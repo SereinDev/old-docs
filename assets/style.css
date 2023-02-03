@@ -1,0 +1,44 @@
+.markdown-section p a,
+.markdown-section table a,
+.markdown-section li a {
+    text-decoration: none;
+    font-weight: inherit !important;
+    border-bottom: 1px solid #00000000;
+    transition: border-bottom 0.3s;
+}
+
+.markdown-section p a:not(.anchor):hover,
+.markdown-section table a:not(.anchor):hover,
+.markdown-section li a:not(.anchor):hover {
+    border-bottom: 1px solid var(--theme-color, #42b983);
+}
+
+* {
+    transition: 0.1s;
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3 {
+    border-bottom: #D8DEE4 solid 2px;
+}
+
+.markdown-section h4,
+.markdown-section h5,
+.markdown-section h6 {
+    border-bottom: #D8DEE4 solid 1px;
+}
+
+.v[data-class=v] .vcards .vcard .vh .vmeta .vat {
+    color: var(--theme-color);
+}
+
+.leancloud_visitors {
+    text-align: right;
+    font-size: 5px !important;
+    position: absolute;
+    transform: translateY(15px);
+    right: 15px;
+    user-select: none;
+    color: #bbb;
+}

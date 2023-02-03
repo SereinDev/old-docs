@@ -1,0 +1,29 @@
+
+- [🏠**主站**](../ ':ignore')
+- **🌌 扩展市场**
+  - 🧱 基础
+    - [🚩 首页](/)
+    - [➕ 发布](Publish.md)
+    - [❔ 如何安装](HowToInstall.md)
+  - 📜 正则
+    - [示例文件](JSON/Demo.json.md)
+    - [PNX](JSON/PNX.json.md)
+  - 🧩 插件
+    - 🎲 前置模块
+      - [ReplyHelper - 回复助手](JS/Modules/ReplyHelper)
+    - [**✨SereinJSPluginHelper - 插件开发助手**](JS/SereinJSPluginHelper)
+    - [Example - 示例文件](JS/Example)
+    - [BotExtension - 机器人功能拓展](JS/BotExtension)
+    - [iPanel - 网页版控制台 *(咕咕咕)*](https://ipanel.serein.cc)
+    - [SLbind - 白名单与账号绑定插件](JS/SLbind)
+    - [HTTPApi - HTTP应用接口控制](JS/HTTPApi)
+    - [SLwhiteList - LLbds白名单插件](https://www.minebbs.com/resources/serein-llbds-slwhitelist-llbds-js.5216/)
+    - [CHATEX - 对群聊消息互通提供更多增强功能](JS/CHATEX)
+    - [StatRecodrer - 统计信息记录](JS/StatRecodrer)
+    - [BetterWhitelist - 更好的白名单](JS/BetterWhitelist)
+  - 💼 整合包
+    - [Serein面板+机器人整合包](https://www.minebbs.com/resources/serein.4390/)
+    - [Serein机器人整合包 *（版本较旧）*](https://www.minebbs.com/resources/serein.4201/)
+  - 🧀 适用于服务器的插件
+    - [PBind - 账号绑定系统](https://www.minebbs.com/resources/pbind.4211/)
+    - [Unescaper for Serein - 解决中文乱码问题](https://www.minebbs.com/resources/unescaper-for-serein.5441/)
