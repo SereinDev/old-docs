@@ -26,4 +26,4 @@
 
 ## 历史版本
 
-- 2022.11.13 [v1.2](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BotExtension/v1.1/BotExtension.js))
+- 2022.11.13 [v1.2](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BotExtension/v1.1/BotExtension.js)
