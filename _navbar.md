@@ -5,4 +5,6 @@
 - 🛹下载
   - [🧊 纯净版](https://github.com/Zaitonn/Serein/releases/latest)
   - [🌈 整合包](https://www.minebbs.com/resources/serein.4390/)
-  - [🌅论坛帖子](https://www.minebbs.com/resources/serein.4169/)
+- 👓发布
+  - [MineBBS](https://www.minebbs.com/resources/serein.4169/)
+  - [MCBBS](https://www.mcbbs.net/thread-1424853-1-1.html)
