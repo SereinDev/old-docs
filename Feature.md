@@ -96,8 +96,8 @@
 
 ## 🧩 JS插件
 
-- 你可以使用[他人编写好的插件](Extension/JS/Example.js.md)直接实现指定功能，方便服主使用
-- 由于js引擎的特性，你可以在js中[插入部分C#代码](Function/JSDocs/README.md)，增添更多功能
+- 你可以使用[他人编写好的插件](Extension/ ':ignore')直接实现指定功能，方便服主使用
+- 由于js引擎的特性，你可以在js中[插入部分C#代码](Function/JSDocs/README.md#特色)，增添更多功能
 - 提供二十余个函数可供使用和十余个事件可供监听
 - 自定义机器人回复/交互/签到等功能
 
