@@ -72,4 +72,4 @@
 
 ## 历史版本
 
-- 2023.2.3 [1.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BetterWhitelist/1.3/BetterWhitelist.js)
+- 2023.2.3 [v1.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BetterWhitelist/v1.3/BetterWhitelist.js)

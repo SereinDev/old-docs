@@ -35,7 +35,7 @@
 
 .leancloud_visitors {
     text-align: right;
-    font-size: 5px !important;
+    font-size: 0.9em !important;
     position: absolute;
     transform: translateY(15px);
     right: 15px;
