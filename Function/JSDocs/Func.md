@@ -5,7 +5,7 @@
 
 ### 输出日志
 
-`serein.log(content:Object)`
+`serein.log(content: Object)`
 
 ```js
 serein.log("这是一条日志");
@@ -23,7 +23,7 @@ serein.log(new System.IO.StreamWriter('log.txt')); // 甚至可以输出对象
 
 ### Debug输出
 
-`serein.debugLog(content:Object)`
+`serein.debugLog(content: Object)`
 
 ```js
 serein.debugLog("这是一条Debug输出");
@@ -37,7 +37,7 @@ serein.debugLog("这是一条Debug输出");
 
 ### 注册插件
 
-`serein.registerPlugin(name:String,version:String,author:String,description:String)`
+`serein.registerPlugin(name: String, version: String, author: String, description: String)`
 
 ```js
 serein.registerPlugin("示例插件","v1.0","Zaitonn","这是一个示例插件"); 
@@ -51,51 +51,143 @@ serein.registerPlugin("示例插件","v1.0","Zaitonn","这是一个示例插件"
 - 返回
   - `Boolean` *(v1.3.2及以前)*
     - 成功为`true`，否则为`false`
-  - `String`
+  - `String` *(v1.3.3及以后)*
     - 当前的命名空间
 
 ### 设置监听器
 
-`serein.setListener(event:String,func:Function)`
+`serein.setListener(event: String, callback: Function)`
 
 ```js
-serein.setListener("onSereinStart",onSereinStart);
-function onSereinStart(){
-    serein.log("Serein启动");
-}
+serein.setListener("onServerOutput", (line) => {
+    serein.log(`服务器输出：${line}`);
+    return false; // 拦截此输出
+});
 ```
 
 ```js
-serein.setListener("onGroupPoke",onGroupPoke);
-function onGroupPoke(group,user){
-    serein.log("监听群群成员戳一戳当前账号 触发群："+group+"  QQ："+user);
-}
+serein.setListener("onGroupPoke", (group, user) => {
+    serein.log(`监听群群成员戳一戳当前账号 触发群：${group} QQ：${user}`);
+});
 ```
 
 - 参数
   - `event` 事件名称，具体值见下表（区分大小写）
-  - `func` 函数
+  - `callback` 回调函数
     - 不要包含`()`和参数
+    - 对于可拦截的事件，你可以通过返回`false`进行拦截
+      - 拦截后该事件便不会进行下一步处理（如正则匹配或输出到控制台）
+      - 需要注意的是，你需要在规定时间内返回，具体时间可在配置文件`Serein.json` - `Function`的`JSEventMaxWaitingTime`中修改（默认500ms）；超出时间后返回的将被忽略；
 - 返回
   - `Boolean`
-    - 成功为`true`，否则为`false`
+    - 设置监听器成功为`true`，否则为`false`
 
-| 事件名                  | 描述                 | 函数原型                                                       |
-| ----------------------- | -------------------- | -------------------------------------------------------------- |
-| onServerStart           | 服务器启动           | `( )`                                                          |
-| onServerStop            | 服务器关闭           | `( )`                                                          |
-| onServerOutput          | 服务器输出           | `(line:String)`                                                |
-| onServerOriginalOutput  | 服务器原始输出       | `(line:String)`                                                |
-| onServerSendCommand     | 服务器输入指令       | `(cmd:String)`                                                 |
-| onGroupIncrease         | 监听群群成员增加     | `(group_id:Number,user_id:Number)`                             |
-| onGroupDecrease         | 监听群群成员减少     | `(group_id:Number,user_id:Number)`                             |
-| onGroupPoke             | 监听群戳一戳自身账号 | `(group_id:Number,user_id:Number)`                             |
-| onReceiveGroupMessage   | 收到群消息           | `(group_id:Number,user_id:Number,msg:String,shownName:String)` |
-| onReceivePrivateMessage | 收到私聊消息         | `(user_id:Number,msg:String,nickName:String)`                  |
-| onReceivePacket         | 收到数据包           | `(packet:String)`                                              |
-| onSereinStart           | Serein启动           | `( )`                                                          |
-| onSereinClose           | Serein关闭           | `( )`                                                          |
-| onPluginsReload         | 插件重载             | `( )`                                                          |
+#### 事件列表
+
+##### onServerStart
+
+- **服务器启动**
+- 监听函数原型： `function () -> void`
+- 不可拦截
+
+##### onServerStop
+
+- **服务器关闭**
+- 监听函数原型： `function (exitCode: Number) -> void`
+  - `exitCode` 退出代码（正常关闭时为0）
+- 不可拦截
+
+##### onServerOutput
+
+- **服务器输出**
+- 监听函数原型： `function (line: String) -> Boolean`
+  - `line` 输出行
+- 可被拦截
+
+##### onServerOriginalOutput
+
+- **服务器原始输出**
+- 监听函数原型： `function (line: String) -> Boolean`
+  - `line` 输出行
+- 可被拦截
+
+>[!NOTE]
+>
+>- `onServerOutput`总是先于`onServerOriginalOutput`触发，但是拦截`onServerOutput`不影响后者触发
+>- 当两者中至少有一个事件被拦截时才会跳过下一步处理
+
+##### onServerSendCommand
+
+- **服务器输入指令**
+- 监听函数原型： `function (cmd: String) -> void`
+  - `cmd` 输入命令
+- 不可拦截
+
+##### onGroupIncrease
+
+- **监听群群成员增加**
+- 监听函数原型： `function (group_id: Number, user_id: Number) -> void`
+  - `group_id` 群号
+  - `user_id` QQ号
+- 不可拦截
+
+##### onGroupDecrease
+
+- **监听群群成员减少**
+- 监听函数原型： `function (group_id: Number, user_id: Number) -> void`
+  - `group_id` 群号
+  - `user_id` QQ号
+- 不可拦截
+
+##### onGroupPoke
+
+- **监听群戳一戳自身账号**
+- 监听函数原型： `function (group_id: Number, user_id: Number) -> void`
+  - `group_id` 群号
+  - `user_id` QQ号
+- 不可拦截
+
+##### onReceiveGroupMessage
+
+- **收到群消息**（包括设置中未监听的群聊）
+- 监听函数原型： `function (group_id: Number, user_id: Number, msg: String, shownName: String) -> Boolean`
+  - `group_id` 群号
+  - `user_id` QQ号
+  - `msg`  消息内容
+  - `shownName` 显示名称
+- 可被拦截
+
+##### onReceivePrivateMessage
+
+- **收到私聊消息**
+- 监听函数原型： `function (user_id: Number, msg: String, nickName: String) -> Boolean`
+  - `user_id` QQ号
+  - `msg`  消息内容
+  - `shownName` 显示名称
+- 可被拦截
+
+##### onReceivePacket
+
+- **收到数据包**
+- 监听函数原型： `function (packet: String) -> Boolean`
+  - `packet` 数据包UTF8文本
+- 可被拦截
+
+>[!NOTE]`onReceivePacket`先于`onReceivePrivateMessage`和`onReceiveGroupMessage`触发，若此事件被拦截，私聊和群聊消息事件均不会被触发
+
+##### onSereinClose
+
+- **Serein关闭**
+- 监听函数原型： `function () -> void`
+- 不可拦截
+
+##### onPluginsReload
+
+- **插件重载**
+- 监听函数原型： `function () -> void`
+- 不可拦截
+
+>[!NOTE]以上两个事件为方便插件保存信息使用，超过`JSEventMaxWaitingTime`设置项的时间后继续执行将被中止
 
 ### 获取Serein设置
 
@@ -229,7 +321,7 @@ var settings = serein.getSettings();
 
 ### 执行命令
 
-`serein.runCommand(cmd:String)`
+`serein.runCommand(cmd: String)`
 
 ```js
 serein.runCommand("g|hello")
@@ -267,9 +359,12 @@ var list = serein.getPluginList();
     "Description": "-", // 注册的介绍
     "EventList": [],  // 监听的事件列表
     "PreLoadConig": { // 预加载配置
-      "AssemblyStrings": [],  // 程序集名称
-      "AssemblyFiles": [],    // 程序集路径
-      "NOTE": "参考文档：[https://learn.microsoft.com/zh-cn/dotnet/api/system.reflection.assembly.load]；其中“AssemblyStrings”项应填系统程序集的不带扩展名的文件名，且该文件需位于“{NET安装目录}/{运行库类型}/{版本号}”的文件夹下；“AssemblyFiles”项应填写程序集文件（如“Newtonsoft.Json.dll”）相对于Serein文件的相对目录"
+      "AssemblyStrings": [],
+      "AllowGetType": false,
+      "AllowOperatorOverloading": true,
+      "AllowSystemReflection": false,
+      "AllowWrite": true,
+      "Strict": false
     } 
   } 
   ```
@@ -442,7 +537,7 @@ var cpupersent = serein.getServerCPUPersent();
 - 参数
   - 空
 - 返回
-  - `Number` ∈ [0,100]
+  - `Number` ∈ [0, 100]
     - 示例：`1.14514191981`
   - `undefined` *Linux版本*
 
@@ -508,7 +603,7 @@ var success = serein.killServer();
 
 ### 发送服务器命令
 
-`serein.sendCmd(String:command)`
+`serein.sendCmd(String: command)`
 
 ```js
 serein.sendCmd("help");
@@ -558,7 +653,7 @@ var cpupersent = serein.getServerCPUPersent();
 - 参数
   - 空
 - 返回
-  - `Number` ∈ [0,100]
+  - `Number` ∈ [0, 100]
     - 示例：`1.14514191981`
 
 ### 获取服务器文件
@@ -577,8 +672,8 @@ var file = serein.getServerFile();
 
 ### 获取Motd原文
 
-基岩版：`serein.getMotdpe(ip:String)`  
-Java版：`serein.getMotdje(ip:String)`
+基岩版：`serein.getMotdpe(ip: String)`  
+Java版：`serein.getMotdje(ip: String)`
 
 ```js
 var pe = serein.getMotdpe("127.0.0.1:19132");
@@ -627,10 +722,10 @@ var je = serein.getMotdje("127.0.0.1:25565");
 
 ### 发送群聊消息
 
-`serein.sendGroup(target:Number,msg:String)`
+`serein.sendGroup(target: Number, msg: String)`
 
 ```js
-var success = serein.sendGroup(114514,"大家好");
+var success = serein.sendGroup(114514, "大家好");
 ```
 
 - 参数
@@ -643,10 +738,10 @@ var success = serein.sendGroup(114514,"大家好");
 
 ### 发送私聊消息
 
-`serein.sendPrivate(target:Number,msg:String)`
+`serein.sendPrivate(target: Number, msg: String)`
 
 ```js
-var success = serein.sendPrivate(114514,"你好");
+var success = serein.sendPrivate(114514, "你好");
 ```
 
 - 参数
@@ -659,7 +754,7 @@ var success = serein.sendPrivate(114514,"你好");
 
 ### 发送数据包
 
-`serein.sendPacket(packet:String)`
+`serein.sendPacket(packet: String)`
 
 ```js
 serein.sendPackage("{\"action\": \"send_private_msg\",\"params\": {\"user_id\": \"10001\",\"message\": \"你好\"}}")
@@ -724,10 +819,10 @@ var myname = serein.getUserName(114514, 1919810); // 与上面的函数示例等
 
 ### 绑定游戏ID
 
-`serein.bindMember(userid:Number, gameid:String)`
+`serein.bindMember(userid: Number, gameid: String)`
 
 ```js
-var success = serein.bindMember(114514, "Li_Tiansuo");
+var success = serein.bindMember(114514,  "Li_Tiansuo");
 ```
 
 - 参数
@@ -739,7 +834,7 @@ var success = serein.bindMember(114514, "Li_Tiansuo");
 
 ### 删除绑定记录
 
-`serein.unbindMember(userid:Number)`
+`serein.unbindMember(userid: Number)`
 
 ```js
 var success = serein.unbindMember(114514);
@@ -753,7 +848,7 @@ var success = serein.unbindMember(114514);
 
 ### 获取指定用户QQ
 
-`serein.getID(gameid:String)`
+`serein.getID(gameid: String)`
 
 ```js
 var qq = serein.getID("Li_Tiansuo");
@@ -766,7 +861,7 @@ var qq = serein.getID("Li_Tiansuo");
 
 ### 获取指定游戏ID
 
-`serein.getGameID(userid:Number)`
+`serein.getGameID(userid: Number)`
 
 ```js
 var id = serein.getGameID(114514);

@@ -7,7 +7,7 @@
 
 ECMAScript 2022
 
->具体特性支持列表详见👉<https://github.com/sebastienros/jint#version-3x>
+>具体特性支持列表详见👉[sebastienros/jint](https://github.com/sebastienros/jint#version-3x)
 
 >[!ATTENTION]
 >以下情况将导致Serein无响应或崩溃
@@ -21,12 +21,16 @@ ECMAScript 2022
 
 `importNamespace(name:String)` 导入命名空间
 
+或
+
+`命名空间`（如`System.IO.File`）
+
 >[!TIP] 配合一定C#基础食用更佳  
 >C#语法详见 [.NET API 浏览器](https://learn.microsoft.com/zh-cn/dotnet/api/?view=net-6.0)
 >
 >```js
 >// https://learn.microsoft.com/zh-cn/dotnet/api/system.io.file?view=net-6.0
->var File = importNamespace("System.IO").File;
+>var File = System.IO.File;
 >File.WriteAllText(
 >    "1.txt", // 路径
 >    "一些文本"// 文本
@@ -36,7 +40,7 @@ ECMAScript 2022
 >
 >```js
 >// https://learn.microsoft.com/zh-cn/dotnet/api/system.diagnostics.process?view=net-6.0
->var Process = importNamespace("System.Diagnostics").Process;
+>var Process = System.Diagnostics.Process;
 >Process.Start("cmd.exe");
 >// 启动cmd.exe
 >```

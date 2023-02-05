@@ -17,7 +17,7 @@ var path = serein.path; // Serein.exe所在文件夹，如C:\Serein
 `serein.version`
 
 ```js
-var version = serein.version; // Serein版本，如v1.3.0
+var version = serein.version; // Serein版本，如v1.3.4
 ```
 
 - 返回
@@ -32,7 +32,7 @@ var version = serein.version; // Serein版本，如v1.3.0
     - 0 - 控制台
     - 1 - winform
     - 2 - wpf
-    - -1 - 未知
+    - -1 - 未知（理论上不可能出现这个值）
 
 ## JS命名空间
 

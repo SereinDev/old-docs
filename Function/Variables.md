@@ -37,7 +37,11 @@
 | CPUBrand      | CPU品牌                     | `GenuineIntel`                              |
 | CPUFrequency  | CPU频率 (MHz)               | `1498`                                      |
 | TotalRAM      | 总内存（MB）                | `7778`                                      |
+| TotalRAMGB    | 总内存（GB）                | `7.6`                                       |
 | UsedRAM       | 已用内存（MB)               | `6072`                                      |
+| UsedRAMGB     | 已用内存（GB)               | `5.9`                                       |
+| FreeRAM       | 空闲内存（MB)               | `1706`                                      |
+| UsedRAMGB     | 空闲内存（GB)               | `1.7`                                       |
 | RAMUsage      | 内存使用率                  | `78.1`                                      |
 | CPUUsage      | CPU使用率 *仅Windows可获取* | `11.4`                                      |
 | UploadSpeed   | 上传速度                    | `11.4MB/s`                                  |
@@ -51,14 +55,15 @@
 > - 服务器不在运行
 > - `settings/Matches.json`设置有误，无法捕捉消息
 
-| 变量名         | 描述                | 例子                  |
-| -------------- | ------------------- | --------------------- |
-| Status         | 运行状态            | `已启动`/`未启动`     |
-| LevelName      | 存档名称            | `Bedrock level`       |
-| Version        | 服务端版本          | `1.18.33.02`          |
-| Difficulty     | 难度                | `Normal`              |
-| RunTime        | 运行时间            | `1.4m`/`2.0h`/`3.23d` |
-| ServerCPUUsage | 服务器进程CPU使用率 | `23.4`                |
+| 变量名         | 描述                | 例子                     |
+| -------------- | ------------------- | ------------------------ |
+| Status         | 运行状态            | `已启动`/`未启动`        |
+| LevelName      | 存档名称            | `Bedrock level`          |
+| Version        | 服务端版本          | `1.18.33.02`             |
+| FileName       | 文件名              | `bedrock_server_mod.exe` |
+| Difficulty     | 难度                | `Normal`                 |
+| RunTime        | 运行时间            | `1.4m`/`2.0h`/`3.23d`    |
+| ServerCPUUsage | 服务器进程CPU使用率 | `23.4`                   |
 
 ## 服务器Motd变量
 
@@ -85,7 +90,7 @@
 | Protocol     | 协议版本                      | `527`                                                                                                                                             |
 | GameMode     | 游戏模式                      | `Survival`                                                                                                                                        |
 | Delay        | 延迟(ms)                      | `20.22`                                                                                                                                           |
-| Favicon      | 图标<small>[仅Java版]</small> | ![favicon.png](../imgs/favicon.png) ![favicon_hypixel.png](../imgs/favicon_hypixel.png) ![favicon_mcol.png](../imgs/favicon_mcol.png)*(仅供参考)* |
+| Favicon      | 图标CQ码<sup>[仅Java版]</sup> | ![favicon.png](../imgs/favicon.png) ![favicon_hypixel.png](../imgs/favicon_hypixel.png) ![favicon_mcol.png](../imgs/favicon_mcol.png)*(仅供参考)* |
 | Origin       | Motd原文                      | `MCPE;Dedicated Server;527;1.19.1;0;10;10904212759644275432;Bedrock level;Survival;1;19132;19133;`                                                |
 
 ## 成员管理变量
@@ -100,7 +105,7 @@
 
 ## 消息变量（私聊）
 
->[!WARNING]若非消息触发的命令使用以下变量可能**返回空值或保留原文**
+>[!WARNING]若非群聊消息触发的命令使用以下变量将**返回空值**
 
 | 变量名   | 描述               | 例子             |
 | -------- | ------------------ | ---------------- |
@@ -111,7 +116,7 @@
 
 ## 消息变量（群聊）
 
->[!WARNING]若非群聊消息触发的命令使用以下变量可能**返回空值或保留原文**
+>[!WARNING]若非群聊消息触发的命令使用以下变量将**返回空值**
 
 | 变量名    | 描述                           | 例子                    |
 | --------- | ------------------------------ | ----------------------- |
