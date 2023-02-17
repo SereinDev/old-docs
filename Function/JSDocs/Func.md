@@ -15,7 +15,6 @@ serein.log(new System.IO.StreamWriter('log.txt')); // 甚至可以输出对象
 
 - 参数
   - `content` 输出内容
-    - 支持`Number` `String`等类型
 - 返回
   - 空
 
@@ -31,7 +30,6 @@ serein.debugLog("这是一条Debug输出");
 
 - 参数
   - `content` 输出内容
-    - 支持`Number` `String`等类型
 - 返回
   - 空
 
@@ -359,7 +357,7 @@ var list = serein.getPluginList();
     "Description": "-", // 注册的介绍
     "EventList": [],  // 监听的事件列表
     "PreLoadConig": { // 预加载配置
-      "AssemblyStrings": [],
+      "Assemblies": [],
       "AllowGetType": false,
       "AllowOperatorOverloading": true,
       "AllowSystemReflection": false,
@@ -427,6 +425,9 @@ serein.editRegex(
   - `Boolean`
     - 成功为`true`，否则为`false`
 
+>[!WARNING]
+>若参数为null则忽略更改
+
 ### 删除正则
 
 `serein.removeRegex(index: Number)`
@@ -478,8 +479,8 @@ var info = serein.getSysInfo();
 
 ```json
 {
-  "Architecture": "64 位",                              // 架构（32位、64位、AMD）
-  "Name": "Microsoft Windows 10 家庭版 SP0.0",
+  "Architecture": "64 位",                              // 架构（可能的值：32位、64位、AMD；具体语言跟随系统）
+  "Name": "Microsoft Windows 10 家庭版 SP0.0",          // 系统名称（具体语言跟随系统）
   "Hardware": {                                         // 硬件信息
     "CPUs": [                                           // CPU列表
       {
@@ -512,7 +513,7 @@ var info = serein.getSysInfo();
     "MajorRevision": 0,
     "MinorRevision": -23536
   },
-  "JavaVersion": {                                      // Java运行库版本（-1为无运行库）
+  "JavaVersion": {                                      // Java运行库版本（当前示例为无运行库）
     "Major": 0,
     "Minor": 0,
     "Build": -1,
@@ -521,7 +522,7 @@ var info = serein.getSysInfo();
     "MinorRevision": -1
   },
   "IsMono": false,                                      // 当前软件是否使用Mono运行
-  "OperatingSystemType": 4                              // 操作系统类型（枚举值）
+  "OperatingSystemType": 0                              // 操作系统类型（枚举值）
   // Windows = 0, Linux, MacOSX, BSD, WebAssembly, Solaris, Haiku, Unity5, Other
 }
 ```
@@ -872,6 +873,35 @@ var id = serein.getGameID(114514);
 - 返回
   - `String` 游戏ID
 
+## 💊导入/导出对象
+
+### 导出
+
+`serein.export(key: String, obj: Object)`
+
+- 参数
+  - `key` 导出键名
+  - `obj` 导出的对象
+- 返回
+  - 无
+
+>[!WARNING]
+>
+>- `key`不能为空或为null、undefined
+>- `obj`可以为JS中的所有数据类型，详见[JavaScript 数据类型](https://www.runoob.com/js/js-datatypes.html)
+>   - 若导出的类型为函数，在导出函数后禁用该插件，导入该函数并执行将引发错误
+>
+
+### 导入
+
+`serein.import(key: String)`
+
+- 参数
+  - `key` 导入键名
+- 返回
+  - 导入的对象
+    - 找不到指定的对象时将返回 undefined
+
 ## 🧬 从模块中加载
 
 v1.3.4 后你可以创建新的js文件，并在里面写一些基本的函数方便日常调用，如判断是否为管理、格式化自定义的时间等
@@ -904,14 +934,14 @@ export function isMyGroup(groupID) {
 
 ### 导入
 
-`serein.loadFrom(file: String)` / `require(file: String)`
+`require(file: String)`
 
 此处的`file`参数对应为你在 plugins 文件夹创建的js文件路径
 
 >[!WARNING]
 >
 >- 必须使用相对路径（基目录为 plugins）
->- 需以`./`开头
+>- 必须以`./`开头
 >- 需包含扩展名
 >- 导入时会被完整运行一次
 >

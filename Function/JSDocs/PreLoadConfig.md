@@ -4,7 +4,7 @@
 
 ```json
 {
-  "AssemblyStrings": [],
+  "Assemblies": [],
   "AllowGetType": false,
   "AllowOperatorOverloading": true,
   "AllowSystemReflection": false,
@@ -13,7 +13,7 @@
 }
 ```
 
-## AssemblyStrings
+## Assemblies
 
 导入已加载的程序集名称
 

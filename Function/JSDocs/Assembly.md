@@ -5,7 +5,7 @@
 
 ### 使用预加载配置文件
 
-详见[AssemblyStrings](Function/JSDocs/PreLoadConfig.md#AssemblyStrings)
+详见[Assemblies](Function/JSDocs/PreLoadConfig.md#Assemblies)
 
 ### 使用NET的反射功能
 
@@ -115,7 +115,7 @@ function form() {
 
 实际上你只要修改声明语句即可
 
->[!TIP]你也可以将类设置为变量，可以简化部分声明语句
+>[!TIP]你也可以将类设置为变量，简化部分声明语句
 >
 >```js
 >const Button = System.Windows.Forms.Button;

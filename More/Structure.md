@@ -30,7 +30,7 @@
   - data *数据*
     - members.json *成员管理*
     - regex.json *正则*
-    - task.json *定时任务*
+    - schedule.json *定时任务*
   - logs *日志*
     - console *控制台输出*
     - crash *崩溃日志*

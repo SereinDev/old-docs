@@ -3,9 +3,9 @@
 
 >安排定期执行的任务
 
-![定时任务](../imgs/task.png)
+![定时任务](../imgs/schedule.png)
 
-任务数据保存在 data/task.json
+任务数据保存在 data/schedule.json
 
 > [!TIP]
 >
@@ -44,7 +44,7 @@
 
 ```json
 {
-  "type": "TASK",
+  "type": "SCHEDULE",
   "comment": "非必要请不要直接修改文件，语法错误可能导致数据丢失",
   "data": [
     {

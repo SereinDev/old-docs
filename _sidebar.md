@@ -13,7 +13,7 @@
   - [🧩 插件](Function/JSPlugin.md)
   - [👨‍💼 成员管理](Function/Member.md)
   - [📜 正则](Function/Regex.md)
-  - [⏰ 定时任务](Function/Task.md)
+  - [⏰ 定时任务](Function/Schedule.md)
   - [🎨 变量](Function/Variables.md)
   - 📝 插件语法
     - [❔ 介绍](Function/JSDocs/README.md)

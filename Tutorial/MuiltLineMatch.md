@@ -7,7 +7,7 @@
 
 >[!TIP] 你可能需要一点关于[JSON](https://www.runoob.com/json/json-tutorial.html)经验
 
-### 操作方法
+## 操作方法
 
 以如下的文本为例，现需要匹配玩家数量和玩家列表
 

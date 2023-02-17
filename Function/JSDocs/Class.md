@@ -9,19 +9,19 @@ var ws = new WSClient("ws://127.0.0.1:11451", serein.namespace);
 // 实例化ws，
 // 此处需要提供当前的命名空间，用于区分和管理
 
-ws.onopen = function(){
+ws.onopen = () => {
   // ws开启事件
   // ...
 };
-ws.onclose = function(){
+ws.onclose = () => {
   // ws关闭事件
   // ...
 };
-ws.onerror = function(e){ // 错误信息
+ws.onerror = (e) => { // 错误信息
   // ws发生错误事件
   // ...
 };
-ws.onmessage = function(message){ // 收到数据
+ws.onmessage = (message) => { // 收到数据
   // ws收到数据事件
   // ...
 };
@@ -44,7 +44,7 @@ ws.dispose(); // 释放对象
 ## Logger
 
 ```js
-var logger = Logger("Example"); // 插件名称
+var logger = new Logger("Example"); // 插件名称
 logger.info("这是一条信息输出");
 logger.warn("这是一条警告输出");
 logger.error("这是一条错误输出");
@@ -58,7 +58,7 @@ logger.debug("这是一条信息输出"); // 此消息将输出到Serein的debug
 ~~Jvav~~版和基岩版的Motd对象
 
 ```js
-let motd = new Motdje('1.2.3.4:1234'); // 地址
+let motd = new Motdje('1.2.3.4:1234'); // 地址（支持域名解析和带端口的文本解析）
 ```
 
 ### 属性

@@ -26,26 +26,26 @@ ECMAScript 2022
 `命名空间`（如`System.IO.File`）
 
 >[!TIP] 配合一定C#基础食用更佳  
->C#语法详见 [.NET API 浏览器](https://learn.microsoft.com/zh-cn/dotnet/api/?view=net-6.0)
+>C#语法详见 [.NET API 浏览器](https://learn.microsoft.com/zh-cn/dotnet/api/)
 >
 >```js
->// https://learn.microsoft.com/zh-cn/dotnet/api/system.io.file?view=net-6.0
+>// https://learn.microsoft.com/zh-cn/dotnet/api/system.io.file
 >var File = System.IO.File;
 >File.WriteAllText(
 >    "1.txt", // 路径
 >    "一些文本"// 文本
 >);
 >// 输出到文件
->   ```
+>```
 >
 >```js
->// https://learn.microsoft.com/zh-cn/dotnet/api/system.diagnostics.process?view=net-6.0
+>// https://learn.microsoft.com/zh-cn/dotnet/api/system.diagnostics.process
 >var Process = System.Diagnostics.Process;
 >Process.Start("cmd.exe");
 >// 启动cmd.exe
 >```
 
->[!TIP] 在[这里](Extension/JS/Example.js.md)你可以找到更详细的示例
+>[!TIP] 在[这里](Extension/#/JS/Example.md ":ignore")你可以找到更详细的示例
 
 >[!NOTE]找不到想要的方法？有更好的建议？速速[联系作者](More/About.md#反馈)
 
