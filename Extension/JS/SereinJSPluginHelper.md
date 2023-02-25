@@ -4,7 +4,7 @@
 |     作者     | Zaitonn               |
 | :----------: | :-------------------- |
 |   **介绍**   | 插件开发助手          |
-| **更新日期** | 2023.1.15             |
+| **更新日期** | 2023.2.25             |
 |   **下载**   | [历史版本](#历史版本) |
 
 ![SereinJSPluginHelper](SereinJSPluginHelper/1.png)
@@ -27,4 +27,5 @@
 
 ## 历史版本
 
+- 2023.2.25 [v1.3.4](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/SereinJSPluginHelper/v1.3.4/SereinJSPluginHelper.js)
 - 2023.1.15 [v1.3.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/SereinJSPluginHelper/v1.3.3/SereinJSPluginHelper.js)
