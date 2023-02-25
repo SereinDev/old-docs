@@ -185,7 +185,33 @@ serein.setListener("onGroupPoke", (group, user) => {
 - 监听函数原型： `function () -> void`
 - 不可拦截
 
+##### onPluginsLoaded
+
+- **插件加载成功**
+- 监听函数原型： `function () -> void`
+- 不可拦截
+
 >[!NOTE]以上两个事件为方便插件保存信息使用，超过`JSEventMaxWaitingTime`设置项的时间后继续执行将被中止
+
+### 设置预加载配置
+
+```js
+serein.setPreLoadConfig(
+  assemblies: String[], 
+  allowGetType: Boolean, 
+  allowOperatorOverloading: Boolean, 
+  allowSystemReflection: Boolean, 
+  allowWrite: Boolean, 
+  strict: Boolean
+  )
+```
+
+- 参数
+  - 详见[预加载配置](Function/JSDocs/PreLoadConfig.md)
+- 返回
+  - 空
+
+>[!NOTE]设置后可能需要重新加载以应用
 
 ### 获取Serein设置
 
@@ -352,9 +378,9 @@ var list = serein.getPluginList();
     "File": "plugins\\test.js", // 相对路径
     "WebSockets": [], // 创建的WS对象状态列表
     "Name": "test",   // 注册的名称
-    "Version": "-",   // 注册的版本
-    "Author": "-",    // 注册的作者
-    "Description": "-", // 注册的介绍
+    "Version": "",   // 注册的版本
+    "Author": "",    // 注册的作者
+    "Description": "", // 注册的介绍
     "EventList": [],  // 监听的事件列表
     "PreLoadConig": { // 预加载配置
       "Assemblies": [],
@@ -387,7 +413,8 @@ serein.addRegex(
   area: Number,
   needAdmin: Boolean,
   command: String,
-  remark: String
+  remark: String,
+  ignore: Number[]
   )
 ```
 
@@ -397,6 +424,7 @@ serein.addRegex(
   - `needAdmin` 需要管理
   - `command` 命令
   - `remark` 备注
+  - `ignore` 忽略的对象
 - 返回
   - `Boolean`
     - 成功为`true`，否则为`false`
@@ -410,7 +438,8 @@ serein.editRegex(
   area: Number,
   needAdmin: Boolean,
   command: String,
-  remark: String
+  remark: String,
+  ignore: Number[]
   )
 ```
 
@@ -421,6 +450,7 @@ serein.editRegex(
   - `needAdmin` 需要管理
   - `command` 命令
   - `remark` 备注
+  - `ignore` 忽略的对象
 - 返回
   - `Boolean`
     - 成功为`true`，否则为`false`

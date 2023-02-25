@@ -34,6 +34,24 @@ var version = serein.version; // Serein版本，如v1.3.4
     - 2 - wpf
     - -1 - 未知（理论上不可能出现这个值）
 
+## Serein类型文本
+
+`serein.typeName`
+
+- 返回
+  - `String`
+    - console
+    - winform
+    - wpf
+    - unknown
+
+## Serein启动时间
+
+`serein.startTime`
+
+- 返回
+  - `Date`
+
 ## JS命名空间
 
 `serein.namespace`

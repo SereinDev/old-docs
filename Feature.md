@@ -20,7 +20,7 @@
     - WinServer2012
     - WinServer2016
     - WinServer2019
-  - Linux *（不完全支持）*
+  - Linux *（仅提供命令行版本）*
 - 支持启动的类型
   - 基岩版专用服务器（BDS)
   - Java版及使用`java`启动的服务器
@@ -97,7 +97,8 @@
 ## 🧩 JS插件
 
 - 你可以使用[他人编写好的插件](Extension/ ':ignore')直接实现指定功能，方便服主使用
-- 由于js引擎的特性，你可以在js中[插入部分C#代码](Function/JSDocs/README.md#特色)，增添更多功能
+- 由于js引擎的特性，你可以在js中[插入几乎所有的C#代码](Function/JSDocs/README.md#特色)，增添更多功能
+  ![插件特色](imgs/jsfeature.png)
 - 提供二十余个函数可供使用和十余个事件可供监听
 - 自定义机器人回复/交互/签到等功能
 

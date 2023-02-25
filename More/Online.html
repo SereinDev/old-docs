@@ -9,10 +9,13 @@
     <style>
         #main-container {
             display: flex;
-            margin: 0 20px;
             flex-wrap: wrap;
             flex-direction: column;
             align-items: center;
+        }
+
+        .text:not(.detail) {
+            user-select: none;
         }
 
         div.child-container {
@@ -76,6 +79,7 @@
 
         table * {
             text-align: center;
+            word-break: keep-all;
         }
 
         #notice {
@@ -114,11 +118,18 @@
             }
 
             .summary-block {
+                min-width: 80%;
                 width: auto;
+                word-break: keep-all;
                 padding: 15px;
+                margin: 20px 0;
             }
 
             .summary-block>* {
+                margin: 10px;
+            }
+
+            div.child-container {
                 margin: 10px;
             }
         }
@@ -172,6 +183,7 @@
                 <th>匿名ID</th>
                 <th>版本</th>
                 <th>类型</th>
+                <th>服务器运行状态</th>
                 <th>运行时长</th>
                 <th>所在省份</th>
             </tr>

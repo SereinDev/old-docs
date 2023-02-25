@@ -51,10 +51,6 @@ public void CreateMyForm()
 
    // Define the border style of the form to a dialog box.
    form1.FormBorderStyle = FormBorderStyle.FixedDialog;
-   // Set the MaximizeBox to false to remove the maximize box.
-   form1.MaximizeBox = false;
-   // Set the MinimizeBox to false to remove the minimize box.
-   form1.MinimizeBox = false;
    // Set the accept button of the form to button1.
    form1.AcceptButton = button1;
    // Set the cancel button of the form to button2.

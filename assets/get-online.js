@@ -38,6 +38,7 @@ function update() {
                         <td>${value.name.substring(9)}</td>
                         <td>${value.metadata.version}</td>
                         <td>${value.metadata.type}</td>
+                        <td>${value.metadata.isRunningServer ? '已启动' : '未启动'}</td>
                         <td>${getTimeStr(value.metadata.runTime) || '未知'}</td>
                         <td>${value.metadata.region || '未知'}</td>
                         </tr>
@@ -52,14 +53,15 @@ function update() {
                 document.querySelector('#type-count-detail').innerHTML = getMaxItemInDict(type) || '未知';
                 document.querySelector('#notice-msg').innerHTML = '因为此功能于v1.3.4才被加入，故仅统计此版本及以后的在线数量';
                 document.querySelector('#notice').classList.remove('hide');
-                document.querySelector('span#update-time').innerHTML=`更新时间：${new Date().toLocaleString()}`;
+                document.querySelector('span#update-time').innerHTML = `更新时间：${new Date().toLocaleString()}`;
             }
         }
 
         xhr.send();
 
     } catch (e) {
-        document.querySelector('#notice-msg').innerHTML = e;
+        document.querySelector('#notice-msg').innerHTML = `获取失败：${e}`;
+        document.querySelector('#notice').classList.remove('hide');
         console.error(e);
     }
 }
@@ -85,8 +87,6 @@ function getMaxItemInDict(dict) {
 function getTimeStr(min) {
     if (!min || min < 0)
         return null;
-    if (min < 120)
-        return `${min} (分钟)`;
     if (min < 60 * 24)
         return `${(min / 60).toFixed(1)} (小时)`;
     return `${(min / 60 / 64).toFixed(1)} (天)`;
