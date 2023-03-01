@@ -2,17 +2,18 @@
     Serein JS插件辅助
 
     @summary 使用方法：
-        0. 建议使用 Visual Studio Code 编写插件 下载链接：https://code.visualstudio.com/
 
-        1. 将此文件复制到插件的同文件夹下
+        1. 建议使用 Visual Studio Code 编写插件 下载链接：https://code.visualstudio.com/
 
-        2. 在你的插件第一行加上下面这一行（只需复制"///"及其之后的部分）
-            /// <reference path="SereinJSPluginHelper.js"/>
+        2. 将此文件复制到插件的同文件夹下
 
-        3. 然后你就可以快乐地写插件了，这时候就可以自动补全和显示函数参数了！！
+        3. 在你的插件第一行加上下面这一行（只需复制`///`及其之后的部分）  
+           ` /// <reference path="SereinJSPluginHelper.js"/>`
+
+        4. 然后你就可以快乐地写插件了，这时候就可以自动补全和显示函数参数了！！
 
     @version 适用版本：
-        Serein v1.3.4 +
+        `Serein v1.3.4 +`
  */
 
 
@@ -332,7 +333,7 @@ var serein = {
 
     /**
      * 获取群成员昵称缓存字典
-     * @returns {Array<Array>}
+     * @returns {Array<Array<Number>}
      * @see https://serein.cc/#/Function/JSDocs/Func?id=%e8%8e%b7%e5%8f%96%e7%be%a4%e6%88%90%e5%91%98%e6%98%b5%e7%a7%b0%e7%bc%93%e5%ad%98%e5%ad%97%e5%85%b8
      */
     getGroupCache: function () { },
@@ -364,15 +365,16 @@ var serein = {
 
     /**
      * 设置预加载配置
-     * @param {Array<String>} assemblies 
-     * @param {Boolean} allowGetType 
-     * @param {Boolean} allowOperatorOverloading 
-     * @param {Boolean} allowSystemReflection 
-     * @param {Boolean} allowWrite 
-     * @param {Boolean} strict 
+     * @param {Array<String>} assemblies
+     * @param {Boolean} allowGetType
+     * @param {Boolean} allowOperatorOverloading
+     * @param {Boolean} allowSystemReflection
+     * @param {Boolean} allowWrite
+     * @param {Boolean} strict
+     * @param {Boolean} stringCompilationAllowed
      * @see https://serein.cc/#/Function/JSDocs/Func?id=%e8%ae%be%e7%bd%ae%e9%a2%84%e5%8a%a0%e8%bd%bd%e9%85%8d%e7%bd%ae
      */
-    setPreLoadConfig: function (assemblies, allowGetType, allowOperatorOverloading, allowSystemReflection, allowWrite, strict) { },
+    setPreLoadConfig: function (assemblies, allowGetType, allowOperatorOverloading, allowSystemReflection, allowWrite, strict, stringCompilationAllowed) { },
 }
 
 /**
@@ -391,63 +393,77 @@ class Motdje {
      * @param {String} addr 服务器地址
      */
     constructor(addr) { };
+    /**
+     * Java服务器Motd对象
+     * @param {Number} port 本地端口
+     */
+    constructor(port) { };
 
     /**
      * 最大玩家数
      */
-    MaxPlayer = '';
+    maxPlayer = '';
 
     /**
      * 在线玩家数
      */
-    OnlinePlayer = '';
+    onlinePlayer = '';
 
     /**
      * 服务器描述
      */
-    Description = '';
+    description = '';
 
     /**
      * 协议
      */
-    Protocol = '';
-
-    /**
-     * 存档名称（仅基岩版有意义）
-     */
-    LevelName = '';
-
-    /**
-     * 游戏模式（仅基岩版有意义）
-     */
-    GameMode = '';
+    protocol = '';
 
     /**
      * 图标（CQ码）（仅Java有意义）
      */
-    Favicon = '';
+    favicon = '';
 
     /**
      * 延迟（ms）
-     * @example var delay = new Motdje('...').Delay.TotalMilliseconds;
-     * @type {Object}
      */
-    Delay;
+    delay = 0;
 
     /**
      * 原文
      */
-    Origin = '';
+    origin = '';
 
     /**
      * 错误消息
      */
-    Exception = '';
+    exception = '';
 
     /**
      * 是否获取成功
      */
-    IsSuccess = false;
+    isSuccessful = false;
+
+    /**
+     * IP
+     */
+    ip = '';
+
+    /**
+     * 端口
+     */
+    port = 0;
+
+    /**
+     * 获取信息
+     */
+    get();
+
+    /**
+     * 尝试获取信息
+     * @returns {Boolean}
+     */
+    tryGet();
 }
 
 /**
@@ -461,61 +477,81 @@ class Motdpe {
     constructor(addr) { };
 
     /**
+     * 基岩版服务器Motd对象
+     * @param {Number} port 本地端口
+     */
+    constructor(port) { };
+
+    /**
      * 最大玩家数
      */
-    MaxPlayer = '';
+    maxPlayer = '';
 
     /**
      * 在线玩家数
      */
-    OnlinePlayer = '';
+    onlinePlayer = '';
 
     /**
      * 服务器描述
      */
-    Description = '';
+    description = '';
 
     /**
      * 协议
      */
-    Protocol = '';
+    protocol = '';
 
     /**
      * 存档名称（仅基岩版有意义）
      */
-    LevelName = '';
+    levelName = '';
 
     /**
      * 游戏模式（仅基岩版有意义）
      */
-    GameMode = '';
-
-    /**
-     * 图标（CQ码）（仅Java有意义）
-     */
-    Favicon = '';
+    gameMode = '';
 
     /**
      * 延迟（ms）
-     * @example var delay = new Motdje('...').Delay.TotalMilliseconds;
-     * @type {Object}
      */
-    Delay;
+    delay = 0;
 
     /**
      * 原文
      */
-    Origin = '';
+    origin = '';
 
     /**
      * 错误消息
      */
-    Exception = '';
+    exception = '';
 
     /**
      * 是否获取成功
      */
-    IsSuccess = false;
+    isSuccessful = false;
+
+    /**
+     * IP
+     */
+    ip = '';
+
+    /**
+     * 端口
+     */
+    port = 0;
+
+    /**
+     * 获取信息
+     */
+    get();
+
+    /**
+     * 尝试获取信息
+     * @returns {Boolean}
+     */
+    tryGet();
 }
 
 /**
