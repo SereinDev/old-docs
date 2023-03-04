@@ -22,7 +22,8 @@
     - [CHATEX - 对群聊消息互通提供更多增强功能](JS/CHATEX.md)
     - [StatRecodrer - 统计信息记录](JS/StatRecodrer.md)
     - [BetterWhitelist - 更好的白名单](JS/BetterWhitelist.md)
-    - [SLblackbe-云黑插件](https://www.minebbs.com/resources/slblackbe-serein.5646/)
+    - [SLblackbe - 云黑插件](https://www.minebbs.com/resources/slblackbe-serein.5646/)
+    - [DeviceInfo - 驱动器信息变量拓展](JS/DeviceInfo.md)
   - 💼 整合包
     - [Serein面板+机器人整合包](https://www.minebbs.com/resources/serein.4390/)
     - [Serein机器人整合包 *（版本较旧）*](https://www.minebbs.com/resources/serein.4201/)
