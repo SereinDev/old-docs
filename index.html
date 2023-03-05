@@ -245,7 +245,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>匿名ID</th>
+                            <th>对象ID</th>
                             <th>版本</th>
                             <th>类型</th>
                             <th>服务器运行状态</th>
@@ -335,7 +335,7 @@
                 document.querySelector('tbody').innerHTML +=
                     `
             <tr>
-            <td>${value._id.substring(9)}</td>
+            <td>${value._id.substring(0, 7)}</td>
             <td>${value.version}</td>
             <td>${value.type}</td>
             <td>${value.server_status ? '已启动' : '未启动'}</td>
