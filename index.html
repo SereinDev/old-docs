@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线统计 - Serein</title>
+    <style>
+        * {
+            cursor: default;
+        }
+
+        body {
+            margin: 0;
+            background: #F6F8FA;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        h2 {
+            width: 100%;
+            user-select: none;
+            margin-bottom: 10px;
+        }
+
+        header {
+            background: #fff;
+            width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 1px 5px 5px #00000010;
+        }
+
+        header>div {
+            height: 100%;
+        }
+
+        header>div#logo {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+            padding: 7px 0;
+        }
+
+        header>div#logo div {
+            margin: 10px;
+        }
+
+        header div#logo-img {
+            background-image: url('https://serein.cc/assets/Serein.png');
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        header div#logo {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #main-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .block {
+            width: 70vw;
+            border: 1px solid #00000020;
+            border-radius: 5px;
+            background-color: #FFFFFF;
+            box-shadow: 0 0.25rem 0.75rem #0000000d;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            overflow: hidden;
+            color: #34495e;
+        }
+
+        .block>* {
+            padding: 20px;
+        }
+
+        .block .detail-block {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #00000020;
+            padding: 30px 20px;
+            user-select: none;
+        }
+
+        .block .detail-block:nth-child(1) {
+            border-top: none;
+        }
+
+        #list .block {
+            display: flex;
+            justify-content: center
+        }
+
+        table {
+            width: initial !important;
+            overflow-x: auto;
+            display: block;
+            border-collapse: collapse;
+            border-spacing: 0;
+            table-layout: fixed;
+        }
+
+        table th {
+            padding: 5px 10px;
+        }
+
+        table * {
+            text-align: center;
+            word-break: keep-all;
+            padding: 5px 10px;
+            margin: 0;
+            border: 1px solid #ddd;
+        }
+
+        table tr {
+            border-top: 1px solid #ccc;
+        }
+
+        table tr:nth-child(2n) {
+            background-color: #fafafa;
+        }
+
+        #notice {
+            padding: 15px;
+            margin: 10px 20px 0;
+            max-width: 70vw;
+            text-align: center;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid var(--theme-color, #429db977);
+        }
+
+        #notice.warn {
+            background: #fff6e9;
+            border: 1px solid #FBAD41;
+        }
+
+        #notice.warn #notice-symbol {
+            color: #bf3816;
+        }
+
+        #notice-symbol {
+            user-select: none;
+            margin: 10px;
+            color: #429db9
+        }
+
+        div#update-time {
+            color: gray;
+            font-size: small;
+            margin: 30px 0;
+            display: block;
+        }
+
+        div#update-time>* {
+            margin: 0 5px;
+        }
+
+        .hide {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+        @media screen and (max-width: 768px) {
+            .block {
+                width: 90vw;
+            }
+
+            .block>* {
+                padding: 10px;
+            }
+
+            .block .detail-block {
+                padding: 15px 20px;
+            }
+
+            table * {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <div id="logo-img"></div>
+            Serein
+        </div>
+    </header>
+    <div id="main-container">
+
+        <div id="notice" class="hide">
+            <span id="notice-symbol">
+                <b>!</b>
+            </span>
+            <span id="notice-msg">
+                获取中...
+            </span>
+        </div>
+        <div>
+            <h2>概述</h2>
+            <div class="block" id="main">
+                <div id="online" class="detail-block">
+                    <span class="text">总在线数</span>
+                    <span id="online-count-detail" class="text detail">-</span>
+                </div>
+                <div id="server-count" class="detail-block">
+                    <span class="text">服务器数</span>
+                    <span id="server-count-detail" class="text detail">-</span>
+                </div>
+
+                <div id="max-runtime" class="detail-block">
+                    <span class="text">最长运行时间</span>
+                    <span id="max-runtime-detail" class="text detail">-</span>
+                </div>
+                <div id="version" class="detail-block">
+                    <span class="text">最受欢迎版本</span>
+                    <span id="version-count-detail" class="text detail">-</span>
+                </div>
+                <div id="type-count" class="detail-block">
+                    <span class="text">最受欢迎类型</span>
+                    <span id="type-count-detail" class="text detail">-</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hide" id="list">
+            <h2>在线列表</h2>
+            <div class="block">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>匿名ID</th>
+                            <th>版本</th>
+                            <th>类型</th>
+                            <th>服务器运行状态</th>
+                            <th>运行时长</th>
+                            <th>所在省份</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div id="update-time"></div>
+    </div>
+
+    <script>
+        async function update() {
+            if (!document.querySelector('#main-container'))
+                return;
+
+            fetch('https://api.user.serein.cc/list')
+                .then(async (response) => updateInfo(await response.text()))
+                .catch((e) => {
+                    document.querySelector('#notice-msg').innerHTML = `获取失败：${e}`;
+                    document.querySelector('#notice').classList.remove('hide');
+                    document.querySelector('#notice').classList.add('warn');
+                    console.error(e);
+                });
+        }
+
+        /**
+         * 获取最大项
+         * @param {Array} dict 
+         */
+        function getMaxItemInDict(dict) {
+            if (typeof (dict) != 'object' || !dict || dict.length == 0)
+                return undefined;
+
+            let max = 0, name = '';
+            for (const key in dict) {
+                if (dict[key] > max) {
+                    name = key;
+                    max = dict[key];
+                }
+            }
+            return `${name} (${max})`;
+        }
+
+        function getTimeStr(min) {
+            if (!min || min < 0)
+                return null;
+            if (min < 60)
+                return `${min.toFixed(1)} (分钟)`;
+            if (min < 60 * 24)
+                return `${(min / 60).toFixed(1)} (小时)`;
+            return `${(min / 60 / 64).toFixed(1)} (天)`;
+        }
+
+        function updateInfo(data) {
+            const array = JSON.parse(data.trim()).documents;
+            let serverCount = 0, longestRunTime = 0;
+            let type = {}, version = {};
+
+            if (array.length != 0) {
+                document.querySelector('#list').classList.remove('hide');
+            }
+
+            for (const value of array) {
+                let start_time = 0;
+
+                if (value.server_status)
+                    serverCount++;
+
+                if (value.version)
+                    version[value.version] = (version[value.version] || 0) + 1;
+
+                if (value.type)
+                    type[value.type] = (type[value.type] || 0) + 1;
+
+                if (value.start_time) {
+                    start_time = (Date.now() - value.start_time) / 1000 / 60;
+                    longestRunTime = Math.max(start_time, longestRunTime);
+                }
+
+                document.querySelector('tbody').innerHTML +=
+                    `
+            <tr>
+            <td>${value._id.substring(9)}</td>
+            <td>${value.version}</td>
+            <td>${value.type}</td>
+            <td>${value.server_status ? '已启动' : '未启动'}</td>
+            <td>${getTimeStr(start_time) || '未知'}</td>
+            <td>${value.region || '未知'}</td>
+            </tr>
+            `;
+
+            }
+
+            document.querySelector('#online-count-detail').innerHTML = array.length;
+            document.querySelector('#server-count-detail').innerHTML = serverCount;
+            document.querySelector('#max-runtime-detail').innerHTML = getTimeStr(longestRunTime) || '未知';
+            document.querySelector('#version-count-detail').innerHTML = getMaxItemInDict(version) || '未知';
+            document.querySelector('#type-count-detail').innerHTML = getMaxItemInDict(type) || '未知';
+            document.querySelector('#notice-msg').innerHTML = '因为此功能于v1.3.4才被加入，故仅统计此版本及以后的在线数量';
+            document.querySelector('#notice').classList.remove('hide');
+            document.querySelector('div#update-time').innerHTML = `<span>更新时间：${new Date().toLocaleString()} </span> <span onclick="refresh()" style="text-decoration:underline;cursor:pointer">点此更新数据</span>`;
+        }
+
+        function refresh() {
+            if (!document.querySelector('#main-container'))
+                return;
+
+            document.querySelector('tbody').innerHTML = '';
+            document.querySelector('#online-count-detail').innerHTML = '-';
+            document.querySelector('#server-count-detail').innerHTML = '-';
+            document.querySelector('#max-runtime-detail').innerHTML = '-';
+            document.querySelector('#version-count-detail').innerHTML = '-';
+            document.querySelector('#type-count-detail').innerHTML = '-';
+            document.querySelector('#notice').classList.add('hide');
+            document.querySelector('div#update-time').innerHTML = '';
+            document.querySelector('#list').classList.add('hide');
+            update();
+        }
+
+        update();
+
+    </script>
+</body>
+
+</html>
