@@ -7,8 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>在线统计 - Serein</title>
     <style>
-        * {
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        header a:hover {
+            color: #34495e;
+        }
+
+        *:not(a) {
             cursor: default;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 5px 0;
+            border-radius: 5px;
+            margin: 0;
         }
 
         body {
@@ -118,7 +135,9 @@
             padding: 5px 10px;
         }
 
-        table * {
+        table td,
+        table th,
+        table tr {
             text-align: center;
             word-break: keep-all;
             padding: 5px 10px;
@@ -138,10 +157,13 @@
             padding: 15px;
             margin: 10px 20px 0;
             max-width: 70vw;
-            text-align: center;
             background-color: #FFFFFF;
             border-radius: 20px;
             border: 1px solid var(--theme-color, #429db977);
+            display: flex;
+            align-items: center;
+            word-break: normal;
+            overflow-x: auto;
         }
 
         #notice.warn {
@@ -155,8 +177,8 @@
 
         #notice-symbol {
             user-select: none;
-            margin: 10px;
-            color: #429db9
+            margin: 10px 15px;
+            color: #429db9;
         }
 
         div#update-time {
@@ -199,18 +221,18 @@
     <header>
         <div id="logo">
             <div id="logo-img"></div>
-            Serein
+            <a href="https://serein.cc">Serein</a>
         </div>
     </header>
     <div id="main-container">
 
         <div id="notice" class="hide">
-            <span id="notice-symbol">
+            <div id="notice-symbol">
                 <b>!</b>
-            </span>
-            <span id="notice-msg">
+            </div>
+            <div id="notice-msg">
                 获取中...
-            </span>
+            </div>
         </div>
         <div>
             <h2>概述</h2>
@@ -268,7 +290,7 @@
             if (!document.querySelector('#main-container'))
                 return;
 
-            fetch('https://api.user.serein.cc/list')
+            fetch('https://api.online-count.serein.cc/list')
                 .then(async (response) => updateInfo(await response.text()))
                 .catch((e) => {
                     document.querySelector('#notice-msg').innerHTML = `获取失败：${e}`;
@@ -335,10 +357,10 @@
                 document.querySelector('tbody').innerHTML +=
                     `
             <tr>
-            <td>${value._id.substring(0, 7)}</td>
+            <td><pre>${value._id.substring(0, 7)}</pre></td>
             <td>${value.version}</td>
             <td>${value.type}</td>
-            <td>${value.server_status ? '已启动' : '未启动'}</td>
+            <td>${value.server_status ? '运行中' : '未启动'}</td>
             <td>${getTimeStr(start_time) || '未知'}</td>
             <td>${value.region || '未知'}</td>
             </tr>
@@ -351,7 +373,7 @@
             document.querySelector('#max-runtime-detail').innerHTML = getTimeStr(longestRunTime) || '未知';
             document.querySelector('#version-count-detail').innerHTML = getMaxItemInDict(version) || '未知';
             document.querySelector('#type-count-detail').innerHTML = getMaxItemInDict(type) || '未知';
-            document.querySelector('#notice-msg').innerHTML = '因为此功能于v1.3.4才被加入，故仅统计此版本及以后的在线数量';
+            document.querySelector('#notice-msg').innerHTML = '此功能于v1.3.4才被加入，故仅统计此版本及以后的在线数量';
             document.querySelector('#notice').classList.remove('hide');
             document.querySelector('div#update-time').innerHTML = `<span>更新时间：${new Date().toLocaleString()} </span> <span onclick="refresh()" style="text-decoration:underline;cursor:pointer">点此更新数据</span>`;
         }
