@@ -181,15 +181,25 @@
             color: #429db9;
         }
 
-        div#update-time {
+        div#infos,
+        div#tip {
             color: gray;
             font-size: small;
-            margin: 30px 0;
+            margin: 10px 0;
             display: block;
+            width: 100%;
+            text-align: center;
+            line-height: 1.4;
         }
 
-        div#update-time>* {
-            margin: 0 5px;
+        footer {
+            width: 70vw;
+            margin: 30px 0;
+        }
+
+        div#infos>* {
+            margin: 5px;
+            display: inline-block;
         }
 
         .hide {
@@ -198,6 +208,8 @@
         }
 
         @media screen and (max-width: 768px) {
+
+            footer,
             .block {
                 width: 90vw;
             }
@@ -281,8 +293,11 @@
             </div>
 
         </div>
-
-        <div id="update-time"></div>
+        <footer>
+            <div id="infos"></div>
+            <div id="tip">
+                TIP: 如果你不同意收集此信息或不愿意显示在此处，你可以在"settings/Serein.json"中将"NoHeartbeat"项的值改为"ture"</div>
+        </footer>
     </div>
 
     <script>
@@ -375,7 +390,7 @@
             document.querySelector('#type-count-detail').innerHTML = getMaxItemInDict(type) || '未知';
             document.querySelector('#notice-msg').innerHTML = '此功能于v1.3.4才被加入，故仅统计此版本及以后的在线数量';
             document.querySelector('#notice').classList.remove('hide');
-            document.querySelector('div#update-time').innerHTML = `<span>更新时间：${new Date().toLocaleString()} </span> <span onclick="refresh()" style="text-decoration:underline;cursor:pointer">点此更新数据</span>`;
+            document.querySelector('div#infos').innerHTML = `<span>更新时间：${new Date().toLocaleString()} </span> <span onclick="refresh()" style="text-decoration:underline;cursor:pointer">点此更新数据</span><br>`;
         }
 
         function refresh() {
@@ -389,7 +404,7 @@
             document.querySelector('#version-count-detail').innerHTML = '-';
             document.querySelector('#type-count-detail').innerHTML = '-';
             document.querySelector('#notice').classList.add('hide');
-            document.querySelector('div#update-time').innerHTML = '';
+            document.querySelector('div#infos').innerHTML = '';
             document.querySelector('#list').classList.add('hide');
             update();
         }
