@@ -284,7 +284,6 @@
                             <th>类型</th>
                             <th>服务器运行状态</th>
                             <th>运行时长</th>
-                            <th>所在省份</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -377,7 +376,6 @@
             <td>${value.type}</td>
             <td>${value.server_status ? '运行中' : '未启动'}</td>
             <td>${getTimeStr(start_time) || '未知'}</td>
-            <td>${value.region || '未知'}</td>
             </tr>
             `;
 
