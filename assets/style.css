@@ -42,3 +42,27 @@
     user-select: none;
     color: #bbb;
 }
+
+.alert.flat.warning {
+    background-color: #fff0d3 !important;
+    border-color: #e0d2b5 !important;
+    color: #855d12 !important;
+}
+
+.markdown-section .alert.flat.warning p a:not(.anchor),
+.markdown-section .alert.flat.warning table a:not(.anchor),
+.markdown-section .alert.flat.warning li a:not(.anchor) {
+    --theme-color: #c18311;
+}
+
+.markdown-section .alert.flat.tip p a:not(.anchor),
+.markdown-section .alert.flat.tip table a:not(.anchor),
+.markdown-section .alert.flat.tip li a:not(.anchor) {
+    --theme-color: #6eb372;
+}
+
+.markdown-section .alert.flat.note p a:not(.anchor),
+.markdown-section .alert.flat.note table a:not(.anchor),
+.markdown-section .alert.flat.note li a:not(.anchor) {
+    --theme-color: #649eb9;
+}

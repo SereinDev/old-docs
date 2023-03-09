@@ -11,7 +11,7 @@
 
 | 版本&更新日志                | 更新日期 | 下载                                                                                                                                                                 |
 | ---------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [v1.3.4](Versions/v1.3.4.md) | 23/2/?   | [![github](https://img.shields.io/github/downloads/Zaitonn/Serein/v1.3.4/total?style=flat-square ":no-zoom")](https://github.com/Zaitonn/Serein/releases/tag/v1.3.4) |
+| [v1.3.4](Versions/v1.3.4.md) | 23/3/11  | [![github](https://img.shields.io/github/downloads/Zaitonn/Serein/v1.3.4/total?style=flat-square ":no-zoom")](https://github.com/Zaitonn/Serein/releases/tag/v1.3.4) |
 | [v1.3.3](Versions/v1.3.3.md) | 23/1/1   | [![github](https://img.shields.io/github/downloads/Zaitonn/Serein/v1.3.3/total?style=flat-square ":no-zoom")](https://github.com/Zaitonn/Serein/releases/tag/v1.3.3) |
 | [v1.3.2](Versions/v1.3.2.md) | 22/11/4  | [![github](https://img.shields.io/github/downloads/Zaitonn/Serein/v1.3.2/total?style=flat-square ":no-zoom")](https://github.com/Zaitonn/Serein/releases/tag/v1.3.2) |
 | [v1.3.1](Versions/v1.3.1.md) | 22/8/10  | [![github](https://img.shields.io/github/downloads/Zaitonn/Serein/v1.3.1/total?style=flat-square ":no-zoom")](https://github.com/Zaitonn/Serein/releases/tag/v1.3.1) |
