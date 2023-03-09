@@ -21,44 +21,67 @@ async function handle(request) {
         if (request.method != 'GET')
             return createResponse('Bad Request', 400);
 
-        switch (url.pathname) {
+        switch (url.host) {
+            case 'online-count.serein.cc':
+                if (request.url.endsWith('ico'))
+                    return Response.redirect('https://serein.cc/assets/Serein.ico', 301);
 
-            case '/list':
-                response = await list();
-                return createResponse(await response.text(), response.status)
+                if (request.url.replace(/\/$/, '') != 'https://online-count.serein.cc')
+                    return Response.redirect('https://online-count.serein.cc');
 
-            case '/heartbeat':
-                if (!check(url.searchParams))
-                    return createResponse('Bad Request', 400);
-
-                response
-                    = await update({
-                        type: url.searchParams.get('type'),
-                        version: url.searchParams.get('version'),
-                        server_status: url.searchParams.get('server_status').toLocaleLowerCase() === 'true',
-                        guid: {
-                            $oid: (url.searchParams.get('guid') || '000000000000000000000000').substring(0, 24)
-                        },
-                        start_time: {
-                            $numberLong: url.searchParams.get('start_time')
-                        },
-                        update_time: {
-                            $numberLong: `${Date.now() + new Date().getTimezoneOffset() * 1000}`
+                return new Response(
+                    await (await fetch('https://raw.githubusercontent.com/Zaitonn/Serein-Docs/online_count/index.html')).text(),
+                    {
+                        status: 200,
+                        headers: {
+                            'Access-Control-Allow-Origin': '*',
+                            'Access-Control-Allow-Credentials': 'true',
+                            'Content-Type': 'text/html; charset=utf-8'
                         }
                     });
-                return createResponse(await response.text(), response.status)
 
-            case '/delete':
-                return await deleteExpirations();
+            case 'api.online-count.serein.cc':
+                switch (url.pathname) {
 
-            case '/favicon.ico':
-                return Response.redirect('https://serein.cc/assets/Serein.ico', 301);
+                    case '/list':
+                        response = await list();
+                        return createResponse(await response.text(), response.status)
 
-            case '/':
+                    case '/heartbeat':
+                        if (!check(url.searchParams))
+                            return createResponse('Bad Request', 400);
+
+                        response
+                            = await update({
+                                type: url.searchParams.get('type'),
+                                version: url.searchParams.get('version'),
+                                server_status: url.searchParams.get('server_status').toLocaleLowerCase() === 'true',
+                                guid: {
+                                    $oid: (url.searchParams.get('guid') || '000000000000000000000000').substring(0, 24)
+                                },
+                                start_time: {
+                                    $numberLong: url.searchParams.get('start_time')
+                                },
+                                update_time: {
+                                    $numberLong: `${Date.now() + new Date().getTimezoneOffset() * 1000}`
+                                }
+                            });
+                        return createResponse(await response.text(), response.status)
+
+                    case '/delete':
+                        return await deleteExpirations();
+
+                    case '/favicon.ico':
+                        return Response.redirect('https://serein.cc/assets/Serein.ico', 301);
+
+                    case '/':
+                    default:
+                        if (url.searchParams.has('debug'))
+                            return createResponse(request);
+                        return createResponse('Api endpoint not found', 404);
+                }
             default:
-                if (url.searchParams.has('debug'))
-                    return createResponse(request);
-                return createResponse('Api endpoint not found', 404);
+                return Response.redirect('https://online-count.serein.cc');
         }
     }
     catch (e) {
