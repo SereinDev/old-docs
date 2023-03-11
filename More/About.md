@@ -1,7 +1,6 @@
 
 # 关于
 
-
 ## 版权
 
 - 软件许可证 [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.zh-cn.html)
