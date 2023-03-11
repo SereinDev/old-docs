@@ -1,0 +1,59 @@
+name: "插件发布"
+description: 插件发布模板
+title: "[🧩插件发布]："
+labels: ["🧩插件发布"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        如果你是第一次发布插件，那你可以看看👉[发布指南](https://serein.cc/Extension/#/Publish)
+
+  - type: input
+    id: name
+    attributes:
+      label: 插件名称
+      description: 填写插件名称
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 插件描述
+      description: 简单描述一下你要发布的插件
+      placeholder: |
+        1. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: function
+    attributes:
+      label: 插件功能
+      description: 插件的主要功能
+      placeholder: |
+        1. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: author
+    attributes:
+      label: 署名相关信息
+      placeholder: |
+        作者：小明
+        交流群：114514（可选）
+        反馈链接：（可选）
+        许可证：（可选）
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: 插件下载链接（网盘/论坛/仓库）
+      description: 下载插件的地方(TIP:你也可以另外提交pr请求，将你的插件提交到`publish`分支上后将Issue与其链接)
+      placeholder: https://...
+    validations:
+      required: false

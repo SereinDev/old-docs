@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-issue-config.json": "file:///c%3A/GitHub/Serein-Docs/.github/ISSUE_TEMPLATE/config.yml"
+    }
+}

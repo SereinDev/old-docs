@@ -161,7 +161,7 @@ serein.setListener("onGroupPoke", (group, user) => {
 - 监听函数原型： `function (user_id: Number, msg: String, nickName: String) -> Boolean`
   - `user_id` QQ号
   - `msg`  消息内容
-  - `shownName` 显示名称
+  - `nickName` 昵称
 - 可被拦截
 
 ##### onReceivePacket
