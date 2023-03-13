@@ -1,16 +1,16 @@
 - [🏠**主站**](../ ':ignore')
 - **🌌 扩展市场**
   - 🧱 基础
-    - [🚩 首页](/)
-    - [➕ 发布](Publish.md)
-    - [❔ 如何安装](HowToInstall.md)
+   - [🚩 首页](/)
+   - [➕ 发布](Publish.md)
+   - [❔ 如何安装](HowToInstall.md)
   - 📜 正则
-    - [示例文件](JSON/Demo.json.md)
-    - [PNX](JSON/PNX.json.md)
+   - [示例文件](JSON/Demo.json.md)
+   - [PNX](JSON/PNX.json.md)
   - 🧩 插件
     - 🎲 前置模块
-      - [ReplyHelper - 回复助手](JS/Modules/ReplyHelper.md)
-      - [GoCQSDK - GoCQHttp协议实现](JS/Modules/GoCQSDK.md)
+       - [ReplyHelper - 回复助手](JS/Modules/ReplyHelper.md)  
+       - [GoCQSDK - GoCQHttp协议实现](JS/Modules/GoCQSDK.md)
     - [**✨SereinJSPluginHelper - 插件开发助手**](JS/SereinJSPluginHelper.md)
     - [Example - 示例文件](JS/Example.md)
     - [BotExtension - 机器人功能拓展](JS/BotExtension.md)
@@ -22,11 +22,10 @@
     - [StatRecodrer - 统计信息记录](JS/StatRecodrer.md)
     - [BetterWhitelist - 更好的白名单](JS/BetterWhitelist.md)
     - [SLblackbe - 云黑插件](https://www.minebbs.com/resources/slblackbe-serein.5646/)
-    - [SLblackbe - 云黑插件](JS/SLblackbe.md)
     - [DeviceInfo - 驱动器信息变量拓展](JS/DeviceInfo.md)
-  - 💼 整合包
+   - 💼 整合包
     - [Serein面板+机器人整合包](https://www.minebbs.com/resources/serein.4390/)
     - [Serein机器人整合包 *（版本较旧）*](https://www.minebbs.com/resources/serein.4201/)
-  - 🧀 适用于服务器的插件
+   - 🧀 适用于服务器的插件
     - [PBind - 账号绑定系统](https://www.minebbs.com/resources/pbind.4211/)
     - [Unescaper for Serein - 解决中文乱码问题](https://www.minebbs.com/resources/unescaper-for-serein.5441/)
