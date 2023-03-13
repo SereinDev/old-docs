@@ -17,8 +17,8 @@
     <a href="https://github.com/Zaitonn/Serein">
         <img alt="GitHub repo file count" src="https://img.shields.io/github/languages/code-size/Zaitonn/Serein">
     </a>
-    <a href="https://www.codefactor.io/repository/github/zaitonn/serein">
-        <img alt="CodeFactor Grade" src="https://img.shields.io/codefactor/grade/github/Zaitonn/Serein/main?color=blue">
+    <a href="https://app.codacy.com/gh/Zaitonn/Serein/">
+        <img alt="Codacy Grade" src="https://img.shields.io/codacy/grade/982069cd172d4ef4a40aa4bce4977542?color=blue&logo=Codacy">
     </a>
     <a href="#">
         <img alt="visitor" src="https://visitor-badge.glitch.me/badge?page_id=Zaitonn.Serein&left_text=Serein%20Visitor">

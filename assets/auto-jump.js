@@ -9,7 +9,7 @@
     },
         auto_jump = function (hook, vm) {
             hook.mounted(check);
-            hook.inited(check);
+            hook.init(check);
         };
 
     $docsify = $docsify || {};

@@ -217,9 +217,6 @@ serein.setPreLoadConfig(
 
 `serein.getSettings()`
 
-```js
-var settings = serein.getSettings();
-```
 
 - 参数
   - 空
@@ -361,10 +358,6 @@ serein.runCommand("g|hello")
 
 `serein.getPluginList()`
 
-```js
-var list = serein.getPluginList();
-```
-
 - 参数
   - 空
 - 返回
@@ -496,10 +489,6 @@ serein.editRegex(
 
 `serein.getSysInfo()`
 
-```js
-var info = serein.getSysInfo();
-```
-
 - 参数
   - 空
 - 返回
@@ -559,11 +548,7 @@ var info = serein.getSysInfo();
 
 ### 获取CPU使用率
 
-`serein.getCPUPersent()`
-
-```js
-var cpupersent = serein.getServerCPUPersent();
-```
+`serein.getCPUUsage()`
 
 - 参数
   - 空
@@ -576,26 +561,22 @@ var cpupersent = serein.getServerCPUPersent();
 
 `serein.getNetSpeed()`
 
-```js
-var netSpeed = serein.getServerCPUPersent();
-var uploadSpeed = netSpeed[0];
-var downloadSpeed = netSpeed[1];
-```
-
 - 参数
   - 空
 - 返回
   - `Array<String>[2]`，其中[0]为上传网速，[1]为下载网速
+
+  ```js
+  var netSpeed = serein.getNetSpeed();
+  var uploadSpeed = netSpeed[0];
+  var downloadSpeed = netSpeed[1];
+  ```
 
 ## 🚛 服务器相关
 
 ### 启动服务器
 
 `serein.startServer()`
-
-```js
-var success = serein.startServer();
-```
 
 - 参数
   - 空
@@ -606,10 +587,6 @@ var success = serein.startServer();
 ### 关闭服务器
 
 `serein.stopServer()`
-
-```js
-serein.stopServer();
-```
 
 - 参数
   - 空
@@ -622,10 +599,6 @@ serein.stopServer();
 
 `serein.killServer()`
 
-```js
-var success = serein.killServer();
-```
-
 - 参数
   - 空
 - 返回
@@ -636,10 +609,6 @@ var success = serein.killServer();
 
 `serein.sendCmd(String: command)`
 
-```js
-serein.sendCmd("help");
-```
-
 - 参数
   - `command` 输入的命令
 - 返回
@@ -648,10 +617,6 @@ serein.sendCmd("help");
 ### 获取服务器状态
 
 `serein.getServerStatus()`
-
-```js
-var serverStatus = serein.getServerStatus();
-```
 
 - 参数
   - 空
@@ -663,10 +628,6 @@ var serverStatus = serein.getServerStatus();
 
 `serein.getServerTime()`
 
-```js
-var time = serein.getServerTime();
-```
-
 - 参数
   - 空
 - 返回
@@ -675,25 +636,17 @@ var time = serein.getServerTime();
 
 ### 获取服务器进程占用
 
-`serein.getServerCPUPersent()`
-
-```js
-var cpupersent = serein.getServerCPUPersent();
-```
+`serein.getServerCPUUsage()`
 
 - 参数
   - 空
 - 返回
   - `Number` ∈ [0, 100]
-    - 示例：`1.14514191981`
+    - 示例：`11.4514191981`
 
 ### 获取服务器文件
 
 `serein.getServerFile()`
-
-```js
-var file = serein.getServerFile();
-```
 
 - 参数
   - 空
@@ -755,10 +708,6 @@ var je = serein.getMotdje("127.0.0.1:25565");
 
 `serein.sendGroup(target: Number, msg: String)`
 
-```js
-var success = serein.sendGroup(114514, "大家好");
-```
-
 - 参数
   - `target` 群号
   - `msg` 消息内容
@@ -770,10 +719,6 @@ var success = serein.sendGroup(114514, "大家好");
 ### 发送私聊消息
 
 `serein.sendPrivate(target: Number, msg: String)`
-
-```js
-var success = serein.sendPrivate(114514, "你好");
-```
 
 - 参数
   - `target` 对方QQ号
@@ -803,10 +748,6 @@ serein.sendPackage("{\"action\": \"send_private_msg\",\"params\": {\"user_id\": 
 
 `serein.getWsStatus()`
 
-```js
-var connected = serein.getWsStatus();
-```
-
 - 参数
   - 无
 - 返回
@@ -817,17 +758,17 @@ var connected = serein.getWsStatus();
 
 `serein.getGroupCache()`
 
-```js
-var dict = serein.getGroupCache();
-var myname = dict["114514"]["1919810"];
-```
-
 - 参数
   - 无
 - 返回
   - `Object` 群成员昵称缓存字典
     - 第一个`key`为群号
     - 第二个`key`为QQ号
+
+```js
+var dict = serein.getGroupCache();
+var myname = dict["114514"]["1919810"];
+```
 
 >[!WARNING] 此处的`key`必须为字符串形式的群号或QQ号，直接使用`Number`类型作为`key`获取将导致Serein引发超出内存的异常
 
@@ -852,10 +793,6 @@ var myname = serein.getUserName(114514, 1919810); // 与上面的函数示例等
 
 `serein.bindMember(userid: Number, gameid: String)`
 
-```js
-var success = serein.bindMember(114514,  "Li_Tiansuo");
-```
-
 - 参数
   - `userid` QQ号
   - `gameid` 游戏ID
@@ -867,10 +804,6 @@ var success = serein.bindMember(114514,  "Li_Tiansuo");
 
 `serein.unbindMember(userid: Number)`
 
-```js
-var success = serein.unbindMember(114514);
-```
-
 - 参数
   - `userid` QQ号
 - 返回
@@ -881,10 +814,6 @@ var success = serein.unbindMember(114514);
 
 `serein.getID(gameid: String)`
 
-```js
-var qq = serein.getID("Li_Tiansuo");
-```
-
 - 参数
   - `gameid` 游戏ID
 - 返回
@@ -893,10 +822,6 @@ var qq = serein.getID("Li_Tiansuo");
 ### 获取指定游戏ID
 
 `serein.getGameID(userid: Number)`
-
-```js
-var id = serein.getGameID(114514);
-```
 
 - 参数
   - `userid` QQ号
@@ -936,7 +861,7 @@ var id = serein.getGameID(114514);
 
 v1.3.4 后你可以创建新的js文件，并在里面写一些基本的函数方便日常调用，如判断是否为管理、格式化自定义的时间等
 
-### 导出
+### 导出模块
 
 >[!WARNING]
 >
@@ -956,13 +881,13 @@ v1.3.4 后你可以创建新的js文件，并在里面写一些基本的函数�
 export const myvalue = 1;
 
 export function isMyGroup(groupID) {
-    return Boolean(JSON.parse(serein.getSettings()).Bot.GroupList.indexOf(groupID) + 1);
+    return Boolean(serein.getSettingsObject().Bot.GroupList.indexOf(groupID) + 1);
 }
 
 // ...
 ```
 
-### 导入
+### 导入模块
 
 `require(file: String)`
 
@@ -978,7 +903,6 @@ export function isMyGroup(groupID) {
 
 ```js
 var isMyGroup = require('./eg.js').isMyGroup(114514);
-// var isMyGroup = serein.loadFrom('./eg.js').isMyGroup(114514); 二者等价
 ```
 
 这样你就可以导入已经导出了的内容了

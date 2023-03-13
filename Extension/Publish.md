@@ -1,7 +1,20 @@
 
 # 发布
 
->[!TIP]如果你有好的插件或正则、任务文件，你也可以[提交ISSUE](https://github.com/Zaitonn/Serein-Docs/issues/new/choose)/[PR](https://github.com/Zaitonn/Serein-Docs/compare)或与作者联系后即可发布在这里
+>[!TIP]如果你有好的插件或正则、定时任务文件想要发布在这里，你可以：
+>
+>- 开[ISSUE](https://github.com/Zaitonn/Serein-Docs/issues/new/choose)
+>- 提交[PR](https://github.com/Zaitonn/Serein-Docs/compare)
+>   - 插件
+>     - 源文件请提交至`publish`分支，路径为`JS/{插件名}/版本号/`
+>     - 介绍文档请提交至主分支，路径为`Extension/JS/{插件名}.md`
+>   - 正则、定时任务
+>     - 源文件请提交至`publish`分支，路径为`JSON/`
+>     - 介绍文档请提交至主分支，路径为`Extension/JSON/{文件名}.md`
+>- 与作者联系
+
+>[!NOTE]对于插件的发布，需要注意的是**混淆或加密js代码将导致效率极其低下乃至无法运行**，请自行权衡利弊  
+>若因特殊原因需要加密代码，你可以将主要代码使用其他语言编写成exe文件后通过js调用
 
 提交时记得附加以下内容：
 
@@ -18,3 +31,5 @@
 - 永久下载链接 / 源文件
 
 如果你会`markdown`的语法，你也可以自己写一份详细的插件文档通过联系作者发布在这里\\(￣︶￣*\\))
+
+>[!TIP]不知道怎么写？那就先去看看别人怎么写的

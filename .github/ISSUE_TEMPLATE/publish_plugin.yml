@@ -1,6 +1,6 @@
 name: "插件发布"
-description: 插件发布模板
-title: "[🧩插件发布]："
+description: 如果你想要发布一个你制作的插件，请点击这里
+title: "🧩插件发布 <把此处改成你的插件名称>"
 labels: ["🧩插件发布"]
 
 body:
