@@ -1,194 +1,190 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<title>Serein扩展市场</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta name="Description" content="Serein扩展市场" />
-		<meta name="Keywords" content="面板，服务器，我的世界，Minecraft，BDS，Java，基岩版，开服，机器人，简单，易用" />
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-		<link rel="stylesheet" href="../assets/style.css" />
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" />
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
-		<link
-			rel="shortcut icon"
-			href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYYAAB2GAV2iE4EAAAJvSURBVDhPdVNLbhNBEH3d8/GMnWSGxAkmEBFgAUIskJBAsGEByo4jcASOwYYbcAZYcwLW2UUgEqQQFGKIE9szSTzfHl61bZQNZZerurrqddXrtvr4vW7QAFDUmZGlyGV/LhJTSmFQXmDFDaHnQSzSLtEztLGCkkqqiqhiuSWF4pimQddrT8+VDjqhxtv3H7AQBkjqGkuOYzdNCHgFwBAz7RdpbZCmCd69eY2zCwMtwUEFLLQDtKnXVhbRClrYvLGGXhhhJYpw8/oqet0YQRCgt9DBehz/G02Ls9YCqsMvqPt7qA++YXSww+McGGPgRy6THZx83Ubzew9Vf9fm2naWCCAoHBtwXNa41satFi6yHCE7cTiCJGvXQ9oo6FmOBRjPAKxYRhTydGi19DwuG5ydF1BaI0+GCCYJGuZIkYyt6EwBWKz4My5KMt5YliPXwXlWoB36aLiWJGs5liGRa11G2PoUQK5u/R427z7ExpOXuProBYosIyhhpbYq4T94hltPt0jYHeiN+zAnjM87kHGSosDpKIEpC/ik1vN53wETOG+jHfTaIco8A3yHgNK/VHL/pLIUImbLNkid5AVq5kTeIvY/f8IPqvZ8Elsg9ph3SXTX1XaWmo/GjjL7uI7G0WBIwh1okjiuajh8NaN0glExkXMsd1qKsUw9a7Acd+zpHkH7g5Eda/3xFm4/fwUvY5E8ZUlvTZ+xBbAsnAI5idr5eYjB6RhfjwYoyhKBqfCr/wfbu/s4Hia2oyzPkSpyIQfH7Hj+b+wE2t6rIM/4mZ5CkfXct8LFeUYEGdkCCNoV6pBKECk4Lg1WPfJD//8C/AUqawii6DJ04gAAAABJRU5ErkJggg=="
-			type="image/x-icon"
-		/>
-	</head>
 
-	<body>
-		<script src="../assets/docsify.modified.min.js"></script>
-		<div id="app">很快！等我一下！</div>
+<head>
+    <meta charset="UTF-8" />
+    <title>Serein扩展市场</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="Description" content="Serein扩展市场" />
+    <meta name="Keywords" content="面板，服务器，我的世界，Minecraft，BDS，Java，基岩版，开服，机器人，简单，易用" />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+    <link rel="shortcut icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYYAAB2GAV2iE4EAAAJvSURBVDhPdVNLbhNBEH3d8/GMnWSGxAkmEBFgAUIskJBAsGEByo4jcASOwYYbcAZYcwLW2UUgEqQQFGKIE9szSTzfHl61bZQNZZerurrqddXrtvr4vW7QAFDUmZGlyGV/LhJTSmFQXmDFDaHnQSzSLtEztLGCkkqqiqhiuSWF4pimQddrT8+VDjqhxtv3H7AQBkjqGkuOYzdNCHgFwBAz7RdpbZCmCd69eY2zCwMtwUEFLLQDtKnXVhbRClrYvLGGXhhhJYpw8/oqet0YQRCgt9DBehz/G02Ls9YCqsMvqPt7qA++YXSww+McGGPgRy6THZx83Ubzew9Vf9fm2naWCCAoHBtwXNa41satFi6yHCE7cTiCJGvXQ9oo6FmOBRjPAKxYRhTydGi19DwuG5ydF1BaI0+GCCYJGuZIkYyt6EwBWKz4My5KMt5YliPXwXlWoB36aLiWJGs5liGRa11G2PoUQK5u/R427z7ExpOXuProBYosIyhhpbYq4T94hltPt0jYHeiN+zAnjM87kHGSosDpKIEpC/ik1vN53wETOG+jHfTaIco8A3yHgNK/VHL/pLIUImbLNkid5AVq5kTeIvY/f8IPqvZ8Elsg9ph3SXTX1XaWmo/GjjL7uI7G0WBIwh1okjiuajh8NaN0glExkXMsd1qKsUw9a7Acd+zpHkH7g5Eda/3xFm4/fwUvY5E8ZUlvTZ+xBbAsnAI5idr5eYjB6RhfjwYoyhKBqfCr/wfbu/s4Hia2oyzPkSpyIQfH7Hj+b+wE2t6rIM/4mZ5CkfXct8LFeUYEGdkCCNoV6pBKECk4Lg1WPfJD//8C/AUqawii6DJ04gAAAABJRU5ErkJggg=="
+        type="image/x-icon" />
+</head>
 
-		<script>
-			window.$docsify = {
-				autoHeader: true,
-				auto2top: true,
-				externalLinkTarget: "_blank",
-				homePage: "README.md",
-				loadFooter: "../_footer.md",
-				loadNavbar: true,
-				loadSidebar: true,
-				mergeNavbar: true,
-				name: "Serein扩展市场",
-				nativeEmoji: true,
-				onlyCover: true,
-				relativePath: false,
-				repo: "https://github.com/Zaitonn/Serein",
-				sidebarDisplayLevel: 6,
-				subMaxLevel: 5,
-				search: {
-					placeholder: "🔍 搜我所想...",
-					namespace: "serein_extension",
-					noData: "👉👈没有找到你想要的内容呢",
-				},
-				pagination: {
-					previousText: "👈上一节",
-					nextText: "下一节👉",
-					crossChapter: true,
-					crossChapterText: true,
-				},
-				"flexible-alerts": {
-					style: "flat",
-					note: {
-						label: "提示",
-					},
-					tip: {
-						label: "小技巧",
-					},
-					warning: {
-						label: "警告",
-					},
-					attention: {
-						label: "注意",
-					},
-				},
-				copyCode: {
-					buttonText: "复制",
-					errorText: "复制失败",
-					successText: "复制成功",
-				},
-				progress: {
-					position: "top",
-					color: "#6ca7d1",
-					height: "3px",
-				},
-				Valine: {
-					appId: "cNqkr1FmMZ1emM73afAKLy9l-MdYXbMMI",
-					appKey: "ce3CUEvXwTV73dmSSWZmsDJq",
-					placeholder: "💬 发一条友善的评论\n（Tips: 在昵称框输入QQ号即可自动获取昵称和头像）",
-					requiredFields: ["nick", "mail"],
-					serverURLs: "//api.serein.cc",
-					meta: ["nick", "mail"],
-					avatar_cdn: "https://cravatar.cn/avatar/",
-					docPath: "full",
-					enableQQ: true,
-					visitor: true,
-					emojiCDN: "",
-					emojiMaps: {
-						"tvgif-白眼": "https://i0.hdslb.com/bfs/emote/48f75163437445665a9be80bb316e4cb252c5415.gif",
-						"tvgif-doge": "https://i0.hdslb.com/bfs/emote/302d6c88c63ed162c81a49cafe7ed2709e6fb955.gif",
-						"tvgif-坏笑": "https://i0.hdslb.com/bfs/emote/5d2572efd09aab5dde9e2a198bb3f9ac1e2a982e.gif",
-						"tvgif-难过": "https://i0.hdslb.com/bfs/emote/9c6b41008a67755410f712334c64313df5f91b3f.gif",
-						"tvgif-生气": "https://i0.hdslb.com/bfs/emote/1902a5a2df5b5c931d88c12f0feb264b1e109d0d.gif",
-						"tvgif-委屈": "https://i0.hdslb.com/bfs/emote/af5a5853edb43a8178a8cb5df707fa5e88143699.gif",
-						"tvgif-斜眼笑": "https://i0.hdslb.com/bfs/emote/c66568b471192ca1f62f6ed4384dc1b283ab7508.gif",
-						"tvgif-呆": "https://i0.hdslb.com/bfs/emote/d3fa91e4db9215eb1e20ab9da44f1214aa4bda7b.gif",
-						"tvgif-发怒": "https://i0.hdslb.com/bfs/emote/3959eb81b952e4fa8d269d98f9e3639172d84073.gif",
-						"tvgif-惊吓": "https://i0.hdslb.com/bfs/emote/13549060757fcd92b11d0657d9b3b6038f97abb6.gif",
-						"tvgif-呕吐": "https://i0.hdslb.com/bfs/emote/db58e9442aae26694af18cc1683607cca3a16763.gif",
-						"tvgif-思考": "https://i0.hdslb.com/bfs/emote/b63f9146bfd985af014f8d6d4bdb498805be48f9.gif",
-						"tvgif-微笑": "https://i0.hdslb.com/bfs/emote/b98656855d782f61cb8edc7f7fca6563ecafff7e.gif",
-						"tvgif-疑问": "https://i0.hdslb.com/bfs/emote/fce1b1a0f3b0e39a2dc16a18508dba7b91e929f4.gif",
-						"tvgif-大哭": "https://i0.hdslb.com/bfs/emote/cba61f05f3039b02a7ffc0dfcd9d7995df9fdd74.gif",
-						"tvgif-鼓掌": "https://i0.hdslb.com/bfs/emote/be106e6b265883a9f28fbe10f7b765701e2618d4.gif",
-						"tvgif-抠鼻": "https://i0.hdslb.com/bfs/emote/696d9f93e722144dc2a78aeffc569418fdf3d565.gif",
-						"tvgif-亲亲": "https://i0.hdslb.com/bfs/emote/3534ea44ab74bd20352b88c245a06c4b4c46d271.gif",
-						"tvgif-调皮": "https://i0.hdslb.com/bfs/emote/fcd967395fd14e4dd5829fa7e8a967ce23205e52.gif",
-						"tvgif-笑哭": "https://i0.hdslb.com/bfs/emote/1c2fd1e8c9dde12812f86e5d4cbddd8993d98082.gif",
-						"tvgif-晕": "https://i0.hdslb.com/bfs/emote/030040ec5c9ddc9e3d067658c4139e7314ab42f8.gif",
-						"tvgif-点赞": "https://i0.hdslb.com/bfs/emote/30ecff401245fb56bcc1cf588d1809ac1ab1607c.gif",
-						"tvgif-害羞": "https://i0.hdslb.com/bfs/emote/411a3e459e8580f5bfd9f639a408247c4b509935.gif",
-						"tvgif-睡着": "https://i0.hdslb.com/bfs/emote/3c8b5e293261287a6203597e29b3de07df4d18c6.gif",
-						"tvgif-色": "https://i0.hdslb.com/bfs/emote/a0c6d99ab0ab63b8648f5283ff72cec04b604828.gif",
-						"tvgif-吐血": "https://i0.hdslb.com/bfs/emote/e17e4539e169d14a3389ff147afea760cebe5de5.gif",
-						"tvgif-无奈": "https://i0.hdslb.com/bfs/emote/eb4cb5f07cfd177c7e6a7914316717e56d9cc1d0.gif",
-						"tvgif-再见": "https://i0.hdslb.com/bfs/emote/344f61609ecce2008520dc8a977b6169215748a9.gif",
-						"tvgif-流汗": "https://i0.hdslb.com/bfs/emote/390bccec65eaff536bd5bb2a0c5b8b0bdea47334.gif",
-						"tvgif-偷笑": "https://i0.hdslb.com/bfs/emote/7f11e6f7f63e79112b833bd41fa13a83d7cd8474.gif",
-						"tvgif-抓狂": "https://i0.hdslb.com/bfs/emote/a476b93ecd8e94ac3257323fd822f91cef212de2.gif",
-						"tvgif-黑人问号": "https://i0.hdslb.com/bfs/emote/b609adf664be33224a9923262031165ae3e34cd2.gif",
-						"tvgif-困": "https://i0.hdslb.com/bfs/emote/91c2bf34ecf842d7016c01d841db3d4074bd281f.gif",
-						"tvgif-打脸": "https://i0.hdslb.com/bfs/emote/b0fad4856e59c1240e448437da3287bb5ce547e5.gif",
-						"tvgif-闭嘴": "https://i0.hdslb.com/bfs/emote/a3fc5388b09e945be3f18fe23bfed5874a0285b7.gif",
-						"tvgif-鄙视": "https://i0.hdslb.com/bfs/emote/293b5d459e6264ecf314d20937a936fa672ccd1e.gif",
-						"tvgif-腼腆": "https://i0.hdslb.com/bfs/emote/30984e8264324f901d19bea85dada7103b695534.gif",
-						"tvgif-馋": "https://i0.hdslb.com/bfs/emote/2525c5703c594e5f0752f68db8948773caebde47.gif",
-						"tvgif-可爱": "https://i0.hdslb.com/bfs/emote/f92d20f76258bc5f33fc9d7c5e2a1d41fef19a7c.gif",
-						"tvgif-发财": "https://i0.hdslb.com/bfs/emote/76131e52c9b033681b4c896c6024d29ef7ec7ec2.gif",
-						"tvgif-生病": "https://i0.hdslb.com/bfs/emote/beb94829fe04f1a41bd6ca611e1f6ca9ca169afa.gif",
-						"tvgif-流鼻血": "https://i0.hdslb.com/bfs/emote/8ef473f74a849420da712487b2f56ecca1f695f5.gif",
-						"tvgif-尴尬": "https://i0.hdslb.com/bfs/emote/e0b84ef5ee3e5b8978e584c7c5a6550c51d15f84.gif",
-						"tvgif-大佬": "https://i0.hdslb.com/bfs/emote/14ca0c05382b8741940942b2430b7a8d55c02f7e.gif",
-						"我的世界-白眼": "https://i0.hdslb.com/bfs/emote/771899cb4c22ba409d6643e9b872da5ebb8a4e97.png",
-						"我的世界-超生气": "https://i0.hdslb.com/bfs/emote/69d64894e744cfbc80b8268dd63494b34c675f36.png",
-						"我的世界-点赞": "https://i0.hdslb.com/bfs/emote/2c1994f1a66eeb405fc7fdc564f73882df83a89b.png",
-						"我的世界-发呆": "https://i0.hdslb.com/bfs/emote/88f1f3ef0fb4148267a3730e105d0774bebd5fdc.png",
-						"我的世界-嘿哈": "https://i0.hdslb.com/bfs/emote/6088d0752b4f62d90b8f76c12ff8a82140c089a3.png",
-						"我的世界-机智": "https://i0.hdslb.com/bfs/emote/094211c55265abc4ee843dacad0eb088048cfb45.png",
-						"我的世界-加油": "https://i0.hdslb.com/bfs/emote/20259b62334ab90f92e343134c532e0fc3d5708d.png",
-						"我的世界-恐惧": "https://i0.hdslb.com/bfs/emote/6fc4b238f8aef837e0dc8614fadf0c2fbff11963.png",
-						"我的世界-抠鼻": "https://i0.hdslb.com/bfs/emote/13b2063bb464b68229780f070b85869d771433ad.png",
-						"我的世界-酷": "https://i0.hdslb.com/bfs/emote/97a8a5d46f6b3369375a9b38531ccd42c20af060.png",
-						"我的世界-流泪": "https://i0.hdslb.com/bfs/emote/189728c66a58c1e96b65674b39e2569a7250efff.png",
-						"我的世界-睡觉": "https://i0.hdslb.com/bfs/emote/6db00b22957b430c3bb693e431a95f6a43244fc1.png",
-						"我的世界-喜欢": "https://i0.hdslb.com/bfs/emote/7bc253e61701e70d04a1a44cc91b1987444a887a.png",
-						"我的世界-再见": "https://i0.hdslb.com/bfs/emote/fdf53257dda93f122f2dfea5de04111627cf0bae.png",
-						"我的世界-疑惑": "https://i0.hdslb.com/bfs/emote/5805b97538990b99b47c606914e9ed0336c8701a.png",
-						"我的世界-大骂": "https://i0.hdslb.com/bfs/emote/d28b915638421055e00f3c30c74b9f9dce02b241.png",
-						"我的世界-欸": "https://i0.hdslb.com/bfs/emote/4cd707eba57791229165fda91a02fa05bdfa1819.png",
-						"我的世界-呲牙咧嘴": "https://i0.hdslb.com/bfs/emote/674c644ccf6acd6c80c0d391ea49fd7bed287e7c.png",
-						"我的世界-呲牙": "https://i0.hdslb.com/bfs/emote/c03502a27dd1becc69e231d508cbce3f0b4ff12e.png",
-						"我的世界-鼓掌": "https://i0.hdslb.com/bfs/emote/946321889a368e1369336e6c585747b174a2c58a.png",
-						"我的世界-害羞": "https://i0.hdslb.com/bfs/emote/d3435c6ec66ccf156f9a43a37727cbeb3c8f2774.png",
-						"我的世界-可怜": "https://i0.hdslb.com/bfs/emote/8eb6d2fe0a1a8a142acc2a6a88e7255abb9db594.png",
-						"我的世界-困": "https://i0.hdslb.com/bfs/emote/c4aa7275fd5e683917d9bcc0da9b39a07580208c.png",
-						"我的世界-彩虹": "https://i0.hdslb.com/bfs/emote/360cc78ed3c4f9a4bfa6961a76ac063e4992df54.png",
-						"我的世界-流汗": "https://i0.hdslb.com/bfs/emote/591be61ffca9b38477cdc56bb310d9baac141436.png",
-						"我的世界-生病": "https://i0.hdslb.com/bfs/emote/85e2d880fa74cc6d68d0a1c5e6f741f0277dd0f5.png",
-						"我的世界-笑": "https://i0.hdslb.com/bfs/emote/3abb6cbe0d8b122e2d5736accd91c787b7b46144.png",
-						"我的世界-嘘": "https://i0.hdslb.com/bfs/emote/586ba6b577d459fdf23d1695ee8f5f9550383da3.png",
-						"我的世界-眨眼": "https://i0.hdslb.com/bfs/emote/316fef1a7ede1cfde8470f3336e27479b9470a15.png",
-						"我的世界-皱眉": "https://i0.hdslb.com/bfs/emote/2f9f8345379aabe7cedfeb51711061cd1dc652c2.png",
-					},
-				},
-				mermaidConfig: {
-					querySelector: ".mermaid",
-				},
-			};
-		</script>
-		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-regex.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-powershell.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-		<script src="../assets/visitor.js"></script>
-		<script src="../assets/docsify-sidebar-collapse.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts/dist/docsify-plugin-flexible-alerts.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js"></script>
-		<script src="//cdn.jsdelivr.net/gh/daidi/docsify-valine@master/dist/docsify-valine.min.js"></script>
-		<script type="module">
-			import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-			mermaid.initialize({ startOnLoad: true });
-			window.mermaid = mermaid;
-		</script>
-		<script src="//cdn.jsdelivr.net/npm/docsify-mermaid@2.0.0/dist/docsify-mermaid.js"></script>
-	</body>
+<body>
+    <script src="../assets/docsify.modified.min.js"></script>
+    <div id="app">很快！等我一下！</div>
+
+    <script>
+        window.$docsify = {
+            autoHeader: true,
+            auto2top: true,
+            externalLinkTarget: "_blank",
+            homePage: "README.md",
+            loadFooter: "../_footer.md",
+            loadNavbar: true,
+            loadSidebar: true,
+            mergeNavbar: true,
+            name: "Serein扩展市场",
+            nativeEmoji: true,
+            onlyCover: true,
+            relativePath: false,
+            repo: "https://github.com/Zaitonn/Serein",
+            sidebarDisplayLevel: 6,
+            subMaxLevel: 5,
+            search: {
+                placeholder: "🔍 搜我所想...",
+                namespace: "serein_extension",
+                noData: "👉👈没有找到你想要的内容呢",
+            },
+            pagination: {
+                previousText: "👈上一节",
+                nextText: "下一节👉",
+                crossChapter: true,
+                crossChapterText: true,
+            },
+            "flexible-alerts": {
+                style: "flat",
+                note: {
+                    label: "提示",
+                },
+                tip: {
+                    label: "小技巧",
+                },
+                warning: {
+                    label: "警告",
+                },
+                attention: {
+                    label: "注意",
+                },
+            },
+            copyCode: {
+                buttonText: "复制",
+                errorText: "复制失败",
+                successText: "复制成功",
+            },
+            progress: {
+                position: "top",
+                color: "#6ca7d1",
+                height: "3px",
+            },
+            Valine: {
+                appId: "cNqkr1FmMZ1emM73afAKLy9l-MdYXbMMI",
+                appKey: "ce3CUEvXwTV73dmSSWZmsDJq",
+                placeholder: "💬 发一条友善的评论\n（Tips: 在昵称框输入QQ号即可自动获取昵称和头像）",
+                requiredFields: ["nick", "mail"],
+                serverURLs: "//api.serein.cc",
+                meta: ["nick", "mail"],
+                avatar_cdn: "https://cravatar.cn/avatar/",
+                docPath: "full",
+                enableQQ: true,
+                visitor: true,
+                emojiCDN: "",
+                emojiMaps: {
+                    "tvgif-白眼": "https://i0.hdslb.com/bfs/emote/48f75163437445665a9be80bb316e4cb252c5415.gif",
+                    "tvgif-doge": "https://i0.hdslb.com/bfs/emote/302d6c88c63ed162c81a49cafe7ed2709e6fb955.gif",
+                    "tvgif-坏笑": "https://i0.hdslb.com/bfs/emote/5d2572efd09aab5dde9e2a198bb3f9ac1e2a982e.gif",
+                    "tvgif-难过": "https://i0.hdslb.com/bfs/emote/9c6b41008a67755410f712334c64313df5f91b3f.gif",
+                    "tvgif-生气": "https://i0.hdslb.com/bfs/emote/1902a5a2df5b5c931d88c12f0feb264b1e109d0d.gif",
+                    "tvgif-委屈": "https://i0.hdslb.com/bfs/emote/af5a5853edb43a8178a8cb5df707fa5e88143699.gif",
+                    "tvgif-斜眼笑": "https://i0.hdslb.com/bfs/emote/c66568b471192ca1f62f6ed4384dc1b283ab7508.gif",
+                    "tvgif-呆": "https://i0.hdslb.com/bfs/emote/d3fa91e4db9215eb1e20ab9da44f1214aa4bda7b.gif",
+                    "tvgif-发怒": "https://i0.hdslb.com/bfs/emote/3959eb81b952e4fa8d269d98f9e3639172d84073.gif",
+                    "tvgif-惊吓": "https://i0.hdslb.com/bfs/emote/13549060757fcd92b11d0657d9b3b6038f97abb6.gif",
+                    "tvgif-呕吐": "https://i0.hdslb.com/bfs/emote/db58e9442aae26694af18cc1683607cca3a16763.gif",
+                    "tvgif-思考": "https://i0.hdslb.com/bfs/emote/b63f9146bfd985af014f8d6d4bdb498805be48f9.gif",
+                    "tvgif-微笑": "https://i0.hdslb.com/bfs/emote/b98656855d782f61cb8edc7f7fca6563ecafff7e.gif",
+                    "tvgif-疑问": "https://i0.hdslb.com/bfs/emote/fce1b1a0f3b0e39a2dc16a18508dba7b91e929f4.gif",
+                    "tvgif-大哭": "https://i0.hdslb.com/bfs/emote/cba61f05f3039b02a7ffc0dfcd9d7995df9fdd74.gif",
+                    "tvgif-鼓掌": "https://i0.hdslb.com/bfs/emote/be106e6b265883a9f28fbe10f7b765701e2618d4.gif",
+                    "tvgif-抠鼻": "https://i0.hdslb.com/bfs/emote/696d9f93e722144dc2a78aeffc569418fdf3d565.gif",
+                    "tvgif-亲亲": "https://i0.hdslb.com/bfs/emote/3534ea44ab74bd20352b88c245a06c4b4c46d271.gif",
+                    "tvgif-调皮": "https://i0.hdslb.com/bfs/emote/fcd967395fd14e4dd5829fa7e8a967ce23205e52.gif",
+                    "tvgif-笑哭": "https://i0.hdslb.com/bfs/emote/1c2fd1e8c9dde12812f86e5d4cbddd8993d98082.gif",
+                    "tvgif-晕": "https://i0.hdslb.com/bfs/emote/030040ec5c9ddc9e3d067658c4139e7314ab42f8.gif",
+                    "tvgif-点赞": "https://i0.hdslb.com/bfs/emote/30ecff401245fb56bcc1cf588d1809ac1ab1607c.gif",
+                    "tvgif-害羞": "https://i0.hdslb.com/bfs/emote/411a3e459e8580f5bfd9f639a408247c4b509935.gif",
+                    "tvgif-睡着": "https://i0.hdslb.com/bfs/emote/3c8b5e293261287a6203597e29b3de07df4d18c6.gif",
+                    "tvgif-色": "https://i0.hdslb.com/bfs/emote/a0c6d99ab0ab63b8648f5283ff72cec04b604828.gif",
+                    "tvgif-吐血": "https://i0.hdslb.com/bfs/emote/e17e4539e169d14a3389ff147afea760cebe5de5.gif",
+                    "tvgif-无奈": "https://i0.hdslb.com/bfs/emote/eb4cb5f07cfd177c7e6a7914316717e56d9cc1d0.gif",
+                    "tvgif-再见": "https://i0.hdslb.com/bfs/emote/344f61609ecce2008520dc8a977b6169215748a9.gif",
+                    "tvgif-流汗": "https://i0.hdslb.com/bfs/emote/390bccec65eaff536bd5bb2a0c5b8b0bdea47334.gif",
+                    "tvgif-偷笑": "https://i0.hdslb.com/bfs/emote/7f11e6f7f63e79112b833bd41fa13a83d7cd8474.gif",
+                    "tvgif-抓狂": "https://i0.hdslb.com/bfs/emote/a476b93ecd8e94ac3257323fd822f91cef212de2.gif",
+                    "tvgif-黑人问号": "https://i0.hdslb.com/bfs/emote/b609adf664be33224a9923262031165ae3e34cd2.gif",
+                    "tvgif-困": "https://i0.hdslb.com/bfs/emote/91c2bf34ecf842d7016c01d841db3d4074bd281f.gif",
+                    "tvgif-打脸": "https://i0.hdslb.com/bfs/emote/b0fad4856e59c1240e448437da3287bb5ce547e5.gif",
+                    "tvgif-闭嘴": "https://i0.hdslb.com/bfs/emote/a3fc5388b09e945be3f18fe23bfed5874a0285b7.gif",
+                    "tvgif-鄙视": "https://i0.hdslb.com/bfs/emote/293b5d459e6264ecf314d20937a936fa672ccd1e.gif",
+                    "tvgif-腼腆": "https://i0.hdslb.com/bfs/emote/30984e8264324f901d19bea85dada7103b695534.gif",
+                    "tvgif-馋": "https://i0.hdslb.com/bfs/emote/2525c5703c594e5f0752f68db8948773caebde47.gif",
+                    "tvgif-可爱": "https://i0.hdslb.com/bfs/emote/f92d20f76258bc5f33fc9d7c5e2a1d41fef19a7c.gif",
+                    "tvgif-发财": "https://i0.hdslb.com/bfs/emote/76131e52c9b033681b4c896c6024d29ef7ec7ec2.gif",
+                    "tvgif-生病": "https://i0.hdslb.com/bfs/emote/beb94829fe04f1a41bd6ca611e1f6ca9ca169afa.gif",
+                    "tvgif-流鼻血": "https://i0.hdslb.com/bfs/emote/8ef473f74a849420da712487b2f56ecca1f695f5.gif",
+                    "tvgif-尴尬": "https://i0.hdslb.com/bfs/emote/e0b84ef5ee3e5b8978e584c7c5a6550c51d15f84.gif",
+                    "tvgif-大佬": "https://i0.hdslb.com/bfs/emote/14ca0c05382b8741940942b2430b7a8d55c02f7e.gif",
+                    "我的世界-白眼": "https://i0.hdslb.com/bfs/emote/771899cb4c22ba409d6643e9b872da5ebb8a4e97.png",
+                    "我的世界-超生气": "https://i0.hdslb.com/bfs/emote/69d64894e744cfbc80b8268dd63494b34c675f36.png",
+                    "我的世界-点赞": "https://i0.hdslb.com/bfs/emote/2c1994f1a66eeb405fc7fdc564f73882df83a89b.png",
+                    "我的世界-发呆": "https://i0.hdslb.com/bfs/emote/88f1f3ef0fb4148267a3730e105d0774bebd5fdc.png",
+                    "我的世界-嘿哈": "https://i0.hdslb.com/bfs/emote/6088d0752b4f62d90b8f76c12ff8a82140c089a3.png",
+                    "我的世界-机智": "https://i0.hdslb.com/bfs/emote/094211c55265abc4ee843dacad0eb088048cfb45.png",
+                    "我的世界-加油": "https://i0.hdslb.com/bfs/emote/20259b62334ab90f92e343134c532e0fc3d5708d.png",
+                    "我的世界-恐惧": "https://i0.hdslb.com/bfs/emote/6fc4b238f8aef837e0dc8614fadf0c2fbff11963.png",
+                    "我的世界-抠鼻": "https://i0.hdslb.com/bfs/emote/13b2063bb464b68229780f070b85869d771433ad.png",
+                    "我的世界-酷": "https://i0.hdslb.com/bfs/emote/97a8a5d46f6b3369375a9b38531ccd42c20af060.png",
+                    "我的世界-流泪": "https://i0.hdslb.com/bfs/emote/189728c66a58c1e96b65674b39e2569a7250efff.png",
+                    "我的世界-睡觉": "https://i0.hdslb.com/bfs/emote/6db00b22957b430c3bb693e431a95f6a43244fc1.png",
+                    "我的世界-喜欢": "https://i0.hdslb.com/bfs/emote/7bc253e61701e70d04a1a44cc91b1987444a887a.png",
+                    "我的世界-再见": "https://i0.hdslb.com/bfs/emote/fdf53257dda93f122f2dfea5de04111627cf0bae.png",
+                    "我的世界-疑惑": "https://i0.hdslb.com/bfs/emote/5805b97538990b99b47c606914e9ed0336c8701a.png",
+                    "我的世界-大骂": "https://i0.hdslb.com/bfs/emote/d28b915638421055e00f3c30c74b9f9dce02b241.png",
+                    "我的世界-欸": "https://i0.hdslb.com/bfs/emote/4cd707eba57791229165fda91a02fa05bdfa1819.png",
+                    "我的世界-呲牙咧嘴": "https://i0.hdslb.com/bfs/emote/674c644ccf6acd6c80c0d391ea49fd7bed287e7c.png",
+                    "我的世界-呲牙": "https://i0.hdslb.com/bfs/emote/c03502a27dd1becc69e231d508cbce3f0b4ff12e.png",
+                    "我的世界-鼓掌": "https://i0.hdslb.com/bfs/emote/946321889a368e1369336e6c585747b174a2c58a.png",
+                    "我的世界-害羞": "https://i0.hdslb.com/bfs/emote/d3435c6ec66ccf156f9a43a37727cbeb3c8f2774.png",
+                    "我的世界-可怜": "https://i0.hdslb.com/bfs/emote/8eb6d2fe0a1a8a142acc2a6a88e7255abb9db594.png",
+                    "我的世界-困": "https://i0.hdslb.com/bfs/emote/c4aa7275fd5e683917d9bcc0da9b39a07580208c.png",
+                    "我的世界-彩虹": "https://i0.hdslb.com/bfs/emote/360cc78ed3c4f9a4bfa6961a76ac063e4992df54.png",
+                    "我的世界-流汗": "https://i0.hdslb.com/bfs/emote/591be61ffca9b38477cdc56bb310d9baac141436.png",
+                    "我的世界-生病": "https://i0.hdslb.com/bfs/emote/85e2d880fa74cc6d68d0a1c5e6f741f0277dd0f5.png",
+                    "我的世界-笑": "https://i0.hdslb.com/bfs/emote/3abb6cbe0d8b122e2d5736accd91c787b7b46144.png",
+                    "我的世界-嘘": "https://i0.hdslb.com/bfs/emote/586ba6b577d459fdf23d1695ee8f5f9550383da3.png",
+                    "我的世界-眨眼": "https://i0.hdslb.com/bfs/emote/316fef1a7ede1cfde8470f3336e27479b9470a15.png",
+                    "我的世界-皱眉": "https://i0.hdslb.com/bfs/emote/2f9f8345379aabe7cedfeb51711061cd1dc652c2.png",
+                },
+            },
+            mermaidConfig: {
+                querySelector: ".mermaid",
+            },
+        };
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-regex.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-powershell.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <script src="../assets/visitor.js"></script>
+    <script src="../assets/docsify-sidebar-collapse.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts/dist/docsify-plugin-flexible-alerts.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/daidi/docsify-valine@master/dist/docsify-valine.min.js"></script>
+</body>
+
 </html>
