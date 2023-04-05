@@ -26,10 +26,11 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Zaitonn/Serein-Docs/edit/market/',
         },
 
         blog: {
+          path: 'resources',
           showReadingTime: false,
           blogSidebarCount: 'ALL',
           routeBasePath: 'resources',
@@ -66,12 +67,7 @@ const config = {
             to: '/resources',
             label: '资源',
             position: 'left'
-          },
-          {
-            href: 'https://github.com/Zaitonn/Serein',
-            label: 'GitHub',
-            position: 'right',
-          },
+          }
         ],
       },
       footer: {
@@ -87,6 +83,10 @@ const config = {
               {
                 label: '在线统计',
                 to: 'https://online-count.serein.cc/'
+              },
+              {
+                label: '问卷调查',
+                to: 'https://wj.qq.com/s2/11559426/5a2e/'
               }
             ],
           },
@@ -94,23 +94,44 @@ const config = {
             title: '更多',
             items: [
               {
-                label: '仓库',
+                label: '仓库（软件）',
                 href: 'https://github.com/Zaitonn/Serein',
               },
               {
-                label: '下载',
+                label: '仓库（文档）',
+                href: 'https://github.com/Zaitonn/Serein-Docs',
+              },
+              {
+                label: '最新版下载',
                 href: 'https://github.com/Zaitonn/Serein/releases/latest',
               },
             ],
           },
+          {
+            title: '发布',
+            items: [
+              {
+                label: 'MineBBS',
+                href: 'https://www.minebbs.com/resources/serein.4169/',
+              },
+              {
+                label: 'MCBBS',
+                href: 'https://www.mcbbs.net/thread-1424853-1-1.html',
+              },
+            ],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Zaitonn. Built with Docusaurus.`,
+        copyright: 'Copyright © 2022 Zaitonn. All Rights Reserved.',
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
+  i18n: {
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
+  }
 };
 
 module.exports = config;

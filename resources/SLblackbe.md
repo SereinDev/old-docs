@@ -11,6 +11,8 @@ date: 2023.3.13
 
 <!--truncate-->
 
+><https://www.minebbs.com/resources/slblackbe-serein.5646/>
+
 ## 使用方法
 
 :::caution

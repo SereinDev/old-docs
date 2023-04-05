@@ -18,7 +18,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/resources">
-            🚩查看所有资源
+            🛒查看所有资源
           </Link>
         </div>
       </div>
