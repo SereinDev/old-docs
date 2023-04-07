@@ -1,0 +1,26 @@
+/* Created by https://docusaurus.io/zh-CN/docs/styling-layout#styling-your-site-with-infima */
+:root {
+  --ifm-color-primary: #2e5b85;
+  --ifm-color-primary-dark: #295278;
+  --ifm-color-primary-darker: #274d71;
+  --ifm-color-primary-darkest: #20405d;
+  --ifm-color-primary-light: #336492;
+  --ifm-color-primary-lighter: #356999;
+  --ifm-color-primary-lightest: #3c76ad;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #9ec0e0;
+  --ifm-color-primary-dark: #81add7;
+  --ifm-color-primary-darker: #73a4d2;
+  --ifm-color-primary-darkest: #4788c4;
+  --ifm-color-primary-light: #bbd3e9;
+  --ifm-color-primary-lighter: #c9dcee;
+  --ifm-color-primary-lightest: #f5f8fc;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  transition: background 0.2s !important;
+}
