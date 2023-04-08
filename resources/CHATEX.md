@@ -3,7 +3,7 @@ title: 聊天转发增强
 slug: CHATEX
 authors: 
   - Zaitonn
-tags: [js,tool]
+tags: [JS,工具]
 date: 2023.1.12
 ---
 

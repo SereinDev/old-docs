@@ -4,7 +4,7 @@ slug: SereinJSPluginHelper
 authors: 
   - Zaitonn
 image: SereinJSPluginHelper/1.png
-tags: [js,dev]
+tags: [JS,dev]
 date: 2023.2.25 
 ---
 

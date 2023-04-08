@@ -3,7 +3,7 @@ title: 机器人功能拓展
 slug: BotExtension
 authors: 
   - Zaitonn
-tags: [js,tool]
+tags: [JS,工具]
 date: 2022.11.13
 ---
 

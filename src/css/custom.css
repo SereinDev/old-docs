@@ -24,3 +24,7 @@
 * {
   transition: background 0.2s !important;
 }
+
+.giscus-container {
+  margin: 20px;
+}

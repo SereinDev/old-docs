@@ -3,7 +3,7 @@ title: 驱动器信息变量拓展
 slug: DeviceInfo
 authors: 
   - Zaitonn
-tags: [js,variable]
+tags: [JS,变量]
 date: 2023.3.4
 ---
 

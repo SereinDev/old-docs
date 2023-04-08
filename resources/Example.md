@@ -3,7 +3,7 @@ title: JS示例文件
 slug: Example
 authors: 
   - Zaitonn
-tags: [js,example]
+tags: [JS,example]
 date: 2022.11.13 
 ---
 

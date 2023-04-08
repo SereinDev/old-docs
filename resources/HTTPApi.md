@@ -3,7 +3,7 @@ title: HTTPApi控制
 slug: HTTPApi
 authors: 
   - Zaitonn
-tags: [js,api]
+tags: [JS,api]
 date: 2023.3.12
 ---
 

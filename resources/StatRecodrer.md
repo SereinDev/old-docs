@@ -3,7 +3,7 @@ title: 记录统计信息
 slug: StatRecodrer
 authors: 
   - Zaitonn
-tags: [js,tool]
+tags: [JS,工具]
 date: 2023.1.13
 ---
 

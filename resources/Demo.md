@@ -3,7 +3,7 @@ title: 正则示例文件
 slug: demo
 authors: 
   - Zaitonn
-tags: [json,regex]
+tags: [JSON,正则]
 date: 2022.10.13
 ---
 

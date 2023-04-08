@@ -3,7 +3,7 @@ title: SL-查云黑
 slug: SLblackbe
 authors: 
   - SOURsLEMONS
-tags: [js,tool]
+tags: [JS,工具]
 date: 2023.3.13
 ---
 

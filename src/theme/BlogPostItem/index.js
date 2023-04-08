@@ -9,7 +9,9 @@ export default function BlogPostItemWrapper(props) {
     <>
       <BlogPostItem {...props} />
       {(isBlogPostPage) && (
+        <div className='giscus-container'>
         <GiscusComponent />
+      </div>
       )}
     </>
   );
