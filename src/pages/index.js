@@ -12,7 +12,6 @@ export default function () {
                 <div id='index-page-bg-mask'></div>
                 <div id='index-page-main'>
                     <div id='logo'>
-                        <img src='/img/Serein.png'></img>
                         <span>Serein</span>
                     </div>
                     <div id='index-page-description'>

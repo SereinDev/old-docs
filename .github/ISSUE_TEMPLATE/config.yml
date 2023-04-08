@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Serein相关
+    url: https://github.com/Zaitonn/Serein/issues/new
+    about: Serein的问题请到对应仓库反馈

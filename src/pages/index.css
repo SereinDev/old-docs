@@ -65,13 +65,6 @@ div#index-page-main #index-page-description {
     text-shadow: 5px 5px 10px #000;
 }
 
-div#index-page-main #logo img {
-    width: 100px;
-    margin: auto;
-    filter: drop-shadow(5px 5px 5px #000);
-    image-rendering: pixelated;
-}
-
 div#index-page-main #index-page-button {
     display: flex;
     align-items: center;
@@ -92,10 +85,6 @@ div#index-page-button-container {
 
     div#index-page-main #index-page-description {
         font-size: 1.3em;
-    }
-
-    div#index-page-main #logo img {
-        width: 60px;
     }
 
     div#index-page-button-container {
