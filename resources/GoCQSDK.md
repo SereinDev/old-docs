@@ -3,7 +3,7 @@ title: GoCQAPI封装
 slug: GoCQSDK
 authors: 
   - Zaitonn
-tags: [JS,dev,preset]
+tags: [JS,开发,模块]
 date: 2023.2.25
 ---
 

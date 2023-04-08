@@ -18,6 +18,10 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  markdown: {
+    mermaid: true,
+  },
+
   presets: [
     [
       'classic',
@@ -33,6 +37,7 @@ const config = {
           path: 'resources',
           showReadingTime: false,
           blogSidebarCount: 'ALL',
+          postsPerPage: 'ALL',
           routeBasePath: 'resources',
           blogSidebarTitle: '所有资源',
           blogTitle: '资源',
@@ -62,13 +67,16 @@ const config = {
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            position: 'left',
             label: '教程',
           },
           {
             to: '/resources',
             label: '资源',
-            position: 'left'
+          },
+          {
+            to: '/docs/publish',
+            label: '💡发布',
+            position: 'right'
           }
         ],
       },
@@ -144,6 +152,7 @@ const config = {
         explicitSearchResultPath: true,
       }),
     ],
+    '@docusaurus/theme-mermaid'
   ],
 };
 
