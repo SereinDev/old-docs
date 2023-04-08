@@ -1,8 +1,8 @@
-# Serein扩展市场
+# Serein文档
 
 ## 发布
 
-详见 <https://market.serein.cc/>
+详见 <https://serein.cc/>
 
 ## 编写文档
 

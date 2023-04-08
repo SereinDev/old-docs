@@ -1,0 +1,105 @@
+div#index-page-container {
+    --index-page-container-height: calc(100vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    color: whitesmoke;
+
+}
+
+div#index-page-bg {
+    position: absolute;
+    top: 0;
+    background-image: url('/img/wallpaper_minecraft_ocean_monument_1920x1080.png');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: var(--index-page-container-height);
+    z-index: -10;
+}
+
+div#index-page-bg-mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--index-page-container-height);
+    z-index: -10;
+}
+
+html[data-theme='dark'] div#index-page-bg-mask {
+    background-color: #00000080;
+}
+
+div#index-page-main {
+    height: var(--index-page-container-height);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div#index-page-main * {
+    margin: 5px;
+}
+
+div#index-page-main #logo {
+    font-size: 100px;
+    font-weight: bolder;
+    text-shadow: 5px 5px 10px #000;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+}
+
+div#index-page-main #logo * {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+div#index-page-main #index-page-description {
+    font-size: 1.5em;
+    margin-top: 0;
+    text-shadow: 5px 5px 10px #000;
+}
+
+div#index-page-main #logo img {
+    width: 100px;
+    margin: auto;
+    filter: drop-shadow(5px 5px 5px #000);
+    image-rendering: pixelated;
+}
+
+div#index-page-main #index-page-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(5px 5px 10px #000);
+    transition: all 0.2s;
+}
+
+div#index-page-button-container {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width:576px) {
+    div#index-page-main #logo {
+        font-size: 60px;
+    }
+
+    div#index-page-main #index-page-description {
+        font-size: 1.3em;
+    }
+
+    div#index-page-main #logo img {
+        width: 60px;
+    }
+
+    div#index-page-button-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

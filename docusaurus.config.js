@@ -25,8 +25,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/Zaitonn/Serein-Docs/edit/main/',
+          editUrl: 'https://github.com/Zaitonn/Serein-Docs/edit/main/',
         },
 
         theme: {

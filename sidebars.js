@@ -77,6 +77,7 @@ const sidebars = {
         'tutorial/setupArgs',
         'tutorial/configBot',
         'tutorial/runServer',
+        'tutorial/manageServerPlugins',
         'tutorial/lagging',
         'tutorial/qa',
       ]
@@ -94,7 +95,6 @@ const sidebars = {
         'tutorial/autoRunOnStarted',
         'tutorial/customConsole',
         'tutorial/customRegex',
-        'tutorial/manageServerPlugins',
         'tutorial/muiltLineMatch',
         'tutorial/debugMode',
         'tutorial/developmentTool',
