@@ -13,7 +13,6 @@ div#index-page-bg {
     top: 0;
     background-image: url('/img/wallpaper_minecraft_ocean_monument_1920x1080.png');
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
