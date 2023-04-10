@@ -3,13 +3,15 @@
   "comment": "非必要请不要直接修改文件，语法错误可能导致数据丢失",
   "data": [
     {
-      "Regex": "这是Serein的示例文件",
-      "Remark": "你可以自行修改以下内容",
-      "Command": "debug|Copyright © 2022 Zaitonn. All Rights Reserved.",
-      "Area": 0,
+      "Ignored": [],
+      "Regex": "Game rule (.+?) has been updated to (.+?)$",
+      "Remark": "命令反馈-gamerule",
+      "Command": "g|[服务器]游戏规则 $1 已更新为 $2",
+      "Area": 1,
       "IsAdmin": false
     },
     {
+      "Ignored": [],
       "Regex": "^list$",
       "Remark": "群命令-list",
       "Command": "s|list",
@@ -17,6 +19,7 @@
       "IsAdmin": false
     },
     {
+      "Ignored": [],
       "Regex": "^开服$",
       "Remark": "群命令-开服",
       "Command": "s|start",
@@ -24,6 +27,15 @@
       "IsAdmin": true
     },
     {
+      "Ignored": [],
+      "Regex": "// 这是Serein的示例文件v1.3",
+      "Remark": "你可以自行修改以下内容",
+      "Command": "debug|Copyright © 2022 Zaitonn. All Rights Reserved.",
+      "Area": 0,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
       "Regex": "^关服$",
       "Remark": "群命令-关服",
       "Command": "s|stop",
@@ -31,6 +43,7 @@
       "IsAdmin": true
     },
     {
+      "Ignored": [],
       "Regex": "^/(.+?)$",
       "Remark": "群命令-执行自定义命令",
       "Command": "s|$1",
@@ -38,13 +51,15 @@
       "IsAdmin": true
     },
     {
+      "Ignored": [],
       "Regex": "^服务器状态$",
       "Remark": "群命令-服务器状态",
-      "Command": "g|服务器名称:%LevelName%\\n游戏版本:%Version%\\n难度:%Difficulty%\\n运行状态:%Status%\\n在线人数:%OnlinePlayer%/%MaxPlayer%\\n本次运行时长:%RunTime%\\n内存占用率:%RAMPercentage%%\\nCPU:%CPUName%(%CPUPercentage%%)",
+      "Command": "g|服务器运行状态：%Status%\\n服务器进程占用：%ServerCPUUsage%%\\n版本：%Version%\\n在线人数：%OnlinePlayer%/%MaxPlayer%\\n本次运行时长：%RunTime%\\n系统：%OS%\\n内存：%usedram%/%totalram%MB（%RAMUsage%%）\\nCPU：%CPUName%(%CPUUsage%%)\\n网速：上传 %uploadspeed% / 下载 %downloadspeed%",
       "Area": 2,
       "IsAdmin": false
     },
     {
+      "Ignored": [],
       "Regex": "^绑定(.+?)$",
       "Remark": "群成员管理-绑定",
       "Command": "bind|$1",
@@ -52,6 +67,7 @@
       "IsAdmin": false
     },
     {
+      "Ignored": [],
       "Regex": "^解绑$",
       "Remark": "群成员管理-解绑",
       "Command": "unbind|%ID%",
@@ -59,6 +75,7 @@
       "IsAdmin": false
     },
     {
+      "Ignored": [],
       "Regex": "^解绑\\[CQ:at,qq=(.+?)$\\]$",
       "Remark": "群成员管理-解绑他人",
       "Command": "unbind|$1",
@@ -66,13 +83,15 @@
       "IsAdmin": true
     },
     {
+      "Ignored": [],
       "Regex": "^(.+?)$",
       "Remark": "聊天转发-群聊",
       "Command": "s|tellraw @a {\"rawtext\":[{\"text\":\"§b[%Time%]§r%ShownName%:$1\"}]}",
-      "Area": 0,
+      "Area": 2,
       "IsAdmin": false
     },
     {
+      "Ignored": [],
       "Regex": "^motdje (.+?)$",
       "Remark": "motd-Java服",
       "Command": "motdje|$1",
@@ -80,6 +99,7 @@
       "IsAdmin": false
     },
     {
+      "Ignored": [],
       "Regex": "^motdpe (.+?)$",
       "Remark": "motd-基岩版服",
       "Command": "motdpe|$1",
@@ -87,51 +107,386 @@
       "IsAdmin": false
     },
     {
-      "Regex": "\\[Chat\\]\\s<(.+?)>\\s(.+?)$",
+      "Ignored": [],
+      "Regex": "\\[Chat\\]\\s<(.+?)>\\s?(.+?)$",
       "Remark": "聊天转发-服务器",
       "Command": "g|[玩家]$1>$2",
       "Area": 1,
       "IsAdmin": false
     },
     {
-      "Regex": "Quit correctly",
-      "Remark": "服务器关闭提示",
-      "Command": "g|服务器已关闭",
+      "Ignored": [],
+      "Regex": "are (.+?) players.+?[\\n\\r].+?\\]\\s+?(.*)$",
+      "Remark": "命令反馈-返回当前在线人数",
+      "Command": "g|[服务器]当前在线:$1\\n$2",
       "Area": 1,
       "IsAdmin": false
     },
     {
-      "Regex": "Done \\((.+?)\\)! $",
-      "Remark": "服务器启动成功提示",
-      "Command": "g|服务器已启动，用时$1",
-      "Area": 1,
-      "IsAdmin": false
-    },
-    {
-      "Regex": "are (.+?) players.+?[\\n\\r].+?\\](.*)$",
-      "Remark": "返回当前在线人数",
-      "Command": "g|当前在线:$1\\n$2",
-      "Area": 1,
-      "IsAdmin": false
-    },
-    {
+      "Ignored": [],
       "Regex": "Unknown command: (.+?). Please check that the command exists and that you have permission to use it.$",
       "Remark": "命令反馈-未知的命令",
-      "Command": "g|未知的命令：$1。请检查命令是否存在，以及您对它是否拥有权限",
+      "Command": "g|[服务器]未知的命令：$1。请检查命令是否存在，以及您对它是否拥有权限",
       "Area": 1,
       "IsAdmin": false
     },
     {
-      "Regex": "No targets matched selector$",
-      "Remark": "命令反馈-找不到目标",
-      "Command": "g|没有与选择器匹配的目标",
-      "Area": 1,
-      "IsAdmin": false
-    },
-    {
+      "Ignored": [],
       "Regex": "Syntax error: Unexpected \"(.+?)\": at \"(.+?)\"$",
       "Remark": "命令反馈-语法错误",
-      "Command": "g|语法错误：意外的“$1”出现在“$2”",
+      "Command": "g|[服务器]语法错误：意外的“$1”出现在“$2”",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Unable to summon object$",
+      "Remark": "命令反馈-summon反馈",
+      "Command": "g|[服务器]无法生成对象",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Player added to allowlist$",
+      "Remark": "命令反馈-白名单添加成功",
+      "Command": "g|[服务器]玩家已添加到白名单",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Player already in allowlist$",
+      "Remark": "命令反馈-白名单添加失败",
+      "Command": "g|[服务器]玩家已经在白名单内",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Player removed from allowlist$",
+      "Remark": "命令反馈-白名单删除成功",
+      "Command": "g|[服务器]玩家已从白名单移除",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Player not in allowlist$",
+      "Remark": "命令反馈-白名单删除失败",
+      "Command": "g|[服务器]玩家不在白名单内",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Could not clear the inventory of (.+?), no items to remove",
+      "Remark": "命令反馈-clear",
+      "Command": "g|[服务器]无法清除$1的物品栏，没有可清除的物品",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Cleared the inventory of (.+?), removing (.+?) items$",
+      "Remark": "命令反馈-clear",
+      "Command": "g|[服务器]清除了$1的物品栏，删除了$2个物品",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Gave (.+?) to (.+?)$",
+      "Remark": "命令反馈-give",
+      "Command": "g|[服务器]给予 $2 $1 效果",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Set (.+?)'s game mode to (.+?)$",
+      "Remark": "命令反馈-gamemode",
+      "Command": "g|[服务器]将$1的游戏模式设置为 $2",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Teleported (.+?) to (.+?)$",
+      "Remark": "命令反馈-tp",
+      "Command": "g|[服务器]已将 $1 传送至 $2",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Players cannot be killed while they are in Creative mode\\.$",
+      "Remark": "命令反馈-kill",
+      "Command": "g|[服务器]玩家在创造模式下无法被杀死。",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Killed (.+?)$",
+      "Remark": "命令反馈-kill",
+      "Command": "g|[服务器]已清除 $1",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Game rule (.+?) has been updated to (.+?)$",
+      "Remark": "命令反馈-gamerule",
+      "Command": "g|[服务器]游戏规则 $1 已更新为 $2",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Server stop requested\\.$",
+      "Remark": "关服反馈",
+      "Command": "g|[服务器]关服请求已提交",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "// 这是Serein的示例文件v1.3",
+      "Remark": "你可以自行修改以下内容",
+      "Command": "debug|Copyright © 2022 Zaitonn. All Rights Reserved.",
+      "Area": 0,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "^list$",
+      "Remark": "群命令-list",
+      "Command": "s|list",
+      "Area": 2,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "^开服$",
+      "Remark": "群命令-开服",
+      "Command": "s|start",
+      "Area": 2,
+      "IsAdmin": true
+    },
+    {
+      "Ignored": [],
+      "Regex": "^关服$",
+      "Remark": "群命令-关服",
+      "Command": "s|stop",
+      "Area": 2,
+      "IsAdmin": true
+    },
+    {
+      "Ignored": [],
+      "Regex": "^/(.+?)$",
+      "Remark": "群命令-执行自定义命令",
+      "Command": "s|$1",
+      "Area": 2,
+      "IsAdmin": true
+    },
+    {
+      "Ignored": [],
+      "Regex": "^服务器状态$",
+      "Remark": "群命令-服务器状态",
+      "Command": "g|服务器运行状态：%Status%\\n服务器进程占用：%ServerCPUUsage%%\\n版本：%Version%\\n在线人数：%OnlinePlayer%/%MaxPlayer%\\n本次运行时长：%RunTime%\\n系统：%OS%\\n内存：%usedram%/%totalram%MB（%RAMUsage%%）\\nCPU：%CPUName%(%CPUUsage%%)\\n网速：上传 %uploadspeed% / 下载 %downloadspeed%",
+      "Area": 2,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "^绑定(.+?)$",
+      "Remark": "群成员管理-绑定",
+      "Command": "bind|$1",
+      "Area": 2,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "^解绑$",
+      "Remark": "群成员管理-解绑",
+      "Command": "unbind|%ID%",
+      "Area": 2,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "^解绑\\[CQ:at,qq=(.+?)$\\]$",
+      "Remark": "群成员管理-解绑他人",
+      "Command": "unbind|$1",
+      "Area": 2,
+      "IsAdmin": true
+    },
+    {
+      "Ignored": [],
+      "Regex": "^(.+?)$",
+      "Remark": "聊天转发-群聊",
+      "Command": "s|tellraw @a {\"rawtext\":[{\"text\":\"§b[%Time%]§r%ShownName%:$1\"}]}",
+      "Area": 2,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "^motdje (.+?)$",
+      "Remark": "motd-Java服",
+      "Command": "motdje|$1",
+      "Area": 2,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "^motdpe (.+?)$",
+      "Remark": "motd-基岩版服",
+      "Command": "motdpe|$1",
+      "Area": 2,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "\\[Chat\\]\\s<(.+?)>\\s?(.+?)$",
+      "Remark": "聊天转发-服务器",
+      "Command": "g|[玩家]$1>$2",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "are (.+?) players.+?[\\n\\r].+?\\]\\s+?(.*)$",
+      "Remark": "命令反馈-返回当前在线人数",
+      "Command": "g|[服务器]当前在线:$1\\n$2",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Unknown command: (.+?). Please check that the command exists and that you have permission to use it.$",
+      "Remark": "命令反馈-未知的命令",
+      "Command": "g|[服务器]未知的命令：$1。请检查命令是否存在，以及您对它是否拥有权限",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Syntax error: Unexpected \"(.+?)\": at \"(.+?)\"$",
+      "Remark": "命令反馈-语法错误",
+      "Command": "g|[服务器]语法错误：意外的“$1”出现在“$2”",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Unable to summon object$",
+      "Remark": "命令反馈-summon反馈",
+      "Command": "g|[服务器]无法生成对象",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Player added to allowlist$",
+      "Remark": "命令反馈-白名单添加成功",
+      "Command": "g|[服务器]玩家已添加到白名单",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Player already in allowlist$",
+      "Remark": "命令反馈-白名单添加失败",
+      "Command": "g|[服务器]玩家已经在白名单内",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Player removed from allowlist$",
+      "Remark": "命令反馈-白名单删除成功",
+      "Command": "g|[服务器]玩家已从白名单移除",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Player not in allowlist$",
+      "Remark": "命令反馈-白名单删除失败",
+      "Command": "g|[服务器]玩家不在白名单内",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Could not clear the inventory of (.+?), no items to remove",
+      "Remark": "命令反馈-clear",
+      "Command": "g|[服务器]无法清除$1的物品栏，没有可清除的物品",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Cleared the inventory of (.+?), removing (.+?) items$",
+      "Remark": "命令反馈-clear",
+      "Command": "g|[服务器]清除了$1的物品栏，删除了$2个物品",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Gave (.+?) to (.+?)$",
+      "Remark": "命令反馈-give",
+      "Command": "g|[服务器]给予 $2 $1 效果",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Set (.+?)'s game mode to (.+?)$",
+      "Remark": "命令反馈-gamemode",
+      "Command": "g|[服务器]将$1的游戏模式设置为 $2",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Teleported (.+?) to (.+?)$",
+      "Remark": "命令反馈-tp",
+      "Command": "g|[服务器]已将 $1 传送至 $2",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Players cannot be killed while they are in Creative mode\\.$",
+      "Remark": "命令反馈-kill",
+      "Command": "g|[服务器]玩家在创造模式下无法被杀死。",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Killed (.+?)$",
+      "Remark": "命令反馈-kill",
+      "Command": "g|[服务器]已清除 $1",
+      "Area": 1,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "^motd\\s?(.+)$",
+      "Remark": "",
+      "Command": "motdje|$1",
+      "Area": 2,
+      "IsAdmin": false
+    },
+    {
+      "Ignored": [],
+      "Regex": "Server stop requested\\.$",
+      "Remark": "关服反馈",
+      "Command": "g|[服务器]关服请求已提交",
       "Area": 1,
       "IsAdmin": false
     }
