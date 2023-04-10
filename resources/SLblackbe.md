@@ -11,7 +11,7 @@ date: 2023.3.13
 
 <!--truncate-->
 
-><https://www.minebbs.com/resources/slblackbe-serein.5646/>
+>这个插件也同时发布在[MineBBS](https://www.minebbs.com/resources/slblackbe-serein.5646/)上
 
 ## 使用方法
 

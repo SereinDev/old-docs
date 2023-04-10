@@ -29,8 +29,9 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/Zaitonn/Serein-Docs/edit/market/',
+          editUrl: 'https://github.com/Zaitonn/Serein-Docs/edit/market/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true
         },
 
         blog: {
@@ -105,21 +106,25 @@ const config = {
             items: [
               {
                 label: '仓库（软件）',
-                href: 'https://github.com/Zaitonn/Serein',
+                to: 'https://github.com/Zaitonn/Serein',
               },
               {
                 label: '仓库（文档）',
-                href: 'https://github.com/Zaitonn/Serein-Docs',
+                to: 'https://github.com/Zaitonn/Serein-Docs',
               },
               {
-                label: '最新版下载',
-                href: 'https://github.com/Zaitonn/Serein/releases/latest',
-              },
+                href: 'https://jq.qq.com/?_wv=1027&amp;k=XNZqPSPv',
+                label: '交流群',
+              }
             ],
           },
           {
             title: '发布',
             items: [
+              {
+                label: 'GitHub',
+                to: 'https://github.com/Zaitonn/Serein/releases/latest',
+              },
               {
                 label: 'MineBBS',
                 href: 'https://www.minebbs.com/resources/serein.4169/',
@@ -137,21 +142,17 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      metadata: [
+        {
+          name: 'keywords',
+          content: '面板, 服务器, 我的世界, Minecraft, BDS, Java, 基岩版, 开服, 机器人, 简单, 易用'
+        }],
     }),
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
   },
   themes: [
-    [
-      "@easyops-cn/docusaurus-search-local",
-      ({
-        hashed: true,
-        language: ["zh"],
-        highlightSearchTermsOnTargetPage: true,
-        explicitSearchResultPath: true,
-      }),
-    ],
     '@docusaurus/theme-mermaid'
   ],
 };
