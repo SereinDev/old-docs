@@ -1,8 +1,13 @@
 {
     "rewrites": [
         {
+            "source": "/imgs/:path*",
+            "destination": "/img/:path*"
+        },
+        {
             "source": "/:path*",
-            "destination": "/index.html"
+            "destination": "/index.html",
+            "permanent": false
         }
     ],
     "buildCommand": "npm run build",

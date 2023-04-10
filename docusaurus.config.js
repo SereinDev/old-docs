@@ -167,18 +167,6 @@ const config = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
   },
-
-  themes: [
-    [
-      "@easyops-cn/docusaurus-search-local",
-      ({
-        hashed: true,
-        language: ["zh"],
-        highlightSearchTermsOnTargetPage: true,
-        explicitSearchResultPath: true,
-      }),
-    ],
-  ],
 };
 
 module.exports = config;
