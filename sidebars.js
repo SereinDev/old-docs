@@ -78,7 +78,6 @@ const sidebars = {
         'tutorial/configBot',
         'tutorial/runServer',
         'tutorial/manageServerPlugins',
-        'tutorial/lagging',
         'tutorial/qa',
       ]
     },

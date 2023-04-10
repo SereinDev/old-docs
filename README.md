@@ -1,8 +1,19 @@
 # Serein文档
 
-## 发布
+<p align="center">
+<img src='static/img/Serein.png' width="100"/>
+<br>
+Serein的官方文档
+<br>
+<b>🖥Website</b> | <a href="https://serein.cc/">serein.cc</a><br>
+<b>🏬Market</b> | <a href="https://market.serein.cc/">market.serein.cc</a>
+</p>
 
-详见 <https://serein.cc/>
+<pre align="center">
+ Build with 🦖<a href="https://docusaurus.io/">Docusaurus</a> 
+</pre>
+
+---
 
 ## 编写文档
 
@@ -13,17 +24,17 @@ nodejs LTS
 ### 初始化
 
 ```ps
-npm install
+> npm install
 ```
 
 ### 开始
 
 ```ps
-npm run start
+> npm run start
 ```
 
 ### 生成
 
 ```ps
-npm run build
+> npm run build
 ```

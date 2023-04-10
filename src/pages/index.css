@@ -10,7 +10,6 @@ div#index-page-container {
 
 div#index-page-bg {
     position: absolute;
-    top: 0;
     background-image: url('/img/wallpaper_minecraft_ocean_monument_1920x1080.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +21,6 @@ div#index-page-bg {
 
 div#index-page-bg-mask {
     position: absolute;
-    top: 0;
     width: 100%;
     height: var(--index-page-container-height);
     z-index: -10;

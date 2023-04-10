@@ -26,6 +26,8 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/Zaitonn/Serein-Docs/edit/main/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true
         },
 
         theme: {
@@ -38,6 +40,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        content: '如果你觉得Serein好用的话，别忘了<a href="https://github.com/Zaitonn/Serein" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);">给个Star⭐</a> :D',
+        textColor: 'var(--ifm-color-primary-contrast-foreground)',
+        backgroundColor: 'var(--ifm-background-surface-color)',
+      },
       image: 'img/Serein.jpg',
       navbar: {
         hideOnScroll: true,
@@ -81,21 +88,6 @@ const config = {
           {
             label: '扩展市场',
             to: 'https://market.serein.cc/'
-          },
-          {
-            type: 'dropdown',
-            label: '…',
-            position: 'right',
-            items: [
-              {
-                href: 'https://github.com/Zaitonn/Serein',
-                label: 'GitHub',
-              },
-              {
-                href: 'https://jq.qq.com/?_wv=1027&amp;k=XNZqPSPv',
-                label: '交流群',
-              }
-            ],
           }
         ],
       },
@@ -130,6 +122,10 @@ const config = {
                 label: '仓库（文档）',
                 to: 'https://github.com/Zaitonn/Serein-Docs',
               },
+              {
+                href: 'https://jq.qq.com/?_wv=1027&amp;k=XNZqPSPv',
+                label: '交流群',
+              }
             ],
           },
           {

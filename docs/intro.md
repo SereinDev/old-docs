@@ -3,6 +3,28 @@
 ![Serein](https://socialify.git.ci/Zaitonn/Serein/image?description=1&font=KoHo&logo=https%3A%2F%2Fserein.cc%2Fimg%2FSerein.png&name=1&owner=1&pattern=Circuit%20Board#light)
 ![Serein](https://socialify.git.ci/Zaitonn/Serein/image?description=1&font=KoHo&logo=https%3A%2F%2Fserein.cc%2Fimg%2FSerein.png&name=1&owner=1&pattern=Circuit%20Board&theme=Dark#dark)
 
+<p align="center">
+    <img alt="GitHub Stars" src="https://img.shields.io/github/stars/Zaitonn/Serein?color=blue" />
+    <a href="https://github.com/Zaitonn/Serein/releases/latest">
+        <img src="https://img.shields.io/github/v/release/Zaitonn/Serein?color=blue" />
+    </a>
+    <a href="https://github.com/Zaitonn/Serein/releases/latest">
+        <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/Zaitonn/Serein/total?color=blue" />
+    </a>
+    <a href="https://github.com/Zaitonn/Serein/actions/workflows/Build.yml">
+      <img alt="GitHub bulid" src="https://img.shields.io/github/actions/workflow/status/Zaitonn/Serein/Build.yml?branch=main&color=blue" />
+    </a>
+    <a href="https://github.com/Zaitonn/Serein">
+        <img alt="GitHub repo file count" src="https://img.shields.io/github/languages/code-size/Zaitonn/Serein" />
+    </a>
+    <a href="https://app.codacy.com/gh/Zaitonn/Serein/">
+        <img alt="Codacy Grade" src="https://img.shields.io/codacy/grade/982069cd172d4ef4a40aa4bce4977542?color=blue&logo=Codacy" />
+    </a>
+    <a href="#">
+        <img alt="visitor" src="https://visitor-badge.glitch.me/badge?page_id=Zaitonn.Serein&left_text=Serein%20Visitor" />
+    </a>
+</p>
+
 ## 📁 麻雀虽小五脏俱全
 
 - **以极小的文件体积囊括多种功能**
