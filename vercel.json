@@ -1,13 +1,14 @@
 {
-    "rewrites": [
+    "redirects":[
         {
             "source": "/imgs/:path*",
             "destination": "/img/:path*"
-        },
+        }
+    ],
+    "rewrites": [
         {
             "source": "/:path*",
-            "destination": "/index.html",
-            "permanent": false
+            "destination": "/404.html"
         }
     ],
     "buildCommand": "npm run build",
