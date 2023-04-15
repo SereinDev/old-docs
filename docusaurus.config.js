@@ -68,11 +68,11 @@ const config = {
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            label: '教程',
+            label: '✏教程',
           },
           {
             to: '/resources',
-            label: '资源',
+            label: '🎞资源',
           },
           {
             to: '/docs/publish',
@@ -148,13 +148,21 @@ const config = {
           content: '面板, 服务器, 我的世界, Minecraft, BDS, Java, 基岩版, 开服, 机器人, 简单, 易用'
         }],
     }),
+
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
   },
+
   themes: [
     '@docusaurus/theme-mermaid'
   ],
+
+  plugins: [
+    ['docusaurus-lunr-search', {
+      languages: ['zh']
+    }]
+  ]
 };
 
 module.exports = config;
