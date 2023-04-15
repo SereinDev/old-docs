@@ -8,9 +8,10 @@
 {
     // ...
     "DevelopmentTool": {
+        // highlight-next-line
         "EnableDebug": true,            // 开启调试模式
+        // highlight-next-line
         "DetailDebug": false,           // 详细的调试输出（包含函数参数类型和返回值，仅当上一行启用时生效）
-        "JSEventCoolingDownTime": 15,   // JS插件事件冷却时间（ms），调为0则为不限速，但是可能导致占用过高（主要是文件读写）导致无响应。默认值为15
         "NOTE": "以上设置内容为开发专用选项，请在指导下修改"
     }
 }

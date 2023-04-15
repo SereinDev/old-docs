@@ -10,7 +10,9 @@
 {
     // ...
     "AutoRun": {
+        // highlight-next-line
         "StartServer": false,   // 启动服务器
+        // highlight-next-line
         "ConnectWS": false      // 连接WS
     }
     // ...

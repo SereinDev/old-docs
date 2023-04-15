@@ -18,7 +18,7 @@
 12:53:54 INFO [Server] Player1
 ```
 
-1. 在 settings/Matches.json 中修改`MuiltLines`属性
+1. 在 settings/Matches.json 中`MuiltLines`属性
 2. 在其中添加能够匹配第一行的正则，此处则为`players\sonline:`
 3. 在Serein的正则页面添加匹配两行的正则及命令，此处则应为`(.+?)\splayers\sonline\n.+?\](.+?)$`
 
@@ -32,8 +32,9 @@
 {
     // ...
     "MuiltLines": [
+        // highlight-next-line
         "players\\sonline:",
-        "其他多行匹配的正则"
+        "（其他多行匹配的正则）"
     ]
     // ...
 }

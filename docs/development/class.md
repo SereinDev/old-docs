@@ -58,23 +58,182 @@ logger.debug("这是一条信息输出"); // 此消息将输出到Serein的debug
 ~~Jvav~~版和基岩版的Motd对象
 
 ```js
-let motd = new Motdje('1.2.3.4:1234'); // 地址（支持域名解析和带端口的文本解析）
+let motd1 = new Motdje('1.2.3.4:1234'); // 地址（支持域名解析和带端口的文本解析）
+let motd2 = new Motdje(1234); // 地址（支持域名解析和带端口的文本解析）
 ```
 
 ### 属性
 
-- MaxPlayer 最大玩家数
-- OnlinePlayer 在线玩家数
-- Description 服务器描述
-- Protocol 协议
-- LevelName 存档名称 *仅基岩版*
-- GameMode 游戏模式 *仅基岩版*
-- Favicon 图标（CQ码）*仅Java*
-- Delay.TotalMilliseconds 延迟（ms）
-- Origin 原文
-- Exception 错误消息
-- IsSuccess 是否获取成功
+```ts
+/**
+ * Java服务器Motd对象
+ */
+declare class Motdje {
+    /**
+     * Java服务器Motd对象
+     * @param {string} addr 服务器地址
+     */
+    constructor(addr: string)
 
-### 默认值
+    /**
+     * Java服务器Motd对象
+     * @param {number} port 本地端口
+     */
+    constructor(port: number)
 
->详见<https://github.com/Zaitonn/Serein/blob/main/Serein/Universal/Items/Motd/Motd.cs>
+    /**
+     * 最大玩家数
+     */
+    readonly maxPlayer: string;
+
+    /**
+     * 在线玩家数
+     */
+    readonly onlinePlayer: string;
+
+    /**
+     * 服务器描述
+     */
+    readonly description: string;
+
+    /**
+     * 协议
+     */
+    readonly protocol: string;
+
+    /**
+     * 图标（CQ码）
+     */
+    readonly favicon: string;
+
+    /**
+     * 延迟（ms）
+     */
+    readonly delay: number;
+
+    /**
+     * 原文
+     */
+    readonly origin: string;
+
+    /**
+     * 错误消息
+     */
+    readonly exception: string;
+
+    /**
+     * 是否获取成功
+     */
+    readonly isSuccessful: boolean;
+
+    /**
+     * IP
+     */
+    readonly ip: string;
+
+    /**
+     * 端口
+     */
+    readonly port: number;
+
+    /**
+     * 获取信息
+     */
+    get(): void;
+
+    /**
+     * 尝试获取信息
+     * @returns {boolean}
+     */
+    tryGet(): boolean;
+}
+
+/**
+ * 基岩版服务器Motd对象
+ */
+declare class Motdpe {
+
+    /**
+     * 基岩版服务器Motd对象
+     * @param {string} addr 服务器地址
+     */
+    constructor(addr: string)
+
+    /**
+     * 基岩版服务器Motd对象
+     * @param {number} port 本地端口
+     */
+    constructor(port: number)
+
+    /**
+     * 最大玩家数
+     */
+    readonly maxPlayer: string;
+
+    /**
+     * 在线玩家数
+     */
+    readonly onlinePlayer: string;
+
+    /**
+     * 服务器描述
+     */
+    readonly description: string;
+
+    /**
+     * 协议
+     */
+    readonly protocol: string;
+
+    /**
+     * 存档名称
+     */
+    readonly levelName: string;
+
+    /**
+     * 游戏模式
+     */
+    readonly gameMode: string;
+
+    /**
+     * 延迟（ms）
+     */
+    readonly delay: number;
+
+    /**
+     * 原文
+     */
+    readonly origin: string;
+
+    /**
+     * 错误消息
+     */
+    readonly exception: string;
+
+    /**
+     * 是否获取成功
+     */
+    readonly isSuccessful: boolean;
+
+    /**
+     * IP
+     */
+    readonly ip: string;
+
+    /**
+     * 端口
+     */
+    readonly port: number;
+
+    /**
+     * 获取信息
+     */
+    get(): void;
+
+    /**
+     * 尝试获取信息
+     * @returns {boolean}
+     */
+    tryGet(): boolean;
+}
+```

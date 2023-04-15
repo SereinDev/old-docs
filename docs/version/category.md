@@ -1,5 +1,6 @@
 ---
 sidebar-posision: 1
+slug: /version
 ---
 
 # 版本一览

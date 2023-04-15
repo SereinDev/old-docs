@@ -3,7 +3,7 @@
 
 ## 输出日志
 
-`serein.log(content: Object)`
+`serein.log(content: any)`
 
 ```js
 serein.log("这是一条日志");
@@ -22,7 +22,7 @@ serein.log(new System.IO.StreamWriter('log.txt')); // 甚至可以输出对象
 
 ## Debug输出
 
-`serein.debugLog(content: Object)`
+`serein.debugLog(content: any)`
 
 ```js
 serein.debugLog("这是一条Debug输出");
@@ -35,7 +35,7 @@ serein.debugLog("这是一条Debug输出");
 
 ## 注册插件
 
-`serein.registerPlugin(name: String, version: String, author: String, description: String)`
+`serein.registerPlugin(name: string, version: string, author: string, description: string)`
 
 ```js
 serein.registerPlugin("示例插件","v1.0","Zaitonn","这是一个示例插件"); 
@@ -47,14 +47,14 @@ serein.registerPlugin("示例插件","v1.0","Zaitonn","这是一个示例插件"
   - `author` 作者或版权信息
   - `description` 介绍
 - 返回
-  - `Boolean` *(v1.3.2及以前)*
+  - `boolean` *(v1.3.2及以前)*
     - 成功为`true`，否则为`false`
-  - `String` *(v1.3.3及以后)*
+  - `string` *(v1.3.3及以后)*
     - 当前的命名空间
 
 ## 设置监听器
 
-`serein.setListener(event: String, callback: Function)`
+`serein.setListener(event: string, callback: Function)`
 
 ```js
 serein.setListener("onServerOutput", (line) => {
@@ -77,7 +77,7 @@ serein.setListener("onGroupPoke", (group, user) => {
       - 拦截后该事件便不会进行下一步处理（如正则匹配或输出到控制台）
       - 需要注意的是，你需要在规定时间内返回，具体时间可在配置文件`Serein.json` - `Function`的`JSEventMaxWaitingTime`中修改（默认500ms）；超出时间后返回的将被忽略；
 - 返回
-  - `Boolean`
+  - `boolean`
     - 设置监听器成功为`true`，否则为`false`
 
 ## 事件列表
@@ -91,21 +91,21 @@ serein.setListener("onGroupPoke", (group, user) => {
 ### onServerStop
 
 - **服务器关闭**
-- 监听函数原型： `function (exitCode: Number) -> void`
+- 监听函数原型： `function (exitCode: number) -> void`
   - `exitCode` 退出代码（正常关闭时为0）
 - 不可拦截
 
 ### onServerOutput
 
 - **服务器输出**
-- 监听函数原型： `function (line: String) -> Boolean`
+- 监听函数原型： `function (line: string) -> boolean`
   - `line` 输出行
 - 可被拦截
 
 ### onServerOriginalOutput
 
 - **服务器原始输出**
-- 监听函数原型： `function (line: String) -> Boolean`
+- 监听函数原型： `function (line: string) -> boolean`
   - `line` 输出行
 - 可被拦截
 
@@ -118,14 +118,14 @@ serein.setListener("onGroupPoke", (group, user) => {
 ### onServerSendCommand
 
 - **服务器输入指令**
-- 监听函数原型： `function (cmd: String) -> void`
+- 监听函数原型： `function (cmd: string) -> void`
   - `cmd` 输入命令
 - 不可拦截
 
 ### onGroupIncrease
 
 - **监听群群成员增加**
-- 监听函数原型： `function (group_id: Number, user_id: Number) -> void`
+- 监听函数原型： `function (group_id: number, user_id: number) -> void`
   - `group_id` 群号
   - `user_id` QQ号
 - 不可拦截
@@ -133,7 +133,7 @@ serein.setListener("onGroupPoke", (group, user) => {
 ### onGroupDecrease
 
 - **监听群群成员减少**
-- 监听函数原型： `function (group_id: Number, user_id: Number) -> void`
+- 监听函数原型： `function (group_id: number, user_id: number) -> void`
   - `group_id` 群号
   - `user_id` QQ号
 - 不可拦截
@@ -141,7 +141,7 @@ serein.setListener("onGroupPoke", (group, user) => {
 ### onGroupPoke
 
 - **监听群戳一戳自身账号**
-- 监听函数原型： `function (group_id: Number, user_id: Number) -> void`
+- 监听函数原型： `function (group_id: number, user_id: number) -> void`
   - `group_id` 群号
   - `user_id` QQ号
 - 不可拦截
@@ -149,7 +149,7 @@ serein.setListener("onGroupPoke", (group, user) => {
 ### onReceiveGroupMessage
 
 - **收到群消息**（包括设置中未监听的群聊）
-- 监听函数原型： `function (group_id: Number, user_id: Number, msg: String, shownName: String) -> Boolean`
+- 监听函数原型： `function (group_id: number, user_id: number, msg: string, shownName: string) -> boolean`
   - `group_id` 群号
   - `user_id` QQ号
   - `msg`  消息内容
@@ -159,7 +159,7 @@ serein.setListener("onGroupPoke", (group, user) => {
 ### onReceivePrivateMessage
 
 - **收到私聊消息**
-- 监听函数原型： `function (user_id: Number, msg: String, nickName: String) -> Boolean`
+- 监听函数原型： `function (user_id: number, msg: string, nickName: string) -> boolean`
   - `user_id` QQ号
   - `msg`  消息内容
   - `nickName` 昵称
@@ -168,7 +168,7 @@ serein.setListener("onGroupPoke", (group, user) => {
 ### onReceivePacket
 
 - **收到数据包**
-- 监听函数原型： `function (packet: String) -> Boolean`
+- 监听函数原型： `function (packet: string) -> boolean`
   - `packet` 数据包UTF8文本
 - 可被拦截
 
@@ -190,7 +190,7 @@ serein.setListener("onGroupPoke", (group, user) => {
 
 ### onPluginsLoaded
 
-- **插件加载成功**
+- **插件加载完毕**
 - 监听函数原型： `function () -> void`
 - 不可拦截
 
@@ -202,12 +202,12 @@ serein.setListener("onGroupPoke", (group, user) => {
 
 ```js
 serein.setPreLoadConfig(
-  assemblies: String[], 
-  allowGetType: Boolean, 
-  allowOperatorOverloading: Boolean, 
-  allowSystemReflection: Boolean, 
-  allowWrite: Boolean, 
-  strict: Boolean
+  assemblies: string[], 
+  allowGetType: boolean, 
+  allowOperatorOverloading: boolean, 
+  allowSystemReflection: boolean, 
+  allowWrite: boolean, 
+  strict: boolean
   )
 ```
 
@@ -227,7 +227,10 @@ serein.setPreLoadConfig(
 - 参数
   - 空
 - 返回
-  - `String` 设置的json文本
+  - `string` 设置的json文本
+
+<details>
+  <summary>返回文本示例（因版本不同会有所偏差）</summary>
 
 ```json
 {
@@ -329,6 +332,8 @@ serein.setPreLoadConfig(
 }
 ```
 
+</details>
+
 ## 获取Serein设置对象
 
 `serein.getSettingsObject()`
@@ -347,7 +352,7 @@ serein.setPreLoadConfig(
 
 ## 执行命令
 
-`serein.runCommand(cmd: String)`
+`serein.runCommand(cmd: string)`
 
 ```js
 serein.runCommand("g|hello")
@@ -374,16 +379,16 @@ serein.runCommand("g|hello")
   ```json
   // PluginInfo
   { 
-    "Namespace": "test",  // 命名空间
-    "Available": true,    // 是否可用
-    "File": "plugins\\test.js", // 相对路径
-    "WebSockets": [], // 创建的WS对象状态列表
-    "Name": "test",   // 注册的名称
-    "Version": "",   // 注册的版本
-    "Author": "",    // 注册的作者
-    "Description": "", // 注册的介绍
-    "EventList": [],  // 监听的事件列表
-    "PreLoadConig": { // 预加载配置
+    "namespace": "test",  // 命名空间
+    "available": true,    // 是否可用
+    "file": "plugins\\test.js", // 相对路径
+    "webSockets": [], // 创建的WS对象状态列表
+    "name": "test",   // 注册的名称
+    "version": "",   // 注册的版本
+    "author": "",    // 注册的作者
+    "description": "", // 注册的介绍
+    "eventList": [],  // 监听的事件列表
+    "preLoadConig": { // 预加载配置
       "Assemblies": [],
       "AllowGetType": false,
       "AllowOperatorOverloading": true,
@@ -400,7 +405,7 @@ serein.runCommand("g|hello")
 
 ## 获取正则列表
 
-`serein.getRegexs()`
+`serein.getRegexes()`
 
 - 参数
   - 空
@@ -412,12 +417,12 @@ serein.runCommand("g|hello")
 
 ```js
 serein.addRegex(
-  regexp: String,
-  area: Number,
-  needAdmin: Boolean,
-  command: String,
-  remark: String,
-  ignore: Number[]
+  regexp: string,
+  area: number,
+  needAdmin: boolean,
+  command: string,
+  remark: string,
+  ignore: number[]
   )
 ```
 
@@ -429,20 +434,20 @@ serein.addRegex(
   - `remark` 备注
   - `ignore` 忽略的对象
 - 返回
-  - `Boolean`
+  - `boolean`
     - 成功为`true`，否则为`false`
 
 ## 修改正则
 
 ```js
 serein.editRegex(
-  index: Number
-  regexp: String,
-  area: Number,
-  needAdmin: Boolean,
-  command: String,
-  remark: String,
-  ignore: Number[]
+  index: number
+  regexp?: string,
+  area?: number,
+  needAdmin?: boolean,
+  command?: string,
+  remark?: string,
+  ignore?: number[]
   )
 ```
 
@@ -455,7 +460,7 @@ serein.editRegex(
   - `remark` 备注
   - `ignore` 忽略的对象
 - 返回
-  - `Boolean`
+  - `boolean`
     - 成功为`true`，否则为`false`
 
 :::note
@@ -464,23 +469,23 @@ serein.editRegex(
 
 ## 删除正则
 
-`serein.removeRegex(index: Number)`
+`serein.removeRegex(index: number)`
 
 - 参数
   - `index` 数组下标
 - 返回
-  - `Boolean`
+  - `boolean`
     - 成功为`true`，否则为`false`
 
 ## 设置命令变量
 
-`serein.setVariable(key: String, variable: Object)`
+`serein.setVariable(key: string, variable: any)`
 
 - 参数
   - `key` 变量名称
   - `variable` 变量内容
 - 返回
-  - `Boolean`
+  - `boolean`
     - 成功为`true`，否则为`false`
 
 :::note
@@ -494,3 +499,13 @@ serein.editRegex(
 - Serein提供的变量在替换时优先级大于该变量
   - 也就是说，只有当匹配不到Serein内的变量时才会采用以上自定义的变量
 :::
+
+## 热重载文件
+
+`serein.reloadFiles(type?: 'all' | 'regex' | 'member' | 'schedule' | 'groupcache' | 'settings')`
+
+- 参数
+  - `type` 类型
+- 返回
+  - `boolean`
+    - 成功为`true`，否则为`false`

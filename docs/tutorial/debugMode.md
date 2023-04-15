@@ -51,6 +51,7 @@ PS C:\> Serein-???.exe debug
 {
     // ...
     "DevelopmentTool": {
+        // highlight-next-line
         "EnableDebug": true,  // 开启调试模式
         // ...
     }

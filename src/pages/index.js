@@ -6,7 +6,7 @@ import './index.css'
 
 export default function () {
     return (
-        <Layout>
+        <Layout description='新时代极简服务器面板，内置多种常用功能，超适合萌新和老手服主；支持C#/JS混合开发插件，有着最丰富的API，插件生态超完善！'>
             <div id='index-page-container'>
                 <div id='index-page-bg'></div>
                 <div id='index-page-bg-mask'></div>

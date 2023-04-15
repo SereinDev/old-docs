@@ -3,7 +3,7 @@
 
 ## 导出
 
-`serein.export(key: String, obj: Object)`
+`serein.export(key: string, obj: any)`
 
 - 参数
   - `key` 导出键名
@@ -21,7 +21,7 @@
 
 ## 导入
 
-`serein.import(key: String)`
+`serein.import(key: string)`
 
 - 参数
   - `key` 导入键名

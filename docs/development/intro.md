@@ -1,3 +1,6 @@
+---
+slug: /development
+---
 
 # 📎 介绍
 
@@ -16,7 +19,7 @@ ECMAScript 2022（具体特性支持列表详见[sebastienros/jint](https://gith
 以下情况将导致Serein无响应或崩溃
 
 - 以极快的速度重复执行语句
-- 无限递归导致爆栈
+- 无限递归导致堆栈溢出
 :::
 
 ## 特色
@@ -25,7 +28,7 @@ ECMAScript 2022（具体特性支持列表详见[sebastienros/jint](https://gith
 
 由于JS引擎的特性，你可以导入NET几乎所有的命名空间以及其对象、类、方法和属性
 
-`importNamespace(name:String)` 导入命名空间
+`importNamespace(name:string)` 导入命名空间
 
 或直接使用命名空间（如`System.IO.File`）
 
@@ -63,5 +66,7 @@ Process.Start("cmd.exe");
 :::
 
 ## JS插件开发助手
+
+![示例](https://market.serein.cc/imgs/SereinJSPluginHelper/1.png)
 
 详见[SereinJSPluginHelper](https://market.serein.cc/resources/SereinJSPluginHelper)

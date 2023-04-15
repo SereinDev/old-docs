@@ -1,5 +1,5 @@
 {
-    "redirects":[
+    "redirects": [
         {
             "source": "/imgs/:path*",
             "destination": "/img/:path*"

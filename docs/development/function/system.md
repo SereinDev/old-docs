@@ -9,7 +9,8 @@
 - 返回
   - `object` 系统信息对象
 
-以json格式显示：
+<details>
+  <summary>返回对象示例（以json格式显示）</summary>
 
 ```json
 {
@@ -61,6 +62,8 @@
 }
 ```
 
+</details>
+
 ## 获取CPU使用率
 
 `serein.getCPUUsage()`
@@ -68,7 +71,7 @@
 - 参数
   - 空
 - 返回
-  - `Number` ∈ [0, 100]
+  - `number` ∈ [0, 100]
     - 示例：`1.14514191981`
   - `undefined` *Linux版本*
 
@@ -79,10 +82,8 @@
 - 参数
   - 空
 - 返回
-  - `Array<String>[2]`，其中`[0]`为上传网速，`[1]`为下载网速
+  - `Array<string>[2]`，其中`[0]`为上传网速，`[1]`为下载网速
 
 ```js
-let netSpeed = serein.getNetSpeed();
-let uploadSpeed = netSpeed[0];
-let downloadSpeed = netSpeed[1];
+const { uploadSpeed, downloadSpeed } = serein.getNetSpeed();
 ```

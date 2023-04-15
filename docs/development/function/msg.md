@@ -2,13 +2,13 @@
 
 ## 发送群聊消息
 
-`serein.sendGroup(target: Number, msg: String)`
+`serein.sendGroup(target: number, msg: string)`
 
 - 参数
   - `target` 群号
   - `msg` 消息内容
 - 返回
-  - `Boolean`
+  - `boolean`
     - 成功为`true`，否则为`false`
 
 :::caution
@@ -17,29 +17,50 @@
 
 ## 发送私聊消息
 
-`serein.sendPrivate(target: Number, msg: String)`
+`serein.sendPrivate(target: number, msg: string)`
 
 - 参数
   - `target` 对方QQ号
   - `msg` 消息内容
 - 返回
-  - `Boolean`
+  - `boolean`
+    - 成功为`true`，否则为`false`
+
+## 发送临时会话消息
+
+`serein.sendTemp(group_id: number, user_id: number, msg: string)`
+
+- 参数
+  - `group_id` 群号
+  - `user_id` 对方QQ号
+  - `msg` 消息内容
+- 返回
+  - `boolean`
     - 成功为`true`，否则为`false`
 
 ## 发送数据包
 
-`serein.sendPacket(packet: String)`
+`serein.sendPacket(packet: string)`
 
 ```js
-serein.sendPackage("{\"action\": \"send_private_msg\",\"params\": {\"user_id\": \"10001\",\"message\": \"你好\"}}")
-// 你可以通过这个功能实现自动同意好友请求等操作
+serein.sendPacket(JSON.stringify({
+    action: "send_private_msg",
+    params: {
+        user_id: 10001,
+        message: "你好"
+    }
+}));
 ```
 
 - 参数
   - `packet` 发送的数据包
 - 返回
-  - `Boolean`
+  - `boolean`
     - 成功为`true`，否则为`false`
+
+:::tip
+你可以通过此函数实现发送消息、同意好友请求、上传文件等功能
+:::
 
 ## 获取ws连接状态
 
@@ -48,7 +69,7 @@ serein.sendPackage("{\"action\": \"send_private_msg\",\"params\": {\"user_id\": 
 - 参数
   - 无
 - 返回
-  - `Boolean`
+  - `boolean`
     - 已连接为`true`，否则为`false`
 
 ## 获取群成员昵称缓存字典
@@ -58,7 +79,7 @@ serein.sendPackage("{\"action\": \"send_private_msg\",\"params\": {\"user_id\": 
 - 参数
   - 无
 - 返回
-  - `Object` 群成员昵称缓存字典
+  - `object` 群成员昵称缓存字典
     - 第一个`key`为群号
     - 第二个`key`为QQ号
 
@@ -68,12 +89,12 @@ var myname = dict["114514"]["1919810"];
 ```
 
 :::note
-此处的`key`必须为字符串形式的群号或QQ号，直接使用`Number`类型作为`key`获取将导致Serein引发超出内存的异常
+此处的`key`必须为字符串形式的群号或QQ号，直接使用`number`类型作为`key`获取将导致Serein引发超出内存的异常
 :::
 
 ## 直接获取指定群的群成员昵称缓存
 
-`serein.getUserName(groupid: Number, userid: Number)`
+`serein.getUserName(groupid: number, userid: number)`
 
 ```js
 var myname = serein.getUserName(114514, 1919810); // 与上面的函数示例等价
@@ -83,5 +104,5 @@ var myname = serein.getUserName(114514, 1919810); // 与上面的函数示例等
   - `groupid` 群号
   - `userid` QQ号
 - 返回
-  - `String`
+  - `string`
     - 若未找到或不存在则返回空字符串

@@ -5,7 +5,7 @@
 - 在plugins文件夹下创建与插件同名的文件夹后，重新加载插件即可自动生成该文件
 - 使用`setPreLoadConfig()`方法
 
-```json
+```json title="PreLoadConfig.json"
 {
   "Assemblies": [],
   "AllowGetType": false,
@@ -31,19 +31,19 @@
 
 ## AllowGetType
 
-`Boolean`
+`boolean`
 
 是否允许使用`Object.GetType()`
 
 ## AllowOperatorOverloading
 
-`Boolean`
+`boolean`
 
 是否允许运算符重载（默认为`true`）
 
 ## AllowSystemReflection
 
-`Boolean`
+`boolean`
 
 是否允许使用`System.Reflection`相关功能
 
@@ -53,13 +53,13 @@
 
 ## AllowWrite
 
-`Boolean`
+`boolean`
 
 是否允许对CLR的写入（建议开启，默认为`true`）
 
 ## Strict
 
-`Boolean`
+`boolean`
 
 JS严格模式
 

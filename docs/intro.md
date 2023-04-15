@@ -1,3 +1,6 @@
+---
+slug: /
+---
 # 🎆 介绍
 
 ![Serein](https://socialify.git.ci/Zaitonn/Serein/image?description=1&font=KoHo&logo=https%3A%2F%2Fserein.cc%2Fimg%2FSerein.png&name=1&owner=1&pattern=Circuit%20Board#light)

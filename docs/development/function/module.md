@@ -12,13 +12,11 @@ v1.3.4 后你可以创建新的js文件，并在里面写一些基本的函数�
 
 :::
 
-```js
-// plugins/eg.js
-
+```js title="modules/export.js"
 export const myvalue = 1;
 
 export function isMyGroup(groupID) {
-    return Boolean(serein.getSettingsObject().Bot.GroupList.indexOf(groupID) + 1);
+    return boolean(serein.getSettingsObject().Bot.GroupList.indexOf(groupID) + 1);
 }
 
 // ...
@@ -26,7 +24,7 @@ export function isMyGroup(groupID) {
 
 ## 导入
 
-`require(file: String)`
+`require(file: string)`
 
 此处的`file`参数对应为你在 plugins 文件夹创建的js文件路径
 
@@ -40,8 +38,8 @@ export function isMyGroup(groupID) {
 
 :::
 
-```js
-var isMyGroup = require('./eg.js').isMyGroup(114514);
+```js title="eg.js"
+var isMyGroup = require('./modules/export.js').isMyGroup(114514);
 ```
 
 这样你就可以导入已经导出了的内容了

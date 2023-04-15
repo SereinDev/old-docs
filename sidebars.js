@@ -111,6 +111,7 @@ const sidebars = {
         id: 'version/category'
       },
       items: [
+        'version/v1.3.4.1',
         'version/v1.3.4',
         'version/v1.3.3',
         'version/v1.3.2.1',

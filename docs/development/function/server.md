@@ -7,7 +7,7 @@
 - 参数
   - 空
 - 返回
-  - `Boolean`
+  - `boolean`
     - 成功为`true`，否则为`false`
 
 ## 关闭服务器
@@ -30,12 +30,12 @@
 - 参数
   - 空
 - 返回
-  - `Boolean`
+  - `boolean`
     - 成功为`true`，否则为`false`
 
 ## 发送服务器命令
 
-`serein.sendCmd(String: command)`
+`serein.sendCmd(string: command)`
 
 - 参数
   - `command` 输入的命令
@@ -49,7 +49,7 @@
 - 参数
   - 空
 - 返回
-  - `Boolean`
+  - `boolean`
     - 已启动为`true`，未启动则为`false`
 
 ## 获取服务器运行时长
@@ -59,7 +59,7 @@
 - 参数
   - 空
 - 返回
-  - `String`
+  - `string`
     - 示例：`0.2m` `1.5h` `3.02d`
 
 ## 获取服务器进程占用
@@ -69,7 +69,7 @@
 - 参数
   - 空
 - 返回
-  - `Number` ∈ [0, 100]
+  - `number` ∈ [0, 100]
     - 示例：`11.4514191981`
 
 ## 获取服务器文件
@@ -79,13 +79,13 @@
 - 参数
   - 空
 - 返回
-  - `String`
+  - `string`
     - 示例：`bedrock_server.exe`
 
 ## 获取Motd原文
 
-基岩版：`serein.getMotdpe(addr: String)`  
-Java版：`serein.getMotdje(addr: String)`
+基岩版：`serein.getMotdpe(addr: string)`  
+Java版：`serein.getMotdje(addr: string)`
 
 ```js
 var pe = serein.getMotdpe("127.0.0.1:19132");
@@ -95,7 +95,7 @@ var je = serein.getMotdje("127.0.0.1:25565");
 - 参数
   - `addr` 服务器ip
 - 返回
-  - `String` Motd原文
+  - `string` Motd原文
     - 获取失败时返回`-`
     - 基岩版为纯字符串
 
@@ -108,7 +108,7 @@ var je = serein.getMotdje("127.0.0.1:25565");
     ```json
     {
       "descraddrtion": {
-        "text": "§bMinecraftOnline§f - §6Home of Freedonia§r\n§3Survival, Without the Grief!"
+        "text": "§bMinecraftOnline§f - §6Home of Freedonia§r"
       },
       "players": {
         "max": 120,
@@ -124,15 +124,15 @@ var je = serein.getMotdje("127.0.0.1:25565");
         "name": "1.12.2",
         "protocol": 340
       },
-      "favicon": "……" // 此处限于篇幅省略其内容，实际上是base64编码的图片
+      "favicon": "" // 此处限于篇幅省略其内容，实际上是base64编码的图片
     }
     ```
 
 :::note
 `addr`支持的类型
 
-1. `String` IP/域名 -> 指定服务器IP
+1. `string` IP/域名 -> 指定服务器IP
    - 不填端口基岩版默认`19132`，Java版默认`25565`
-2. `String` IP/域名:端口 -> 指定服务器IP和端口
+2. `string` IP/域名:端口 -> 指定服务器IP和端口
 
 :::
