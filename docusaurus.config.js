@@ -155,13 +155,15 @@ const config = {
   },
 
   themes: [
-    '@docusaurus/theme-mermaid'
-  ],
-
-  plugins: [
-    ['docusaurus-lunr-search', {
-      languages: ['zh']
-    }]
+    '@docusaurus/theme-mermaid',
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      ({
+        hashed: true,
+        language: ["en", "zh"],
+        blogRouteBasePath: '/resources'
+      }),
+    ],
   ]
 };
 
