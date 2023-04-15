@@ -82,6 +82,15 @@
   - `string`
     - 示例：`bedrock_server.exe`
 
+## 获取服务器Motd
+
+`serein.getServerMotd()`
+
+- 参数
+  - 空
+- 返回
+  - [`Motdpe` | `Motdje`](../class#motdjemotdpe)
+
 ## 获取Motd原文
 
 基岩版：`serein.getMotdpe(addr: string)`  

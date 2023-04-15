@@ -16,7 +16,7 @@
 
 ## 插件开发
 
-详见[JS文档](../development/intro)
+详见[JS文档](../development)
 
 ## 食用方法
 

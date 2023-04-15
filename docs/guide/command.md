@@ -146,7 +146,7 @@ Serein中最重要的组成部分
 
 - 运行限时：1min
 - js标准：ECMAScript 2022
-- 详见[插件语法](../development/intro)
+- 详见[插件语法](../development)
 
 ## 在指定插件的JS引擎上执行Javascript代码
 

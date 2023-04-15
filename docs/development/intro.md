@@ -57,7 +57,7 @@ Process.Start("cmd.exe");
 :::tip
 
 - 在[这里](https://market.serein.cc/resources/Example)你可以找到更详细的示例
-- 部分命名空间需要设置[预加载配置](assembly)后才能导入
+- 部分命名空间需要设置[预加载配置](development/preLoadConfig)后才能导入
 
 :::
 

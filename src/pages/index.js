@@ -21,8 +21,8 @@ export default function () {
                         <div id='index-page-button'>
                             <Link
                                 className="button button--secondary button--lg"
-                                to="/docs/intro">
-                                查看文档
+                                to="/docs">
+                                介绍
                             </Link>
                         </div>
                         <div id='index-page-button'>

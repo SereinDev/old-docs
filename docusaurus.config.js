@@ -40,6 +40,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        appId: '8B3GBB4Z7B',
+        apiKey: '0fcac6569e49c5b557f7c78357c55ea1',
+        indexName: 'main'
+      },
       announcementBar: {
         content: '如果你觉得Serein好用的话，别忘了<a href="https://github.com/Zaitonn/Serein" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);">给个Star⭐</a> :D',
         textColor: 'var(--ifm-color-primary-contrast-foreground)',
@@ -56,7 +61,7 @@ const config = {
         items: [
           {
             type: 'dropdown',
-            label: '文档',
+            label: '📔文档',
             items: [
               {
                 type: 'docSidebar',
@@ -83,10 +88,18 @@ const config = {
                 sidebarId: 'moreSidebar',
                 label: '更多',
               },
+              {
+                label: '上古文档',
+                href: 'https://legacy.serein.cc/'
+              }
             ],
           },
           {
-            label: '扩展市场',
+            label: '📝留言板',
+            to: 'messageBoard'
+          },
+          {
+            label: '🏬扩展市场',
             to: 'https://market.serein.cc/'
           }
         ],
@@ -164,6 +177,16 @@ const config = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
   },
+
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      ({
+        hashed: true,
+        language: ["en", "zh"],
+      }),
+    ],
+  ]
 };
 
 module.exports = config;
