@@ -9,8 +9,8 @@ date: 2023.2.25
 
 提供所有的GOCQAPI封装
 
-![示例](GoCQSDK/1.png)  
-![示例](GoCQSDK/2.png)
+![示例](/img/GoCQSDK/1.png)  
+![示例](/img/GoCQSDK/2.png)
 
 <!--truncate-->
 

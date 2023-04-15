@@ -38,7 +38,7 @@ date: 2023.1.13
 
 使用`Excel`或其他软件打开CSV文件，选择整个列生成即可
 
-![例子](StatRecodrer/1.png)
+![例子](/img/StatRecodrer/1.png)
 
 ## 历史版本
 

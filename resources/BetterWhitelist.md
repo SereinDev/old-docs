@@ -50,7 +50,7 @@ date: 2023.4.1
 | `绑定 GameID` | 使自己 QQ 与游戏 id 绑定，并获得白名单（可选择是否开启）   | bind       |
 | `解绑`        | 使自己 QQ 与已绑定 id 解绑，并删除白名单（可选择是否开启） | unbind     |
 
-![1](BetterWhitelist/BetterWhitelist_1.png ":size=300")
+![1](/img/BetterWhitelist/BetterWhitelist_1.png ":size=300")
 
 | 管理员命令                          | 说明                                       | 其他关键词             |
 | ----------------------------------- | ------------------------------------------ | ---------------------- |
@@ -60,29 +60,29 @@ date: 2023.4.1
 | `同步白名单 <QQ号(@成员)>`          | 使该成员的绑定 id 同步白名单               | syncwl、syncwhitelist  |
 | `白名单列表`                        | 列出 Serein 成员管理列表等信息             | wllist、whitelist      |
 
-![2](BetterWhitelist/BetterWhitelist_2.png)
+![2](/img/BetterWhitelist/BetterWhitelist_2.png)
 
-![3](BetterWhitelist/BetterWhitelist_3.png)
+![3](/img/BetterWhitelist/BetterWhitelist_3.png)
 
-![4](BetterWhitelist/BetterWhitelist_4.png)
+![4](/img/BetterWhitelist/BetterWhitelist_4.png)
 
-![5](BetterWhitelist/BetterWhitelist_5.png)
+![5](/img/BetterWhitelist/BetterWhitelist_5.png)
 
-![6](BetterWhitelist/BetterWhitelist_6.png)
+![6](/img/BetterWhitelist/BetterWhitelist_6.png)
 
 ## 特征
 
 - 完善的白名单增删逻辑
 
-![7](BetterWhitelist/BetterWhitelist_7.png)
+![7](/img/BetterWhitelist/BetterWhitelist_7.png)
 
 - 各种防呆设计
 
-![8](BetterWhitelist/BetterWhitelist_8.png)
+![8](/img/BetterWhitelist/BetterWhitelist_8.png)
 
 ## 配置文件
 
-![9](BetterWhitelist/BetterWhitelist_9.png)
+![9](/img/BetterWhitelist/BetterWhitelist_9.png)
 
 ## 历史版本
 
