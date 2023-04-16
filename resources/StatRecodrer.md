@@ -4,7 +4,7 @@ slug: StatRecodrer
 authors: 
   - Zaitonn
 tags: [JS,工具]
-date: 2023.1.13
+date: 2023.4.16
 ---
 
 自动按时间记录系统信息、在线人数等
@@ -42,4 +42,5 @@ date: 2023.1.13
 
 ## 历史版本
 
+- 2023.4.16 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/StatRecodrer/v1.1/StatRecorder.js)
 - 2023.1.13 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/StatRecodrer/v1.0/StatRecorder.js)
