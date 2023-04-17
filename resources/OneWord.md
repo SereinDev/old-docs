@@ -4,7 +4,7 @@ slug: OneWord
 authors: 
   - Zaitonn
 tags: [JS,工具]
-date: 2023.4.16
+date: 2023.4.17
 ---
 
 ![控制台](/img/OneWord/console.png)
@@ -29,4 +29,4 @@ date: 2023.4.16
 
 ## 历史版本
 
-- 2023.4.16 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/OneWord/v1.0/OneWord.js)
+- 2023.4.17 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/OneWord/v1.0/OneWord.js)

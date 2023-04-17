@@ -4,7 +4,7 @@ slug: CommandHelper
 authors: 
   - Zaitonn
 tags: [JS,前置]
-date: 2023.4.16
+date: 2023.4.17
 ---
 
 ![控制台](/img/CommandHelper/1.png)
@@ -35,23 +35,26 @@ date: 2023.4.16
 
 ## 开发
 
-1. 下载[模板文件](#历史版本)后放到`plugins`文件夹下
+1. 下载[模板和自动补全](#历史版本)两个文件后放到`plugins`文件夹下
 2. 打开编辑`function callback()`和命令介绍
 3. 重新加载插件
 
-```js {7-11,17}
+```js {10-15,20}
+/// <reference path="CommandHelper.d.ts"/>
+
 serein.setListener('onPluginsLoaded', () => {
+    /** @type {CHregCommand} */
     const CHregCommand = serein.import('CHregCommand');
     if (!CHregCommand)
         throw new Error('你需要安装`CommandHelper.js`');
 
-    CHregCommand(
-        '你好世界',     // 命令名称
-        ['test'],       // 触发关键词
-        callback,       // 回调函数
-        false,          // 是否需要管理权限
-        ['一个模板']    // 以string[]储存，一行一条
-    );
+    CHregCommand({
+        name: '你好世界',     // 命令名称
+        keywords: ['test'],       // 触发关键词
+        callback: callback,       // 回调函数
+        needAdmin: false,          // 是否需要管理权限
+        description: ['一个模板']    // 以string[]储存，一行一条
+    });
 });
 
 // 参数同 https://serein.cc/docs/development/function/serein#onreceivegroupmessage
@@ -66,5 +69,6 @@ function callback (group_id, user_id, msg, shownName) {
 
 ## 历史版本
 
-- 2023.4.16 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/CommandHelper/v1.0/CommandHelper.js)
+- 2023.4.17 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/CommandHelper/v1.0/CommandHelper.js)
   - [模板](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/CommandHelper/v1.0/template.js)
+  - [自动补全](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/CommandHelper/v1.0/CommandHelper.d.ts)
