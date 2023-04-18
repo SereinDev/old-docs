@@ -4,7 +4,7 @@
 
 const commands = [];
 const prefix = '';
-const logger = new Logger('ReplyHelper');
+const logger = new Logger('CommandHelper');
 
 serein.registerPlugin('命令助手', 'v1.0', 'Zaitonn', '提供快捷的命令注册功能');
 serein.export('CHregCommand', regCommand);
@@ -100,9 +100,14 @@ function handleMsg(group_id, user_id, msg, shownName) {
       !commandConfig.keywords.includes(keyword))
       continue;
 
-    const reply = commandConfig.callback(group_id, user_id, msg, shownName);
-    if (reply)
-      serein.sendGroup(group_id, reply);
+    try {
+      const reply = commandConfig.callback(group_id, user_id, msg, shownName);
+      if (reply)
+        serein.sendGroup(group_id, reply);
+    }
+    catch (e) {
+      logger.error(`触发插件[${commandConfig.name}]时异常：\n${e}`)
+    }
   }
 };
 
