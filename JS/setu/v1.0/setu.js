@@ -30,7 +30,9 @@ serein.setListener('onPluginsLoaded', () => {
         keywords: ['色图', '涩图'],
         callback: callback,
         needAdmin: false,
-        description: ['随机返回一张二次元图片捏♡♡', '用法：发送“涩图” | “色图”']
+        description: ['随机返回一张二次元图片捏♡♡', '用法：发送“涩图” | “色图”'],
+        author: 'Zaitonn',
+        version: 'v1.0'
     });
 });
 

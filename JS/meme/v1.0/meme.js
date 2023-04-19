@@ -15,7 +15,9 @@ serein.setListener('onPluginsLoaded', () => {
         keywords: ['meme', '草图'],
         callback: callback,
         needAdmin: false,
-        description: ['草草草草草草草草草草草草草草草草', '用法：发送“meme” | “草图”']
+        description: ['草草草草草草草草草草草草草草草草', '用法：发送“meme” | “草图”'],
+        author: 'Zaitonn',
+        version: 'v1.0'
     });
 });
 

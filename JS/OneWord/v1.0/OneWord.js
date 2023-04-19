@@ -2,7 +2,7 @@
 /// <reference path="CommandHelper.d.ts"/>
 /// @ts-check
 
-serein.registerPlugin('一言', 'v1.0', 'Zaitonn', '');
+serein.registerPlugin('一言', 'v1.0', 'Zaitonn', '需要安装`CommandHelper.js`前置');
 
 /** @type {CHregCommand} */
 let CHregCommand,
@@ -20,7 +20,9 @@ serein.setListener('onPluginsLoaded', () => {
         keywords: ['一言'],
         callback: oneword,
         needAdmin: false,
-        description: ['发送“一言”随机回复一句话', 'api源：Hitokoto（https://v1.hitokoto.cn）']
+        description: ['发送“一言”随机回复一句话', 'api源：Hitokoto（https://v1.hitokoto.cn）'],
+        author: 'Zaitonn',
+        version: 'v1.0'
     });
 });
 

@@ -11,12 +11,9 @@ declare type CommandConfig = {
 
     /**
      * 回调函数
-     * @param group_id 群号
-     * @param user_id 用户ID
-     * @param msg 消息
-     * @param shownName 显示名称
+     * @param event 接收事件
      */
-    callback: (group_id: number, user_id: number, msg: string, shownName: string) => void,
+    callback: (packet: Packet) => string | undefined | void,
 
     /**
      * 是否需要管理员权限
@@ -27,6 +24,16 @@ declare type CommandConfig = {
      * 介绍
      */
     description?: string[],
+
+    /**
+     * 作者
+     */
+    author?: string;
+
+    /**
+     * 版本
+     */
+    version?: string;
 
     /**
      * 权限列表
@@ -40,3 +47,32 @@ declare type CommandConfig = {
 }
 
 declare type CHregCommand = (config: CommandConfig) => void;
+
+declare interface Sender {
+    age: number;
+    area: string;
+    card: string;
+    level: string;
+    nickname: string;
+    role: string;
+    sex: string;
+    title: string;
+    user_id: number;
+}
+
+declare interface Packet {
+    post_type: string;
+    message_type: string;
+    time: number;
+    self_id: number;
+    sub_type: string;
+    message_seq: number;
+    message_id: number;
+    font: number;
+    group_id: number;
+    message: string;
+    raw_message: string;
+    sender: Sender;
+    user_id: number;
+    anonymous?: any;
+}
