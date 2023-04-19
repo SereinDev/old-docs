@@ -18,6 +18,7 @@ date: 2077.5.5
 
 ## 未发布在此页面的插件
 
+- [PQuery - 多功能查询插件](https://www.minebbs.com/resources/serein-pquery.5804/)
 - [SLwhiteList - LLbds白名单插件](https://www.minebbs.com/resources/serein-llbds-slwhitelist-llbds-js.5216/)
 - [~~iPanel - 网页版控制台~~](https://ipanel.serein.cc)(已弃坑)
 

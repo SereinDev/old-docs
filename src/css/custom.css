@@ -33,3 +33,12 @@
 .markdown img {
   margin: 2px;
 }
+
+.you-know-too-much {
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.you-know-too-much:hover {
+  opacity: 1;
+}
