@@ -1,10 +1,14 @@
+// @ts-check
+
 const BASEURL = 'https://us-east-1.aws.data.mongodb-api.com/app/data-ymcin/endpoint/data/v1';
 const ACCEPTABLETYPE = ['console', 'winform', 'wpf'];
 const VERSION_REGEX = /^v\d\.\d\.\d+$/;
 const GUID_REGEX = /^[0-9a-f]{32}$/i;
 const DATE_REGEX = /^\d+$/;
 
+// @ts-ignore
 addEventListener('fetch', (event) => event.respondWith(handle(event.request)));
+// @ts-ignore
 addEventListener('scheduled', event => event.waitUntil(deleteExpirations()));
 
 
@@ -24,7 +28,7 @@ async function handle(request) {
         switch (url.host) {
             case 'online-count.serein.cc':
                 if (request.url.endsWith('ico'))
-                    return Response.redirect('https://serein.cc/assets/Serein.ico', 301);
+                    return Response.redirect('https://serein.cc/img/Serein.ico', 301);
 
                 if (request.url.replace(/\/$/, '') != 'https://online-count.serein.cc')
                     return Response.redirect('https://online-count.serein.cc');
@@ -43,6 +47,11 @@ async function handle(request) {
             case 'api.online-count.serein.cc':
                 switch (url.pathname) {
 
+                    case '/robots.txt':
+                        return createResponse(
+                            `User-agent: *\nDisallow: /`
+                        );
+
                     case '/list':
                         response = await list();
                         return createResponse(await response.text(), response.status)
@@ -55,7 +64,7 @@ async function handle(request) {
                             = await update({
                                 type: url.searchParams.get('type'),
                                 version: url.searchParams.get('version'),
-                                server_status: url.searchParams.get('server_status').toLocaleLowerCase() === 'true',
+                                server_status: url?.searchParams?.get('server_status')?.toLocaleLowerCase() === 'true',
                                 guid: {
                                     $oid: (url.searchParams.get('guid') || '000000000000000000000000').substring(0, 24)
                                 },
@@ -72,12 +81,14 @@ async function handle(request) {
                         return await deleteExpirations();
 
                     case '/favicon.ico':
-                        return Response.redirect('https://serein.cc/assets/Serein.ico', 301);
+                        return Response.redirect('https://serein.cc/img/Serein.ico', 301);
 
                     case '/':
+                        return createResponse('This is a api worker for Serein. For more infomation please see "https://serein.cc/". Have a nice day :D')
+
                     default:
                         if (url.searchParams.has('debug'))
-                            return createResponse(request);
+                            return createResponse(JSON.stringify(request));
                         return createResponse('Api endpoint not found', 404);
                 }
             default:
@@ -93,8 +104,8 @@ async function handle(request) {
 
 /**
  * 创建响应
- * @param {String} data 返回数据
- * @param {Number} status 状态码
+ * @param {any} data 返回数据
+ * @param {number} status 状态码
  * @returns {Response}
  */
 function createResponse(data = null, status = 200) {
@@ -143,10 +154,10 @@ async function update(datas) {
  */
 function check(urlparams) {
     return false ||
-        ACCEPTABLETYPE.includes(urlparams.get('type')) &&
-        VERSION_REGEX.test(urlparams.get('version')) &&
-        GUID_REGEX.test(urlparams.get('guid')) &&
-        DATE_REGEX.test(urlparams.get('start_time'));
+        ACCEPTABLETYPE.includes(urlparams.get('type') || '') &&
+        VERSION_REGEX.test(urlparams.get('version') || '') &&
+        GUID_REGEX.test(urlparams.get('guid') || '') &&
+        DATE_REGEX.test(urlparams.get('start_time') || '');
 }
 
 /**
