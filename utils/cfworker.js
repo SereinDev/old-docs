@@ -19,8 +19,10 @@ addEventListener('scheduled', event => event.waitUntil(deleteExpirations()));
 async function handle(request) {
     const url = new URL(request.url);
     let response;
+
     if (url.protocol != 'https:') // http -> https
         return Response.redirect(request.url.replace(/^http:/, 'https:'));
+
     try {
         if (request.method != 'GET')
             return createResponse('Bad Request', 400);
@@ -54,7 +56,7 @@ async function handle(request) {
 
                     case '/list':
                         response = await list();
-                        return createResponse(await response.text(), response.status)
+                        return createResponse(await response.text(), response.status, 'application/json')
 
                     case '/heartbeat':
                         if (!check(url.searchParams))
@@ -62,6 +64,8 @@ async function handle(request) {
 
                         response
                             = await update({
+                                // @ts-ignore
+                                region: request.cf.region || request.cf.country || null,
                                 type: url.searchParams.get('type'),
                                 version: url.searchParams.get('version'),
                                 server_status: url?.searchParams?.get('server_status')?.toLocaleLowerCase() === 'true',
@@ -75,7 +79,7 @@ async function handle(request) {
                                     $numberLong: `${Date.now() + new Date().getTimezoneOffset() * 1000}`
                                 }
                             });
-                        return createResponse(await response.text(), response.status)
+                        return createResponse(await response.text(), response.status, 'application/json')
 
                     case '/delete':
                         return await deleteExpirations();
@@ -88,7 +92,7 @@ async function handle(request) {
 
                     default:
                         if (url.searchParams.has('debug'))
-                            return createResponse(JSON.stringify(request));
+                            return createResponse(JSON.stringify(request), 200, 'application/json');
                         return createResponse('Api endpoint not found', 404);
                 }
             default:
@@ -106,16 +110,18 @@ async function handle(request) {
  * 创建响应
  * @param {any} data 返回数据
  * @param {number} status 状态码
+ * @param {string} contentType 正文类型
  * @returns {Response}
  */
-function createResponse(data = null, status = 200) {
+function createResponse(data = null, status = 200, contentType = 'text/plain; charset=utf-8') {
     return new Response(
         data,
         {
             status: status,
             headers: {
                 'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Credentials': 'true'
+                'Access-Control-Allow-Credentials': 'true',
+                'Content-Type': contentType
             }
         }
     );
@@ -130,6 +136,7 @@ async function update(datas) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            // @ts-ignore
             'api-key': APIKEY
         },
         body: JSON.stringify({
@@ -168,6 +175,7 @@ async function list() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            // @ts-ignore
             'api-key': APIKEY
         },
         body: JSON.stringify({
@@ -191,6 +199,7 @@ async function deleteExpirations() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            // @ts-ignore
             'api-key': APIKEY
         },
         body: JSON.stringify({
@@ -199,7 +208,7 @@ async function deleteExpirations() {
             collection: 'OnlineClient',
             filter: {
                 update_time: {
-                    $lte: Date.now() + new Date().getTimezoneOffset() * 1000 - 575_000
+                    $lte: Date.now() + new Date().getTimezoneOffset() * 1000 - 800_000
                 }
             }
         })
