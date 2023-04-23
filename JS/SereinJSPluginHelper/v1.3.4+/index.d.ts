@@ -1,4 +1,4 @@
-// ---------- 函数 ----------
+/// ---------- 函数 ----------
 /// <reference path="serein.d.ts"/>
 /// <reference path="server.d.ts"/>
 /// <reference path="msg.d.ts"/>
@@ -6,13 +6,13 @@
 /// <reference path="binder.d.ts"/>
 /// <reference path="exportFix.js"/>
 
-// ---------- 类型 ----------
+/// ---------- 类型 ----------
 /// <reference path="classes.d.ts"/>
 
 /**
- * ## Serein JS插件辅助
+ * # Serein JS插件辅助
  * 
- * ### 使用方法
+ * ## 使用方法
  * 
  * 1. 建议使用[Visual Studio Code](https://code.visualstudio.com/)编写插件
  * 2. 将此文件夹复制到`plugins`下，目录结构示意如下
@@ -30,8 +30,10 @@
  * ```
  * 4. 然后你就可以快乐地写插件了，这时候就可以自动补全和显示函数参数了！！
  * 
- * @see https://market.serein.cc/resources/SereinJSPluginHelper
- * @since `v1.3.4.1`+
+ * ## 更多介绍
+ * 
+ * 👉 https://market.serein.cc/resources/SereinJSPluginHelper
+ * @version `v1.3.4.1 0421`
  */
 declare namespace serein {
     /**
@@ -76,6 +78,6 @@ declare namespace serein {
 declare const importNamespace: (namespace: string) => any;
 
 /**
- * C# System对象
+ * .Net System对象
  */
 declare const System: any;

@@ -20,7 +20,7 @@ declare namespace serein {
      * @param {string} packet 数据包文本
      * @returns {boolean} 发送结果
      */
-    function sendPacket(packet: string): boolean
+    function sendPacket(packet): boolean
 
     /**
      * 获取ws连接状态
@@ -30,15 +30,23 @@ declare namespace serein {
 
     /**
      * 获取群成员昵称缓存字典
-     * @returns {object} 字典
+     * @returns {Object} 字典
      */
-    function getGroupCache(): object
+    function getGroupCache(): Object
 
     /**
      * 直接获取指定群的群成员昵称缓存
      * @param {number} groupid 群号
      * @param {number} userid QQ号
-     * @returns {string} 群成员昵称缓存
+     * @returns {UserInfo} 群成员昵称缓存
      */
-    function getUserName(groupid: number, userid: number): string
+    function getUserInfo(groupid: number, userid: number): UserInfo
+}
+
+declare interface UserInfo {
+    id: number
+    card: string
+    nickname: string
+    role: number
+    gameId: string
 }

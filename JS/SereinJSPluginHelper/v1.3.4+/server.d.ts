@@ -93,7 +93,7 @@ declare namespace serein {
 
     /**
      * 获取服务器Motd
-     * @returns {Motdje | Motdpe} Motd对象
+     * @returns {Motdje | Motdpe | null} Motd对象
      */
-    function getServerMotd(): Motdje | Motdpe
+    function getServerMotd(): Motdje | Motdpe | null
 }

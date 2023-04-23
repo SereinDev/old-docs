@@ -31,7 +31,7 @@ declare namespace serein {
      * 获取Serein设置对象
      * @returns {object} 设置的json文本
      */
-    function getSettingsObject(): object
+    function getSettingsObject(): any
 
     /**
      * 执行命令
@@ -97,7 +97,7 @@ declare namespace serein {
      * @param {Function} func 回调函数
      * @returns {boolean} 设置结果
      */
-    function setListener(eventname: 'onReceiveGroupMessage', func: (group_id: number, user_id: number, msg: string, shownName: string) => boolean | void): boolean
+    function setListener(eventname: 'onReceiveGroupMessage', func: (group_id: number, user_id: number, msg: string, shown_name: string, message_id: number) => boolean | void): boolean
 
     /**
      * 设置监听器
@@ -106,7 +106,7 @@ declare namespace serein {
      * @param {Function} func 回调函数
      * @returns {boolean} 设置结果
      */
-    function setListener(eventname: 'onReceivePrivateMessage', func: (user_id: number, msg: string, nickName: string) => boolean | void): boolean
+    function setListener(eventname: 'onReceivePrivateMessage', func: (user_id: number, msg: string, nick_name: string, message_id: number) => boolean | void): boolean
 
     /**
      * 设置监听器
@@ -132,6 +132,17 @@ declare namespace serein {
      * @returns {boolean} 设置结果
      */
     function setListener(eventname: 'onPluginsReload' | 'onPluginsLoaded', func: () => void): boolean
+
+    /**
+     * 设置监听器
+     * 
+     * **❌ 事件名称不存在或参数不完整，此函数将始终返回`false`**
+     * @param {string?} eventname 事件名称
+     * @param {Function?} func 回调函数
+     * @returns {boolean} 设置结果
+     * @deprecated
+     */
+    function setListener(eventname?: string, func?: () => void | boolean): false
 
     /**
      * 获取正则列表
@@ -203,7 +214,7 @@ declare namespace serein {
      * @param {boolean} strict
      * @param {boolean} stringCompilationAllowed
      */
-    function setPreLoadConfig(assemblies: string[], allowGetType: boolean, allowOperatorOverloading: boolean, allowSystemReflection: boolean, allowWrite: boolean, strict: boolean, stringCompilationAllowed: boolean): void
+    function setPreLoadConfig(assemblies?: string[], allowGetType?: boolean, allowOperatorOverloading?: boolean, allowSystemReflection?: boolean, allowWrite?: boolean, strict?: boolean, stringCompilationAllowed?: boolean): void
 
     /**
      * 热重载文件
@@ -217,7 +228,7 @@ declare namespace serein {
  * Serein正则对象
  */
 declare type Regex = {
-    readonly regexp: string
+    readonly regex: string
     readonly area: RegexAreaType,
     readonly needAdmin: boolean,
     readonly command: string,
@@ -239,14 +250,14 @@ declare enum RegexAreaType {
 declare interface SereinPlugin {
     readonly namespace: string
     readonly available: boolean
+    readonly name: string
     readonly version: string | null
     readonly author: string | null
     readonly description: string | null
     readonly file: string
     readonly wsclients: WSClient[]
     readonly preLoadConfig: PreLoadConfig
-    readonly name: string
-    readonly eventList: number[]
+    readonly eventList: string[]
 }
 
 declare interface PreLoadConfig {
@@ -261,4 +272,5 @@ declare interface PreLoadConfig {
 
 declare interface WSClient {
     readonly state: -1 | 0 | 1 | 2 | 3
+    readonly disposed: boolean
 }
