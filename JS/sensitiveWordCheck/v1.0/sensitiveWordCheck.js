@@ -67,7 +67,7 @@ function checkSensitiveWord(text) {
  * @returns {boolean|void}
  */
 function handle(group_id, user_id, msg, shown_name, message_id) {
-    if (!serein.getSettingsObject().Bot.GroupList.Contains(group_id)) return;
+    if (!serein.getSettingsObject().Bot.GroupList.includes(group_id)) return;
 
     const sensitiveCheckResult = checkSensitiveWord(msg);
     if (sensitiveCheckResult[0] >= 3) {

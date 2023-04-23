@@ -105,7 +105,7 @@ function handleMsg(packet) {
 
   const { user_id } = sender;
 
-  if (!serein.getSettingsObject().Bot.GroupList.Contains(group_id) ||
+  if (!serein.getSettingsObject().Bot.GroupList.includes(group_id) ||
     !message ||
     (prefix && !message.startsWith(prefix)))
     return;
@@ -137,5 +137,5 @@ function handleMsg(packet) {
  * @param {number} userID 
  */
 function hasPermission(userID) {
-  return serein.getSettingsObject().Bot.PermissionList.Contains(userID) >= 0;
+  return serein.getSettingsObject().Bot.PermissionList.includes(userID) >= 0;
 }

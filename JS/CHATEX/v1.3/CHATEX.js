@@ -50,7 +50,7 @@ logger.info('加载完毕！更多信息请访问 https://market.serein.cc/resou
  * @param {string} shown_name 显示名称
  */
 function handle(groupid, userid, msg, shown_name) {
-    if (!serein.getSettingsObject().Bot.GroupList.Contains(groupid) || // 监听的群聊
+    if (!serein.getSettingsObject().Bot.GroupList.includes(groupid) || // 监听的群聊
         config.prefix && !msg.startsWith(config.prefix) || // 检验触发前缀
         !shouldForward || // 检验服务器状态
         (config.ignore || []).includes(userid) // 检验排除对象
