@@ -57,5 +57,5 @@ date: 2023.4.23
 
 ## 历史版本
 
-- 2023.4.23 [v1.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/CHATEX/v1.3/CHATEX.js)
-- 2023.1.12 [v1.2](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/CHATEX/v1.2/CHATEX.js)
+- 2023.4.23 [v1.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/CHATEX/v1.3/CHATEX.js)
+- 2023.1.12 [v1.2](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/CHATEX/v1.2/CHATEX.js)

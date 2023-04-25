@@ -13,4 +13,4 @@ date: 2022.10.13
 
 ## 下载
 
-[Demo.json](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JSON/Demo.json)
+[Demo.json](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JSON/Demo.json)

@@ -32,4 +32,4 @@ date: 2023.3.4
 
 ## 历史版本
 
-- 2023.3.4  [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/DeviceInfo/v1.0/deviceinfo.js)
+- 2023.3.4  [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/DeviceInfo/v1.0/deviceinfo.js)

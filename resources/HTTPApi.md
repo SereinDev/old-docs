@@ -388,5 +388,5 @@ eg: `http://127.0.0.1:{端口号}/serein?auth=test`
 
 ## 历史版本
 
-- 2023.3.12 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/HTTPApi/v1.1/HTTPApi.js)
-- 2022.12.20 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/HTTPApi/v1.0/HTTPApi.js)
+- 2023.3.12 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/HTTPApi/v1.1/HTTPApi.js)
+- 2022.12.20 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/HTTPApi/v1.0/HTTPApi.js)

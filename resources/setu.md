@@ -44,4 +44,4 @@ date: 2023.4.19
 
 ## 历史版本
 
-- 2023.4.19 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/setu/v1.0/setu.js)
+- 2023.4.19 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/setu/v1.0/setu.js)

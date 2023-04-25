@@ -47,4 +47,4 @@ date: 2022.11.13
 
 ## 历史版本
 
-- 2022.11.13 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/Example/Example%20v1.1.js)
+- 2022.11.13 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/Example/Example%20v1.1.js)
