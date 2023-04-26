@@ -3,13 +3,13 @@ declare namespace serein {
      * 输出日志
      * @param {any} content 内容
      */
-    function log(content: any): void
+    function log(content?: any): void
 
     /**
      * Debug输出
      * @param {any} content 内容
      */
-    function debugLog(content: any): void
+    function debugLog(content?: any): void
 
     /**
      * 注册插件
@@ -136,7 +136,7 @@ declare namespace serein {
     /**
      * 设置监听器
      * 
-     * **❌ 事件名称不存在或参数不完整，此函数将始终返回`false`**
+     * ### ❌ 事件名称不存在或参数不完整，此函数将始终返回`false`
      * @param {string?} eventname 事件名称
      * @param {Function?} func 回调函数
      * @returns {boolean} 设置结果

@@ -162,25 +162,25 @@ declare class Logger {
      * 信息输出
      * @param {*} content 输出内容
      */
-    info(content: any): void
+    info(content?: any): void
 
     /**
      * 警告输出
      * @param {*} content 输出内容
      */
-    warn(content: any): void
+    warn(content?: any): void
 
     /**
      * 错误输出
      * @param {*} content 输出内容
      */
-    error(content: any): void
+    error(content?: any): void
 
     /**
      * 调试输出
      * @param {*} content 输出内容
      */
-    debug(content: any): void
+    debug(content?: any): void
 }
 
 /**

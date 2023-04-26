@@ -33,7 +33,7 @@
  * ## 更多介绍
  * 
  * 👉 https://market.serein.cc/resources/SereinJSPluginHelper
- * @version `v1.3.4.1 0421`
+ * @version `v1.3.4.1 0426`
  */
 declare namespace serein {
     /**
@@ -44,7 +44,7 @@ declare namespace serein {
     /**
      * Serein版本
      */
-    const version: 'v1.3.4' | string
+    const version: 'v1.3.4'
 
     /**
      * JS命名空间
