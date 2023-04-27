@@ -84,25 +84,34 @@ serein.sendPacket(JSON.stringify({
     - 第二个`key`为QQ号
 
 ```js
-var dict = serein.getGroupCache();
-var myname = dict["114514"]["1919810"];
+const dict = serein.getGroupCache();
+const info = dict["114514"]["1919810"];
 ```
 
 :::note
 此处的`key`必须为字符串形式的群号或QQ号，直接使用`number`类型作为`key`获取将导致Serein引发超出内存的异常
 :::
 
-## 直接获取指定群的群成员昵称缓存
+## 直接获取指定群的群成员信息
 
-`serein.getUserName(groupid: number, userid: number)`
+`serein.getUserInfo(groupid: number, userid: number)`
 
 ```js
-var myname = serein.getUserName(114514, 1919810); // 与上面的函数示例等价
+const info = serein.getUserInfo(114514, 1919810); // 与上面的函数示例等价
 ```
 
 - 参数
   - `groupid` 群号
   - `userid` QQ号
 - 返回
-  - `string`
-    - 若未找到或不存在则返回空字符串
+  - `UserInfo` | `undefined`
+
+```ts
+declare interface UserInfo {
+    id: number
+    card: string
+    nickname: string
+    role: number
+    gameId: string
+}
+```

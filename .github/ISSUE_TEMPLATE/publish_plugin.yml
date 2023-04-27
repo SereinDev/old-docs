@@ -21,9 +21,9 @@ body:
     id: description
     attributes:
       label: 插件描述
-      description: 简单描述一下你要发布的插件
+      description: 简单用一句话描述你要发布的插件（最好50字以内，可适当附带图片）
       placeholder: |
-        1. ...
+        这个插件可以……
     validations:
       required: true
 
@@ -33,19 +33,40 @@ body:
       label: 插件功能
       description: 插件的主要功能
       placeholder: |
-        1. ...
+        - [ ] 自动回复xxxx
     validations:
       required: true
+
+  - type: textarea
+    id: tutorial
+    attributes:
+      label: 使用教程
+      description: 配置方法、使用方法
+      placeholder: |
+        1. 下载文件后放到……
+    validations:
+      required: true
+  
+  - type: textarea
+    id: docs
+    attributes:
+      label: 插件文档
+      description: 二次开发接口、拓展方法
+    validations:
+      required: false
 
   - type: textarea
     id: author
     attributes:
       label: 署名相关信息
       placeholder: |
-        作者：小明
-        交流群：114514（可选）
-        反馈链接：（可选）
-        许可证：（可选）
+        - 作者
+        - 作者一句话介绍（可选）
+        - 作者头像（可选）
+        - 作者链接（可选）
+        - 交流群（可选）
+        - 反馈链接（可选）
+        - 许可证（可选）
     validations:
       required: true
 

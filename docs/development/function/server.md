@@ -108,13 +108,13 @@ var je = serein.getMotdje("127.0.0.1:25565");
     - 获取失败时返回`-`
     - 基岩版为纯字符串
 
-    ```txt
+    ```txt title='返回示例'
     MCPE;Dedicated Server;503;1.18.33;0;10;12578007761032183218;Bedrock level;Survival;1;19132;19133;
     ```
 
     - Java版为Json文本
 
-    ```json
+    ```json title='返回示例'
     {
       "descraddrtion": {
         "text": "§bMinecraftOnline§f - §6Home of Freedonia§r"
