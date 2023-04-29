@@ -70,13 +70,13 @@ const config = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'developmentSidebar',
-                label: '插件开发',
+                sidebarId: 'tutorialSidebar',
+                label: '教程',
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'tutorialSidebar',
-                label: '教程',
+                sidebarId: 'developmentSidebar',
+                label: '插件开发',
               },
               {
                 type: 'docSidebar',
@@ -164,7 +164,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['csharp', 'powershell', 'typescript']
+        additionalLanguages: ['csharp', 'powershell', 'typescript', 'regex']
       },
       metadata: [
         {

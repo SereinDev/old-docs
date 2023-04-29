@@ -135,17 +135,6 @@ declare class Motdje {
      * 端口
      */
     readonly port: number;
-
-    /**
-     * 获取信息
-     */
-    get(): void;
-
-    /**
-     * 尝试获取信息
-     * @returns {boolean}
-     */
-    tryGet(): boolean;
 }
 
 /**
@@ -224,16 +213,5 @@ declare class Motdpe {
      * 端口
      */
     readonly port: number;
-
-    /**
-     * 获取信息
-     */
-    get(): void;
-
-    /**
-     * 尝试获取信息
-     * @returns {boolean}
-     */
-    tryGet(): boolean;
 }
 ```

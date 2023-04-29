@@ -18,7 +18,7 @@
 
 ## 文件格式
 
-```json
+```json title='data/members.json'
 {
   "type": "MEMBERS",
   "comment": "非必要请不要直接修改文件，语法错误可能导致数据丢失",

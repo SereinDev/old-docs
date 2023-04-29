@@ -3,7 +3,7 @@
 
 ## 输出日志
 
-`serein.log(content: any)`
+`serein.log(content?: any)`
 
 ```js
 serein.log("这是一条日志");
@@ -22,7 +22,7 @@ serein.log(new System.IO.StreamWriter('log.txt')); // 甚至可以输出对象
 
 ## Debug输出
 
-`serein.debugLog(content: any)`
+`serein.debugLog(content?: any)`
 
 ```js
 serein.debugLog("这是一条Debug输出");
@@ -149,20 +149,22 @@ serein.setListener("onGroupPoke", (group, user) => {
 ### onReceiveGroupMessage
 
 - **收到群消息**（包括设置中未监听的群聊）
-- 监听函数原型： `function (group_id: number, user_id: number, msg: string, shownName: string) -> boolean`
+- 监听函数原型： `function (group_id: number, user_id: number, msg: string, shownName: string, message_id: number?) -> boolean`
   - `group_id` 群号
   - `user_id` QQ号
   - `msg`  消息内容
   - `shownName` 显示名称
+  - `message_id` 消息ID
 - 可被拦截
 
 ### onReceivePrivateMessage
 
 - **收到私聊消息**
-- 监听函数原型： `function (user_id: number, msg: string, nickName: string) -> boolean`
+- 监听函数原型： `function (user_id: number, msg: string, nickName: string, message_id: number?) -> boolean`
   - `user_id` QQ号
   - `msg`  消息内容
   - `nickName` 昵称
+  - `message_id` 消息ID
 - 可被拦截
 
 ### onReceivePacket
@@ -188,15 +190,15 @@ serein.setListener("onGroupPoke", (group, user) => {
 - 监听函数原型： `function () -> void`
 - 不可拦截
 
+:::note
+以上两个事件为方便插件保存信息使用，超过`JSEventMaxWaitingTime`设置项的时间后继续执行将被中止
+:::
+
 ### onPluginsLoaded
 
 - **插件加载完毕**
 - 监听函数原型： `function () -> void`
 - 不可拦截
-
-:::note
-以上两个事件为方便插件保存信息使用，超过`JSEventMaxWaitingTime`设置项的时间后继续执行将被中止
-:::
 
 ## 设置预加载配置
 
@@ -234,99 +236,137 @@ serein.setPreLoadConfig(
 
 ```json
 {
-  "Server": {
-    "Path": "",
-    "EnableRestart": false,
-    "EnableOutputCommand": true,
-    "EnableLog": false,
-    "OutputStyle": 1,
-    "StopCommand": "stop",
-    "AutoStop": true,
-    "EncodingIndex": 0,
-    "EnableUnicode": false,
-    "Type": 1,
-    "Port": 19132
+  "server": {
+    "autoStop": true,
+    "enableRestart": false,
+    "enableOutputCommand": true,
+    "enableLog": false,
+    "enableUnicode": false,
+    "excludedOutputs": [],
+    "inputEncoding": 0,
+    "lineTerminator": "\r\n",
+    "outputEncoding": 0,
+    "outputStyle": 1,
+    "path": "C:\\Users\\Zaitonn\\Desktop\\s19\\bedrock_server_mod.exe",
+    "port": 19132,
+    "stopCommands": [
+      "stop"
+    ],
+    "type": 1
   },
-  "Matches": {
-    "Version": "(\\d+\\.\\d+\\.\\d+\\.\\d+)",
-    "Difficulty": "(PEACEFUL|EASY|NORMAL|HARD|DIFFICULT[^Y])",
-    "LevelName": "Level Name: (.+?)$",
-    "Finished": "(Done|Started)",
-    "PlayerList": "players\\sonline:"
+  "matches": {
+    "difficulty": "(PEACEFUL|EASY|NORMAL|HARD|DIFFICULT[^Y])",
+    "levelName": "Level\\sName:\\s(.+?)$",
+    "muiltLines": [
+      "players\\sonline:",
+      "个玩家在线"
+    ]
   },
-  "Bot": {
-    "EnableLog": false,
-    "GivePermissionToAllAdmin": false,
-    "EnbaleOutputData": false,
-    "GroupList": [],
-    "PermissionList": [],
-    "Uri": "127.0.0.1:6700",
-    "Authorization": "",
-    "Restart": false,
-    "AutoEscape": false
+  "bot": {
+    "authorization": "",
+    "autoEscape": false,
+    "autoReconnect": false,
+    "enableLog": false,
+    "enbaleOutputData": false,
+    "enbaleParseAt": true,
+    "givePermissionToAllAdmin": false,
+    "groupList": [],
+    "permissionList": [],
+    "uri": "127.0.0.1:8080"
   },
-  "Serein": {
-    "EnableGetUpdate": true,
-    "EnableGetAnnouncement": true,
-    "Debug": true,
-    "DPIAware": true
+  "serein": {
+    "autoUpdate": false,
+    "colorfulLog": true,
+    "dpiAware": true,
+    "enableGetUpdate": false,
+    "maxCacheLines": 250,
+    "themeFollowSystem": true,
+    "useDarkTheme": false,
+    "autoRun": {
+      "startServer": false,
+      "connectWS": false,
+      "delay": 0
+    },
+    "developmentTool": {
+      "enableDebug": true,
+      "detailDebug": false,
+      "note": "以上设置内容为开发专用选项，请在指导下修改"
+    },
+    "function": {
+      "noHeartbeat": false,
+      "jsEventMaxWaitingTime": 500,
+      "jsEventCoolingDownTime": 15,
+      "disableBinderWhenServerClosed": false
+    },
+    "pagesDisplayed": {
+      "serverPanel": true,
+      "serverPluginManager": true,
+      "regexList": true,
+      "schedule": true,
+      "bot": true,
+      "member": true,
+      "jsPlugin": true,
+      "settings": true
+    }
   },
-  "Event": {
-    "Notice": "在这里你可以自定义每个事件触发时执行的命令。参考：https://serein.cc/Command.html、https://serein.cc/Event.html",
-    "Bind_Success": [
+  "event": {
+    "BindingSucceed": [
       "g|[CQ:at,qq=%ID%] 绑定成功"
     ],
-    "Bind_Occupied": [
+    "BindingFailDueToOccupation": [
       "g|[CQ:at,qq=%ID%] 该游戏名称被占用"
     ],
-    "Bind_Invalid": [
+    "BindingFailDueToInvalid": [
       "g|[CQ:at,qq=%ID%] 该游戏名称无效"
     ],
-    "Bind_Already": [
+    "BindingFailDueToAlreadyBinded": [
       "g|[CQ:at,qq=%ID%] 你已经绑定过了"
     ],
-    "Unbind_Success": [
+    "UnbindingSucceed": [
       "g|[CQ:at,qq=%ID%] 解绑成功"
     ],
-    "Unbind_Failure": [
+    "UnbindingFail": [
       "g|[CQ:at,qq=%ID%] 该账号未绑定"
     ],
-    "Server_Start": [
+    "BinderDisable": [
+      "g|[CQ:at,qq=%ID%] 绑定功能已被禁用"
+    ],
+    "ServerStart": [
       "g|服务器正在启动"
     ],
-    "Server_Stop": [
+    "ServerStop": [
       "g|服务器已关闭"
     ],
-    "Server_Error": [
+    "ServerExitUnexpectedly": [
       "g|服务器异常关闭"
     ],
-    "Group_Increase": [
+    "GroupIncrease": [
       "g|欢迎[CQ:at,qq=%ID%]入群~"
     ],
-    "Group_Decrease": [
+    "GroupDecrease": [
       "g|用户%ID%退出了群聊，已自动解绑游戏ID",
       "unbind|%ID%"
     ],
-    "Group_Poke": [
+    "GroupPoke": [
       "g|别戳我……(*/ω＼*)"
     ],
-    "Serein_Crash": [
+    "SereinCrash": [
       "g|唔……发生了一点小问题(っ °Д °;)っ\n请查看Serein错误弹窗获取更多信息"
     ],
-    "Motdpe_Success": [
+    "RequestingMotdpeSucceed": [
       "g|服务器描述：%Description%\n版本：%Version%(%Protocol%)\n在线玩家：%OnlinePlayer%/%MaxPlayer%\n游戏模式：%GameMode%\n延迟：%Delay%ms"
     ],
-    "Motdje_Success": [
+    "RequestingMotdjeSucceed": [
       "g|服务器描述：%Description%\n版本：%Version%(%Protocol%)\n在线玩家：%OnlinePlayer%/%MaxPlayer%\n延迟：%Delay%ms\n%Favicon%"
     ],
-    "Motd_Failure": [
+    "RequestingMotdFail": [
       "g|Motd获取失败\n详细原因：%Exception%"
     ],
-    "PermissionDenied_Private": [
+    "PermissionDeniedFromPrivateMsg": [
       "p|你没有执行这个命令的权限"
     ],
-    "PermissionDenied_Group": [
-      "g|[CQ:at,qq=%ID%] 你没有执行这个命令的权限"
+    "PermissionDeniedFromGroupMsg": [
+      "g|[CQ:at,qq=%ID%] 你没有执行这个命令的权限 %card%"
     ]
   }
 }
@@ -376,28 +416,58 @@ serein.runCommand("g|hello")
 - 返回
   - `Array<PluginInfo>` 插件列表
 
-  ```json
-  // PluginInfo
-  { 
-    "namespace": "test",  // 命名空间
-    "available": true,    // 是否可用
-    "file": "plugins\\test.js", // 相对路径
-    "webSockets": [], // 创建的WS对象状态列表
-    "name": "test",   // 注册的名称
-    "version": "",   // 注册的版本
-    "author": "",    // 注册的作者
-    "description": "", // 注册的介绍
-    "eventList": [],  // 监听的事件列表
-    "preLoadConig": { // 预加载配置
-      "Assemblies": [],
-      "AllowGetType": false,
-      "AllowOperatorOverloading": true,
-      "AllowSystemReflection": false,
-      "AllowWrite": true,
-      "Strict": false
-    } 
+```json
+// PluginInfo
+{ 
+  "namespace": "test",        // 命名空间
+  "available": true,          // 是否可用
+  "file": "plugins\\test.js", // 相对路径
+  "wsclients": [],            // 创建的WS对象状态列表
+  "name": "test",             // 注册的名称
+  "version": "",              // 注册的版本
+  "author": "",               // 注册的作者
+  "description": "",          // 注册的介绍
+  "eventList": [],            // 监听的事件列表
+  "preLoadConig": {           // 预加载配置
+    "Assemblies": [],
+    "AllowGetType": false,
+    "AllowOperatorOverloading": true,
+    "AllowSystemReflection": false,
+    "AllowWrite": true,
+    "Strict": false
   } 
-  ```
+} 
+```
+
+```ts
+declare type Plugin = {
+  readonly namespace: string
+  readonly name?: string
+  readonly version?: string
+  readonly author?: string
+  readonly description?: string
+  readonly file: string
+  readonly preLoadConfig: PreLoadConfig
+  readonly eventList: string[]
+  readonly wsclients: WSClient[]
+  readonly available: boolean
+}
+
+declare interface PreLoadConfig {
+  readonly Assemblies: string[]
+  readonly AllowGetType: boolean
+  readonly AllowOperatorOverloading: boolean
+  readonly AllowSystemReflection: boolean
+  readonly AllowWrite: boolean
+  readonly Strict: boolean
+  readonly StringCompilationAllowed: boolean
+}
+
+declare interface WSClient {
+  readonly state: -1 | 0 | 2 | 3
+  readonly disposed: boolean
+}
+```
 
 :::tip
 由于此函数为即时获取，获取时可能还未将所有插件载入，故建议使用`setTimeout()`延迟一段时间再获取
@@ -411,7 +481,19 @@ serein.runCommand("g|hello")
   - 空
 - 返回
   - `Array<RegexItem>` 正则列表
-    - `RegexItem`结构见[正则](../../guide/regex)
+    - `RegexItem`
+      - 结构见[正则](../../guide/regex)
+
+```ts
+declare type Regex = {
+  readonly regex: string
+  readonly area: RegexAreaType,
+  readonly needAdmin: boolean,
+  readonly command: string,
+  readonly remark: string,
+  readonly ignore: number[]
+}
+```
 
 ## 添加正则
 

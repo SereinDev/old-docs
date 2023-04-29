@@ -26,8 +26,12 @@ Cron表达式或命令为空或不合法时无法保存
 指定任务执行的时间和周期
 
 :::tip
-生成器（推荐）：[Crontab guru](https://crontab.guru/)  
-语法：[POSIX cron 语法](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07) ，[Crontab Expression](https://github.com/atifaziz/NCrontab/wiki/Crontab-Expression)
+**生成器**  
+[Crontab guru](https://crontab.guru/)  
+
+**语法**  
+[POSIX cron 语法](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)  
+[Crontab Expression](https://github.com/atifaziz/NCrontab/wiki/Crontab-Expression)
 :::
 
 ### 执行命令
@@ -40,7 +44,7 @@ Cron表达式或命令为空或不合法时无法保存
 
 ## 文件格式
 
-```json
+```json title='data/schedule.json'
 {
   "type": "SCHEDULE",
   "comment": "非必要请不要直接修改文件，语法错误可能导致数据丢失",

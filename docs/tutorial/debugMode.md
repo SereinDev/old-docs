@@ -40,7 +40,7 @@ internal static class Logger
 使用cmd或PowerShell启动 Serein-???.exe ，在路径后面写上`debug`即可
 
 ```powershell
-PS C:\> Serein-???.exe debug
+> Serein-???.exe debug
 ```
 
 ### 更改设置

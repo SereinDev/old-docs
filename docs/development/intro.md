@@ -65,6 +65,16 @@ Process.Start("cmd.exe");
 找不到想要的方法？有更好的建议？速速[联系作者](more/about#反馈)
 :::
 
+:::info
+已知缺点如下
+
+- 对于加密混淆后的代码，运行效率极其低下
+  - 运行时间可能长达原来的数十倍以上
+- 初始化类时貌似未阻塞线程，导致未初始化完毕就执行剩下的语句
+  - 包括但不限于[类](development/class)和反射[程序集](development/assembly)得到的类
+  - 临时解决方案：使用`setTimeout`异步处理
+:::
+
 ## JS插件开发助手
 
 ![示例](https://market.serein.cc/imgs/SereinJSPluginHelper/1.png)

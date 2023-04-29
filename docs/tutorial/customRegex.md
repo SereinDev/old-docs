@@ -41,7 +41,7 @@
 ![图片](/img/tutorial/customRegex/3.png)
 5. 填写命令
 
-```Serein命令
+```txt title="Serein命令"
 g|$1 $2
 ```
 
@@ -51,7 +51,7 @@ g|$1 $2
 
 当然你也可以自定义字符美化发送至QQ群内的消息，例如  
 
-```Serein命令
+```txt title="Serein命令"
 g|<$1>$2
 ```
 
@@ -78,25 +78,25 @@ tellraw指令用法：`/tellraw <player: target> <rawtext: rawtext>`
 1. 新建一条正则，作用域选`消息（群聊）`
 2. 正则输入框填写如下正则
 
-    ```regex
+    ```regex title="正则"
     ^(.+?)$
     ```
 
     上面的正则表达式会转发群内所有消息至服务器，如果想只转发带`#`前缀的消息则应写成如下样式
 
-    ```regex
+    ```regex title="正则"
     ^#(.+?)$
     ```
 
 3. 命令输入框填写匹配到字符串后服务器执行的指令
 
-    ```Serein命令
+    ```txt title="Serein命令"
     s|tellraw @a {"rawtext":[{"text":"[互通群]<%ShownName%>$1"}]}
     ```
 
     当然你也可以在发送进服务器的消息内增加颜色符号改变文本颜色，示例如下
 
-    ```Serein命令
+    ```txt title="Serein命令"
     s|tellraw @a {"rawtext":[{"text":"§6[互通群]§b<%ShownName%>§f$1"}]}
     ```
 

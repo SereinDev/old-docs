@@ -41,6 +41,5 @@
     - msg *机器人接收数据包*
   - plugins *[插件](../guide/plugin)文件夹*
   - update 更新缓存
-  - Serein-???.dll *仅dotnet6.0*
   - Serein-???.exe *程序主体*
   - Serein-???.exe.config *仅dotnet framework 4.7.2*

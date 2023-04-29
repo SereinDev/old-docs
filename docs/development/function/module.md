@@ -16,7 +16,7 @@ v1.3.4 后你可以创建新的js文件，并在里面写一些基本的函数�
 export const myvalue = 1;
 
 export function isMyGroup(groupID) {
-    return boolean(serein.getSettingsObject().Bot.GroupList.indexOf(groupID) + 1);
+    return serein.getSettingsObject().Bot.GroupList.includes(groupID);
 }
 
 // ...
@@ -39,7 +39,7 @@ export function isMyGroup(groupID) {
 :::
 
 ```js title="eg.js"
-var isMyGroup = require('./modules/export.js').isMyGroup(114514);
+const isMyGroup = require('./modules/export.js').isMyGroup(114514);
 ```
 
 这样你就可以导入已经导出了的内容了

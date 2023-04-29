@@ -36,10 +36,17 @@
 一种字符串匹配的模式，可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。
 
 :::tip
-**基础语法：**  
-[正则表达式  菜鸟教程](https://www.runoob.com/regexp/regexp-tutorial.html)  
-[.NET 正则表达式  Microsoft Docs](https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expressions)
+**基础语法**  
+[正则表达式 | 菜鸟教程](https://www.runoob.com/regexp/regexp-tutorial.html)  
+[.NET 正则表达式 | Microsoft Docs](https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expressions)
 
+**生成辅助**  
+[AI 驱动的正则表达式求解器 | regex.ai](https://regex.ai/)  
+[正则可视化 | ihateregex.io](https://ihateregex.io/playground)  
+[fast-regexp | @adams549659584](https://adams549659584.github.io/fast-regexp/)  
+
+**教程**  
+[自定义正则 | @azhunotfound](../tutorial/customRegex)
 :::
 
 | 高级功能                                                                                                                                                                                     | 可用性     |
@@ -68,7 +75,7 @@
 
 ## 文件格式
 
-```json
+```json title="data/regex.json"
 {
   "type": "REGEX",
   "comment": "非必要请不要直接修改文件，语法错误可能导致数据丢失",

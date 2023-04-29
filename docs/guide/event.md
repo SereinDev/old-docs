@@ -17,26 +17,26 @@
 
 ## 事件一览表
 
-| 事件名                         | 描述                           |
-| ------------------------------ | ------------------------------ |
-| BindingSucceed                 | 绑定成功                       |
-| BindingFailDueToOccupation     | 绑定失败-游戏ID占用            |
-| BindingFailDueToInvalid        | 绑定失败-该游戏ID不符合规范    |
-| BindingFailDueToAlreadyBinded  | 绑定失败-该QQ已经绑定          |
-| UnbindingSucceed               | 解绑成功                       |
-| UnbindingFail                  | 解绑成功                       |
-| ServerStart                    | 服务器启动                     |
-| ServerStop                     | 服务器正常关闭                 |
-| ServerExitUnexpectedly         | 服务器异常退出                 |
-| GroupIncrease                  | 监听群有人进群                 |
-| GroupDecrease                  | 监听群有人退群                 |
-| GroupPoke                      | 监听群内当前账号被他人戳一戳   |
+| 事件名                         | 描述                         |
+| ------------------------------ | ---------------------------- |
+| BindingSucceed                 | 绑定成功                     |
+| BindingFailDueToOccupation     | 绑定失败-游戏ID占用          |
+| BindingFailDueToInvalid        | 绑定失败-该游戏ID不符合规范  |
+| BindingFailDueToAlreadyBinded  | 绑定失败-该QQ已经绑定        |
+| UnbindingSucceed               | 解绑成功                     |
+| UnbindingFail                  | 解绑成功                     |
+| ServerStart                    | 服务器启动                   |
+| ServerStop                     | 服务器正常关闭               |
+| ServerExitUnexpectedly         | 服务器异常退出               |
+| GroupIncrease                  | 监听群有人进群               |
+| GroupDecrease                  | 监听群有人退群               |
+| GroupPoke                      | 监听群内当前账号被他人戳一戳 |
 | RequestingMotdpeSucceed        | 命令motdpe执行成功           |
 | RequestingMotdjeSucceed        | 命令motdje执行成功           |
-| RequestingMotdFail             | 命令motdpe或motdje执行失败 |
-| PermissionDeniedFromPrivateMsg | 权限不足（私聊）               |
-| PermissionDeniedFromGroupMsg   | 权限不足（群聊）               |
-| SereinCrash                    | Serein崩溃                     |
+| RequestingMotdFail             | 命令motdpe或motdje执行失败   |
+| PermissionDeniedFromPrivateMsg | 权限不足（私聊）             |
+| PermissionDeniedFromGroupMsg   | 权限不足（群聊）             |
+| SereinCrash                    | Serein崩溃                   |
 
 ## 绑定/解绑
 
@@ -47,49 +47,76 @@
 ### BindingSucceed
 
 绑定成功  
-默认值： `g|[CQ:at,qq=%ID%] 绑定成功`
+
+```txt title="Serein命令"
+g|[CQ:at,qq=%ID%] 绑定成功
+```
 
 ### BindingFailDueToOccupation
 
 游戏ID占用  
-默认值： `g|[CQ:at,qq=%ID%] 该游戏名称被占用`
+
+```txt title="Serein命令"
+g|[CQ:at,qq=%ID%] 该游戏名称被占用
+```
 
 ### BindingFailDueToInvalid
 
 该游戏ID不符合规范  
-默认值： `g|[CQ:at,qq=%ID%] 该游戏名称无效`
+
+```txt title="Serein命令"
+g|[CQ:at,qq=%ID%] 该游戏名称无效
+```
 
 ### BindingFailDueToAlreadyBinded
 
 该QQ已经绑定  
-默认值： `g|[CQ:at,qq=%ID%] 你已经绑定过了`
+
+```txt title="Serein命令"
+g|[CQ:at,qq=%ID%] 你已经绑定过了
+```
 
 ### UnbindingSucceed
 
 解绑成功  
-默认值： `g|[CQ:at,qq=%ID%] 解绑成功`
+
+```txt title="Serein命令"
+g|[CQ:at,qq=%ID%] 解绑成功
+```
 
 ### UnbindingFail
 
 解绑成功  
-默认值： `g|[CQ:at,qq=%ID%] 该账号未绑定`
+
+```txt title="Serein命令"
+g|[CQ:at,qq=%ID%] 该账号未绑定
+```
 
 ## 服务器状态变更
 
 ### ServerStart
 
 服务器启动
-默认值： `g|服务器正在启动`
+
+```txt title="Serein命令"
+g|服务器正在启动
+```
 
 ### ServerStop
 
 服务器正常关闭
-默认值： `g|服务器已关闭`
+
+```txt title="Serein命令"
+g|服务器已关闭
+```
 
 ### ServerExitUnexpectedly
 
 服务器异常退出  
-默认值： `g|服务器异常关闭`
+
+```txt title="Serein命令"
+g|服务器异常关闭
+```
 
 ## QQ群事件
 
@@ -100,7 +127,10 @@
 ### GroupIncrease
 
 监听群有人进群  
-默认值： `g|欢迎[CQ:at,qq=%ID%]入群~`
+
+```txt title="Serein命令"
+g|欢迎[CQ:at,qq=%ID%]入群~
+```
 
 ### GroupDecrease
 
@@ -115,18 +145,21 @@ ubind|%ID%
 ### GroupPoke
 
 监听群内当前账号被他人戳一戳  
-默认值： `g|别戳我……(*/ω＼*)`
+
+```txt title="Serein命令"
+g|别戳我……(*/ω＼*)
+```
 
 :::tip
 以上三个事件其实很有用，可以欢迎新成员/引导玩家绑定ID/快捷获取服务器状态/提示退群消息/~~整活~~  
 
 - 示例：
 
-```Serein命令
+```txt title="Serein命令"
 [CQ:at,qq=%ID%] 呐呐呐~！欢迎来到XXX服务器★(笑)♡今后也.请.多.多.指.教.喔?~
 ```
 
-```Serein命令
+```txt title="Serein命令"
 [CQ:at,qq=%ID%]
 服务器描述：Dedicated Server
 版本：1.19.2(527)
@@ -144,7 +177,7 @@ ubind|%ID%
 命令motdpe执行成功  
 默认值：
 
-```Serein命令
+```txt title="Serein命令"
 g|
 服务器描述：%Description%
 版本：%Version%(%Protocol%)
@@ -158,7 +191,7 @@ g|
 命令motdje执行成功  
 默认值：
 
-```Serein命令
+```txt title="Serein命令"
 g|
 服务器描述：%Description%
 版本：%Version%(%Protocol%)
@@ -172,7 +205,7 @@ g|
 命令motdpe或motdje执行失败  
 默认值：
 
-```Serein命令
+```txt title="Serein命令"
 g|
 Motd获取失败
 %Exception%
@@ -188,13 +221,17 @@ RequestingMotdFail 可以使用额外的`Exception`变量输出错误信息
 
 当没有管理权限的用户通过私聊方式触发了需要权限的命令时触发
 
-默认值：`p|你没有执行这个命令的权限`
+```txt title="Serein命令"
+p|你没有执行这个命令的权限
+```
 
 ### PermissionDeniedFromGroupMsg
 
 当没有管理权限的用户通过群聊方式触发了需要权限的命令时触发
 
-默认值：`g|[CQ:at,qq=%id%] 你没有执行这个命令的权限`
+```txt title="Serein命令"
+g|[CQ:at,qq=%id%] 你没有执行这个命令的权限
+```
 
 ## Serein
 
@@ -203,7 +240,7 @@ RequestingMotdFail 可以使用额外的`Exception`变量输出错误信息
 Serein崩溃  
 默认值：
 
-```Serein命令
+```txt title="Serein命令"
 g|
 唔……发生了一点小问题(っ °Д °;)っ
 请查看Serein错误弹窗获取更多信息
