@@ -4,7 +4,7 @@ slug: demo
 authors: 
   - Zaitonn
 tags: [JSON,正则,例子]
-date: 2022.10.13
+date: 2023.4.29
 ---
 
 提供一些基础的正则（针对BDS with LiteLoaderBDS）
@@ -13,4 +13,4 @@ date: 2022.10.13
 
 ## 下载
 
-[Demo.json](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JSON/Demo.json)
+[Demo.json](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/e74d3532a3898d57b21f38851b110f1d851961d2/JSON/Demo.json)
