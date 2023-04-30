@@ -1,6 +1,5 @@
 ---
 title: PQuery 多功能查询插件免正则版
-slug: PQuery
 authors: 
     name: 苏苏
     title: Planet工作室-星辰开发组

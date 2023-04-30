@@ -1,6 +1,5 @@
 ---
 title: 敏感词检测
-slug: sensitiveWordCheck
 authors: 
   - Zaitonn
 tags: [JS,工具]

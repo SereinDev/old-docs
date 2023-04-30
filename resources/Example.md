@@ -1,6 +1,5 @@
 ---
 title: JS示例文件
-slug: Example
 authors: 
   - Zaitonn
 tags: [JS,例子]

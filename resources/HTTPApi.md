@@ -1,6 +1,5 @@
 ---
 title: HTTPApi控制
-slug: HTTPApi
 authors: 
   - Zaitonn
 tags: [JS,API]

@@ -1,6 +1,5 @@
 ---
 title: AI聊天（小米）
-slug: AiCommunicationMi
 authors: 
   - Zaitonn
 tags: [JS,娱乐]

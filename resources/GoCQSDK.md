@@ -1,6 +1,5 @@
 ---
 title: GoCQAPI封装
-slug: GoCQSDK
 authors: 
   - Zaitonn
 tags: [JS,开发,模块]

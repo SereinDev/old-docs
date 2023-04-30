@@ -1,6 +1,5 @@
 ---
 title: SL-成员绑定
-slug: SLbind
 authors: 
   - SOURsLEMONS
   - Zaitonn

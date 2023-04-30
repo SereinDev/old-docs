@@ -1,6 +1,5 @@
 ---
 title: 适用于PowerNukkitX的正则
-slug: PNX
 authors: 
   name: 世中之中
   url: http://blogs.szzz666.top

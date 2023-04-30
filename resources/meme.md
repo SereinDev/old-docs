@@ -1,9 +1,8 @@
 ---
 title: 随机草图
-slug: meme
 authors: 
   - Zaitonn
-tags: [JS,工具]
+tags: [JS,娱乐]
 date: 2023.4.19
 ---
 

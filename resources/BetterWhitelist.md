@@ -1,6 +1,5 @@
 ---
 title: 更好的白名单
-slug: BetterWhitelist
 authors: 
   - wait9yan
 tags: [JS,工具]

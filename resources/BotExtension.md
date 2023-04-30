@@ -1,6 +1,5 @@
 ---
 title: 机器人功能拓展
-slug: BotExtension
 authors: 
   - Zaitonn
 tags: [JS,工具]

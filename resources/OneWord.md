@@ -1,9 +1,8 @@
 ---
 title: 一言
-slug: OneWord
 authors: 
   - Zaitonn
-tags: [JS,工具]
+tags: [JS,娱乐]
 date: 2023.4.17
 ---
 

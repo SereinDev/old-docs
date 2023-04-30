@@ -1,9 +1,8 @@
 ---
 title: 随机涩图
-slug: setu
 authors: 
   - Zaitonn
-tags: [JS,工具]
+tags: [JS,娱乐]
 date: 2023.4.19
 ---
 

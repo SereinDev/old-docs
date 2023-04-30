@@ -1,6 +1,5 @@
 ---
 title: 聊天转发增强
-slug: CHATEX
 authors: 
   - Zaitonn
 tags: [JS,工具]

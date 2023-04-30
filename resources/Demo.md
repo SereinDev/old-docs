@@ -1,6 +1,5 @@
 ---
 title: 正则示例文件
-slug: demo
 authors: 
   - Zaitonn
 tags: [JSON,正则,例子]

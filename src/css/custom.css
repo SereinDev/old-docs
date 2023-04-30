@@ -42,3 +42,9 @@
 .you-know-too-much:hover {
   opacity: 1;
 }
+
+img[src$='#small'],
+img[title=':small'] {
+  width: 50%;
+  max-width: 50vw;
+}

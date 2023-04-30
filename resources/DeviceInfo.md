@@ -1,6 +1,5 @@
 ---
 title: 驱动器信息变量拓展
-slug: DeviceInfo
 authors: 
   - Zaitonn
 tags: [JS,变量]

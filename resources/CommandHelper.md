@@ -1,6 +1,5 @@
 ---
 title: 命令助手
-slug: CommandHelper
 authors: 
   - Zaitonn
 tags: [JS,前置]

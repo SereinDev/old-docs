@@ -1,6 +1,5 @@
 ---
 title: 插件开发助手
-slug: SereinJSPluginHelper
 authors: 
   - Zaitonn
 image: SereinJSPluginHelper/1.png

@@ -1,6 +1,5 @@
 ---
 title: SL-查云黑
-slug: SLblackbe
 authors: 
   - SOURsLEMONS
 tags: [JS,工具]

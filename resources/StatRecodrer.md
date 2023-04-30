@@ -1,6 +1,5 @@
 ---
 title: 记录统计信息
-slug: StatRecodrer
 authors: 
   - Zaitonn
 tags: [JS,工具]

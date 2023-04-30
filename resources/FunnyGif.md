@@ -1,17 +1,20 @@
 ---
 title: Gif图片生成
-slug: FunnyGif
 authors: 
   - Zaitonn
 tags: [JS,娱乐]
 date: 2023.4.29
 ---
 
-![咬](https://api.iculture.cc/api/face_bite/?QQ=10001)
+![咬](https://api.iculture.cc/api/face_bite/?QQ=10001 ':small')
 
 使用用户头像生成Gif图片
 
 <!--truncate-->
+
+:::caution
+此插件需要安装前置插件[命令助手](CommandHelper)，否则将无法使用
+:::
 
 ## 使用方法
 
@@ -30,59 +33,59 @@ date: 2023.4.29
 
 ### 结婚
 
-![结婚](https://api.iculture.cc/api/face_propose/?QQ=10001)
+![结婚](https://api.iculture.cc/api/face_propose/?QQ=10001 ':small')
 
 ### 吃
 
-![吃](https://api.iculture.cc/api/chi/?QQ=10001)
+![吃](https://api.iculture.cc/api/chi/?QQ=10001 ':small')
 
 ### 咬
 
-![咬](https://api.iculture.cc/api/face_bite/?QQ=10001)
+![咬](https://api.iculture.cc/api/face_bite/?QQ=10001 ':small')
 
 ### 需要ta
 
-![需要ta](https://api.iculture.cc/api/face_need/?QQ=10001)
+![需要ta](https://api.iculture.cc/api/face_need/?QQ=10001 ':small')
 
 ### 高质量
 
-![高质量](https://api.iculture.cc/api/face_gao/?QQ=10001)
+![高质量](https://api.iculture.cc/api/face_gao/?QQ=10001 ':small')
 
 ### 拍
 
-![拍](https://api.iculture.cc/api/face_pat/?QQ=10001)
+![拍](https://api.iculture.cc/api/face_pat/?QQ=10001 ':small')
 
 ### 摸
 
-![摸](https://api.iculture.cc/api/face_petpet/?QQ=10001)
+![摸](https://api.iculture.cc/api/face_petpet/?QQ=10001 ':small')
 
 ### 顶
 
-![顶](https://api.iculture.cc/api/face_play/?QQ=10001)
+![顶](https://api.iculture.cc/api/face_play/?QQ=10001 ':small')
 
 ### 捣
 
-![捣](https://api.iculture.cc/api/face_pound/?QQ=10001)
+![捣](https://api.iculture.cc/api/face_pound/?QQ=10001 ':small')
 
 ### 吸
 
-![吸](https://api.iculture.cc/api/face_suck/?QQ=10001)
+![吸](https://api.iculture.cc/api/face_suck/?QQ=10001 ':small')
 
 ### 看
 
-![看](https://api.iculture.cc/api/face_thsee/?QQ=10001)
+![看](https://api.iculture.cc/api/face_thsee/?QQ=10001 ':small')
 
 ### 感动哭了
 
-![感动哭了](https://api.iculture.cc/api/face_touch/?QQ=10001)
+![感动哭了](https://api.iculture.cc/api/face_touch/?QQ=10001 ':small')
 
 ### 膜拜
 
-![膜拜](https://api.iculture.cc/api/face_worship/?QQ=10001)
+![膜拜](https://api.iculture.cc/api/face_worship/?QQ=10001 ':small')
 
 ### 咸鱼
 
-![咸鱼](https://api.iculture.cc/api/face_yu/?QQ=10001)
+![咸鱼](https://api.iculture.cc/api/face_yu/?QQ=10001 ':small')
 
 ## 历史版本
 
