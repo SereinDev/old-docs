@@ -13,8 +13,8 @@ date: 2023.4.30
   alignItems: 'center'}}>
 
 <img
-  src="/img/CommandHelper/CommandHelper.png" 
-  style={{imageRendering: 'pixelated',width: '80px'}} 
+  src="/img/CommandHelper/CommandHelper.png"
+  style={{imageRendering: 'pixelated',width: '80px'}}
   alt="logo"/>
 
 <span
