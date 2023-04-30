@@ -3,7 +3,27 @@ title: 命令助手
 authors: 
   - Zaitonn
 tags: [JS,前置]
-date: 2023.4.19
+date: 2023.4.30
+---
+
+<p style={{
+  textAlign: 'center',
+  display:'flex',
+  justifyContent: 'center',
+  alignItems: 'center'}}>
+
+<img
+  src="/img/CommandHelper/CommandHelper.png" 
+  style={{imageRendering: 'pixelated',width: '80px'}} 
+  alt="logo"/>
+
+<span
+  style={{fontSize:'30px',fontWeight:'bolder'}}>
+COMMANDHELPER
+
+</span>
+</p>
+
 ---
 
 ![控制台](/img/CommandHelper/1.png)
