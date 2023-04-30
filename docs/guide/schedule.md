@@ -50,10 +50,10 @@ Cron表达式或命令为空或不合法时无法保存
   "comment": "非必要请不要直接修改文件，语法错误可能导致数据丢失",
   "data": [
     {
-      "Cron": "* * * * *",  // Cron表达式
-      "Command": "s|测试",  // 执行命令
-      "Remark": "",  // 备注
-      "Enable": true  // 启用
+      "cron": "* * * * *",  // Cron表达式
+      "command": "s|测试",  // 执行命令
+      "remark": "",  // 备注
+      "enable": true  // 启用
     }
   ]
 }

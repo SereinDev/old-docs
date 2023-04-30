@@ -61,7 +61,7 @@ java -Dfile.encoding=utf-8 -jar server.jar nogui
 :::
 
 :::info
-近期疼逊更改了登录逻辑，可能导致部分情况下无法登录
+近期（2023年4月）疼逊更改了登录逻辑，可能导致部分情况下无法登录
 
 你可以按如下方式暂时性修复（go-cqhttp）
 
@@ -92,7 +92,7 @@ java -Dfile.encoding=utf-8 -jar server.jar nogui
   - 可能是被tx屏蔽了，可以多挂几天后再试试
 :::
 
-## 🧶 Serein卡顿
+## Serein卡顿
 
 - 正则匹配延迟较大
 - 服务器控制台输出特别慢（特别是在服务器占用极大时几乎无法输出）

@@ -95,8 +95,8 @@ const sidebars = {
         'tutorial/customConsole',
         'tutorial/customRegex',
         'tutorial/muiltLineMatch',
+        'tutorial/hiddenSettings',
         'tutorial/debugMode',
-        'tutorial/developmentTool',
       ]
     },
   ],

@@ -31,7 +31,7 @@
 ```json
 {
     // ...
-    "MuiltLines": [
+    "muiltLines": [
         // highlight-next-line
         "players\\sonline:",
         "（其他多行匹配的正则）"

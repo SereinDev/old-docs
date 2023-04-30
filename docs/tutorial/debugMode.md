@@ -3,7 +3,9 @@
 开启Serein自带的调试输出窗口
 
 :::note
-供开发和调试使用，一般不建议开启
+
+- 供开发和调试使用，一般不建议开启
+- 必要时可能会要求你开启此功能为开发者提供更多详细信息
 :::
 
 ![调试窗口](/img/debug.png)
@@ -11,23 +13,6 @@
 ## 用途
 
 供开发者确定函数的执行情况、变量的变化等，并总是自动保存日志到`logs/debug`文件夹下
-
-### C\#
-
-你可以使用以下语句输出调试信息
-
-```csharp
-Logger.Out(LogType.Debug, "这是一条调试信息");
-// 你可以通过使用','拼接输出多个值
-Logger.Out(LogType.Debug, "这是一条调试信息", 1, 2, 3);
-```
-
-```csharp
-internal static class Logger
-{
-    public static void Out(LogType Type, params object[] objects); // 函数原型
-}
-```
 
 ### JS插件
 
@@ -50,10 +35,13 @@ internal static class Logger
 ```json
 {
     // ...
-    "DevelopmentTool": {
+    "developmentTool": {
         // highlight-next-line
-        "EnableDebug": true,  // 开启调试模式
-        // ...
+        "enableDebug": true,            // 开启调试模式
+        // highlight-next-line
+        "detailDebug": false,           // 详细的调试输出（包含函数参数类型和返回值，仅当上一行启用时生效）
+        "note": "以上设置内容为开发专用选项，请在指导下修改"
     }
+    // ...
 }
 ```

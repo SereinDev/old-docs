@@ -18,6 +18,7 @@ Serein中最重要的组成部分
 ## 调用cmd.exe执行一条命令
 
 `cmd|<命令>`
+
 运行结束后自动结束cmd进程
 
 - 默认窗口编码：`936 ANSI/GBK`  
@@ -26,8 +27,8 @@ Serein中最重要的组成部分
   
 ## 服务器命令
 
-`s|<命令>`
-`server|<命令>`
+`s|<命令>`  
+`server|<命令>`  
 在服务器中执行命令  
 
 :::note
@@ -142,6 +143,22 @@ Serein中最重要的组成部分
 - 消息模板和错误消息可通过[事件](event)自定义
 :::
 
+## 重新加载文件
+
+`reload|[类型]`
+
+- 类型
+  - `all` - 以下所有文件
+  - `regex` [正则](regex)
+  - `schedule` [定时任务](schedule)
+  - `member` [绑定](member)
+  - `groupcache` 群组缓存
+  - `settings` 设置
+
+:::caution
+通过群聊执行命令实现热重载Serein数据文件属于高危操作，**务必勾选`需要管理权限`**
+:::
+
 ## 执行Javascript代码
 
 `js|<代码>`  
@@ -157,9 +174,6 @@ Serein中最重要的组成部分
 `javascripst:<命名空间>|<代码>`
 
 `命名空间`为插件文件名去掉扩展名后的文本
-
-- 运行限时：1min
-- js标准：ECMAScript 2022
 
 ## 调试输出
 

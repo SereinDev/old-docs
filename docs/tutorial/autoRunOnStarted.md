@@ -9,11 +9,11 @@
 ```json
 {
     // ...
-    "AutoRun": {
+    "autoRun": {
         // highlight-next-line
-        "StartServer": false,   // 启动服务器
+        "startServer": false,   // 启动服务器
         // highlight-next-line
-        "ConnectWS": false      // 连接WS
+        "connectWS": false      // 连接WS
     }
     // ...
 }
