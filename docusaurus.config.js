@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Serein扩展市场',
   tagline: '在这里你可以找到你喜欢的插件',
-  favicon: 'img/Serein_Extension.png',
+  favicon: 'img/Serein_Extension.ico',
 
   url: 'http://market.serein.cc',
   baseUrl: '/',
