@@ -33,4 +33,4 @@ date: 2023.1.18
 
 ## 历史版本
 
-- 2023.1.18 [v1.0_fix](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/SLbind/v1.0/SLbind.js)
+- 2023.1.18 [v1.0_fix](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/SLbind/v1.0/SLbind.js?download)

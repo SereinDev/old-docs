@@ -43,5 +43,5 @@ date: 2023.4.23
 ## 历史版本
 
 - 2023.4.23 [v1.3.4+](https://github.com/Zaitonn/Serein-Docs/releases/tag/SereinJSPluginHelper)
-- 2023.2.25 [v1.3.4](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/SereinJSPluginHelper/v1.3.4/SereinJSPluginHelper.js)
-- 2023.1.15 [v1.3.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/SereinJSPluginHelper/v1.3.3/SereinJSPluginHelper.js)
+- 2023.2.25 [v1.3.4](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/SereinJSPluginHelper/v1.3.4/SereinJSPluginHelper.js?download)
+- 2023.1.15 [v1.3.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/SereinJSPluginHelper/v1.3.3/SereinJSPluginHelper.js?download)

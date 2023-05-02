@@ -89,4 +89,4 @@ date: 2023.4.29
 
 ## 历史版本
 
-- 2023.4.29 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/43485d0de53646841c5da44128aa1f2a8888dae8/JS/FunnyGif/FunnyGif.js)
+- 2023.4.29 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/43485d0de53646841c5da44128aa1f2a8888dae8/JS/FunnyGif/FunnyGif.js?download)

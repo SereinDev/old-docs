@@ -33,4 +33,4 @@ date: 2023.4.30
 
 ## 历史版本
 
-- 2023.4.30 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/030c6cd5666aa1e5c2995205ab4490a7314052b6/JS/AnswerBook/AnswerBook.js)
+- 2023.4.30 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/030c6cd5666aa1e5c2995205ab4490a7314052b6/JS/AnswerBook/AnswerBook.js?download)

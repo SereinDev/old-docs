@@ -36,4 +36,4 @@ date: 2023.4.30
 
 ## 历史版本哼啊啊啊啊啊
 
-- 2023.4.30 [v114.514.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/HomoMath/HomoMath.js)
+- 2023.4.30 [v114.514.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/HomoMath/HomoMath.js?download)

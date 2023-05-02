@@ -29,4 +29,4 @@ date: 2022.11.13
 
 ## 历史版本
 
-- 2022.11.13 [v1.2](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/2b9d4f2805bee419f8f2910958560fbf6319ac36/JS/BotExtension/v1.1/BotExtension.js)
+- 2022.11.13 [v1.2](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/2b9d4f2805bee419f8f2910958560fbf6319ac36/JS/BotExtension/v1.1/BotExtension.js?download)

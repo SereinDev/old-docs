@@ -117,6 +117,6 @@ declare interface Packet {
 ## 历史版本
 
 - 2023.4.19 v1.0
-  - [`CommandHelper.js` - 本体](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/CommandHelper/v1.0/CommandHelper.js)
-  - [`template.js` - 模板](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/CommandHelper/v1.0/template.js)
-  - [`CommandHelper.d.ts` - 自动补全](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/CommandHelper/v1.0/CommandHelper.d.ts)
+  - [`CommandHelper.js` - 本体](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/CommandHelper/v1.0/CommandHelper.js?download)
+  - [`template.js` - 模板](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/CommandHelper/v1.0/template.js?download)
+  - [`CommandHelper.d.ts` - 自动补全](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/CommandHelper/v1.0/CommandHelper.d.ts?download)

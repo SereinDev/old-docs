@@ -58,4 +58,4 @@ date: 2023.4.26
 
 ## 历史版本
 
-- 2023.4.26 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/c2a97e32b8597672d5447339fe38811714a1cb86/JS/AiCommunicationMi/AiCommunicationMi.js)
+- 2023.4.26 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/c2a97e32b8597672d5447339fe38811714a1cb86/JS/AiCommunicationMi/AiCommunicationMi.js?download)

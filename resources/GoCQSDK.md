@@ -42,7 +42,7 @@ instance.dispose(); // 建议加上这行，执行后会释放HttpClient资源
 
 ## 历史版本
 
-- 2023.2.25 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/Modules/GoCQSDK/v1.1/GoCQSDK.js)
+- 2023.2.25 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/Modules/GoCQSDK/v1.1/GoCQSDK.js?download)
   - 需要Serein v1.3.4及以上
-- 2023.2.3 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/Modules/GoCQSDK/v1.0/GoCQSDK.js)
+- 2023.2.3 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/Modules/GoCQSDK/v1.0/GoCQSDK.js?download)
   - 需要Serein v1.3.4及以上
