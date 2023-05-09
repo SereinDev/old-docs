@@ -150,10 +150,10 @@ date: 2023.5.9
 `v1.8` 后此插件最低支持版本为 Serein `v1.3.4.1`，在 `v1.3.4` 及以下版本几乎不可用
 :::
 
--   2023.05.09 [v1.8](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BetterWhitelist/v1.8/BetterWhitelist.js)
--   2023.04.01 [v1.6](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BetterWhitelist/v1.6/BetterWhitelist.js)
--   2023.02.26 [v1.4](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BetterWhitelist/v1.4/BetterWhitelist.js)
--   2023.02.03 [v1.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BetterWhitelist/v1.3/BetterWhitelist.js)
--   2023.02.03 [v1.2](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BetterWhitelist/v1.2/BetterWhitelist.js)
--   2023.01.18 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BetterWhitelist/v1.1/BetterWhitelist.js)
--   2023.01.18 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/publish/JS/BetterWhitelist/v1.0/BetterWhitelist.js)
+-   2023.5.9 [v1.8](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/b22810e487103cf9d990b96ef70b9ccf2b9f042e/JS/BetterWhitelist/BetterWhitelist.js?download)
+-   2023.4.1 [v1.6](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.6/BetterWhitelist.js?download)
+-   2023.2.26 [v1.4](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.4/BetterWhitelist.js?download)
+-   2023.2.3 [v1.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.3/BetterWhitelist.js?download)
+-   2023.2.3 [v1.2](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.2/BetterWhitelist.js?download)
+-   2023.1.18 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.1/BetterWhitelist.js?download)
+-   2023.1.18 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.0/BetterWhitelist.js?download)
