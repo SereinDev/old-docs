@@ -16,10 +16,10 @@ date: 2023.5.9
 下列功能可以通过配置文件控制是否启用
 :::
 
--   群成员使用群命令 **绑定/解绑** 管理自己的成员管理，可自动修改群名片
--   完善的绑定增删逻辑以及各种全面的防呆设计
--   服务器启动自动同步 **Serein 成员管理** 与 **服务器白名单**，关服时也能绑定
--   将 **成员管理** 设为 **服务器白名单** 后，无白名单玩家进服会在群聊提醒”没有白名单，尝试进入服务器“
+- 群成员使用群命令 **绑定/解绑** 管理自己的成员管理，可自动修改群名片
+- 完善的绑定增删逻辑以及各种全面的防呆设计
+- 服务器启动自动同步 **Serein 成员管理** 与 **服务器白名单**，关服时也能绑定
+- 将 **成员管理** 设为 **服务器白名单** 后，无白名单玩家进服会在群聊提醒”没有白名单，尝试进入服务器“
 
 <details>
 	<summary>点此以查看示例图片</summary>
@@ -28,9 +28,9 @@ date: 2023.5.9
 
 </details>
 
--   Serein 管理权限列表的管理使用群命令 **添加/删除白名单** 管理其他人的 **成员管理**
--   自动删除退群成员的 **成员管理** 与 **白名单** 数据
--   通过群命令“白名单列表”查看当前所有白名单情况
+- Serein 管理权限列表的管理使用群命令 **添加/删除白名单** 管理其他人的 **成员管理**
+- 自动删除退群成员的 **成员管理** 与 **白名单** 数据
+- 通过群命令“白名单列表”查看当前所有白名单情况
 
 <details>
 	<summary>点此以查看示例图片</summary>
@@ -39,9 +39,9 @@ date: 2023.5.9
 
 </details>
 
--   在绑定时检测 GameID 是否符合规范
--   排除监听指定群聊，可以单独开个服务器玩家群用于管理玩家
--   在多服装了 n 个插件后，可以关闭 n-1 个服务器的信息回复防止发送重复信息
+- 在绑定时检测 GameID 是否符合规范
+- 排除监听指定群聊，可以单独开个服务器玩家群用于管理玩家
+- 在多服装了 n 个插件后，可以关闭 n-1 个服务器的信息回复防止发送重复信息
 
 ## 管理流程
 
@@ -150,10 +150,10 @@ date: 2023.5.9
 `v1.8` 后此插件最低支持版本为 Serein `v1.3.4.1`，在 `v1.3.4` 及以下版本几乎不可用
 :::
 
--   2023.5.9 [v1.8](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/b22810e487103cf9d990b96ef70b9ccf2b9f042e/JS/BetterWhitelist/BetterWhitelist.js?download)
--   2023.4.1 [v1.6](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.6/BetterWhitelist.js?download)
--   2023.2.26 [v1.4](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.4/BetterWhitelist.js?download)
--   2023.2.3 [v1.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.3/BetterWhitelist.js?download)
--   2023.2.3 [v1.2](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.2/BetterWhitelist.js?download)
--   2023.1.18 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.1/BetterWhitelist.js?download)
--   2023.1.18 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.0/BetterWhitelist.js?download)
+- 2023.5.9 [v1.8](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/c2b4968c5e0afe2abb60ab5f15b3159338d76982/JS/BetterWhitelist/BetterWhitelist.js?download)
+- 2023.4.1 [v1.6](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.6/BetterWhitelist.js?download)
+- 2023.2.26 [v1.4](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.4/BetterWhitelist.js?download)
+- 2023.2.3 [v1.3](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.3/BetterWhitelist.js?download)
+- 2023.2.3 [v1.2](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.2/BetterWhitelist.js?download)
+- 2023.1.18 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.1/BetterWhitelist.js?download)
+- 2023.1.18 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/BetterWhitelist/v1.0/BetterWhitelist.js?download)
