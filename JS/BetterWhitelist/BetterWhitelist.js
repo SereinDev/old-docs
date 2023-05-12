@@ -2,8 +2,8 @@
  * @Author       : Maraudern
  * @Date         : 2023-01-16 20:19:47
  * @LastEditors  : 9Yan
- * @LastEditTime : 2023-05-09 18:31:06
- * @FilePath     : \Serein-Docse:\Workspace\VSCode\Javascript\Serein-Plugins\Serein\plugins\BetterWhitelist.js
+ * @LastEditTime : 2023-05-12 20:58:43
+ * @FilePath     : \Serein-Plugins\Serein\plugins\BetterWhitelist.js
  * @Description  : 更好的白名单
  */
 /// <reference path="CommandHelper.d.ts"/>
@@ -268,7 +268,7 @@ serein.setListener("onReceiveGroupMessage", (groupID, userID, msg, shownName) =>
 	if (config.command.bind.keywords.includes(keyword)) {
 		if (!hasPermission(userID) && !config.hasBind) {
 			if (config.sendGroup) {
-				serein.sendGroup(groupID, `您没有使用>>${keyword}<<的权限！`);
+				serein.sendGroup(groupID, `您没有使用<${keyword}>的权限！`);
 			}
 			return;
 		}
@@ -318,7 +318,7 @@ serein.setListener("onReceiveGroupMessage", (groupID, userID, msg, shownName) =>
 	if (config.command.unbind.keywords.includes(keyword)) {
 		if (!hasPermission(userID) && !config.hasBind) {
 			if (config.sendGroup) {
-				serein.sendGroup(groupID, `您没有使用>>${keyword}<<的权限！`);
+				serein.sendGroup(groupID, `您没有使用<${keyword}>的权限！`);
 			}
 			return;
 		}
@@ -345,7 +345,7 @@ serein.setListener("onReceiveGroupMessage", (groupID, userID, msg, shownName) =>
 	if (config.command.whitelistAdd.keywords.includes(keyword)) {
 		if (!hasPermission(userID)) {
 			if (config.sendGroup) {
-				serein.sendGroup(groupID, `您没有使用>>${keyword}<<的权限！`);
+				serein.sendGroup(groupID, `您没有使用<${keyword}>的权限！`);
 			}
 			return;
 		}
@@ -406,7 +406,7 @@ serein.setListener("onReceiveGroupMessage", (groupID, userID, msg, shownName) =>
 	if (config.command.whitelistDelete.keywords.includes(keyword)) {
 		if (!hasPermission(userID)) {
 			if (config.sendGroup) {
-				serein.sendGroup(groupID, `您没有使用>>${keyword}<<的权限！`);
+				serein.sendGroup(groupID, `您没有使用<${keyword}>的权限！`);
 			}
 			return;
 		}
@@ -449,7 +449,7 @@ serein.setListener("onReceiveGroupMessage", (groupID, userID, msg, shownName) =>
 	if (config.command.syncWhitelist.keywords.includes(keyword)) {
 		if (!hasPermission(userID)) {
 			if (config.sendGroup) {
-				serein.sendGroup(groupID, `您没有使用>>${keyword}<<的权限！`);
+				serein.sendGroup(groupID, `您没有使用<${keyword}>的权限！`);
 			}
 			return;
 		}
@@ -487,7 +487,7 @@ serein.setListener("onReceiveGroupMessage", (groupID, userID, msg, shownName) =>
 	if (config.command.whitelist.keywords.includes(keyword)) {
 		if (!hasPermission(userID)) {
 			if (config.sendGroup) {
-				serein.sendGroup(groupID, "您没有使用<" + keyword + ">的权限！");
+				serein.sendGroup(groupID, `您没有使用<${keyword}>的权限！`);
 			}
 			return;
 		}
@@ -531,6 +531,8 @@ serein.setListener("onReceiveGroupMessage", (groupID, userID, msg, shownName) =>
 });
 
 serein.setListener("onServerStart", () => {
+	if (!config.syncWhitelist) return;
+
 	for (let i = 0; i < serein.getSettingsObject().bot.groupList.length; i++) {
 		if (!isIgnoreGroup(serein.getSettingsObject().bot.groupList[i])) {
 			var groupID = serein.getSettingsObject().bot.groupList[i];
