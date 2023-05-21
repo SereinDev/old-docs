@@ -5,7 +5,7 @@
 
 ```js
 // 由于该js解释器不支持ws，所以这里用C#封装了一个，部分方法和js原生的有所不同
-var ws = new WSClient("ws://127.0.0.1:11451", serein.namespace); 
+const ws = new WSClient("ws://127.0.0.1:11451", serein.namespace); 
 // 实例化ws，
 // 此处需要提供当前的命名空间，用于区分和管理
 
@@ -29,7 +29,7 @@ ws.onmessage = (message) => { // 收到数据
 ws.open(); // 连接ws
 var state = ws.state; // 连接状态
 /*
- * 此状态有以下五个可能的枚举值
+ * 此状态有以下五个枚举值
  *  -1  未知或无效
  *  0   正在连接
  *  1   连接成功
@@ -44,12 +44,16 @@ ws.dispose(); // 释放对象
 ## Logger
 
 ```js
-var logger = new Logger("Example"); // 插件名称
+const logger = new Logger("Example"); // Logger名称
 logger.info("这是一条信息输出");
 logger.warn("这是一条警告输出");
 logger.error("这是一条错误输出");
 logger.debug("这是一条信息输出"); // 此消息将输出到Serein的debug窗口而不是插件控制台
 ```
+
+:::tip
+以上四个函数可以有多个参数，输出时各参数将用空格连接
+:::
 
 ![logger](/img/logger.png)
 

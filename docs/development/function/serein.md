@@ -584,10 +584,29 @@ serein.editRegex(
 
 ## 热重载文件
 
-`serein.reloadFiles(type?: 'all' | 'regex' | 'member' | 'schedule' | 'groupcache' | 'settings')`
+`serein.reloadFiles(type: 'all' | 'regex' | 'member' | 'schedule' | 'groupcache' | 'settings' | 'permissiongroup' = 'all')`
 
 - 参数
   - `type` 类型
 - 返回
   - `boolean`
     - 成功为`true`，否则为`false`
+
+## 安全调用函数
+
+:::note
+此函数可用于解决跨插件调用函数时导致线程不安全的问题
+:::
+
+`serein.safeCall(func: Function, ...args: any)`
+
+- 参数
+  - `func` 函数
+  - `args` 调用参数
+- 返回
+  - `any`
+    - 传入函数的返回值
+    - 当`func`不是一个正确的函数时将返回`undefined`
+- 错误
+  - `any` 由调用的函数`throw`
+  - `System.MethodAccessException` 调用等待超时（1000ms）

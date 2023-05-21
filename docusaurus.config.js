@@ -61,7 +61,7 @@ const config = {
         items: [
           {
             type: 'dropdown',
-            label: '📔文档',
+            label: '📔目录',
             items: [
               {
                 type: 'docSidebar',
@@ -87,10 +87,6 @@ const config = {
                 type: 'docSidebar',
                 sidebarId: 'moreSidebar',
                 label: '更多',
-              },
-              {
-                label: '上古文档',
-                href: 'https://legacy.serein.cc/'
               }
             ],
           },
@@ -101,6 +97,24 @@ const config = {
           {
             label: '🏬扩展市场',
             to: 'https://market.serein.cc/'
+          },
+          {
+            label: '🗃版本',
+            position: 'right',
+            items: [
+              {
+                label: '正式版（发布版）',
+                href: 'https://serein.cc/'
+              },
+              {
+                label: '上古文档（v1.3.3之前）',
+                href: 'https://legacy.serein.cc/'
+              },
+              {
+                label: '船新文档（预览版）',
+                href: 'https://preview.serein.cc/'
+              }
+            ]
           }
         ],
       },

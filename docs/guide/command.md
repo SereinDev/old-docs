@@ -152,7 +152,8 @@ Serein中最重要的组成部分
   - `regex` [正则](regex)
   - `schedule` [定时任务](schedule)
   - `member` [绑定](member)
-  - `groupcache` 群组缓存
+  - `groupcache` [群组缓存](../development/function/msg#获取群成员昵称缓存字典)
+  - `permissiongroup` [权限组](../development/permissionGroup)
   - `settings` 设置
 
 :::caution
