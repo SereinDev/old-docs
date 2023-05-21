@@ -79,7 +79,7 @@ serein.sendPacket(JSON.stringify({
 - 参数
   - 无
 - 返回
-  - `object` 群成员昵称缓存字典
+  - `object<string, object<string, UserInfo>>` 群成员昵称缓存字典
     - 第一个`key`为群号
     - 第二个`key`为QQ号
 

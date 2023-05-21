@@ -10,7 +10,7 @@ Serein没有设置重启上限次数，在投入生产环境前请确保服务�
 - 可能是服务器存在异常导致启动失败，请自行参照[https://www.minebbs.com/resources/bds.3403/](https://www.minebbs.com/resources/bds.3403/)向其他大佬询问
 :::
 
-## 服务器输入乱码
+## 输入乱码
 
 编码不匹配
 
@@ -18,13 +18,10 @@ Serein没有设置重启上限次数，在投入生产环境前请确保服务�
 在设置中选择相应的编码类型
 :::
 
-:::note
-在基岩版1.19之后，BDS服务端控制台输入编码被改为UTF-16，但由于一些问题，无论如何修改编码都无法正常输入中文。
+- 在基岩版1.19之后，BDS服务端控制台输入编码被改为UTF-16，但由于一些问题，无论如何修改编码都无法正常输入中文。
+  - 你可以使用LLSE插件[Unescaper for Serein.js](https://www.minebbs.com/resources/unescaper-for-serein.5441/)，并在设置中开启 使用Unicode字符 选项或使用[Unicode命令输入](../guide/command#在服务器中执行命令)将命令内的非ASCII编码的符号使用Unicode字符表示即可
 
-你可以使用LLSE插件[Unescaper for Serein.js](https://www.minebbs.com/resources/unescaper-for-serein.5441/)，并在设置中开启 使用Unicode字符 选项或使用[Unicode命令输入](../guide/command#在服务器中执行命令)将命令内的非ASCII编码的符号使用Unicode字符表示即可
-:::
-
-## 服务器输出乱码
+## 输出乱码
 
 编码不匹配
 
@@ -32,15 +29,21 @@ Serein没有设置重启上限次数，在投入生产环境前请确保服务�
 在设置中选择相应的编码类型
 :::
 
-:::note
-对于使用`java`启动的服务端（Nukkit、PNX和大部分Java版的服务器），默认编码为GBK。因为NET对该编码不完全支持，所以你可以在启动的批处理文件中添加`-Dfile.encoding=utf-8`参数。  
-举个例子：
+- `Java`启动的服务端（Nukkit、PNX和大部分Java版的服务器）
+  - Java默认编码为GBK,因为NET对该编码不完全支持，所以你可以在启动的批处理文件中添加`-Dfile.encoding=utf-8`参数。
+    - 举个例子
+      ```bat
+      java -Dfile.encoding=utf-8 -jar server.jar nogui
+      ```
 
-```powershell
-java -Dfile.encoding=utf-8 -jar server.jar nogui
-```
 
-:::
+- Python启动的进程（如[MCDReforged](https://github.com/Fallen-Breath/MCDReforged)）
+  - Windows中文版CMD输出编码为GBK，故你可以在启动脚本中添加`set PYTHONIOENCODING=utf-8`行
+    - 举个例子
+      ```bat
+      set PYTHONIOENCODING=utf-8
+      python start.py
+      ```
 
 ## 使用批处理启动的服务器进程无法强制结束
 

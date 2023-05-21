@@ -81,7 +81,7 @@ const config = {
               {
                 type: 'docSidebar',
                 sidebarId: 'versionSidebar',
-                label: '版本',
+                label: '版本记录',
               },
               {
                 type: 'docSidebar',
@@ -178,7 +178,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['csharp', 'powershell', 'typescript', 'regex']
+        additionalLanguages: ['csharp', 'batch', 'powershell', 'typescript', 'regex']
       },
       metadata: [
         {

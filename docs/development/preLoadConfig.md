@@ -9,17 +9,17 @@
 
 ```json title="PreLoadConfig.json"
 {
-  "Assemblies": [],
-  "AllowGetType": false,
-  "AllowOperatorOverloading": true,
-  "AllowSystemReflection": false,
-  "AllowWrite": true,
-  "Strict": false,
-  "StringCompilationAllowed": true
+  "assemblies": [],
+  "allowGetType": false,
+  "allowOperatorOverloading": true,
+  "allowSystemReflection": false,
+  "allowWrite": true,
+  "strict": false,
+  "stringCompilationAllowed": true
 }
 ```
 
-## Assemblies `string[]`
+## assemblies `string[]`
 
 导入已加载的程序集名称
 
@@ -32,15 +32,15 @@
 
 参考文档：[Assembly.Load 方法](https://learn.microsoft.com/zh-cn/dotnet/api/system.reflection.assembly.load)
 
-## AllowGetType `boolean`
+## allowGetType `boolean`
 
 允许使用`Object.GetType()`
 
-## AllowOperatorOverloading `boolean`
+## allowOperatorOverloading `boolean`
 
 允许运算符重载（默认为`true`）
 
-## AllowSystemReflection `boolean`
+## allowSystemReflection `boolean`
 
 允许使用`System.Reflection`相关功能
 
@@ -48,15 +48,15 @@
 你可以通过此功能实现动态加载Dll
 :::
 
-## AllowWrite `boolean`
+## allowWrite `boolean`
 
 允许对CLR的写入（建议开启，默认为`true`）
 
-## Strict `boolean`
+## strict `boolean`
 
 JS严格模式
 
-## StringCompilationAllowed `boolean`
+## stringCompilationAllowed `boolean`
 
 允许字符串编译（建议开启，默认为`true`）
 

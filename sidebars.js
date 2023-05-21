@@ -105,7 +105,7 @@ const sidebars = {
   versionSidebar: [
     {
       type: 'category',
-      label: '🔔 版本',
+      label: '🔔 版本记录',
       collapsible: false,
       link: {
         type: 'doc',
