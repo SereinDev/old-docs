@@ -95,7 +95,7 @@ const sidebars = {
         'tutorial/autoRunOnStarted',
         'tutorial/customConsole',
         'tutorial/customRegex',
-        'tutorial/muiltLineMatch',
+        'tutorial/matchWithMuiltLine',
         'tutorial/hiddenSettings',
         'tutorial/debugMode',
       ]

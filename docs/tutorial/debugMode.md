@@ -30,7 +30,7 @@
 
 ### 更改设置
 
-打开`settings/Serein.json`，将`EnableDebug`后面的`false`改为`true`即可
+打开`settings/Serein.json`，将`developmentTool.enableDebug`后面的`false`改为`true`即可
 
 ```json
 {

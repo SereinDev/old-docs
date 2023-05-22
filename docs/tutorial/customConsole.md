@@ -4,7 +4,7 @@
 自定义控制台的背景、字体
 
 :::caution
-**仅WinForm**
+仅WinForm和v1.3.3及以前的WPF
 :::
 
 ## 具体步骤

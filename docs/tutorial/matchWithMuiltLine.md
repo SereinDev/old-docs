@@ -34,7 +34,7 @@
     "muiltLines": [
         // highlight-next-line
         "players\\sonline:",
-        "（其他多行匹配的正则）"
+        ///（其他多行匹配的正则）
     ]
     // ...
 }

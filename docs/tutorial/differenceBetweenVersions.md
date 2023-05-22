@@ -51,4 +51,5 @@ Serein不同版本类型之间的差异
 - .NET 6.0
   - 运行速度较快，若追求处理速度可选择此版本
     - 详见 [Performance Improvements in .NET 6 （.NET 6 中的性能改进）](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-6/)
+    - ~~个人感觉体验不出来~~
   - 但是系统一般不自带运行库，需自行安装
