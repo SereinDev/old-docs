@@ -7,7 +7,7 @@
 <details>
   <summary>配置文件</summary>
 
-```json title="permission.json"
+```json title="permission.json" showLineNumbers
 {
   "default": {
     "description": "Serein内置权限组",   // 介绍
@@ -114,7 +114,7 @@
 <details>
   <summary>优先级主导</summary>
 
-```json
+```json showLineNumbers
 {
   "test1": {
     "description": "测试权限组1",
@@ -152,7 +152,7 @@
 <details>
   <summary>权限组顺序主导</summary>
 
-```json
+```json showLineNumbers
 {
   // highlight-next-line
   "test1": {

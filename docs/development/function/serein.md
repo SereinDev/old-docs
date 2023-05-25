@@ -17,7 +17,7 @@ serein.log(new System.IO.StreamWriter('log.txt')); // 甚至可以输出对象
   - 空
 
 :::tip
-个人更推荐使用[Logger](../class#logger)输出，可以方便区分输出等级
+个人更推荐使用[Logger](../class#logger)输出，支持多参输入，且方便区分输出等级
 :::
 
 ## Debug输出
@@ -80,29 +80,29 @@ serein.setListener("onGroupPoke", (group, user) => {
   - `boolean`
     - 设置监听器成功为`true`，否则为`false`
 
-## 事件列表
+### 事件列表
 
-### onServerStart
+#### onServerStart
 
 - **服务器启动**
 - 监听函数原型： `function () -> void`
 - 不可拦截
 
-### onServerStop
+#### onServerStop
 
 - **服务器关闭**
 - 监听函数原型： `function (exitCode: number) -> void`
   - `exitCode` 退出代码（正常关闭时为0）
 - 不可拦截
 
-### onServerOutput
+#### onServerOutput
 
 - **服务器输出**
 - 监听函数原型： `function (line: string) -> boolean`
   - `line` 输出行
 - 可被拦截
 
-### onServerOriginalOutput
+#### onServerOriginalOutput
 
 - **服务器原始输出**
 - 监听函数原型： `function (line: string) -> boolean`
@@ -115,14 +115,14 @@ serein.setListener("onGroupPoke", (group, user) => {
 - 当两者中至少有一个事件被拦截时才会跳过下一步处理
 :::
 
-### onServerSendCommand
+#### onServerSendCommand
 
 - **服务器输入指令**
 - 监听函数原型： `function (cmd: string) -> void`
   - `cmd` 输入命令
 - 不可拦截
 
-### onGroupIncrease
+#### onGroupIncrease
 
 - **监听群群成员增加**
 - 监听函数原型： `function (group_id: number, user_id: number) -> void`
@@ -130,7 +130,7 @@ serein.setListener("onGroupPoke", (group, user) => {
   - `user_id` QQ号
 - 不可拦截
 
-### onGroupDecrease
+#### onGroupDecrease
 
 - **监听群群成员减少**
 - 监听函数原型： `function (group_id: number, user_id: number) -> void`
@@ -138,7 +138,7 @@ serein.setListener("onGroupPoke", (group, user) => {
   - `user_id` QQ号
 - 不可拦截
 
-### onGroupPoke
+#### onGroupPoke
 
 - **监听群戳一戳自身账号**
 - 监听函数原型： `function (group_id: number, user_id: number) -> void`
@@ -146,7 +146,7 @@ serein.setListener("onGroupPoke", (group, user) => {
   - `user_id` QQ号
 - 不可拦截
 
-### onReceiveGroupMessage
+#### onReceiveGroupMessage
 
 - **收到群消息**（包括设置中未监听的群聊）
 - 监听函数原型： `function (group_id: number, user_id: number, msg: string, shownName: string, message_id: number?) -> boolean`
@@ -157,7 +157,7 @@ serein.setListener("onGroupPoke", (group, user) => {
   - `message_id` 消息ID
 - 可被拦截
 
-### onReceivePrivateMessage
+#### onReceivePrivateMessage
 
 - **收到私聊消息**
 - 监听函数原型： `function (user_id: number, msg: string, nickName: string, message_id: number?) -> boolean`
@@ -167,7 +167,7 @@ serein.setListener("onGroupPoke", (group, user) => {
   - `message_id` 消息ID
 - 可被拦截
 
-### onReceivePacket
+#### onReceivePacket
 
 - **收到数据包**
 - 监听函数原型： `function (packet: string) -> boolean`
@@ -178,13 +178,13 @@ serein.setListener("onGroupPoke", (group, user) => {
 `onReceivePacket`先于`onReceivePrivateMessage`和`onReceiveGroupMessage`触发，若此事件被拦截，私聊和群聊消息事件均不会被触发
 :::
 
-### onSereinClose
+#### onSereinClose
 
 - **Serein关闭**
 - 监听函数原型： `function () -> void`
 - 不可拦截
 
-### onPluginsReload
+#### onPluginsReload
 
 - **插件重载**
 - 监听函数原型： `function () -> void`
@@ -194,7 +194,7 @@ serein.setListener("onGroupPoke", (group, user) => {
 以上两个事件为方便插件保存信息使用，超过`JSEventMaxWaitingTime`设置项的时间后继续执行将被中止
 :::
 
-### onPluginsLoaded
+#### onPluginsLoaded
 
 - **插件加载完毕**
 - 监听函数原型： `function () -> void`
@@ -384,10 +384,15 @@ serein.setPreLoadConfig(
   - `object` 设置内容对象（见上）
 
 :::tip
-最好使用该函数而不是上面的`serein.getSettings()`
+最好使用`serein.getSettingsObject()`而不是`serein.getSettings()`
 
-- 你可以直接通过对象的属性获取对应的设置项，而不用将其转成JSON后再获取
-- `serein.getSettings()`为了向下兼容将会存留两到三个版本，以后可能将被`serein.getSettingsObject()`取代
+```js
+const settings = JSON.parse(serein.getSettings());
+const settingsObj = serein.getSettingsObject();
+// 虽然说两个方法等价（
+// 但是通过`getSettingsObject`获取不需要再加一步转成JS对象，效率更高
+```
+
 :::
 
 ## 执行命令
@@ -429,17 +434,17 @@ serein.runCommand("g|hello")
   "description": "",          // 注册的介绍
   "eventList": [],            // 监听的事件列表
   "preLoadConig": {           // 预加载配置
-    "Assemblies": [],
-    "AllowGetType": false,
-    "AllowOperatorOverloading": true,
-    "AllowSystemReflection": false,
-    "AllowWrite": true,
-    "Strict": false
+    "assemblies": [],
+    "allowGetType": false,
+    "allowOperatorOverloading": true,
+    "allowSystemReflection": false,
+    "allowWrite": true,
+    "strict": false
   } 
 } 
 ```
 
-```ts
+```ts title="serein.d.ts"
 declare type Plugin = {
   readonly namespace: string
   readonly name?: string
@@ -454,13 +459,13 @@ declare type Plugin = {
 }
 
 declare interface PreLoadConfig {
-  readonly Assemblies: string[]
-  readonly AllowGetType: boolean
-  readonly AllowOperatorOverloading: boolean
-  readonly AllowSystemReflection: boolean
-  readonly AllowWrite: boolean
-  readonly Strict: boolean
-  readonly StringCompilationAllowed: boolean
+  readonly assemblies: string[]
+  readonly allowGetType: boolean
+  readonly allowOperatorOverloading: boolean
+  readonly allowSystemReflection: boolean
+  readonly allowWrite: boolean
+  readonly strict: boolean
+  readonly stringCompilationAllowed: boolean
 }
 
 declare interface WSClient {
@@ -472,92 +477,6 @@ declare interface WSClient {
 :::tip
 由于此函数为即时获取，获取时可能还未将所有插件载入，故建议使用`setTimeout()`延迟一段时间再获取
 :::
-
-## 获取正则列表
-
-`serein.getRegexes()`
-
-- 参数
-  - 空
-- 返回
-  - `Array<RegexItem>` 正则列表
-    - `RegexItem`
-      - 结构见[正则](../../guide/regex)
-
-```ts
-declare type Regex = {
-  readonly regex: string
-  readonly area: RegexAreaType,
-  readonly needAdmin: boolean,
-  readonly command: string,
-  readonly remark: string,
-  readonly ignore: number[]
-}
-```
-
-## 添加正则
-
-```js
-serein.addRegex(
-  regexp: string,
-  area: number,
-  needAdmin: boolean,
-  command: string,
-  remark: string,
-  ignore: number[]
-  )
-```
-
-- 参数
-  - `regexp` 正则表达式
-  - `area` 作用域
-  - `needAdmin` 需要管理
-  - `command` 命令
-  - `remark` 备注
-  - `ignore` 忽略的对象
-- 返回
-  - `boolean`
-    - 成功为`true`，否则为`false`
-
-## 修改正则
-
-```js
-serein.editRegex(
-  index: number
-  regexp?: string,
-  area?: number,
-  needAdmin?: boolean,
-  command?: string,
-  remark?: string,
-  ignore?: number[]
-  )
-```
-
-- 参数
-  - `index` 数组下标
-  - `regexp` 正则表达式
-  - `area` 作用域
-  - `needAdmin` 需要管理
-  - `command` 命令
-  - `remark` 备注
-  - `ignore` 忽略的对象
-- 返回
-  - `boolean`
-    - 成功为`true`，否则为`false`
-
-:::note
-若参数为null则忽略更改
-:::
-
-## 删除正则
-
-`serein.removeRegex(index: number)`
-
-- 参数
-  - `index` 数组下标
-- 返回
-  - `boolean`
-    - 成功为`true`，否则为`false`
 
 ## 设置命令变量
 

@@ -1,10 +1,18 @@
-# 🎲 程序集
+# 🎲 Net程序集
 
 ## 导入
 
+:::tip
+一些基础的程序集已默认自动导入
+
+- `System.IO`
+- `System.Text`
+- ...
+:::
+
 ### 使用预加载配置文件
 
-详见[Assemblies](preLoadConfig#Assemblies)
+详见[Assemblies](preLoadConfig#assemblies-string)
 
 ### 使用NET的反射功能
 
@@ -21,9 +29,10 @@ let obj = System.Activator.CreateInstance(Type, /* 构造函数参数 */);
 
 与C#中一致
 
-以下是个例子
+<details>
+  <summary>以下是个例子</summary>
 
-```cs
+```cs showLineNumbers
 // https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.form
 
 public void CreateMyForm()
@@ -69,7 +78,7 @@ public void CreateMyForm()
 
 转换后👇
 
-```js
+```js showLineNumbers
 function form() {
     let form1 = new System.Windows.Forms.Form();
     // Create two buttons to use as the accept and cancel buttons.
@@ -120,3 +129,11 @@ let button1 = new Button();
 ```
 
 :::
+
+</details>
+
+## 更多例子
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />

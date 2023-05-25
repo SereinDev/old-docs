@@ -25,6 +25,7 @@ const sidebars = {
           },
           items: [
             'development/function/serein',
+            'development/function/regex',
             'development/function/system',
             'development/function/server',
             'development/function/msg',
@@ -35,7 +36,19 @@ const sidebars = {
         },
         'development/permissionGroup',
         'development/preLoadConfig',
-        'development/assembly',
+        {
+          type: 'category',
+          label: '🎲 Net程序集',
+          collapsible: false,
+          link: {
+            type: 'doc',
+            id: 'development/assembly',
+          },
+          items: [
+            'development/assembly/System.Diagnostics',
+            'development/assembly/System.IO',
+          ]
+        }
       ]
     }
   ],
