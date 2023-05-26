@@ -25,7 +25,7 @@
 使用cmd或PowerShell启动 Serein-???.exe ，在路径后面写上`debug`即可
 
 ```powershell
-> Serein-???.exe debug
+Serein-???.exe debug
 ```
 
 ### 更改设置
@@ -36,10 +36,14 @@
 {
     // ...
     "developmentTool": {
+        // 开启调试模式
         // highlight-next-line
-        "enableDebug": true,            // 开启调试模式
+        "enableDebug": true,
+
+        // 详细的调试输出（包含函数参数类型和返回值，仅当上一项启用时生效）
         // highlight-next-line
-        "detailDebug": false,           // 详细的调试输出（包含函数参数类型和返回值，仅当上一行启用时生效）
+        "detailDebug": false, 
+        
         "note": "以上设置内容为开发专用选项，请在指导下修改"
     }
     // ...

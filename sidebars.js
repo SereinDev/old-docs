@@ -10,13 +10,13 @@ const sidebars = {
         type: 'doc',
         id: 'development/intro'
       },
+      collapsible: false,
       items: [
         'development/class',
         'development/properties',
         {
           type: 'category',
           label: '🗿 函数',
-          collapsible: false,
           link: {
             type: 'generated-index',
             title: '函数大全',
@@ -39,7 +39,6 @@ const sidebars = {
         {
           type: 'category',
           label: '🎲 Net程序集',
-          collapsible: false,
           link: {
             type: 'doc',
             id: 'development/assembly',
@@ -47,6 +46,20 @@ const sidebars = {
           items: [
             'development/assembly/System.Diagnostics',
             'development/assembly/System.IO',
+            {
+              type: 'category',
+              label: '🌰 System.Net.Http',
+              link: {
+                type: 'doc',
+                id: 'development/assembly/System.Net.Http'
+              },
+              items: [
+                'development/assembly/System.Net.Http.HttpClient',
+                'development/assembly/System.Net.Http.HttpContent',
+                'development/assembly/System.Net.Http.HttpRequestMessage',
+                'development/assembly/System.Net.Http.HttpResponseMessage',
+              ]
+            }
           ]
         }
       ]

@@ -526,6 +526,6 @@ declare interface WSClient {
   - `any`
     - 传入函数的返回值
     - 当`func`不是一个正确的函数时将返回`undefined`
-- 错误
-  - `any` 由调用的函数`throw`
+- 可能的错误
+  - `any` 由调用的函数抛出
   - `System.MethodAccessException` 调用等待超时（1000ms）

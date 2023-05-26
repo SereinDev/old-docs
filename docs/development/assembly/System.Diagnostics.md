@@ -3,18 +3,19 @@
 提供允许你与系统进程、事件日志和性能计数器进行交互的类
 
 :::tip
-此章节中默认已导入以下命名空间
 
-```js
-const {
-  Diagnostics: {
-    Process,
-    ProcessStartInfo
-  },
-  Text: {
-    Encoding
-  } } = System;
-```
+- 此章节中默认已导入以下命名空间
+  ```js
+  const {
+    Diagnostics: {
+      Process,
+      ProcessStartInfo
+    },
+    Text: {
+      Encoding
+    } } = System;
+  ```
+- 使用`Process`和`ProcessStartInfo`前需要在[预加载配置](../preLoadConfig)中导入`System`命名空间
 
 :::
 
