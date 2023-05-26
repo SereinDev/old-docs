@@ -128,7 +128,7 @@ export function readAllLinesFromFile(path: string, encoding: any = Encoding.UTF8
  * @param encoding 要使用的字符编码
  * @returns 包含文件中所有文本的字符串
  */
-export function readAllTextFromFile(path: string, encoding: any = Encoding.UTF8): string[] {
+export function readAllTextFromFile(path: string, encoding: any = Encoding.UTF8): string {
     return File.ReadAllText(path, encoding);
 }
 

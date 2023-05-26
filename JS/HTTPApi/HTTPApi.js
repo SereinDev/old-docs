@@ -1,18 +1,37 @@
+/// <reference path='SereinJSPluginHelper/index.d.ts'/>
+// @ts-check
 
-const HttpListener = System.Net.HttpListener;
-const Encoding = System.Text.Encoding;
-const File = System.IO.File;
-const Directory = System.IO.Directory;
-const listener = new HttpListener();
-const logger = new Logger('HTTPApi');
-const VERSION = 'v1.1';
+const VERSION = 'v1.2';
+
+const {
+    existDirectory,
+    existFile,
+    createDirectory,
+    writeAllTextToFile,
+    readAllTextFromFile
+} = require('./modules/stdio.js');
+
+const {
+    Net: {
+        HttpListener
+    },
+    Text: {
+        Encoding
+    }
+} = System;
 
 serein.registerPlugin('HTTPApi', VERSION, 'Zaitonn', 'HTTP应用程序接口');
+checkPreLoadConfig();
+
+const listener = new HttpListener();
+const logger = new Logger('HTTPApi');
+let globalStatus = true;
+
 
 let config = {
-    auth: [''],
+    auth: new Array(),
     port: 2222,
-    whitelist: [],
+    whitelist: new Array(),
     enableWhitelist: false
 };
 
@@ -23,45 +42,60 @@ function init() {
     if (!HttpListener.IsSupported)
         throw new Error('当前系统不支持HttpListener');
 
-    if (Directory.Exists('plugins/HTTPApi') && File.Exists('plugins/HTTPApi/config.json')) {
+    if (existDirectory('plugins/HTTPApi') && existFile('plugins/HTTPApi/config.json')) {
         try {
-            config = JSON.parse(File.ReadAllText('plugins/HTTPApi/config.json'));
+            config = JSON.parse(readAllTextFromFile('plugins/HTTPApi/config.json'));
             config.whitelist.push('127.0.0.1');
         } catch (e) {
             throw new Error(`读取配置文件时出现问题：${e}`);
         }
-
+        checkConfig();
         if (config.auth.length <= 0)
             throw new Error('AuthKey为空，请修改后重试');
 
         listener.Prefixes.Add(`http://127.0.0.1:${config.port}/serein/`);
         listener.Start();
-        start();
-    } else {
-        Directory.CreateDirectory('plugins/HTTPApi');
-        File.WriteAllText('plugins/HTTPApi/config.json', JSON.stringify(config, null, 4));
-        logger.error('配置文件不存在，已重新创建');
-        throw new Error('请使用文本编辑器打开 plugins/HTTPApi/config.json 修改相应配置后重新加载');
+        listener.BeginGetContext(asyncCallback, null);
+        serein.setListener('onPluginsReload', onReload);
+        return;
     }
+
+    createDirectory('plugins/HTTPApi');
+    writeAllTextToFile('plugins/HTTPApi/config.json', JSON.stringify(config, null, 4));
+    logger.error('配置文件不存在，已重新创建');
+    throw new Error('请使用文本编辑器打开“plugins/HTTPApi/config.json”修改相应配置后重新加载');
 }
 
 /**
- * 开始获取请求
+ * 异步回调函数
+ * @param {*} result 参数
  */
-function start() {
-    setTimeout(() => {
-        logger.warn('已开始接收http数据包。若要重新加载配置请重启Serein，直接重载插件将导致此插件无法被加载');
-        while (listener.IsListening) {
-            const context = listener.GetContext();
-            const response = handleResponse(context.Request);
-            context.Response.AddHeader('Content-Type', 'application/json'); // 添加响应头
-            context.Response.StatusCode = response.status;
-            const bytes = Encoding.UTF8.GetBytes(createResponse(response.data, response.status));
-            context.Response.ContentLength64 = bytes.length;
-            context.Response.OutputStream.Write(bytes, 0, bytes.length);
-            context.Response.Close();
-        }
-    }, 100);
+function asyncCallback(result) {
+    try {
+        const context = listener.EndGetContext(result);
+        const response = handleResponse(context.Request);
+
+        context.Response.AddHeader('Content-Type', 'application/json'); // 添加响应头
+        context.Response.StatusCode = response.status;
+        const bytes = Encoding.UTF8.GetBytes(createResponse(response.data, response.status));
+        context.Response.ContentLength64 = bytes.length;
+        context.Response.OutputStream.Write(bytes, 0, bytes.length);
+        context.Response.Close();
+        listener.BeginGetContext(asyncCallback, null);
+
+    } catch (e) {
+        if (globalStatus)
+            logger.error(e);
+    }
+
+}
+
+/**
+ * 重载触发
+ */
+function onReload() {
+    listener.Stop();
+    globalStatus = false;
 }
 
 /**
@@ -75,13 +109,13 @@ function getParameter(parameter, name) {
     let r = parameter.match(reg);
     if (r != null)
         return r[2];
-    return null;
+    return '';
 }
 
 /**
  * 处理回复
- * @param {HttpListenerRequest} request 请求体对象
- * @returns {Array}
+ * @param {*} request 请求体对象
+ * @returns
  */
 function handleResponse(request) {
     try {
@@ -166,21 +200,23 @@ function handleResponse(request) {
                 };
 
             case 'stopserver':
-                if (serein.stopServer())
+                if (!serein.getServerStatus())
                     return {
-                        status: 200,
+                        status: 403,
                         data: {
-                            success: true,
-                            reason: ''
+                            success: false,
+                            reason: '服务器不在运行中'
                         }
                     };
+                serein.stopServer();
                 return {
-                    status: 403,
+                    status: 200,
                     data: {
-                        success: false,
-                        reason: '服务器不在运行中'
+                        success: true,
+                        reason: ''
                     }
                 };
+
 
             case 'killserver':
                 if (serein.killServer())
@@ -392,9 +428,9 @@ function handleResponse(request) {
 
 /**
  * 创建响应
- * @param {*} data 
- * @param {Number} status 
- * @returns {String}
+ * @param {*} data
+ * @param {number} status
+ * @returns {string}
  */
 function createResponse(data, status = 200) {
     return JSON.stringify({
@@ -402,6 +438,33 @@ function createResponse(data, status = 200) {
         data: data || null,
         time: Math.floor(Date.now() / 1000)
     }, null, 2);
+}
+
+/**
+ * 检查预加载配置
+ */
+function checkPreLoadConfig() {
+    if (existDirectory('./plugins/HTTPApi') && existFile('./plugins/HTTPApi/PreLoadConfig.json'))
+        return;
+
+    serein.setPreLoadConfig(['System']);
+    throw new Error('请重新加载此插件');
+}
+
+/**
+ * 检查配置文件
+ */
+function checkConfig() {
+    if (!Array.isArray(config.auth) ||
+        config.auth.length === 0 ||
+        !Array.isArray(config.whitelist) ||
+        typeof (config.enableWhitelist) !== 'boolean' ||
+        typeof (config.port) !== 'number' ||
+        !Number.isInteger(config.port) ||
+        config.port > 65536 ||
+        config.port <= 0
+    )
+        throw new Error('配置文件内容有误');
 }
 
 init();

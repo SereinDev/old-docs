@@ -74,7 +74,7 @@ export declare function readAllLinesFromFile(path: string, encoding?: any): stri
  * @param encoding 要使用的字符编码
  * @returns 包含文件中所有文本的字符串
  */
-export declare function readAllTextFromFile(path: string, encoding?: any): string[];
+export declare function readAllTextFromFile(path: string, encoding?: any): string;
 /**
  * 创建一个新文件，使用指定编码在其中写入指定的字符串数组，然后关闭该文件。
  * @param path 要写入的文件
