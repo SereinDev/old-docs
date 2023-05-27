@@ -517,7 +517,7 @@ declare interface WSClient {
 此函数可用于解决跨插件调用函数时导致线程不安全的问题
 :::
 
-`serein.safeCall(func: Function, ...args: any)`
+`serein.safeCall(func: Function, ...args: any): any`
 
 - 参数
   - `func` 函数

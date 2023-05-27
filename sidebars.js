@@ -18,10 +18,8 @@ const sidebars = {
           type: 'category',
           label: '🗿 函数',
           link: {
-            type: 'generated-index',
-            title: '函数大全',
-            description:
-              ' ',
+            type: 'doc',
+            id: 'development/function'
           },
           items: [
             'development/function/serein',

@@ -10,7 +10,7 @@
 
 [开启调试模式](debugMode)
 
-## `function` 功能
+## `function`功能
 
 ### `noHeartbeat`
 
@@ -24,18 +24,24 @@
 
 ### `jsEventMaxWaitingTime`
 
-- `number >=0`
+- `number`
 - JS插件事件拦截调用最大等待时间
   - 详见[设置监听器](../development/function/serein#设置监听器)
 
 ### `jsEventCoolingDownTime`
 
-- `number >=0`
+- `number`
 - JS事件冷却事件，避免调用过快导致插件卡死
 
 :::tip
 若你没有使用JS的需求，你可以将以上两项调为`0`来加快消息处理速度
 :::
+
+### `jsGlobalAssemblies`
+
+- `string[]`
+- JS全局程序集，此处的程序集将被所有JS引擎加载
+  - 你可以在此写入一些常用的程序集方便各插件使用
 
 ### `disableBinderWhenServerClosed`
 
