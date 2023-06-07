@@ -250,7 +250,7 @@ function handle(packet) {
 function reg() {
     const MHregHandler = serein.imports('MsgHelper.regHandler');
     if (!MHregHandler || typeof (MHregHandler) != 'function')
-        throw new Error('你需要安装`CommandHelper.js`');
+        throw new Error('你需要安装`MsgHelper.js`');
     MHregHandler({
         name: '当前状态图片',
         descriptions: ['以图片方式返回当前状态', '用法：发送“zt”|“状态”|“服务器状态”'],

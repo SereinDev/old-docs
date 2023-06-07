@@ -1,8 +1,6 @@
-/// <reference path="../SereinJSPluginHelper/index.d.ts"/>
-
 /**
  * 文件读写模块
- * @version v1.0
+ * @version v1.1
  * @author Zaitonn
  */
 
@@ -193,7 +191,7 @@ export function moveDirectory(sourceDirName: string, destDirName: string) {
  * @param searchOption 用于指定搜索操作是应包含所有子目录还是仅包含当前目录的枚举值之一
  * @returns 指定目录中与指定的搜索模式和选项匹配的文件的完整名称（包含路径）的数组；如果未找到任何文件，则为空数组
  */
-export function getFiles(path: string, searchPattern?: string, searchOption: any = SearchOption.AllDirectories): string[] {
+export function getFiles(path: string, searchPattern?: string, searchOption: any = SearchOption.TopDirectoryOnly): string[] {
     if (searchPattern)
         return Directory.GetFiles(path, searchPattern, searchOption);
     else
@@ -207,7 +205,7 @@ export function getFiles(path: string, searchPattern?: string, searchOption: any
  * @param searchOption 用于指定搜索操作是应包含所有子目录还是仅包含当前目录的枚举值之一
  * @returns 指定目录中与指定的搜索模式和选项匹配的文件的完整名称（包含路径）的数组；如果未找到任何文件，则为空数组
  */
-export function getDirectories(path: string, searchPattern?: string, searchOption: any = SearchOption.AllDirectories): string[] {
+export function getDirectories(path: string, searchPattern?: string, searchOption: any = SearchOption.TopDirectoryOnly): string[] {
     if (searchPattern)
         return Directory.GetDirectories(path, searchPattern, searchOption);
     return Directory.GetDirectories(path);

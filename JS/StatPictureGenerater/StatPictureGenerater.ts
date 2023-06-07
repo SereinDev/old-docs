@@ -1170,7 +1170,7 @@ function handle(packet: Packet) {
 function reg() {
     const MHregHandler: regHandler = serein.imports('MsgHelper.regHandler');
     if (!MHregHandler || typeof (MHregHandler) != 'function')
-        throw new Error('你需要安装`CommandHelper.js`');
+        throw new Error('你需要安装`MsgHelper.js`');
 
     MHregHandler({
         name: '当前状态图片',
