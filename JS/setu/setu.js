@@ -1,7 +1,8 @@
 /// <reference path="SereinJSPluginHelper/index.d.ts"/>
-/// <reference path="CommandHelper.d.ts"/>
+/// <reference path="MsgHelper.d.ts"/>
+/// @ts-check
 
-serein.registerPlugin('随机二次元图片', 'v1.0', 'Zaitonn', '需要安装`CommandHelper.js`前置');
+serein.registerPlugin('随机二次元图片', 'v1.1', 'Zaitonn', '需要安装`MsgHelper.js`前置');
 
 /**
  * api索引
@@ -20,23 +21,28 @@ const apis = [
 ];
 
 serein.setListener('onPluginsLoaded', () => {
-    /** @type {CHregCommand} */
-    const CHregCommand = serein.import('CHregCommand');
-    if (!CHregCommand)
-        throw new Error('你需要安装`CommandHelper.js`');
+    /** @type {regHandler} */
+    const MHregHandler = serein.imports('MsgHelper.regHandler');
+    if (!MHregHandler)
+        throw new Error('你需要安装`MsgHelper.js`');
 
-    CHregCommand({
+    MHregHandler({
         name: '随机二次元图片',
-        keywords: ['色图', '涩图'],
-        callback: callback,
-        needAdmin: false,
-        description: ['随机返回一张二次元图片捏♡♡', '用法：发送“涩图” | “色图”'],
+        descriptions: ['随机返回一张二次元图片捏♡♡', '用法：发送“涩图” | “色图”'],
         author: 'Zaitonn',
-        version: 'v1.0'
+        version: 'v1.0',
+        triggers: [
+            {
+                type: 'fullmatch',
+                params: ['涩图', '色图'],
+                callback: callback
+            }
+        ]
     });
 });
 
 
 function callback() {
+    // @ts-ignore
     return `[CQ:image,file=${apis[apiIndex] || apis[Math.floor(Math.random() * apis.length)]},cache=0]`;
 }

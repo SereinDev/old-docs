@@ -1,31 +1,37 @@
 /// <reference path='SereinJSPluginHelper/index.d.ts'/>
-/// <reference path="CommandHelper.d.ts"/>
+/// <reference path="MsgHelper.d.ts"/>
+/// @ts-check
 
-serein.registerPlugin('恶臭数字论证器', 'v114.514.0', 'Zaitonn', '需要安装`CommandHelper.js`前置');
+const VERSION = 'v114.514.1';
+serein.registerPlugin('恶臭数字论证器', VERSION, 'Zaitonn', '需要安装`MsgHelper.js`前置');
 
 serein.setListener('onPluginsLoaded', () => {
-    /** @type {CHregCommand} */
-    // @ts-expect-error
-    const CHregCommand = serein.import('CHregCommand');
-    if (!CHregCommand)
-        throw new Error('你需要安装`CommandHelper.js`');
+    /** @type {regHandler} */
+    const MHregHandler = serein.imports('MsgHelper.regHandler');
+    if (!MHregHandler || typeof (MHregHandler) != 'function')
+        throw new Error('你需要安装`MsgHelper.js`');
 
-    CHregCommand({
+    MHregHandler({
         name: '恶臭数字论证器',
-        keywords: ['homo'],
-        callback: callback,
-        needAdmin: false,
-        description: ['恶臭数字论证器', '万物的尽头都是homo（暴论）', '嗯哼哼啊啊啊啊啊啊啊啊啊啊啊啊啊', '用法：“homo <数字>”'],
+        descriptions: ['恶臭数字论证器', '万物的尽头都是homo（暴论）', '嗯哼哼啊啊啊啊啊啊啊啊啊啊啊啊啊', '用法：“homo <数字>”'],
         author: 'Zaitonn',
-        version: 'v114.514.0'
+        version: VERSION,
+        triggers: [
+            {
+                type: 'startswith',
+                params: ['homo'],
+                callback: callback,
+                reply: true
+            }
+        ]
     });
 });
 
-function callback({ message, message_id }) {
+function callback({ message }) {
     const mainContent = message.replace(/^homo /, '');
     if (/^\d+$/.test(mainContent))
-        return `[CQ:reply,id=${message_id}]${homo(Number(mainContent))}`;
-    return `[CQ:reply,id=${message_id}]兄啊，这有论证的必要吗（悲）`;
+        return homo(Number(mainContent));
+    return `兄啊，这有论证的必要吗（悲）`;
 }
 
 /**

@@ -1,23 +1,25 @@
 /// <reference path='SereinJSPluginHelper/index.d.ts'/>
 /// @ts-check
 
-serein.registerPlugin('答案之书', 'v1.0', 'Zaitonn', '需要安装`CommandHelper.js`前置');
+const VERSION = 'v1.1';
+serein.registerPlugin('答案之书', VERSION, 'Zaitonn', '需要安装`MsgHelper.js`前置');
 
 serein.setListener('onPluginsLoaded', () => {
-    /** @type {CHregCommand} */
-    // @ts-expect-error
-    const CHregCommand = serein.import('CHregCommand');
-    if (!CHregCommand)
-        throw new Error('你需要安装`CommandHelper.js`');
+    /** @type {regHandler} */
+    const MHregHandler = serein.imports('MsgHelper.regHandler');
+    if (!MHregHandler || typeof (MHregHandler) != 'function')
+        throw new Error('你需要安装`MsgHelper.js`');
 
-    CHregCommand({
+    MHregHandler({
         name: '答案之书',
-        keywords: ['答案之书'],
-        callback: callback,
-        needAdmin: false,
-        description: ['答案之书', '用法：“答案之书 [你的问题]”'],
+        descriptions: ['答案之书', '用法：“答案之书 [你的问题]”'],
         author: 'Zaitonn',
-        version: 'v1.0'
+        version: VERSION,
+        triggers: [{
+            type: 'startswith',
+            params: ['答案之书'],
+            callback: callback
+        }]
     });
 });
 

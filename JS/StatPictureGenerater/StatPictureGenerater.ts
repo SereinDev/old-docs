@@ -137,7 +137,7 @@ const BASECONFIG: Config = {
     defaultColor: ''
 };
 
-serein.registerPlugin('状态图片生成', VERSION, 'Zaiton', '');
+serein.registerPlugin('状态图片生成', VERSION, 'Zaiton', '需要安装`MsgHelper.js`前置');
 checkPreLoadConfig();
 clearAllCache();
 

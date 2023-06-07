@@ -1,23 +1,28 @@
 /// <reference path="SereinJSPluginHelper/index.d.ts"/>
-/// <reference path="CommandHelper.d.ts"/>
+/// <reference path="MsgHelper.d.ts"/>
 /// @ts-check
 
-serein.registerPlugin('随机草图', 'v1.0', 'Zaitonn', '需要安装`CommandHelper.js`前置');
+const VERSION = 'v1.1';
+serein.registerPlugin('随机草图', VERSION, 'Zaitonn', '需要安装`MsgHelper.js`前置');
 
 serein.setListener('onPluginsLoaded', () => {
-    /** @type {CHregCommand} */
-    const CHregCommand = serein.import('CHregCommand');
-    if (!CHregCommand)
-        throw new Error('你需要安装`CommandHelper.js`');
+    /** @type {regHandler} */
+    const MHregHandler = serein.imports('MsgHelper.regHandler');
+    if (!MHregHandler || typeof (MHregHandler) != 'function')
+        throw new Error('你需要安装`MsgHelper.js`');
 
-    CHregCommand({
+    MHregHandler({
         name: '随机草图',
-        keywords: ['meme', '草图'],
-        callback: callback,
-        needAdmin: false,
-        description: ['草草草草草草草草草草草草草草草草', '用法：发送“meme” | “草图”'],
+        descriptions: ['草草草草草草草草草草草草草草草草', '用法：发送“meme” | “草图”'],
         author: 'Zaitonn',
-        version: 'v1.0'
+        version: VERSION,
+        triggers: [
+            {
+                type: 'fullmatch',
+                params: ['meme', '草图'],
+                callback: callback
+            }
+        ]
     });
 });
 
