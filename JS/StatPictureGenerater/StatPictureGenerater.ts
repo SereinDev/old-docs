@@ -1,5 +1,5 @@
+/// <reference path='MsgHelper.d.ts'/>
 /// <reference path='SereinJSPluginHelper/index.d.ts'/>
-/// <reference path='CommandHelper.d.ts'/>
 /// <reference path='modules/stdio.d.ts'/>
 // @ts-check
 
@@ -73,6 +73,7 @@ const {
     IO: {
         DriveInfo,
         File,
+        FileInfo,
         SearchOption,
     },
     Net: {
@@ -117,7 +118,7 @@ const SIZES = {
 /**
  * 版本
  */
-const VERSION = 'v1.0';
+const VERSION = 'v1.1';
 
 /**
  * 默认配置
@@ -1117,10 +1118,13 @@ function generate(packet: Packet) {
     // 设置缓存
     caches.set(file, Date.now());
 
+    // 获取文件大小
+    const fileSize = new FileInfo(file).length / 1024 / 1024;
+
     // 清理内存
     GC.Collect();
 
-    logger.info(`生成完毕。用时：${(Date.now() - time) / 1000}s`)
+    logger.info(`生成完毕。用时：${(Date.now() - time) / 1000}s；${fileSize.toFixed(2)}MB`)
 
     return `[CQ:image,file=base64://${Convert.ToBase64String(File.ReadAllBytes(file))}]` // 返回base64CQ🐴
 }
@@ -1155,7 +1159,7 @@ function handle(packet: Packet) {
     try {
         return generate(packet);
     } catch (e: any) {
-        serein.sendGroup(packet.group_id, e?.message || e.toString() || e);
+        serein.sendGroup(packet.group_id, e?.message || e?.toString() || e);
         throw e;
     }
 }
@@ -1164,17 +1168,20 @@ function handle(packet: Packet) {
  * 注册命令
  */
 function reg() {
-    const CHregCommand: CHregCommand = serein.imports('CHregCommand');
-    if (!CHregCommand)
+    const MHregHandler: regHandler = serein.imports('MsgHelper.regHandler');
+    if (!MHregHandler || typeof (MHregHandler) != 'function')
         throw new Error('你需要安装`CommandHelper.js`');
-    CHregCommand({
+
+    MHregHandler({
         name: '当前状态图片',
-        keywords: ['zt', '状态', '服务器状态'],
-        callback: handle,
-        needAdmin: false,
-        description: ['以图片方式返回当前状态', '用法：发送“zt”|“状态”|“服务器状态”'],
+        descriptions: ['以图片方式返回当前状态', '用法：发送“zt”|“状态”|“服务器状态”'],
         author: 'Zaitonn',
-        version: VERSION
+        version: VERSION,
+        triggers: [{
+            type: 'fullmatch',
+            params: ['zt', '状态', '服务器状态'],
+            callback: handle
+        }]
     });
 }
 

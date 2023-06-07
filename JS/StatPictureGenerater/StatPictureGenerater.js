@@ -1,11 +1,12 @@
 /**
  * 此插件使用了Typescript编写，并在编译时删除了注释和空行，因此代码可读性极低
- * 如果你想要查看源码，请在<https://github.com/Zaitonn/Serein-Docs/tree/publish/JS/StatPictureGenerater/StatPictureGenerater.ts>查看
+ * 如果你想要查看源码，请在<https://github.com/Zaitonn/Serein-Docs/blob/publish/JS/StatPictureGenerater/StatPictureGenerater.ts>查看
  */
+
 "use strict";
 const stdio = require("./modules/stdio.js");
 const { existFile, existDirectory, createDirectory, deleteFile, getFiles, getExtension, getFileName, writeAllTextToFile, readAllTextFromFile } = stdio;
-const { Drawing: { Drawing2D: { CompositingQuality, InterpolationMode, SmoothingMode, }, Imaging: { ImageFormat, }, Text: { TextRenderingHint, }, Bitmap, Color, Font, Graphics, Rectangle, RectangleF, StringAlignment, StringFormat, StringTrimming, SolidBrush, }, IO: { DriveInfo, File, SearchOption, }, Net: { Http: { HttpClient } }, Convert, Environment, GC } = System;
+const { Drawing: { Drawing2D: { CompositingQuality, InterpolationMode, SmoothingMode, }, Imaging: { ImageFormat, }, Text: { TextRenderingHint, }, Bitmap, Color, Font, Graphics, Rectangle, RectangleF, StringAlignment, StringFormat, StringTrimming, SolidBrush, }, IO: { DriveInfo, File, FileInfo, SearchOption, }, Net: { Http: { HttpClient } }, Convert, Environment, GC } = System;
 const caches = new Map();
 const PATH = {
     main: './plugins/StatPictureGenerater/',
@@ -21,7 +22,7 @@ const SIZES = {
         return config.shadow ? 1.5 : 0;
     }
 };
-const VERSION = 'v1.0';
+const VERSION = 'v1.1';
 const BASECONFIG = {
     urls: [
         'https://t.mwm.moe/ysmp/',
@@ -218,8 +219,9 @@ function generate(packet) {
     bitmap.Dispose();
     graphics.Dispose();
     caches.set(file, Date.now());
+    const fileSize = new FileInfo(file).length / 1024 / 1024;
     GC.Collect();
-    logger.info(`生成完毕。用时：${(Date.now() - time) / 1000}s`);
+    logger.info(`生成完毕。用时：${(Date.now() - time) / 1000}s；${fileSize.toFixed(2)}MB`);
     return `[CQ:image,file=base64://${Convert.ToBase64String(File.ReadAllBytes(file))}]`;
 }
 function clearCaches() {
@@ -241,22 +243,24 @@ function handle(packet) {
         return generate(packet);
     }
     catch (e) {
-        serein.sendGroup(packet.group_id, e?.message || e.toString() || e);
+        serein.sendGroup(packet.group_id, e?.message || e?.toString() || e);
         throw e;
     }
 }
 function reg() {
-    const CHregCommand = serein.imports('CHregCommand');
-    if (!CHregCommand)
+    const MHregHandler = serein.imports('MsgHelper.regHandler');
+    if (!MHregHandler || typeof (MHregHandler) != 'function')
         throw new Error('你需要安装`CommandHelper.js`');
-    CHregCommand({
+    MHregHandler({
         name: '当前状态图片',
-        keywords: ['zt', '状态', '服务器状态'],
-        callback: handle,
-        needAdmin: false,
-        description: ['以图片方式返回当前状态', '用法：发送“zt”|“状态”|“服务器状态”'],
+        descriptions: ['以图片方式返回当前状态', '用法：发送“zt”|“状态”|“服务器状态”'],
         author: 'Zaitonn',
-        version: VERSION
+        version: VERSION,
+        triggers: [{
+                type: 'fullmatch',
+                params: ['zt', '状态', '服务器状态'],
+                callback: handle
+            }]
     });
 }
 function getColor(hexColor) {
