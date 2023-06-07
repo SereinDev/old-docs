@@ -25,6 +25,7 @@ date: 2077.5.5
 
 - [PBind - 账号绑定系统](https://www.minebbs.com/resources/pbind.4211/)
 - [Unescaper for Serein - 解决中文乱码问题](https://www.minebbs.com/resources/unescaper-for-serein.5441/)
+- [聊天栏无前缀发件(Nukkit)](https://www.minebbs.com/resources/5923/)
 
 ## 整合包
 

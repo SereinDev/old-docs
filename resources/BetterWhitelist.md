@@ -22,7 +22,7 @@ date: 2023.5.9
 - 将 **成员管理** 设为 **服务器白名单** 后，无白名单玩家进服会在群聊提醒”没有白名单，尝试进入服务器“
 
 <details>
-	<summary>点此以查看示例图片</summary>
+    <summary>点此以查看示例图片</summary>
 
 ![1](/img/BetterWhitelist/BetterWhitelist_1.png)
 
@@ -33,7 +33,7 @@ date: 2023.5.9
 - 通过群命令“白名单列表”查看当前所有白名单情况
 
 <details>
-	<summary>点此以查看示例图片</summary>
+    <summary>点此以查看示例图片</summary>
 
 ![2](/img/BetterWhitelist/BetterWhitelist_2.png)
 
@@ -52,15 +52,15 @@ date: 2023.5.9
 :::
 
 ```mermaid
-	flowchart TB
-		A("开始") --> |"方式一"| B["成员"]
-		A --> |"方式二"| C["成员"]
-		A --> |"方式三"| D["管理员"]
-		B -->|"绑定/解绑"| B1["管理员"]
-		C -->|"绑定/解绑"| C1["插件"]
-		B1 -->|"手动"| Z("增删白名单")
-		C1 -->|"自动"| Z
-		D -->|"手动"| Z
+    flowchart TB
+        A("开始") --> |"方式一"| B["成员"]
+        A --> |"方式二"| C["成员"]
+        A --> |"方式三"| D["管理员"]
+        B -->|"绑定/解绑"| B1["管理员"]
+        C -->|"绑定/解绑"| C1["插件"]
+        B1 -->|"手动"| Z("增删白名单")
+        C1 -->|"自动"| Z
+        D -->|"手动"| Z
 ```
 
 ---
@@ -94,53 +94,53 @@ date: 2023.5.9
 
 ```json
 {
-	"NOTICE": "https://market.serein.cc/resources/BetterWhitelistt#配置文件",
-	"version": "v1.8",
-	"hasBind": true, // 群成员使用绑定/解绑命令的权限
-	"exitGroup": true, // 自动删除退群成员的 serein 成员管理数据
-	"editCard": true, // 自动修改群成员的群名片为 GameID，需管理员权限
-	"onlineMode": true, // 添加白名单时检测 GameID 是否符合规范
-	"sendGroup": true, // 向群聊中发送信息，关闭后可防止多服发送重复信息
-	"syncWhitelist": true, // 自动同步 serein 成员管理与服务端白名单
-	"betterMembers": {
-		"enable": false, // 将 serein 成员管理设为白名单
-		"interServer": [
-			// 匹配玩家进入服务器的控制台信息
-			"^.*?Player Spawned: (.*?) xuid:.*$",
-			"^.*?Player connected: (.*?), xuid:.*$"
-		],
-		"interServerReply": "^.*?Kicked (.*?) .*You do not have a whitelist!.*$"
-	},
-	"command": {
-		"bind": {
-			"name": "绑定",
-			"keywords": [
-				// 群内响应关键词，可自行增删
-				"绑定",
-				"bind"
-			]
-		},
-		"unbind": {
-			"name": "解绑",
-			"keywords": ["解绑", "unbind"]
-		},
-		"whitelistAdd": {
-			"name": "添加白名单",
-			"keywords": ["添加白名单", "whitelistadd", "wladd"]
-		},
-		"whitelistDelete": {
-			"name": "删除白名单",
-			"keywords": ["删除白名单", "whitelistdelete", "wldel"]
-		},
-		"syncWhitelist": {
-			"name": "同步白名单",
-			"keywords": ["同步白名单", "whitelistsync", "wlsync"]
-		},
-		"whitelist": {
-			"name": "白名单列表",
-			"keywords": ["白名单列表", "whitelist", "wllist"]
-		}
-	}
+    "NOTICE": "https://market.serein.cc/resources/BetterWhitelistt#配置文件",
+    "version": "v1.8",
+    "hasBind": true, // 群成员使用绑定/解绑命令的权限
+    "exitGroup": true, // 自动删除退群成员的 serein 成员管理数据
+    "editCard": true, // 自动修改群成员的群名片为 GameID，需管理员权限
+    "onlineMode": true, // 添加白名单时检测 GameID 是否符合规范
+    "sendGroup": true, // 向群聊中发送信息，关闭后可防止多服发送重复信息
+    "syncWhitelist": true, // 自动同步 serein 成员管理与服务端白名单
+    "betterMembers": {
+        "enable": false, // 将 serein 成员管理设为白名单
+        "interServer": [
+            // 匹配玩家进入服务器的控制台信息
+            "^.*?Player Spawned: (.*?) xuid:.*$",
+            "^.*?Player connected: (.*?), xuid:.*$"
+        ],
+        "interServerReply": "^.*?Kicked (.*?) .*You do not have a whitelist!.*$"
+    },
+    "command": {
+        "bind": {
+            "name": "绑定",
+            "keywords": [
+                // 群内响应关键词，可自行增删
+                "绑定",
+                "bind"
+            ]
+        },
+        "unbind": {
+            "name": "解绑",
+            "keywords": ["解绑", "unbind"]
+        },
+        "whitelistAdd": {
+            "name": "添加白名单",
+            "keywords": ["添加白名单", "whitelistadd", "wladd"]
+        },
+        "whitelistDelete": {
+            "name": "删除白名单",
+            "keywords": ["删除白名单", "whitelistdelete", "wldel"]
+        },
+        "syncWhitelist": {
+            "name": "同步白名单",
+            "keywords": ["同步白名单", "whitelistsync", "wlsync"]
+        },
+        "whitelist": {
+            "name": "白名单列表",
+            "keywords": ["白名单列表", "whitelist", "wllist"]
+        }
+    }
 }
 ```
 
