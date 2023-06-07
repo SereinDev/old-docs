@@ -1,4 +1,4 @@
-# 🦺 属性
+# 🧮 属性
 
 ## Serein.exe所在文件夹
 
@@ -49,7 +49,7 @@
   - `string`
 
 :::note
-JS命名空间用于内部区分JS解释器和其他属性，实例化[WebSocket](class#websocket客户端)时需要提供此参数
+JS命名空间用于内部区分JS解释器和其他属性，实例化[WebSocket](class/WSClient)等时需要提供此参数
 :::
 
 :::tip

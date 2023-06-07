@@ -86,7 +86,7 @@
 使用JS设置权限组时，在`permissions`内填入函数将导致无法正确保存
 :::
 
-### priority `Int32`
+### priority `number`
 
 优先级，数值越高的权限组的优先级越高
 

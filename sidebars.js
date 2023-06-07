@@ -12,7 +12,20 @@ const sidebars = {
       },
       collapsible: false,
       items: [
-        'development/class',
+        {
+          type: 'category',
+          label: '📚 类',
+          link: {
+            type: 'doc',
+            id: 'development/class'
+          },
+          items: [
+            'development/class/Logger',
+            'development/class/MessageBus',
+            'development/class/WSClient',
+            'development/class/Motd',
+          ]
+        },
         'development/properties',
         {
           type: 'category',
@@ -36,7 +49,7 @@ const sidebars = {
         'development/preLoadConfig',
         {
           type: 'category',
-          label: '🎲 Net程序集',
+          label: '🎲 Net程序集及示例',
           link: {
             type: 'doc',
             id: 'development/assembly',
