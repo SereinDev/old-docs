@@ -72,7 +72,7 @@ const config = {
           },
           {
             to: '/resources',
-            label: '🎞资源',
+            label: '🗃资源',
           },
           {
             to: '/docs/publish',

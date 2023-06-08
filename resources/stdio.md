@@ -3,7 +3,7 @@ title: 文件读写模块
 authors: 
   - Zaitonn
 tags: [JS,开发,模块]
-date: 2023.5.22
+date: 2023.6.7
 ---
 
 通过文件读写移动等操作的函数封装
@@ -227,6 +227,10 @@ export declare function getFullPath(path: string, basePath?: string): string;
 
 ## 历史版本
 
+- 2023.6.7 v1.1
+  - [`stdio.js`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/84c8408b7dd584d4fd5d9ebc1d5d284cd64a2d7b/JS/Modules/stdio/stdio.js?d) 编译后的文件
+  - [`stdio.d.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/84c8408b7dd584d4fd5d9ebc1d5d284cd64a2d7b/JS/Modules/stdio/stdio.d.ts?d) 类型声明文件
+  - [`stdio.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/84c8408b7dd584d4fd5d9ebc1d5d284cd64a2d7b/JS/Modules/stdio/stdio.ts?d) TypeScript源码
 - 2023.5.22 v1.0
   - [`stdio.js`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/df039a122e6f82db370a87fe05c1245f8c635c77/JS/Modules/stdio/stdio.js?d) 编译后的文件
   - [`stdio.d.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/df039a122e6f82db370a87fe05c1245f8c635c77/JS/Modules/stdio/stdio.d.ts?d) 类型声明文件

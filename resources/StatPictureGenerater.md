@@ -18,7 +18,7 @@ date: 2023.6.7
 - 你需要安装
   - [文件读写模块](stdio)
     - 下载后放在plugins/modules文件夹内
-  - [命令助手](CommandHelper)
+  - [消息助手](MsgHelper)
     - 下载后放在plugins文件夹内
 - 此插件使用了Typescript编写，阅读编译后的JS文件可能会有一些困难
 
@@ -42,7 +42,7 @@ date: 2023.6.7
 ## 使用方法
 
 1. 安装前置插件  
-  [文件读写模块](stdio)、[命令助手](CommandHelper)
+  [文件读写模块](stdio)、[消息助手](MsgHelper)
 2. 加载插件
 3. 按照提示重新加载
 4. 在监听的群聊中发送以下任意值触发

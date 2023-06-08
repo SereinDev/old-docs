@@ -3,7 +3,7 @@ title: 答案之书
 authors: 
   - Zaitonn
 tags: [JS,娱乐]
-date: 2023.4.30
+date: 2023.6.7
 ---
 
 >谁的生活不迷茫，谁的人生不迷惑。每个人都希望未卜先知，都希望掌控自己命运的罗盘，可变换莫测的世界总让我们感到失望，其实，我们的困惑并不在身外，而在我们的内心深处。我们总是希望心灵的疑惑得带一个真诚的回应，即便这个回应只是简单的“是”或“否”。
@@ -13,7 +13,7 @@ date: 2023.4.30
 <!--truncate-->
 
 :::caution
-此插件需要安装前置插件[命令助手](CommandHelper)，否则将无法使用
+此插件需要安装前置插件[消息助手](MsgHelper)，否则将无法使用
 :::
 
 ## 使用方法
@@ -33,4 +33,5 @@ date: 2023.4.30
 
 ## 历史版本
 
+- 2023.6.7 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/84c8408b7dd584d4fd5d9ebc1d5d284cd64a2d7b/JS/AnswerBook/AnswerBook.js?download)
 - 2023.4.30 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/030c6cd5666aa1e5c2995205ab4490a7314052b6/JS/AnswerBook/AnswerBook.js?download)

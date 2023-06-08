@@ -3,7 +3,7 @@ title: 随机涩图
 authors: 
   - Zaitonn
 tags: [JS,娱乐]
-date: 2023.4.19
+date: 2023.6.7
 ---
 
 ![如果你看不到的话那就一定看不到吧（](http://www.98qy.com/sjbz/api.php)
@@ -15,7 +15,7 @@ date: 2023.4.19
 <!--truncate-->
 
 :::caution
-此插件需要安装前置插件[命令助手](CommandHelper)，否则将无法使用
+此插件需要安装前置插件[消息助手](MsgHelper)，否则将无法使用
 :::
 
 ## 功能
@@ -43,4 +43,5 @@ date: 2023.4.19
 
 ## 历史版本
 
+- 2023.6.7 [v1.1](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/84c8408b7dd584d4fd5d9ebc1d5d284cd64a2d7b/JS/setu/setu.js?d)
 - 2023.4.19 [v1.0](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/setu/v1.0/setu.js?download)
