@@ -202,13 +202,13 @@ function isListeningToThisGroup(group_id) {
     return serein.getSettingsObject().bot.groupList.includes(group_id);
 }
 function loadConfig() {
-    if (!existDirectory('./plugins/CommandHelper') || !existFile('./plugins/CommandHelper/config.json')) {
-        createDirectory('./plugins/CommandHelper');
-        writeAllTextToFile('./plugins/CommandHelper/config.json', JSON.stringify(CONFIG, null, 2));
+    if (!existDirectory('./plugins/MsgHelper') || !existFile('./plugins/MsgHelper/config.json')) {
+        createDirectory('./plugins/MsgHelper');
+        writeAllTextToFile('./plugins/MsgHelper/config.json', JSON.stringify(CONFIG, null, 2));
         logger.warn('配置文件已创建');
         return null;
     }
-    const localConfig = JSON.parse(readAllTextFromFile('./plugins/CommandHelper/config.json'));
+    const localConfig = JSON.parse(readAllTextFromFile('./plugins/MsgHelper/config.json'));
     if (typeof (localConfig.commandPrefix) != 'string')
         throw new Error('配置文件命令前缀类型错误');
     if (typeof (localConfig.commandSeparator) != 'string')

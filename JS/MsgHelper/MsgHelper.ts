@@ -484,14 +484,14 @@ function isListeningToThisGroup(group_id: number) {
 }
 
 function loadConfig(): Config | null {
-    if (!existDirectory('./plugins/CommandHelper') || !existFile('./plugins/CommandHelper/config.json')) {
-        createDirectory('./plugins/CommandHelper');
-        writeAllTextToFile('./plugins/CommandHelper/config.json', JSON.stringify(CONFIG, null, 2));
+    if (!existDirectory('./plugins/MsgHelper') || !existFile('./plugins/MsgHelper/config.json')) {
+        createDirectory('./plugins/MsgHelper');
+        writeAllTextToFile('./plugins/MsgHelper/config.json', JSON.stringify(CONFIG, null, 2));
         logger.warn('配置文件已创建');
         return null;
     }
 
-    const localConfig: Config = JSON.parse(readAllTextFromFile('./plugins/CommandHelper/config.json'));
+    const localConfig: Config = JSON.parse(readAllTextFromFile('./plugins/MsgHelper/config.json'));
 
     if (typeof (localConfig.commandPrefix) != 'string')
         throw new Error('配置文件命令前缀类型错误');
