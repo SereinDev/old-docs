@@ -122,7 +122,7 @@ classDiagram
   - 注册后`descriptions`将被转成`description`
 - `StartsWithTrigger`为匹配开头
 - `EndsWithTrigger`为匹配结尾
-- `RegexTrigger`采用正则匹配(`RegExp.text()`)
+- `RegexTrigger`采用正则匹配(`RegExp.test()`)
   - `params`为字符串和正则的数组，允许二者同时存在
     - 注册时字符串会转为正则
 - `FullMatchTrigger`为完全匹配
