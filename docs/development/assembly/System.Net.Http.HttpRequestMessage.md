@@ -2,6 +2,18 @@
 
 一条HTTP请求消息
 
+```mermaid
+classDiagram
+  class HttpRequestMessage{
+    Content: HttpContent
+    Headers: HttpRequestHeaders
+    Method: HttpMethod
+
+    constructor()
+    constructor(method: HttpMethod, requestUri: string)
+  }
+```
+
 ## 构造函数
 
 - `new HttpRequestMessage()`

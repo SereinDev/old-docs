@@ -43,6 +43,11 @@
 - JS全局程序集，此处的程序集将被所有JS引擎加载
   - 你可以在此写入一些常用的程序集方便各插件使用
 
+### `jsPatternToSkipLoadingSpecifiedFile`
+
+- `string[]`
+- 加载JS时忽略的文件名后缀
+
 ### `disableBinderWhenServerClosed`
 
 - `boolean`

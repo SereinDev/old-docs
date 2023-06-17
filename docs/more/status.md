@@ -1,8 +1,14 @@
 # 📊 统计信息
 
-![Star History Chart](https://api.star-history.com/svg?repos=Zaitonn/Serein&type=Date)
+## Stars
+
+![starchart](https://starchart.cc/Zaitonn/Serein.svg)
+
+## 仓库
 
 ![Alt](https://repobeats.axiom.co/api/embed/d29d2773958747edfeed6ee9f280c17f781882cb.svg "Repobeats analytics image")
+
+## 其他
 
 | ![GitHub latest releases](https://img.shields.io/github/downloads/Zaitonn/Serein/latest/total?style=flat-square) | ![GitHub all releases](https://img.shields.io/github/downloads/Zaitonn/Serein/total?style=flat-square)                      |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |

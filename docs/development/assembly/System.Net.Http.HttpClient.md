@@ -2,6 +2,23 @@
 
 提供一个类，用于发送HTTP请求并从URI标识的资源接收HTTP响应
 
+```mermaid
+classDiagram
+  class HttpClient{
+    DefaultRequestHeaders: HttpRequestHeaders
+
+    CancelPendingRequests()
+    DeleteAsync(requestUri?: string) System.Threading.Tasks.Task<HttpResponseMessage>
+    GetAsync(requestUri?: string) System.Threading.Tasks.Task<HttpResponseMessage>
+    GetStringAsync(requestUri?: string) System.Threading.Tasks.Task<string>
+    PatchAsync(requestUri?: string, content?: HttpContent) System.Threading.Tasks.Task<HttpResponseMessage>
+    PostAsync(requestUri?: string, content?: HttpContent) System.Threading.Tasks.Task<HttpResponseMessage>
+    PutAsync(requestUri?: string, content?: HttpContent) System.Threading.Tasks.Task<HttpResponseMessage>
+    Send(request: HttpRequestMessage) HttpResponseMessage
+    SendAsync(request: HttpRequestMessage) System.Threading.Tasks.Task<HttpResponseMessage>
+  }
+```
+
 ## 主要属性
 
 - `DefaultRequestHeaders: HttpRequestHeaders` 每个请求一起发送的标头
@@ -75,7 +92,7 @@ const text = httpClient
 
 ## 以异步操作方式将PATCH请求发送到指定为字符串的URI
 
-`PatchAsync(requestUri?: string,content?: HttpContent): System.Threading.Tasks.Task<HttpResponseMessage>`
+`PatchAsync(requestUri?: string, content?: HttpContent): System.Threading.Tasks.Task<HttpResponseMessage>`
 
 - 参数
   - `requestUri` 请求发送到的URI
@@ -85,7 +102,7 @@ const text = httpClient
 
 ## 以异步操作方式将POST请求发送到指定为字符串的URI
 
-`PostAsync(requestUri?: string,content?: HttpContent): System.Threading.Tasks.Task<HttpResponseMessage>`
+`PostAsync(requestUri?: string, content?: HttpContent): System.Threading.Tasks.Task<HttpResponseMessage>`
 
 - 参数
   - `requestUri` 请求发送到的URI
@@ -95,7 +112,7 @@ const text = httpClient
 
 ## 以异步操作方式将PUT请求发送到指定为字符串的URI
 
-`PutAsync(requestUri?: string,content?: HttpContent): System.Threading.Tasks.Task<HttpResponseMessage>`
+`PutAsync(requestUri?: string, content?: HttpContent): System.Threading.Tasks.Task<HttpResponseMessage>`
 
 - 参数
   - `requestUri` 请求发送到的URI

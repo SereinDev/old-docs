@@ -23,13 +23,30 @@
 
 ## `Process`类
 
+```mermaid
+classDiagram
+  class Process{
+    ExitCode: number
+    ExitTime: Date
+    HasExited: boolean
+    ID: number
+    ProcessName: string
+    StartTime: Date
+
+    Close() void
+
+    Kill() void
+    Kill(entireProcessTree: boolean) void
+  }
+```
+
 ### 主要属性
 
-- `ExitCode: int` 关联进程终止时指定的代码
+- `ExitCode: number` 关联进程终止时指定的代码
   - 进程尚未退出时获取将导致报错
 - `ExitTime: Date` 关联进程退出的时间
 - `HasExited: boolean` 关联进程是否已终止
-- `ID: int` 关联进程的唯一标识符
+- `ID: number` 关联进程的唯一标识符
 - `ProcessName: string` 系统用以向用户标识该进程的名称
 - `StartTime: Date` 关联进程启动的时间
   - 如果进程未运行，将会引发异常
@@ -48,7 +65,7 @@
 #### 强制终止基础进程
 
 `Kill()`  
-`Kill(entireProcessTree: string)` *（仅Net6）*
+`Kill(entireProcessTree: boolean)` *（仅Net6）*
 
 - 参数
   - `entireProcessTree` *（仅Net6）*
@@ -58,6 +75,27 @@
   - 空
 
 ## `ProcessStartInfo`类
+
+```mermaid
+classDiagram
+  class ProcessStartInfo{
+    Arguments: string
+    CreateNoWindow: boolean
+    FileName: string
+    RedirectStandardError: boolean
+    RedirectStandardInput: boolean
+    RedirectStandardOutput: boolean
+    StandardErrorEncoding: Encoding
+    StandardInputEncoding: Encoding
+    StandardOutputEncoding: Encoding
+    UseShellExecute: boolean
+    WorkingDirectory: string
+
+    constructor()
+    constructor(fileName: string)
+    constructor(fileName: string, arguments: string)
+  }
+```
 
 ### 构造函数
 

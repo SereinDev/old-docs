@@ -18,6 +18,10 @@ const config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
+  markdown: {
+    mermaid: true,
+  },
+
   presets: [
     [
       'classic',
@@ -178,7 +182,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['csharp', 'batch', 'powershell', 'typescript', 'regex']
+        additionalLanguages: ['csharp', 'batch', 'powershell', 'typescript', 'regex', 'batch']
       },
       metadata: [
         {
@@ -193,6 +197,7 @@ const config = {
   },
 
   themes: [
+    '@docusaurus/theme-mermaid',
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       ({

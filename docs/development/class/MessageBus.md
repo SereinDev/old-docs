@@ -2,6 +2,17 @@
 
 用于插件之间快捷的通信
 
+```mermaid
+classDiagram
+  class MessageBus{
+    alive: boolean
+    constructor(namespace: string)
+    onerror(err: string?)
+    postMessage(channal: string, msg: object) void
+    setListener(channal: string, callback: (msg: object) => void) boolean
+  }
+```
+
 ## 构造函数
 
 - `MessageBus(namespace: string)`

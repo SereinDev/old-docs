@@ -2,9 +2,47 @@
 
 ~~Jvav~~版和基岩版的Motd对象
 
+```mermaid
+classDiagram
+  class Motdje{
+    description: string
+    protocol: string
+    favicon: string
+    onlinePlayer: number
+    maxPlayer: number
+    delay: number
+    origin: string
+    exception: string
+    isSuccessful: boolean
+    ip: string
+    port: number
+
+    constructor(addr: string)
+    constructor(port: number)
+  }
+
+  class Motdpe{
+    description: string
+    protocol: string
+    levelName: string
+    gameMode: string
+    onlinePlayer: number
+    maxPlayer: number
+    delay: number
+    origin: string
+    exception: string
+    isSuccessful: boolean
+    ip: string
+    port: number
+
+    constructor(addr: string)
+    constructor(port: number)
+  }
+```
+
 ```js
 let motd1 = new Motdje('1.2.3.4:1234'); // 地址（支持域名解析和带端口的文本解析）
-let motd2 = new Motdje(1234); // 地址（支持域名解析和带端口的文本解析）
+let motd2 = new Motdje(1234); // 本地端口
 ```
 
 ## 属性
@@ -29,12 +67,12 @@ declare class Motdje {
     /**
      * 最大玩家数
      */
-    readonly maxPlayer: string;
+    readonly maxPlayer: number;
 
     /**
      * 在线玩家数
      */
-    readonly onlinePlayer: string;
+    readonly onlinePlayer: number;
 
     /**
      * 服务器描述
@@ -102,12 +140,12 @@ declare class Motdpe {
     /**
      * 最大玩家数
      */
-    readonly maxPlayer: string;
+    readonly maxPlayer: number;
 
     /**
      * 在线玩家数
      */
-    readonly onlinePlayer: string;
+    readonly onlinePlayer: number;
 
     /**
      * 服务器描述

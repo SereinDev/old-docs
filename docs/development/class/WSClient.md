@@ -2,6 +2,22 @@
 
 连接Websocket
 
+```mermaid
+classDiagram
+  class WSClient{
+    state: number
+    constructor(uri: string, namespace: string)
+    onopen() void
+    onclose() void
+    onerror(e: string) void
+    onmessage(message: string) void
+    open() void
+    close() void
+    send(content: string) void
+    dispose() void
+  }
+```
+
 ## 示例
 
 ```js

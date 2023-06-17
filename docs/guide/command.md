@@ -11,7 +11,9 @@ Serein中最重要的组成部分
 
 - 命令的名称部分不区分大小写
 - `|`为竖线（分隔线）
-  - 👆 U+007C，不是中文的`丨`(gǔn)
+  - `U+007C`
+    - `Enter`键上面的那个
+    - 不是中文的`丨`(gǔn)
 - `<>`表示必选内容
 - `[]`表示为可选内容
 
@@ -155,6 +157,8 @@ Serein中最重要的组成部分
   - `groupcache` [群组缓存](../development/function/msg#获取群成员昵称缓存字典)
   - `permissiongroup` [权限组](../development/permissionGroup)
   - `settings` 设置
+  - `plugin` 插件
+    - 由于安全原因，仅允许通过消息触发
 
 :::caution
 通过群聊执行命令实现热重载Serein数据文件属于高危操作，**务必勾选`需要管理权限`**

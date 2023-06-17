@@ -3,6 +3,17 @@
 
 表示包括状态代码和数据的 HTTP 响应消息
 
+```mermaid
+classDiagram
+  class HttpResponseMessage{
+    Content: HttpContent
+    Headers: HttpRequestHeaders
+    IsSuccessStatusCode: boolean
+    ReasonPhrase: string
+    StatusCode: HttpStatusCode
+  }
+```
+
 ## 主要属性
 
 ### `Content`

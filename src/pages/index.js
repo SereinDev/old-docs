@@ -22,14 +22,14 @@ export default function () {
                             <Link
                                 className="button button--secondary button--lg"
                                 to="/docs">
-                                介绍
+                                📍介绍
                             </Link>
                         </div>
                         <div id='index-page-button'>
                             <Link
                                 className="button button--secondary button--lg"
                                 href="https://github.com/Zaitonn/Serein/releases/latest">
-                                下载
+                                📦下载
                             </Link>
                         </div>
                     </div>

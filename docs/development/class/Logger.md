@@ -2,6 +2,18 @@
 
 一个简简单单的Logger
 
+```mermaid
+classDiagram
+  class Logger{
+    -
+    constructor(title: string)
+    info(...contnet: any) void
+    warn(...contnet: any) void
+    error(...contnet: any) void
+    debug(...contnet: any) void
+  }
+```
+
 ## 示例
 
 ```js

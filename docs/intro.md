@@ -139,3 +139,7 @@ slug: /
   - [加群](https://jq.qq.com/?_wv=1027&amp;k=XNZqPSPv)询问作者或群内其他用户，我们将会尽己所能提供解答和支持
 - **📢 倾听用户声音**
   - 如果你有好的建议或者需求，都可以[加群](https://jq.qq.com/?_wv=1027&amp;k=XNZqPSPv)或[提交Issue](https://github.com/Zaitonn/Serein/issues/new)提出建议
+
+## ⭐ Stars记录
+
+![starchart](https://starchart.cc/Zaitonn/Serein.svg)

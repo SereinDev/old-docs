@@ -2,6 +2,13 @@
 
 HTTP实体正文和内容标头的基类
 
+```mermaid
+classDiagram
+  class HttpContent{
+    Headers: HttpRequestHeaders
+  }
+```
+
 ## 属性
 
 ### `Headers`
