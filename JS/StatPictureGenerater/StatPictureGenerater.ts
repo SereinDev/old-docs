@@ -1172,7 +1172,7 @@ function reg() {
     if (!MHregHandler || typeof (MHregHandler) != 'function')
         throw new Error('你需要安装`MsgHelper.js`');
 
-    MHregHandler({
+    serein.safeCall(MHregHandler, {
         name: '当前状态图片',
         descriptions: ['以图片方式返回当前状态', '用法：发送“zt”|“状态”|“服务器状态”'],
         author: 'Zaitonn',

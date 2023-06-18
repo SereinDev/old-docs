@@ -26,7 +26,7 @@ serein.setListener('onPluginsLoaded', () => {
     if (!MHregHandler)
         throw new Error('你需要安装`MsgHelper.js`');
 
-    MHregHandler({
+    serein.safeCall(MHregHandler, {
         name: '随机二次元图片',
         descriptions: ['随机返回一张二次元图片捏♡♡', '用法：发送“涩图” | “色图”'],
         author: 'Zaitonn',

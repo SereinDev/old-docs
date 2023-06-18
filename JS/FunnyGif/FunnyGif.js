@@ -1,17 +1,13 @@
 /// <reference path="SereinJSPluginHelper/index.d.ts"/>
 /// <reference path="MsgHelper.d.ts"/>
-/// @ts-check
 'use strict';
-
 const VERSION = 'v1.1';
 serein.registerPlugin('GIF生成', VERSION, 'Zaitonn', '需要安装`MsgHelper.js`前置');
 serein.setListener('onPluginsLoaded', () => {
-    /** @type {regHandler} */
     const MHregHandler = serein.imports('MsgHelper.regHandler');
-    if (!MHregHandler || typeof (MHregHandler) != 'function')
+    if (!MHregHandler)
         throw new Error('你需要安装`MsgHelper.js`');
-
-    MHregHandler({
+    serein.safeCall(MHregHandler, {
         name: 'GIF生成',
         descriptions: ['生成一点乱七八糟的GIF图（误', '用法：发送“gif <图片名> [QQ]” 或 “gif 帮助”'],
         author: 'Zaitonn',

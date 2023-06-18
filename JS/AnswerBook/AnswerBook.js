@@ -10,7 +10,7 @@ serein.setListener('onPluginsLoaded', () => {
     if (!MHregHandler || typeof (MHregHandler) != 'function')
         throw new Error('你需要安装`MsgHelper.js`');
 
-    MHregHandler({
+    serein.safeCall(MHregHandler, {
         name: '答案之书',
         descriptions: ['答案之书', '用法：“答案之书 [你的问题]”'],
         author: 'Zaitonn',

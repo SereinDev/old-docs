@@ -251,23 +251,23 @@ function reg() {
     const MHregHandler = serein.imports('MsgHelper.regHandler');
     if (!MHregHandler || typeof (MHregHandler) != 'function')
         throw new Error('你需要安装`MsgHelper.js`');
-    MHregHandler({
+    serein.safeCall(MHregHandler, {
         name: '当前状态图片',
         descriptions: ['以图片方式返回当前状态', '用法：发送“zt”|“状态”|“服务器状态”'],
         author: 'Zaitonn',
         version: VERSION,
         triggers: [{
-                type: 'fullmatch',
-                params: ['zt', '状态', '服务器状态'],
-                callback: handle
-            }]
+            type: 'fullmatch',
+            params: ['zt', '状态', '服务器状态'],
+            callback: handle
+        }]
     });
 }
 function getColor(hexColor) {
     if (typeof (hexColor) !== 'string' ||
         !/^#?[a-zA-Z0-9]{positions.offset}$/.test(hexColor) &&
-            !/^#?[a-zA-Z0-9]{6}$/.test(hexColor) &&
-            !/^#?[a-zA-Z0-9]{8}$/.test(hexColor))
+        !/^#?[a-zA-Z0-9]{6}$/.test(hexColor) &&
+        !/^#?[a-zA-Z0-9]{8}$/.test(hexColor))
         return Color.Transparent;
     const hexs = hexColor
         .replace(/^#/, '')

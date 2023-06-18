@@ -1,25 +1,29 @@
 /// <reference path="SereinJSPluginHelper/index.d.ts"/>
-/// <reference path="CommandHelper.d.ts"/>
-/// @ts-check
+/// <reference path="MsgHelper.d.ts"/>
 
 'use strict';
 
-serein.registerPlugin('GIF生成', 'v1.0', 'Zaitonn', '需要安装`CommandHelper.js`前置');
+const VERSION = 'v1.1';
+
+serein.registerPlugin('GIF生成', VERSION, 'Zaitonn', '需要安装`MsgHelper.js`前置');
 
 serein.setListener('onPluginsLoaded', () => {
-    // @ts-expect-error
-    const CHregCommand: CHregCommand = serein.import('CHregCommand');
-    if (!CHregCommand)
-        throw new Error('你需要安装`CommandHelper.js`');
+    const MHregHandler: regHandler = serein.imports('MsgHelper.regHandler');
+    if (!MHregHandler)
+        throw new Error('你需要安装`MsgHelper.js`');
 
-    CHregCommand({
+    serein.safeCall(MHregHandler, {
         name: 'GIF生成',
-        keywords: ['gif', 'GIF', 'Gif'],
-        callback: handle,
-        needAdmin: false,
-        description: ['生成一点乱七八糟的GIF图（误', '用法：发送“gif <图片名> [QQ]” 或 “gif 帮助”'],
+        descriptions: ['生成一点乱七八糟的GIF图（误', '用法：发送“gif <图片名> [QQ]” 或 “gif 帮助”'],
         author: 'Zaitonn',
-        version: 'v1.0'
+        version: VERSION,
+        triggers: [
+            {
+                type: 'startswith',
+                params: ['gif', 'GIF', 'Gif'],
+                callback: handle
+            }
+        ]
     });
 });
 

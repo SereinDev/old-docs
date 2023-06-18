@@ -11,7 +11,7 @@ serein.setListener('onPluginsLoaded', () => {
     if (!MHregHandler || typeof (MHregHandler) != 'function')
         throw new Error('你需要安装`MsgHelper.js`');
 
-    MHregHandler({
+    serein.safeCall(MHregHandler, {
         name: '恶臭数字论证器',
         descriptions: ['恶臭数字论证器', '万物的尽头都是homo（暴论）', '嗯哼哼啊啊啊啊啊啊啊啊啊啊啊啊啊', '用法：“homo <数字>”'],
         author: 'Zaitonn',
