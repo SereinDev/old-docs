@@ -201,8 +201,8 @@ flowchart TB
 ## 历史版本
 
 - 2023.6.7 v1.1
-  - [**`StatPictureGenerater.js`**](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/48333874d341c485e01624b843c9972f66fe3ccb/JS/StatPictureGenerater/StatPictureGenerater.js?d) 编译后的文件
-  - [`StatPictureGenerater.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/48333874d341c485e01624b843c9972f66fe3ccb/JS/StatPictureGenerater/StatPictureGenerater.ts?d) TypeScript源码
+  - [**`StatPictureGenerater.js`**](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/4d3c4d6009685806b2f95cfa0851b35e28f5a330/JS/StatPictureGenerater/StatPictureGenerater.js?d) 编译后的文件
+  - [`StatPictureGenerater.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/4d3c4d6009685806b2f95cfa0851b35e28f5a330/JS/StatPictureGenerater/StatPictureGenerater.ts?d) TypeScript源码
 - 2023.5.31 v1.0
   - [`StatPictureGenerater.js`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/45ae3bbe50561e590ba6eb090fd6e58fc4b704b4/JS/StatPictureGenerater/StatPictureGenerater.js?d) 编译后的文件
   - [`StatPictureGenerater.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/45ae3bbe50561e590ba6eb090fd6e58fc4b704b4/JS/StatPictureGenerater/StatPictureGenerater.ts?d) TypeScript源码

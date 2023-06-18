@@ -155,10 +155,10 @@ MHregHandler(...);
 ## 历史版本
 
 - 2023.6.8 v2.0
-  - [`MsgHelper.js` - 本体](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/105552bbd30f5615da8d3b748db8948e6386788c/JS/MsgHelper/MsgHelper.js?d)
-  - [`template.js` - 模板](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/105552bbd30f5615da8d3b748db8948e6386788c/JS/MsgHelper/template.js?d)
-  - [`MsgHelper.ts` - 源码](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/105552bbd30f5615da8d3b748db8948e6386788c/JS/MsgHelper/MsgHelper.ts?d)
-  - [`MsgHelper.d.ts` - 自动补全](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/105552bbd30f5615da8d3b748db8948e6386788c/JS/MsgHelper/MsgHelper.d.ts?d)
+  - [`MsgHelper.js` - 本体](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/4d3c4d6009685806b2f95cfa0851b35e28f5a330/JS/MsgHelper/MsgHelper.js?d)
+  - [`template.js` - 模板](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/4d3c4d6009685806b2f95cfa0851b35e28f5a330/JS/MsgHelper/template.js?d)
+  - [`MsgHelper.ts` - 源码](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/4d3c4d6009685806b2f95cfa0851b35e28f5a330/JS/MsgHelper/MsgHelper.ts?d)
+  - [`MsgHelper.d.ts` - 自动补全](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/4d3c4d6009685806b2f95cfa0851b35e28f5a330/JS/MsgHelper/MsgHelper.d.ts?d)
 - 2023.4.19 v1.0
   - [`CommandHelper.js` - 本体](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/CommandHelper/v1.0/CommandHelper.js?download)
   - [`template.js` - 模板](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/5bf23e0c3666087a1faca1ada4064781b9d50c20/JS/CommandHelper/v1.0/template.js?download)

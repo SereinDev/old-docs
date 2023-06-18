@@ -31,7 +31,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/Zaitonn/Serein-Docs/edit/market/',
           showLastUpdateAuthor: true,
-          showLastUpdateTime: true
+          showLastUpdateTime: true,
         },
 
         blog: {
@@ -68,7 +68,7 @@ const config = {
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            label: '✏教程',
+            label: '🧾公告',
           },
           {
             to: '/resources',

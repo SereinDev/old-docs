@@ -9,7 +9,7 @@ sidebar_position: 1
 - 开[ISSUE](https://github.com/Zaitonn/Serein-Docs/issues/new/choose)
 - 提交[PR](https://github.com/Zaitonn/Serein-Docs/compare)
   - 源文件请提交至`publish`分支，路径为`{JS|JSON}/{插件名}/版本号/`
-  - 介绍文档请提交至`market`分支，路径为`blog/{插件名}.md`
+  - 介绍文档请提交至`market`分支，路径为`resources/{插件名}.md`
 
 :::caution
 对于插件的发布，需要注意的是**混淆或加密js代码将导致效率极其低下乃至无法运行**，请自行权衡利弊  

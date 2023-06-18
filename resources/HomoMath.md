@@ -36,5 +36,5 @@ date: 2023.6.7
 
 ## 历史版本哼啊啊啊啊啊
 
-- 2023.6.7 [v114.514.1](https://github.com/Zaitonn/Serein-Docs/blob/84c8408b7dd584d4fd5d9ebc1d5d284cd64a2d7b/JS/HomoMath/HomoMath.js?d)
+- 2023.6.7 [v114.514.1](https://github.com/Zaitonn/Serein-Docs/blob/4d3c4d6009685806b2f95cfa0851b35e28f5a330/JS/HomoMath/HomoMath.js?d)
 - 2023.4.30 [v114.514.0](https://github.com/Zaitonn/Serein-Docs/blob/030c6cd5666aa1e5c2995205ab4490a7314052b6/JS/HomoMath/HomoMath.js?d)
