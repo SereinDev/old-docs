@@ -118,7 +118,7 @@ const SIZES = {
 /**
  * 版本
  */
-const VERSION = 'v1.1';
+const VERSION = 'v1.2';
 
 /**
  * 默认配置
@@ -1016,6 +1016,9 @@ function generate(packet: Packet) {
     const allDirves = DriveInfo.GetDrives();
     for (let index = 1; index < allDirves.length + 1 && index < 6; index++) {
         const drive = allDirves[index - 1];
+
+        if (!drive.IsReady)
+            continue;
 
         // 解构对象
         const {

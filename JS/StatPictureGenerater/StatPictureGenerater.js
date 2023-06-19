@@ -22,7 +22,7 @@ const SIZES = {
         return config.shadow ? 1.5 : 0;
     }
 };
-const VERSION = 'v1.1';
+const VERSION = 'v1.2';
 const BASECONFIG = {
     urls: [
         'https://t.mwm.moe/ysmp/',
@@ -206,6 +206,8 @@ function generate(packet) {
     const allDirves = DriveInfo.GetDrives();
     for (let index = 1; index < allDirves.length + 1 && index < 6; index++) {
         const drive = allDirves[index - 1];
+        if (!drive.IsReady)
+            continue;
         const { TotalFreeSpace: totalFreeSpace, TotalSize: totalSize, Name: [name] } = drive;
         graphics.DrawString(name + ':\\', new Font(config.font, 13), new SolidBrush(colors.shadow), new RectangleF(SIZES.padding * 2 + SIZES.width / 2 + SIZES.shadowOffset, subBar_top + SIZES.padding + SIZES.shadowOffset + subBar_lineHeight * index, 200, subBar_lineHeight), FORMATS.left);
         graphics.DrawString(name + ':\\', new Font(config.font, 13), new SolidBrush(colors.text), new RectangleF(SIZES.padding * 2 + SIZES.width / 2, subBar_top + SIZES.padding + subBar_lineHeight * index, 200, subBar_lineHeight), FORMATS.left);
