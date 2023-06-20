@@ -3,7 +3,7 @@ title: 状态图片生成
 authors: 
   - Zaitonn
 tags: [JS,娱乐]
-date: 2023.6.7
+date: 2023.6.19
 ---
 
 生成当前系统和服务器状态的图片，支持自定义标题和图片/API
@@ -14,7 +14,8 @@ date: 2023.6.7
 
 :::caution
 
-- 此插件支持的最低版本为v1.3.4.2
+- 此插件支持的最低版本为v1.3.5
+  - 低于此版本使用此插件将会报错
 - 你需要安装
   - [文件读写模块](stdio)
     - 下载后放在plugins/modules文件夹内
@@ -200,8 +201,11 @@ flowchart TB
 
 ## 历史版本
 
+- 2023.6.19 v1.2
+  - [**`StatPictureGenerater.js`**](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/c12be67e90faadebad693f6e88f53ba4e256460b/JS/StatPictureGenerater/StatPictureGenerater.js?d) 编译后的文件
+  - [`StatPictureGenerater.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/c12be67e90faadebad693f6e88f53ba4e256460b/JS/StatPictureGenerater/StatPictureGenerater.ts?d) TypeScript源码
 - 2023.6.7 v1.1
-  - [**`StatPictureGenerater.js`**](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/4d3c4d6009685806b2f95cfa0851b35e28f5a330/JS/StatPictureGenerater/StatPictureGenerater.js?d) 编译后的文件
+  - [`StatPictureGenerater.js`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/4d3c4d6009685806b2f95cfa0851b35e28f5a330/JS/StatPictureGenerater/StatPictureGenerater.js?d) 编译后的文件
   - [`StatPictureGenerater.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/4d3c4d6009685806b2f95cfa0851b35e28f5a330/JS/StatPictureGenerater/StatPictureGenerater.ts?d) TypeScript源码
 - 2023.5.31 v1.0
   - [`StatPictureGenerater.js`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/45ae3bbe50561e590ba6eb090fd6e58fc4b704b4/JS/StatPictureGenerater/StatPictureGenerater.js?d) 编译后的文件
