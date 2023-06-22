@@ -384,7 +384,7 @@ serein.setPreLoadConfig(
   - `object` 设置内容对象（见上）
 
 :::tip
-最好使用`serein.getSettingsObject()`而不是`serein.getSettings()`
+推荐使用`serein.getSettingsObject()`而不是`serein.getSettings()`
 
 ```js
 const settings = JSON.parse(serein.getSettings());
@@ -513,7 +513,7 @@ declare interface WSClient {
 
 ## 安全调用函数
 
-:::note
+:::info
 此函数可用于解决跨插件调用函数时导致线程不安全的问题
 :::
 

@@ -6,6 +6,10 @@ slug: /development
 
 Serein JS插件的详细文档
 
+:::caution 🚧警告
+由于一些原因，本文档和[JS插件开发助手](#js插件开发助手)可能更新不及时，一切内容以[GitHub的源码](https://github.com/Zaitonn/Serein)为准
+:::
+
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

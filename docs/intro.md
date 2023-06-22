@@ -7,22 +7,25 @@ slug: /
 ![Serein](https://socialify.git.ci/Zaitonn/Serein/image?description=1&font=KoHo&logo=https%3A%2F%2Fserein.cc%2Fimg%2FSerein.png&name=1&owner=1&pattern=Circuit%20Board&theme=Dark#dark)
 
 <p align="center">
-    <img alt="GitHub Stars" src="https://img.shields.io/github/stars/Zaitonn/Serein?color=blue" />
-    <a href="https://github.com/Zaitonn/Serein/releases/latest">
-        <img src="https://img.shields.io/github/v/release/Zaitonn/Serein?color=blue" />
-    </a>
-    <a href="https://github.com/Zaitonn/Serein/releases/latest">
-        <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/Zaitonn/Serein/total?color=blue" />
-    </a>
-    <a href="https://github.com/Zaitonn/Serein/actions/workflows/Build.yml">
-      <img alt="GitHub bulid" src="https://img.shields.io/github/actions/workflow/status/Zaitonn/Serein/Build.yml?branch=main&color=blue" />
-    </a>
-    <a href="https://github.com/Zaitonn/Serein">
-        <img alt="GitHub repo file count" src="https://img.shields.io/github/languages/code-size/Zaitonn/Serein" />
-    </a>
-    <a href="https://app.codacy.com/gh/Zaitonn/Serein/">
-        <img alt="Codacy Grade" src="https://img.shields.io/codacy/grade/982069cd172d4ef4a40aa4bce4977542?color=blue&logo=Codacy" />
-    </a>
+  <img alt="GitHub Stars" src="https://img.shields.io/github/stars/Zaitonn/Serein?color=blue" />
+  <a href="https://github.com/Zaitonn/Serein/releases/latest">
+    <img src="https://img.shields.io/github/v/release/Zaitonn/Serein?color=blue" />
+  </a>
+  <a href="https://github.com/Zaitonn/Serein/releases/latest">
+    <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/Zaitonn/Serein/total?color=blue" />
+  </a>
+  <a href="https://github.com/Zaitonn/Serein/actions/workflows/Build.yml">
+    <img alt="GitHub bulid" src="https://img.shields.io/github/actions/workflow/status/Zaitonn/Serein/Build.yml?branch=main&color=blue" />
+  </a>
+  <a href="https://github.com/Zaitonn/Serein">
+    <img alt="GitHub repo file count" src="https://img.shields.io/github/languages/code-size/Zaitonn/Serein" />
+  </a>
+  <a href="https://app.codacy.com/gh/Zaitonn/Serein/">
+    <img alt="Codacy Grade" src="https://img.shields.io/codacy/grade/982069cd172d4ef4a40aa4bce4977542?color=blue&logo=Codacy" />
+  </a>
+  <a href="https://wakatime.com/badge/github/Zaitonn/Serein">
+    <img src="https://wakatime.com/badge/github/Zaitonn/Serein.svg" alt="wakatime" />
+  </a>
 </p>
 
 ## 📁 麻雀虽小五脏俱全
@@ -42,7 +45,9 @@ slug: /
     - WinServer2012
     - WinServer2016
     - WinServer2019
-  - Linux *（仅提供命令行版本）*
+  - Linux
+    - 目前只提供命令行版本
+    - 非命令行版请自行套Wine尝试，不保证稳定性
 - 支持启动的类型
   - 基岩版专用服务器（BDS)
   - Java版及使用`java`启动的服务器
@@ -142,4 +147,4 @@ slug: /
 
 ## ⭐ Stars记录
 
-![starchart](https://starchart.cc/Zaitonn/Serein.svg)
+[![starchart 我图图呢（](https://starchart.cc/Zaitonn/Serein.svg)](https://github.com/Zaitonn/Serein/stargazers)

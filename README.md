@@ -5,8 +5,10 @@
 <br>
 Serein的官方文档
 <br>
-<b>🖥Website</b> | <a href="https://serein.cc/">serein.cc</a><br>
-<b>🏬Market</b> | <a href="https://market.serein.cc/">market.serein.cc</a>
+<a href="https://wakatime.com/badge/github/Zaitonn/Serein-Docs"><img style="margin:10px 0 0" src="https://wakatime.com/badge/github/Zaitonn/Serein-Docs.svg" alt="wakatime"></a>
+<br>
+<b>主站</b> | <a href="https://serein.cc/">serein.cc</a><br>
+<b>扩展市场</b> | <a href="https://market.serein.cc/">market.serein.cc</a>
 </p>
 
 <pre align="center">
@@ -19,7 +21,7 @@ Serein的官方文档
 
 ### 要求
 
-nodejs LTS
+NodeJS LTS
 
 ### 初始化
 
@@ -27,7 +29,7 @@ nodejs LTS
 > npm install
 ```
 
-### 开始
+### 预览
 
 ```ps
 > npm run start
