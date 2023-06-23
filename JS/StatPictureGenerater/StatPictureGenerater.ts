@@ -352,16 +352,16 @@ function generate(packet: Packet) {
 
     // 获取相关变量
     const {
-        Name: os,
-        Hardware: {
+        name: os,
+        hardware: {
             RAM: {
                 Free: ram_free,
                 Total: ram_total
             },
             CPUs: [
                 {
-                    Name: cpu_name,
-                    PhysicalCores: cpu_cores
+                    name: cpu_name,
+                    logicalCores: cpu_cores
                 }
             ]
         }

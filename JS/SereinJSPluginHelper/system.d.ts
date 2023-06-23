@@ -8,9 +8,9 @@ declare namespace serein {
     /**
      * 获取CPU使用率
      * - Linux版本下返回`undefined`
-     * @returns {number|undefined}
+     * @returns {number}
      */
-    function getCPUUsage(): number | undefined
+    function getCPUUsage(): number
 
     /**
      * 获取网速
@@ -20,49 +20,50 @@ declare namespace serein {
 }
 
 declare interface SysInfo {
-    readonly Architecture: string
-    readonly Name: string
-    readonly Hardware: Hardware
-    readonly FrameworkVersion: FrameworkVersion
-    readonly JavaVersion: JavaVersion
-    readonly IsMono: boolean
-    readonly OperatingSystemType: number
+    readonly architecture: string
+    readonly name: string
+    readonly hardware: Hardware
+    readonly frameworkVersion: FrameworkVersion
+    readonly javaVersion: JavaVersion
+    readonly isMono: boolean
+    readonly operatingSystemType: number
 }
 
 declare interface Hardware {
-    readonly CPUs: Cpu[]
-    readonly GPUs: Gpu[]
-    readonly RAM: Ram
+    readonly CPUs: CPU[]
+    readonly GPUs: GPU[]
+    readonly RAM: RAM
 }
 
-declare interface Cpu {
-    readonly Name: string
-    readonly Brand: string
-    readonly Architecture: string
-    readonly Cores: number
-    readonly Frequency: number
+declare interface CPU {
+    readonly name: string
+    readonly brand: string
+    readonly architecture: string
+    readonly physicalCores: number
+    readonly logicalCores: number
+    readonly frequency: number
 }
 
-declare interface Gpu {
-    readonly Name: string
-    readonly Brand: string
-    readonly Resolution: string
-    readonly RefreshRate: number
-    readonly MemoryTotal: number
+declare interface GPU {
+    readonly name: string
+    readonly brand: string
+    readonly resolution: string
+    readonly refreshRate: number
+    readonly memoryTotal: number
 }
 
-declare interface Ram {
-    readonly Free: number
-    readonly Total: number
+declare interface RAM {
+    readonly free: number
+    readonly total: number
 }
 
 declare interface FrameworkVersion {
-    readonly Major: number
-    readonly Minor: number
-    readonly Build: number
-    readonly Revision: number
-    readonly MajorRevision: number
-    readonly MinorRevision: number
+    readonly major: number
+    readonly minor: number
+    readonly build: number
+    readonly revision: number
+    readonly majorRevision: number
+    readonly minorRevision: number
 }
 
 declare interface JavaVersion {

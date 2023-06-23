@@ -16,11 +16,20 @@ declare namespace serein {
     function sendPrivate(userid: number, msg: string): boolean
 
     /**
+     * 发送私聊消息
+     * @param {number} groupid 群号
+     * @param {number} userid 对方qq
+     * @param {string} msg 消息文本
+     * @returns {boolean} 发送结果
+     */
+    function sendTemp(group_id: number, userid: number, msg: string): boolean
+
+    /**
      * 发送数据包
      * @param {string} packet 数据包文本
      * @returns {boolean} 发送结果
      */
-    function sendPacket(packet): boolean
+    function sendPacket(packet: string): boolean
 
     /**
      * 获取ws连接状态
@@ -38,12 +47,12 @@ declare namespace serein {
      * 直接获取指定群的群成员昵称缓存
      * @param {number} groupid 群号
      * @param {number} userid QQ号
-     * @returns {UserInfo} 群成员昵称缓存
+     * @returns {Member} 群成员昵称缓存
      */
-    function getUserInfo(groupid: number, userid: number): UserInfo
+    function getUserInfo(groupid: number, userid: number): Member
 }
 
-declare interface UserInfo {
+declare interface Member {
     id: number
     card: string
     nickname: string

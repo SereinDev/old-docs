@@ -1,3 +1,5 @@
+/// <reference path="settings.d.ts"/>
+
 declare namespace serein {
     /**
      * 输出日志
@@ -29,9 +31,9 @@ declare namespace serein {
 
     /**
      * 获取Serein设置对象
-     * @returns {object} 设置的json文本
+     * @returns {Settings} 设置的json文本
      */
-    function getSettingsObject(): any
+    function getSettingsObject(): Settings
 
     /**
      * 执行命令
@@ -92,6 +94,7 @@ declare namespace serein {
 
     /**
      * 设置监听器
+     * 
      * `onReceivePacket`先于`onReceivePrivateMessage`和`onReceiveGroupMessage`触发，若此事件被拦截，私聊和群聊消息事件均不会被触发
      * @param {string} eventname 事件名称（收到群消息）
      * @param {Function} func 回调函数
@@ -101,6 +104,7 @@ declare namespace serein {
 
     /**
      * 设置监听器
+     * 
      * `onReceivePacket`先于`onReceivePrivateMessage`和`onReceiveGroupMessage`触发，若此事件被拦截，私聊和群聊消息事件均不会被触发
      * @param {string} eventname 事件名称（收到私聊消息）
      * @param {Function} func 回调函数
@@ -110,6 +114,7 @@ declare namespace serein {
 
     /**
      * 设置监听器
+     * 
      * `onReceivePacket`先于`onReceivePrivateMessage`和`onReceiveGroupMessage`触发，若此事件被拦截，私聊和群聊消息事件均不会被触发
      * @param {string} eventname 事件名称（收到数据包）
      * @param {Function} func 回调函数
@@ -136,51 +141,13 @@ declare namespace serein {
     /**
      * 设置监听器
      * 
-     * ### ❌ 事件名称不存在或参数不完整，此函数将始终返回`false`
+     * **❌ 事件名称不存在或参数不完整，此函数将始终返回`false`**
      * @param {string?} eventname 事件名称
      * @param {Function?} func 回调函数
      * @returns {boolean} 设置结果
      * @deprecated
      */
     function setListener(eventname?: string, func?: () => void | boolean): false
-
-    /**
-     * 获取正则列表
-     * @returns {Array<Regex>} 正则列表
-     */
-    function getRegexes(): Array<Regex>
-
-    /**
-     * 添加正则
-     * @param {string} regexp 正则
-     * @param {number} area 作用域
-     * @param {boolean} needAdmin 需要管理
-     * @param {string} command 命令
-     * @param {string} remark 备注
-     * @param {Array<number>} ignore 忽略对象
-     * @returns {boolean} 添加结果
-     */
-    function addRegex(regexp: string, area: RegexAreaType, needAdmin: boolean, command: string, remark?: string, ignore?: number[]): boolean
-
-    /**
-     * 修改正则
-     * @param {number} index 数组下标
-     * @param {string} regexp 正则
-     * @param {number} area 作用域
-     * @param {boolean} needAdmin 需要管理
-     * @param {string} command 命令
-     * @param {string} remark 备注
-     * @param {Array<number>} ignore 忽略对象
-     * @returns {boolean} 添加结果
-     */
-    function editRegex(index: number, regexp?: string, area?: RegexAreaType, needAdmin?: boolean, command?: string, remark?: string, ignore?: number[]): boolean
-
-    /**
-     * 删除正则
-     * @param {number} index 数组下标
-     * @returns {boolean} 删除结果
-     */
-    function removeRegex(index: number): boolean
 
     /**
      * 设置命令变量
@@ -222,29 +189,15 @@ declare namespace serein {
      * @returns {boolean} 重载结果
      */
     function reloadFiles(type?: 'all' | 'regex' | 'member' | 'schedule' | 'groupcache' | 'settings'): boolean
-}
 
-/**
- * Serein正则对象
- */
-declare type Regex = {
-    readonly regex: string
-    readonly area: RegexAreaType,
-    readonly needAdmin: boolean,
-    readonly command: string,
-    readonly remark: string,
-    readonly ignore: number[]
-}
-
-/**
- * Serein正则作用域枚举值
- */
-declare enum RegexAreaType {
-    disable = 0,
-    console = 1,
-    groupMsg = 2,
-    privateMsg = 3,
-    selfMsg = 4,
+    /**
+     * 安全调用函数
+     * 
+     * 此函数可用于解决跨插件调用函数时导致线程不安全的问题
+     * @param {Function} func 函数
+     * @param {any} args 调用参数
+     */
+    function safeCall(func: Function, ...args: any): any
 }
 
 declare interface SereinPlugin {
@@ -261,12 +214,12 @@ declare interface SereinPlugin {
 }
 
 declare interface PreLoadConfig {
-    readonly Assemblies: string[]
-    readonly AllowGetType: boolean
-    readonly AllowOperatorOverloading: boolean
-    readonly AllowSystemReflection: boolean
-    readonly AllowWrite: boolean
-    readonly Strict: boolean
+    readonly assemblies: string[]
+    readonly allowGetType: boolean
+    readonly allowOperatorOverloading: boolean
+    readonly allowSystemReflection: boolean
+    readonly allowWrite: boolean
+    readonly strict: boolean
     readonly stringCompilationAllowed: boolean
 }
 

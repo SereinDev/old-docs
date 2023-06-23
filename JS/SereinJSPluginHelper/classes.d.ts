@@ -15,6 +15,11 @@ declare class Motdje {
     constructor(port: number)
 
     /**
+     * 在线玩家数
+     */
+    readonly version: string;
+
+    /**
      * 最大玩家数
      */
     readonly maxPlayer: number;
@@ -86,6 +91,11 @@ declare class Motdpe {
      * @param {number} port 本地端口
      */
     constructor(port: number)
+
+    /**
+     * 在线玩家数
+     */
+    readonly version: string;
 
     /**
      * 最大玩家数
@@ -162,25 +172,25 @@ declare class Logger {
      * 信息输出
      * @param {*} content 输出内容
      */
-    info(content?: any): void
+    info(...content: any): void
 
     /**
      * 警告输出
      * @param {*} content 输出内容
      */
-    warn(content?: any): void
+    warn(...content: any): void
 
     /**
      * 错误输出
      * @param {*} content 输出内容
      */
-    error(content?: any): void
+    error(...content: any): void
 
     /**
      * 调试输出
      * @param {*} content 输出内容
      */
-    debug(content?: any): void
+    debug(...content: any): void
 }
 
 /**
@@ -245,3 +255,35 @@ declare class WSClient {
      */
     readonly state: -1 | 0 | 1 | 2 | 3;
 }
+
+/**
+ * MessageBus,用于插件之间快捷的通信
+ */
+declare class MessageBus {
+    /**
+     * MessageBus
+     * @param namespace 命名空间
+     */
+    constructor(namespace: string)
+
+    /**
+     * 错误事件
+     * @param err 错误信息
+     */
+    onerror: (err: string) => void
+
+    /**
+     * 发送消息
+     * @param channal 频道
+     * @param msg 消息
+     */
+    postMessage(channal: string, msg: object): void
+
+    /**
+     * 设置监听器
+     * @param channal 频道
+     * @param callback 回调函数
+     */
+    setListener(channal: string, callback: (msg: object) => void): boolean
+}
+

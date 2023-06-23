@@ -4,10 +4,11 @@
 /// <reference path="msg.d.ts"/>
 /// <reference path="system.d.ts"/>
 /// <reference path="binder.d.ts"/>
-/// <reference path="exportFix.js"/>
+/// <reference path="export.d.ts"/>
 
 /// ---------- 类型 ----------
 /// <reference path="classes.d.ts"/>
+/// <reference path="settings.d.ts"/>
 
 /**
  * # Serein JS插件辅助
@@ -32,8 +33,8 @@
  * 
  * ## 更多介绍
  * 
- * 👉 https://market.serein.cc/resources/SereinJSPluginHelper
- * @version `v1.3.4.1 0426`
+ * 👉 https://market.serein.cc/resources/SereinJSPluginHelper 👈
+ * @version v1.3。5(0623)
  */
 declare namespace serein {
     /**
@@ -44,7 +45,7 @@ declare namespace serein {
     /**
      * Serein版本
      */
-    const version: 'v1.3.4'
+    const version: 'v1.3.5'
 
     /**
      * JS命名空间
