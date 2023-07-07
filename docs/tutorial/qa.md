@@ -30,11 +30,13 @@ Serein没有设置重启上限次数，在投入生产环境前请确保服务�
 :::
 
 - Java启动的服务端（Nukkit、PNX和大部分Java版的服务器）
-  - Java默认编码为GBK,因为NET对该编码不完全支持，所以你可以在启动的批处理文件中添加`-Dfile.encoding=utf-8`参数。
-    - 举个例子
-      ```bat
-      java -Dfile.encoding=utf-8 -jar server.jar nogui
-      ```
+  - Java默认编码为GBK
+    - ~~因为NET对该编码不完全支持~~，（**[v1.3.5](../version/v1.3.5)已支持**）所以你可以在启动的批处理文件中添加`-Dfile.encoding=utf-8`参数。
+      - 举个例子
+        ```bat
+        java -Dfile.encoding=utf-8 -jar server.jar nogui
+        ```
+    - [v1.3.5](../version/v1.3.5)中已支持使用GBK编码作为输入和输出的编码，故你可以直接在 服务器-输出编码 选择此编码
 
 
 - Python启动的进程（如[MCDReforged](https://github.com/Fallen-Breath/MCDReforged)）
@@ -44,6 +46,7 @@ Serein没有设置重启上限次数，在投入生产环境前请确保服务�
       set PYTHONIOENCODING=utf-8
       python start.py
       ```
+  - [v1.3.5](../version/v1.3.5)中已支持使用GBK编码作为输入和输出的编码，故你可以直接在 服务器-输出编码 选择此编码
 
 ## 使用批处理启动的服务器进程无法强制结束
 
@@ -64,13 +67,9 @@ Serein没有设置重启上限次数，在投入生产环境前请确保服务�
 :::
 
 :::info
-近期（2023年4月）疼逊更改了登录逻辑，可能导致部分情况下无法登录
+2023.7 你需要一个签名服务器。你可以参考此视频👇
 
-你可以按如下方式暂时性修复（go-cqhttp）
-
-1. 进入目录找到`device.json`
-2. 修改`portocel`的值，`0`改为`2`
-3. 保存后重新登录
+<iframe src="//player.bilibili.com/player.html?aid=530300995&bvid=BV1nu411h7bS&cid=1177748002&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 :::
 
 ## 连接失败

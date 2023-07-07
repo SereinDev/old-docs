@@ -8,9 +8,10 @@ classDiagram
     description: string
     protocol: string
     favicon: string
+    faviconCQCode: string
     onlinePlayer: number
     maxPlayer: number
-    delay: number
+    latency: number
     origin: string
     exception: string
     isSuccessful: boolean
@@ -28,7 +29,7 @@ classDiagram
     gameMode: string
     onlinePlayer: number
     maxPlayer: number
-    delay: number
+    latency: number
     origin: string
     exception: string
     isSuccessful: boolean
@@ -54,13 +55,13 @@ let motd2 = new Motdje(1234); // 本地端口
 declare class Motdje {
     /**
      * Java服务器Motd对象
-     * @param {string} addr 服务器地址
+     * @param addr 服务器地址
      */
     constructor(addr: string)
 
     /**
      * Java服务器Motd对象
-     * @param {number} port 本地端口
+     * @param port 本地端口
      */
     constructor(port: number)
 
@@ -85,14 +86,19 @@ declare class Motdje {
     readonly protocol: string;
 
     /**
-     * 图标（CQ码）
+     * 图标（Base64）
      */
     readonly favicon: string;
 
     /**
+     * 图标（CQ码）
+     */
+    readonly faviconCQCode: string;
+
+    /**
      * 延迟（ms）
      */
-    readonly delay: number;
+    readonly latency: number;
 
     /**
      * 原文
@@ -127,13 +133,13 @@ declare class Motdpe {
 
     /**
      * 基岩版服务器Motd对象
-     * @param {string} addr 服务器地址
+     * @param addr 服务器地址
      */
     constructor(addr: string)
 
     /**
      * 基岩版服务器Motd对象
-     * @param {number} port 本地端口
+     * @param port 本地端口
      */
     constructor(port: number)
 
@@ -170,7 +176,7 @@ declare class Motdpe {
     /**
      * 延迟（ms）
      */
-    readonly delay: number;
+    readonly latency: number;
 
     /**
      * 原文
