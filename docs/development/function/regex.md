@@ -27,7 +27,7 @@ serein.removeRegex(0);
 
 ```ts
 declare type Regex = {
-  readonly regex: string
+  readonly expression: string
   readonly area: RegexAreaType,
   readonly needAdmin: boolean,
   readonly command: string,
@@ -40,7 +40,7 @@ declare type Regex = {
 
 ```js
 serein.addRegex(
-  regexp: string,
+  expression: string,
   area: number,
   needAdmin: boolean,
   command: string,
@@ -50,7 +50,7 @@ serein.addRegex(
 ```
 
 - 参数
-  - `regexp` 正则表达式
+  - `expression` 正则表达式
   - `area` 作用域
   - `needAdmin` 需要管理
   - `command` 命令
@@ -65,7 +65,7 @@ serein.addRegex(
 ```js
 serein.editRegex(
   index: number
-  regexp?: string,
+  expression?: string,
   area?: number,
   needAdmin?: boolean,
   command?: string,
@@ -76,7 +76,7 @@ serein.editRegex(
 
 - 参数
   - `index` 数组下标
-  - `regexp` 正则表达式
+  - `expression` 正则表达式
   - `area` 作用域
   - `needAdmin` 需要管理
   - `command` 命令

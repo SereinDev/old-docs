@@ -96,6 +96,7 @@ const sidebars = {
         'guide/member',
         'guide/bot',
         'guide/event',
+        'guide/hiddenSettings',
       ]
     },
   ],
@@ -133,7 +134,6 @@ const sidebars = {
         'tutorial/customConsole',
         'tutorial/customRegex',
         'tutorial/matchWithMuiltLine',
-        'tutorial/hiddenSettings',
         'tutorial/debugMode',
       ]
     },

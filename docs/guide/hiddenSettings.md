@@ -15,7 +15,7 @@
 ### `noHeartbeat`
 
 - `boolean`
-- 是否禁用心跳功能（用于[在线统计](https://online-count.serein.cc)）
+- 是否禁用心跳功能（用于[在线统计](/onlineCount)）
 - 此项功能会收集您的以下数据（匿名）
   - 启动时间
   - Serein版本
@@ -34,7 +34,9 @@
 - JS事件冷却事件，避免调用过快导致插件卡死
 
 :::tip
-若你没有使用JS的需求，你可以将以上两项调为`0`来加快消息处理速度
+
+- 若你没有使用JS的需求，你可以将以上两项调为`0`来加快消息处理速度
+- `jsEventCoolingDownTime`为`0`可能导致重新加载插件时报错
 :::
 
 ### `jsGlobalAssemblies`
@@ -47,6 +49,11 @@
 
 - `string[]`
 - 加载JS时忽略的文件名后缀
+
+### `jsScriptToPreExecute`
+
+- `string?`
+- JS引擎初始化预执行代码
 
 ### `disableBinderWhenServerClosed`
 

@@ -1,0 +1,33 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 20px;
+}
+
+div#overview-container>table,
+div#detail-list-container>table {
+    width: 100%;
+    text-align: center;
+}
+
+div#overview-container>table * {
+    width: 200px;
+    max-width: 100%;
+}
+
+div#detail-list-container td {
+    padding: 5px 10px;
+}
+
+div#detail-list-container th {
+    font-weight: bolder;
+}
+
+div#detail-list-container>table pre {
+    padding: 4px;
+    margin: 0;
+    background: #88888830;
+}

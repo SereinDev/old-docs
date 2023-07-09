@@ -44,11 +44,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      algolia: {
-        appId: '8B3GBB4Z7B',
-        apiKey: '0fcac6569e49c5b557f7c78357c55ea1',
-        indexName: 'main'
-      },
       announcementBar: {
         content: '如果你觉得Serein好用的话，别忘了<a href="https://github.com/Zaitonn/Serein" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);">给个Star⭐</a> :D',
         textColor: 'var(--ifm-color-primary-contrast-foreground)',
@@ -86,6 +81,10 @@ const config = {
                 type: 'docSidebar',
                 sidebarId: 'versionSidebar',
                 label: '版本记录',
+              },
+              {
+                label: '在线统计',
+                href: '/onlineCount'
               },
               {
                 type: 'docSidebar',

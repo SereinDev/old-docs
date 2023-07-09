@@ -115,3 +115,24 @@ declare interface UserInfo {
     gameId: string
 }
 ```
+
+## 获取自身ID（使用Serein缓存）
+
+`serein.getSelfID()`
+
+- 参数
+  - 无
+- 返回
+  - `number?`
+    - 当未连接WS时或缓存为空时返回null
+
+## 获取统计信息（使用Serein缓存）
+
+`serein.getWsStat()`
+
+- 参数
+  - 无
+- 返回
+  - `number?[]`
+    - 其中`[0]`为发送消息数，`[1]`为接收消息数
+    - 当未连接WS时或缓存为空时返回`[null, null]`
