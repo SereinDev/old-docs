@@ -4,13 +4,13 @@
 declare class Motdje {
     /**
      * Java服务器Motd对象
-     * @param {string} addr 服务器地址
+     * @param addr 服务器地址
      */
     constructor(addr: string)
 
     /**
      * Java服务器Motd对象
-     * @param {number} port 本地端口
+     * @param port 本地端口
      */
     constructor(port: number)
 
@@ -47,7 +47,7 @@ declare class Motdje {
     /**
      * 延迟（ms）
      */
-    readonly delay: number;
+    readonly latency: number;
 
     /**
      * 原文
@@ -82,13 +82,13 @@ declare class Motdpe {
 
     /**
      * 基岩版服务器Motd对象
-     * @param {string} addr 服务器地址
+     * @param addr 服务器地址
      */
     constructor(addr: string)
 
     /**
      * 基岩版服务器Motd对象
-     * @param {number} port 本地端口
+     * @param port 本地端口
      */
     constructor(port: number)
 
@@ -130,7 +130,7 @@ declare class Motdpe {
     /**
      * 延迟（ms）
      */
-    readonly delay: number;
+    readonly latency: number;
 
     /**
      * 原文
@@ -164,31 +164,31 @@ declare class Motdpe {
 declare class Logger {
     /**
      * Logger
-     * @param {string} title 标题
+     * @param title 标题
      */
     constructor(title: string)
 
     /**
      * 信息输出
-     * @param {*} content 输出内容
+     * @param content 输出内容
      */
     info(...content: any): void
 
     /**
      * 警告输出
-     * @param {*} content 输出内容
+     * @param content 输出内容
      */
     warn(...content: any): void
 
     /**
      * 错误输出
-     * @param {*} content 输出内容
+     * @param content 输出内容
      */
     error(...content: any): void
 
     /**
      * 调试输出
-     * @param {*} content 输出内容
+     * @param content 输出内容
      */
     debug(...content: any): void
 }
@@ -199,8 +199,8 @@ declare class Logger {
 declare class WSClient {
     /**
      * WebSocket客户端
-     * @param {string} uri ws地址
-     * @param {string} namespace 当前命名空间
+     * @param uri ws地址
+     * @param namespace 当前命名空间
      */
     constructor(uri: string, namespace: string)
 
@@ -231,7 +231,7 @@ declare class WSClient {
 
     /**
      * 发送
-     * @param {string} msg 消息内容
+     * @param msg 消息内容
      */
     send(msg: string): void
 
@@ -257,7 +257,9 @@ declare class WSClient {
 }
 
 /**
- * MessageBus,用于插件之间快捷的通信
+ * MessageBus
+ * 
+ * 用于插件之间快捷的通信
  */
 declare class MessageBus {
     /**

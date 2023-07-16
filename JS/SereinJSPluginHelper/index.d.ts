@@ -34,7 +34,7 @@
  * ## 更多介绍
  * 
  * 👉 https://market.serein.cc/resources/SereinJSPluginHelper 👈
- * @version v1.3。5(0623)
+ * @version v1.3.5(0716)
  */
 declare namespace serein {
     /**
@@ -73,8 +73,8 @@ declare namespace serein {
 
 /**
  * 导入命名空间
- * @param {string} namespace 命名空间名称
- * @returns {any} 命名空间对象
+ * @param namespace 命名空间名称
+ * @returns 命名空间对象
  */
 declare const importNamespace: (namespace: string) => any;
 

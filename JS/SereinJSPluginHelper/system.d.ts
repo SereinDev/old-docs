@@ -1,22 +1,22 @@
 declare namespace serein {
     /**
      * 获取系统信息
-     * @returns {SysInfo} 系统信息
+     * @returns 系统信息
      */
     function getSysInfo(): SysInfo
 
     /**
      * 获取CPU使用率
      * - Linux版本下返回`undefined`
-     * @returns {number}
+     * @returns CPU使用率
      */
     function getCPUUsage(): number
 
     /**
      * 获取网速
-     * @returns {string[]} `[0]`为上传网速，`[1]`为下载网速
+     * @returns `[0]`为上传网速，`[1]`为下载网速
      */
-    function getNetSpeed(): string[]
+    function getNetSpeed(): [string, string]
 }
 
 declare interface SysInfo {
