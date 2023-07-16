@@ -65,6 +65,12 @@ const config = {
           alt: 'Logo',
           src: 'img/Serein_Extension.png',
         },
+        items: [
+          {
+            to: '/resources',
+            label: '🗃资源',
+          }
+        ],
       },
       footer: {
         style: 'light',

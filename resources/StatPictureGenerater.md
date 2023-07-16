@@ -3,7 +3,7 @@ title: 状态图片生成
 authors: 
   - Zaitonn
 tags: [JS,娱乐]
-date: 2023.6.19
+date: 2023.7.16
 ---
 
 生成当前系统和服务器状态的图片，支持自定义标题和图片/API
@@ -22,6 +22,7 @@ date: 2023.6.19
   - [消息助手](MsgHelper)
     - 下载后放在plugins文件夹内
 - 此插件使用了Typescript编写，阅读编译后的JS文件可能会有一些困难
+- 此插件在net472和net6.0的初始化逻辑不同，因此在更换NET版本时，**你需要删除整个配置文件夹**
 
 :::
 
@@ -201,6 +202,9 @@ flowchart TB
 
 ## 历史版本
 
+- 2023.7.16 v1.3
+  - [`StatPictureGenerater.js`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/dc93ac607d0edd9e1cb6e07d7caa2c30db3b696d/JS/StatPictureGenerater/StatPictureGenerater.js?d) 编译后的文件
+  - [`StatPictureGenerater.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/dc93ac607d0edd9e1cb6e07d7caa2c30db3b696d/JS/StatPictureGenerater/StatPictureGenerater.ts?d) TypeScript源码
 - 2023.6.19 v1.2
   - [**`StatPictureGenerater.js`**](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/c12be67e90faadebad693f6e88f53ba4e256460b/JS/StatPictureGenerater/StatPictureGenerater.js?d) 编译后的文件
   - [`StatPictureGenerater.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/c12be67e90faadebad693f6e88f53ba4e256460b/JS/StatPictureGenerater/StatPictureGenerater.ts?d) TypeScript源码
