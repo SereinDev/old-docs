@@ -60,6 +60,11 @@
 - `boolean`
 - 在服务器关闭时禁用绑定功能（部分插件/事件有绑定后自动添加白名单功能，开启此项可以防止在服务器关闭时绑定导致白名单未同步）
 
+## `regexForCheckingGameID`
+
+- `string`
+- 用于检查游戏ID的正则
+
 ## `pagesDisplayed`
 
 - 页面是否显示 *（仅Winform和WPF）*

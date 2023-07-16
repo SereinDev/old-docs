@@ -82,7 +82,7 @@
 - 参数
   - 空
 - 返回
-  - `Array<string>[2]`，其中`[0]`为上传网速，`[1]`为下载网速
+  - `[string, string]`，其中`[0]`为上传网速，`[1]`为下载网速
 
 ```js
 const [ uploadSpeed, downloadSpeed ] = serein.getNetSpeed();

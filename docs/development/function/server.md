@@ -62,6 +62,15 @@
   - `string`
     - 示例：`0.2m` `1.5h` `3.02d`
 
+## 获取服务器PID
+
+`serein.getServerPID()`
+
+- 参数
+  - 空
+- 返回
+  - `number?`
+
 ## 获取服务器进程占用
 
 `serein.getServerCPUUsage()`
@@ -105,7 +114,7 @@ var je = serein.getMotdje("127.0.0.1:25565");
   - `addr` 服务器ip
 - 返回
   - `string` Motd原文
-    - 获取失败时返回`-`
+    - 获取失败时返回空字符串
     - 基岩版为纯字符串
 
     ```txt title='返回示例'
@@ -124,8 +133,8 @@ var je = serein.getMotdje("127.0.0.1:25565");
         "online": 1,
         "sample": [
             {
-                "id": "a4740a2c-1eec-4b7d-9d22-1c861e7045d7",
-                "name": "Biolord101"
+              "id": "a4740a2c-1eec-4b7d-9d22-1c861e7045d7",
+              "name": "Biolord101"
             }
         ]
       },
