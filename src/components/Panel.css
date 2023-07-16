@@ -1,0 +1,32 @@
+#panel-main-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 50px !important;
+    margin-bottom: 100px !important;
+}
+
+#panel-main-container>div>div {
+    display: inline-block;
+    padding: 5px;
+    width: initial;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 996px) {
+    #panel-main-container>div {
+        padding: 10px;
+        width: 100%;
+    }
+
+    #panel-main-container {
+        flex-direction: column;
+    }
+}

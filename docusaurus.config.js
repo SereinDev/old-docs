@@ -32,6 +32,7 @@ const config = {
           editUrl: 'https://github.com/Zaitonn/Serein-Docs/edit/market/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
+          routeBasePath:'/'
         },
 
         blog: {
@@ -64,22 +65,6 @@ const config = {
           alt: 'Logo',
           src: 'img/Serein_Extension.png',
         },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            label: '🧾公告',
-          },
-          {
-            to: '/resources',
-            label: '🗃资源',
-          },
-          {
-            to: '/docs/publish',
-            label: '💡发布',
-            position: 'right'
-          }
-        ],
       },
       footer: {
         style: 'light',
