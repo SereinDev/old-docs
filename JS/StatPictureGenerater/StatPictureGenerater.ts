@@ -41,6 +41,25 @@ const {
 } = stdio;
 
 /**
+ * 版本
+ */
+const VERSION = 'v1.3';
+
+/**
+ * 路径
+ */
+const PATH = {
+    main: './plugins/StatPictureGenerater/',
+    preLoadConfig: './plugins/StatPictureGenerater/PreLoadConfig.json',
+    caches: './plugins/StatPictureGenerater/cache',
+    config: './plugins/StatPictureGenerater/config.json',
+};
+
+serein.registerPlugin('状态图片生成', VERSION, 'Zaiton', '需要安装`MsgHelper.js`前置');
+checkPreLoadConfig();
+clearAllCache();
+
+/**
  * 导入命名空间
  */
 const {
@@ -82,7 +101,6 @@ const {
         }
     },
     Convert,
-    Environment,
     GC
 } = System;
 
@@ -91,16 +109,6 @@ const {
  * 图片缓存
  */
 const caches = new Map<string, number>();
-
-/**
- * 路径
- */
-const PATH = {
-    main: './plugins/StatPictureGenerater/',
-    preLoadConfig: './plugins/StatPictureGenerater/PreLoadConfig.json',
-    caches: './plugins/StatPictureGenerater/cache',
-    config: './plugins/StatPictureGenerater/config.json',
-}
 
 /**
  * 尺寸
@@ -114,11 +122,6 @@ const SIZES = {
         return config.shadow ? 1.5 : 0
     }
 };
-
-/**
- * 版本
- */
-const VERSION = 'v1.2';
 
 /**
  * 默认配置
@@ -136,10 +139,6 @@ const BASECONFIG: Config = {
     theme: 'auto',
     defaultColor: ''
 };
-
-serein.registerPlugin('状态图片生成', VERSION, 'Zaiton', '需要安装`MsgHelper.js`前置');
-checkPreLoadConfig();
-clearAllCache();
 
 /**
  * http客户端
@@ -178,7 +177,7 @@ function checkPreLoadConfig() {
             'System.Net.Http'
         ];
 
-        if (Environment.Version.Major === 6)
+        if (System.Environment.Version.Major === 6)
             assemblies.push('System.IO.FileSystem.DriveInfo');
 
         serein.setPreLoadConfig(assemblies);
@@ -355,8 +354,8 @@ function generate(packet: Packet) {
         name: os,
         hardware: {
             RAM: {
-                Free: ram_free,
-                Total: ram_total
+                free: ram_free,
+                total: ram_total
             },
             CPUs: [
                 {
@@ -1163,8 +1162,22 @@ function handle(packet: Packet) {
         return generate(packet);
     } catch (e: any) {
         serein.sendGroup(packet.group_id, e?.message || e?.toString() || e);
+        logger.error(getErrorMsg(e));
         throw e;
     }
+}
+
+
+/**
+ * 获取错误信息
+ * @param err 错误对象
+ * @returns 错误信息
+ */
+function getErrorMsg(err: Error): string {
+    if (err instanceof Error) {
+        return err.name + ' ' + err.message + '\n' + err.stack || ''
+    }
+    return String(err);
 }
 
 /**

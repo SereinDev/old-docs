@@ -6,14 +6,18 @@
 "use strict";
 const stdio = require("./modules/stdio.js");
 const { existFile, existDirectory, createDirectory, deleteFile, getFiles, getExtension, getFileName, writeAllTextToFile, readAllTextFromFile } = stdio;
-const { Drawing: { Drawing2D: { CompositingQuality, InterpolationMode, SmoothingMode, }, Imaging: { ImageFormat, }, Text: { TextRenderingHint, }, Bitmap, Color, Font, Graphics, Rectangle, RectangleF, StringAlignment, StringFormat, StringTrimming, SolidBrush, }, IO: { DriveInfo, File, FileInfo, SearchOption, }, Net: { Http: { HttpClient } }, Convert, Environment, GC } = System;
-const caches = new Map();
+const VERSION = 'v1.3';
 const PATH = {
     main: './plugins/StatPictureGenerater/',
     preLoadConfig: './plugins/StatPictureGenerater/PreLoadConfig.json',
     caches: './plugins/StatPictureGenerater/cache',
     config: './plugins/StatPictureGenerater/config.json',
 };
+serein.registerPlugin('状态图片生成', VERSION, 'Zaiton', '需要安装`MsgHelper.js`前置');
+checkPreLoadConfig();
+clearAllCache();
+const { Drawing: { Drawing2D: { CompositingQuality, InterpolationMode, SmoothingMode, }, Imaging: { ImageFormat, }, Text: { TextRenderingHint, }, Bitmap, Color, Font, Graphics, Rectangle, RectangleF, StringAlignment, StringFormat, StringTrimming, SolidBrush, }, IO: { DriveInfo, File, FileInfo, SearchOption, }, Net: { Http: { HttpClient } }, Convert, GC } = System;
+const caches = new Map();
 const SIZES = {
     width: 1080,
     height: 1440,
@@ -22,7 +26,6 @@ const SIZES = {
         return config.shadow ? 1.5 : 0;
     }
 };
-const VERSION = 'v1.2';
 const BASECONFIG = {
     urls: [
         'https://t.mwm.moe/ysmp/',
@@ -36,9 +39,6 @@ const BASECONFIG = {
     theme: 'auto',
     defaultColor: ''
 };
-serein.registerPlugin('状态图片生成', VERSION, 'Zaiton', '需要安装`MsgHelper.js`前置');
-checkPreLoadConfig();
-clearAllCache();
 const httpClient = new HttpClient();
 const FORMATS = getFormats();
 const logger = new Logger('StatPictureGenerater');
@@ -51,7 +51,7 @@ function checkPreLoadConfig() {
             'System.Drawing',
             'System.Net.Http'
         ];
-        if (Environment.Version.Major === 6)
+        if (System.Environment.Version.Major === 6)
             assemblies.push('System.IO.FileSystem.DriveInfo');
         serein.setPreLoadConfig(assemblies);
         throw new Error('请重新加载此插件');
@@ -140,7 +140,7 @@ function generate(packet) {
     graphics.DrawString(config.title || 'Serein · 状态', new Font(config.font, 45), new SolidBrush(colors.text), new RectangleF(20, 30, SIZES.width - 40, 160), FORMATS.center);
     const [sys_top, sys_left, sys_size] = [200, 140, 250];
     graphics.FillRectangle(new SolidBrush(colors.background), new Rectangle(SIZES.padding, sys_top, SIZES.width - 2 * SIZES.padding, sys_size * 2 + 2 * SIZES.padding + 50));
-    const { Name: os, Hardware: { RAM: { Free: ram_free, Total: ram_total }, CPUs: [{ Name: cpu_name, PhysicalCores: cpu_cores }] } } = serein.getSysInfo();
+    const { name: os, hardware: { RAM: { free: ram_free, total: ram_total }, CPUs: [{ name: cpu_name, logicalCores: cpu_cores }] } } = serein.getSysInfo();
     const cpu_usage = serein.getCPUUsage() || 0;
     const [uploadSpeed, downloadSpeed] = serein.getNetSpeed();
     {
@@ -246,8 +246,15 @@ function handle(packet) {
     }
     catch (e) {
         serein.sendGroup(packet.group_id, e?.message || e?.toString() || e);
+        logger.error(getErrorMsg(e));
         throw e;
     }
+}
+function getErrorMsg(err) {
+    if (err instanceof Error) {
+        return err.name + ' ' + err.message + '\n' + err.stack || '';
+    }
+    return String(err);
 }
 function reg() {
     const MHregHandler = serein.imports('MsgHelper.regHandler');
@@ -259,17 +266,17 @@ function reg() {
         author: 'Zaitonn',
         version: VERSION,
         triggers: [{
-            type: 'fullmatch',
-            params: ['zt', '状态', '服务器状态'],
-            callback: handle
-        }]
+                type: 'fullmatch',
+                params: ['zt', '状态', '服务器状态'],
+                callback: handle
+            }]
     });
 }
 function getColor(hexColor) {
     if (typeof (hexColor) !== 'string' ||
         !/^#?[a-zA-Z0-9]{positions.offset}$/.test(hexColor) &&
-        !/^#?[a-zA-Z0-9]{6}$/.test(hexColor) &&
-        !/^#?[a-zA-Z0-9]{8}$/.test(hexColor))
+            !/^#?[a-zA-Z0-9]{6}$/.test(hexColor) &&
+            !/^#?[a-zA-Z0-9]{8}$/.test(hexColor))
         return Color.Transparent;
     const hexs = hexColor
         .replace(/^#/, '')
