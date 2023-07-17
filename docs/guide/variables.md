@@ -45,23 +45,23 @@ g|现在是现在是2022/1/1 20:00:00
 
 ## 系统变量
 
-| 变量名        | 描述                        | 例子                                        |
-| ------------- | --------------------------- | ------------------------------------------- |
-| NET           | 当前NET版本                 | `4.0.30319.42000`                           |
-| OS            | 操作系统名称                | `Microsoft Windows 10 家庭版`               |
-| CPUName       | CPU名称                     | `Intel(R) Core(TM) i5-1035G4 CPU @ 1.10GHz` |
-| CPUBrand      | CPU品牌                     | `GenuineIntel`                              |
-| CPUFrequency  | CPU频率 (MHz)               | `1498`                                      |
-| TotalRAM      | 总内存（MB）                | `7778`                                      |
-| TotalRAMGB    | 总内存（GB）                | `7.6`                                       |
-| UsedRAM       | 已用内存（MB)               | `6072`                                      |
-| UsedRAMGB     | 已用内存（GB)               | `5.9`                                       |
-| FreeRAM       | 空闲内存（MB)               | `1706`                                      |
-| UsedRAMGB     | 空闲内存（GB)               | `1.7`                                       |
-| RAMUsage      | 内存使用率                  | `78.1`                                      |
-| CPUUsage      | CPU使用率 *仅Windows可获取* | `11.4`                                      |
-| UploadSpeed   | 上传速度                    | `11.4MB/s`                                  |
-| DownloadSpeed | 下载速度                    | `51.4GB/s`                                  |
+| 变量名        | 描述                            | 例子                                        |
+| ------------- | ------------------------------- | ------------------------------------------- |
+| NET           | 当前NET版本                     | `4.0.30319.42000`                           |
+| OS            | 操作系统名称                    | `Microsoft Windows 10 家庭版`               |
+| CPUName       | CPU名称                         | `Intel(R) Core(TM) i5-1035G4 CPU @ 1.10GHz` |
+| CPUBrand      | CPU品牌                         | `GenuineIntel`                              |
+| CPUFrequency  | CPU频率 (MHz)                   | `1498`                                      |
+| TotalRAM      | 总内存（MB）                    | `7778`                                      |
+| TotalRAMGB    | 总内存（GB）                    | `7.6`                                       |
+| UsedRAM       | 已用内存（MB)                   | `6072`                                      |
+| UsedRAMGB     | 已用内存（GB)                   | `5.9`                                       |
+| FreeRAM       | 空闲内存（MB)                   | `1706`                                      |
+| UsedRAMGB     | 空闲内存（GB)                   | `1.7`                                       |
+| RAMUsage      | 内存使用率                      | `78.1`                                      |
+| CPUUsage      | CPU使用率<sup>[仅Windows]</sup> | `11.4`                                      |
+| UploadSpeed   | 上传速度                        | `11.4MB/s`                                  |
+| DownloadSpeed | 下载速度                        | `51.4GB/s`                                  |
 
 ## 服务器变量
 

@@ -65,10 +65,10 @@ classDiagram
 #### 强制终止基础进程
 
 `Kill()`  
-`Kill(entireProcessTree: boolean)` *（仅Net6）*
+`Kill(entireProcessTree: boolean)` <sup>[仅NET6]</sup>
 
 - 参数
-  - `entireProcessTree` *（仅Net6）*
+  - `entireProcessTree` <sup>[仅NET6]</sup>
     - `true` - 终止相关联进程及其后代
     - `false` - 仅终止相关联进程。
 - 返回

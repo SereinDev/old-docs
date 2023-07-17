@@ -26,7 +26,7 @@
 
 ## 程序
 
-- `console` 控制台网页文件 *仅Winform*
+- `console` 控制台网页文件<sup>[仅Winform]</sup>
   - `console.html` 控制台html文件
   - `preset.css` 预设CSS
 - `data` 数据
