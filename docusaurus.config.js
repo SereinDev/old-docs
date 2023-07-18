@@ -98,6 +98,10 @@ const config = {
             to: 'messageBoard'
           },
           {
+            label: '💖捐赠',
+            to: '/docs/more/donate'
+          },
+          {
             label: '🏬扩展市场',
             to: 'https://market.serein.cc/'
           },

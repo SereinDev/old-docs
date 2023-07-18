@@ -1,10 +1,19 @@
 
-# 💰 捐赠
+# 💖 捐赠
 
 如果觉得这个软件对你很有帮助的话可以稍微鼓励一下  
 我会很感谢你的(*￣3￣)╭❤
 
-![爱发电](/img/afdian.png ":size=300")
+非常感谢各位的一路相伴，愿Serein能越走越远
+
+<details>
+<summary>发电链接</summary>
+
+[Zaiton | 爱发电](https://afdian.net/a/Zaiton)
+
+<img src='/img/afdian.png' style={{ maxWidth: "40vw" }}/>
+
+</details>
 
 | Supporters                                                                        | 发电金额 | 日期       |
 | --------------------------------------------------------------------------------- | -------: | ---------- |

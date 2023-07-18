@@ -36,7 +36,7 @@ export default function ({ datas }) {
                                 {d.type}
                             </td>
                             <td>
-                                {d.server_status ? '运行中' : '未启动'}
+                                {d.server_status ? '🟢运行中' : '🔴未启动'}
                             </td>
 
                             <td>
