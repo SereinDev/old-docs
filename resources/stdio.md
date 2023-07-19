@@ -40,6 +40,21 @@ date: 2023.6.7
     - 目录
   - 是否存在
 
+## 使用方法
+
+## 安装
+
+将`stdio.js`放在plugins/modules下即可
+
+### 开发
+
+1. 将`stdio.js`和`stdio.d.ts`放在plugins/modules下
+2. 在插件中写入
+   ```js
+   const { /* 此处填你需要导入的函数名称 */ } = require('./modules/stdio.js');
+   ```
+3. 快乐地编写插件
+
 <details>
   <summary>声明文件（stdio.d.ts）</summary>
 
@@ -216,21 +231,12 @@ export declare function getFullPath(path: string, basePath?: string): string;
 
 </details>
 
-## 使用方法
-
-1. 将`stdio.js`和`stdio.d.ts`放在plugins/modules下
-2. 在插件中写入
-   ```js
-   const { /* 此处填你需要导入的函数名称 */ } = require('./modules/stdio.js');
-   ```
-3. 快乐地编写插件
-
 ## 历史版本
 
 - 2023.6.7 v1.1
-  - [`stdio.js`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/2f3fbec390a232c78f8fdb41b73184c086fd8a0a/JS/Modules/stdio/stdio.js?d) 编译后的文件
-  - [`stdio.d.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/2f3fbec390a232c78f8fdb41b73184c086fd8a0a/JS/Modules/stdio/stdio.d.ts?d) 类型声明文件
-  - [`stdio.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/2f3fbec390a232c78f8fdb41b73184c086fd8a0a/JS/Modules/stdio/stdio.ts?d) TypeScript源码
+  - [**`stdio.js`**](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/120dd9cb471185fb612ef9eb6c6e4fbdac730bba/JS/Modules/stdio/stdio.js?d) 编译后的文件
+  - [`stdio.d.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/120dd9cb471185fb612ef9eb6c6e4fbdac730bba/JS/Modules/stdio/stdio.d.ts?d) 类型声明文件
+  - [`stdio.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/120dd9cb471185fb612ef9eb6c6e4fbdac730bba/JS/Modules/stdio/stdio.ts?d) TypeScript源码
 - 2023.5.22 v1.0
   - [`stdio.js`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/df039a122e6f82db370a87fe05c1245f8c635c77/JS/Modules/stdio/stdio.js?d) 编译后的文件
   - [`stdio.d.ts`](https://download.serein.cc/https://raw.githubusercontent.com/Zaitonn/Serein-Docs/df039a122e6f82db370a87fe05c1245f8c635c77/JS/Modules/stdio/stdio.d.ts?d) 类型声明文件
