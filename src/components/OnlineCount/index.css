@@ -31,3 +31,9 @@ div#detail-list-container>table pre {
     margin: 0;
     background: #88888830;
 }
+
+div#detail-list-container>table th,
+div#detail-list-container>table td,
+div#detail-list-container>table tr {
+  white-space: nowrap;
+}

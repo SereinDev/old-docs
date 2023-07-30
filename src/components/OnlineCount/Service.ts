@@ -17,7 +17,6 @@ export declare type Instance = {
 let cache: Instance[] | null = null;
 
 export async function init(): Promise<Instance[]> {
-    console.log(1);
     return cache ?? (cache = ((await ((await fetch(url)).json())).documents as Instance[]).sort((a, b) => a.start_time - b.start_time));
 };
 

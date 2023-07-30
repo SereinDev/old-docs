@@ -1,7 +1,7 @@
 
 # 🧩 插件
 
-极大拓展Serein的功能
+通过热加载Javascript文件来极大拓展Serein的功能
 
 ![插件](/img/javacriptplugins.png)
 

@@ -6,7 +6,7 @@ import './index.css'
 
 export default function () {
     return (
-        <Layout description='新时代极简服务器面板，内置多种常用功能，超适合萌新和老手服主；支持C#/JS混合开发插件，有着最丰富的API，插件生态超完善！'>
+        <Layout description='极简但多功能的服务器面板软件.支持热重载JS插件；简单易上手，对萌新服主非常友好'>
             <div id='index-page-container'>
                 <div id='index-page-bg'></div>
                 <div id='index-page-bg-mask'></div>
@@ -15,7 +15,7 @@ export default function () {
                         <span>Serein</span>
                     </div>
                     <div id='index-page-description'>
-                        新时代极简服务器面板
+                        极简但多功能的服务器面板软件
                     </div>
                     <div id='index-page-button-container'>
                         <div id='index-page-button'>

@@ -15,8 +15,8 @@ const config = {
   organizationName: 'Zaitonn',
   projectName: 'Serein',
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
 
   markdown: {
     mermaid: true,

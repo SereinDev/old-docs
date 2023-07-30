@@ -8,6 +8,8 @@
   --ifm-color-primary-lighter: #3584c1;
   --ifm-color-primary-lightest: #4994cd;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-navbar-background-color: #ffffffd0;
 }
 
 [data-theme='dark'] {
@@ -19,6 +21,8 @@
   --ifm-color-primary-lighter: #abd0ea;
   --ifm-color-primary-lightest: #d5e7f4;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ifm-navbar-background-color: #242526d0;
 }
 
 .giscus-container {
@@ -32,4 +36,9 @@
 
 .markdown img {
   margin: 2px;
+}
+
+nav.navbar {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }

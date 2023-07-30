@@ -23,7 +23,7 @@ export default function ({ datas }) {
                 </thead>
                 <tbody>
                     {datas.map((d, i) => (
-                        <tr id={i}>
+                        <tr id={i} key={`tr-${i}`}>
                             <td>
                                 <pre>
                                     {d._id?.substring(0, 7)}

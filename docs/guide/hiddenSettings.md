@@ -1,14 +1,18 @@
 # 🎭 隐藏设置
 
-一些并不会出现在Serein界面里的设置项（`Serein.json`）
+一些并不会出现在Serein界面里的**高级设置**项（`Serein.json`）
+
+:::caution
+如果你并不知道这些设置项能带来什么后果，那就不要随意修改
+:::
 
 ## `autoRun`
 
-[自动启动运行](autoRunOnStarted)
+[自动启动运行](../tutorial/autoRunOnStarted)
 
 ## `developmentTool`
 
-[开启调试模式](debugMode)
+[开启调试模式](../tutorial/debugMode)
 
 ## `function`功能
 
@@ -19,7 +23,7 @@
 - 此项功能会收集您的以下数据（匿名）
   - 启动时间
   - Serein版本
-  - [Serein类型](differenceBetweenVersions)
+  - [Serein类型](../tutorial/differenceBetweenVersions)
   - 服务器状态
 
 ### `jsEventMaxWaitingTime`
