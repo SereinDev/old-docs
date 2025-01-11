@@ -28,7 +28,7 @@ export default function () {
                         <div id='index-page-button'>
                             <Link
                                 className="button button--secondary button--lg"
-                                href="https://github.com/Zaitonn/Serein/releases/latest">
+                                href="https://github.com/SereinDev/Serein/releases/latest">
                                 📦下载
                             </Link>
                         </div>

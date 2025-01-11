@@ -12,7 +12,7 @@ const config = {
   url: 'https://serein.cc',
   baseUrl: '/',
 
-  organizationName: 'Zaitonn',
+  organizationName: 'SereinDev',
   projectName: 'Serein',
 
   onBrokenLinks: 'throw',
@@ -29,7 +29,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/Zaitonn/Serein-Docs/edit/main/',
+          editUrl: 'https://github.com/SereinDev/old-docs/edit/main/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true
         },
@@ -45,9 +45,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       announcementBar: {
-        content: '如果你觉得Serein好用的话，别忘了<a href="https://github.com/Zaitonn/Serein" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);">给个Star⭐</a> :D',
+        content: 'Serein v2.0已发布！<a href="https://sereindev.github.io/" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);">点我查看</a>',
         textColor: 'var(--ifm-color-primary-contrast-foreground)',
         backgroundColor: 'var(--ifm-background-surface-color)',
+        isCloseable: false
       },
       image: 'img/Serein.jpg',
       navbar: {
